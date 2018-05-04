@@ -137,6 +137,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4067542031894262}
+  - component: {fileID: 114803221524516594}
+  - component: {fileID: 135224537793786564}
+  - component: {fileID: 114384292155368832}
   m_Layer: 0
   m_Name: YellowMaic
   m_TagString: Untagged
@@ -153,6 +156,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4688408070599862}
   - component: {fileID: 95784080948099164}
+  - component: {fileID: 136174820462084286}
+  - component: {fileID: 114237469194270976}
   m_Layer: 0
   m_Name: arrow
   m_TagString: Untagged
@@ -389,6 +394,8 @@ GameObject:
   - component: {fileID: 4644722701934362}
   - component: {fileID: 198560189878180828}
   - component: {fileID: 114058499071982960}
+  - component: {fileID: 135477035291807936}
+  - component: {fileID: 114493414959360648}
   m_Layer: 0
   m_Name: ArrowTrab
   m_TagString: Untagged
@@ -556,7 +563,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4631446917289568}
   - component: {fileID: 54168237442081744}
-  - component: {fileID: 136505311151004404}
   - component: {fileID: 114029551733662380}
   m_Layer: 0
   m_Name: Arrow
@@ -1432,19 +1438,135 @@ MonoBehaviour:
   x: 0
   y: 1
   z: 0
---- !u!136 &136505311151004404
+--- !u!114 &114237469194270976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195537860169114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31f7d58f88c54049b532ff11b0ce3fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OneHit: 1
+  Power: 20
+  AreaHit: 0
+  AreaDmg: 40
+  AreaTime: 0.5
+  DotHit: 0
+  DotDmg: 50
+  DotTime: 5
+  Cycle: 0.3
+  HitCount: 4
+  PowerMemory:
+  - 0
+  - 0
+  - 0
+  ElecShock: 0
+  ShockTime: 2
+--- !u!114 &114384292155368832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157932278727202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31f7d58f88c54049b532ff11b0ce3fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OneHit: 1
+  Power: 20
+  AreaHit: 0
+  AreaDmg: 40
+  AreaTime: 0.5
+  DotHit: 0
+  DotDmg: 50
+  DotTime: 5
+  Cycle: 0.3
+  HitCount: 4
+  PowerMemory:
+  - 0
+  - 0
+  - 0
+  ElecShock: 0
+  ShockTime: 2
+--- !u!114 &114493414959360648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614433395567630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31f7d58f88c54049b532ff11b0ce3fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OneHit: 1
+  Power: 50
+  AreaHit: 1
+  AreaDmg: 40
+  AreaTime: 0.5
+  DotHit: 0
+  DotDmg: 50
+  DotTime: 5
+  Cycle: 0.5
+  HitCount: 4
+  PowerMemory:
+  - 0
+  - 0
+  - 0
+  ElecShock: 0
+  ShockTime: 2
+--- !u!114 &114803221524516594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157932278727202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41958758091f7944f9dcf070d8cef121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &135224537793786564
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157932278727202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135477035291807936
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614433395567630}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136174820462084286
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1902216250298378}
+  m_GameObject: {fileID: 1195537860169114}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.01
-  m_Height: 0.16
+  m_Radius: 1
+  m_Height: 13
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.01}
+  m_Center: {x: 0, y: 0, z: -0.5}
 --- !u!198 &198054838289981162
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -8039,7 +8161,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 576878138
+  randomSeed: -520925010
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -27688,7 +27810,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -512403748
+  randomSeed: -490139273
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -30911,7 +31033,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1723027396
+  randomSeed: -1818374519
   InitialModule:
     serializedVersion: 3
     enabled: 1

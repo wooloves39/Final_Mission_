@@ -17,7 +17,7 @@ public class SeiKwanSkill : MonoBehaviour
 	private bool Shoot = false;
 	private bool del_timer = false;
 
-	private Collider collider;
+	//private Collider collider;
 	public GameObject SeiKwanArrow;
 
 
@@ -25,7 +25,7 @@ public class SeiKwanSkill : MonoBehaviour
 	private void Awake()
 	{
 		deltaTime = Time.deltaTime;
-		collider = GetComponent<Collider>();
+		//collider = GetComponent<Collider>();
 	}
 	public void shoot(int skillIndex, GameObject targets, float handDistance, float del_time = 10.0f)
 	{
@@ -42,10 +42,10 @@ public class SeiKwanSkill : MonoBehaviour
 				ArrowTrab();
 				break;
 			case 3:
-				SkyArrow();
+				SkyArrow(targets.transform.position);
 				break;
 			case 5:
-				HavensGate(Vector3.zero);
+				HavensGate(targets.transform.position);
 				break;
 		}
 		if (skill == 5) del_time += 20f;
@@ -92,7 +92,7 @@ public class SeiKwanSkill : MonoBehaviour
 			r.velocity = TargettingDir * 15f * handDis;
 		}
 		Debug.Log(handDis);
-		StartCoroutine(ArrowTrabCor(1f));
+		StartCoroutine(ArrowTrabCor(.5f));
 	}
 	IEnumerator ArrowTrabCor(float timer)
 	{
@@ -100,14 +100,14 @@ public class SeiKwanSkill : MonoBehaviour
 		arrow_trab_particle.SetActive(true);
 		arrow_trab_particle.transform.LookAt(SeiKwanArrow.transform);
 	}
-	private void SkyArrow()
+	private void SkyArrow(Vector3 targetPoint)
 	{
 		Vector3 Arrowforward = transform.forward;
 		Rigidbody r = GetComponent<Rigidbody>();
 		r.velocity = (Vector3.up / .5f + Arrowforward) * 15f * handDis;
 		for (int i = 0; i < sky_Arraws.Length; ++i)
 		{
-			StartCoroutine(SkyArrowCor(sky_Arraws[i], new Vector3(0, 0, 0), 2.0f));
+			StartCoroutine(SkyArrowCor(sky_Arraws[i], targetPoint, 2.0f));
 		}
 	}
 	IEnumerator SkyArrowCor(GameObject skyArrow, Vector3 target, float timer)
@@ -155,7 +155,7 @@ public class SeiKwanSkill : MonoBehaviour
 	public void resetDelete()
 	{
 		SeiKwanArrow.SetActive(true);
-		collider.enabled = true;
+		//collider.enabled = true;
 		Gate.transform.position = transform.position;
 		Gate.transform.localScale = transform.localScale;
 		Gate.transform.rotation = transform.rotation;
@@ -176,6 +176,6 @@ public class SeiKwanSkill : MonoBehaviour
 	private void UseOtherObject()
 	{
 		SeiKwanArrow.SetActive(false);
-		collider.enabled = false;
+		//collider.enabled = false;
 	}
 }

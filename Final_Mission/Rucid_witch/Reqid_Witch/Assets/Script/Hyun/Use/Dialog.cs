@@ -167,10 +167,10 @@ public class Dialog : MonoBehaviour
 	{
 		if (currentDialogueIndex == 0) return;
 		if (chatChar[currentDialogueIndex] == 0)
-			iTween.ShakePosition(Me, iTween.Hash("amount", new Vector3(0.2f, 0.1f, 0.1f), "time", 1.0f));
+			iTween.ShakePosition(Me, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 1.0f));
 		else if (chatChar[currentDialogueIndex] == 1)
 		{
-			iTween.ShakePosition(Boss, iTween.Hash("amount", new Vector3(0.2f, 0.1f, 0.1f), "time", 1.0f));
+			iTween.ShakePosition(Boss, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 1.0f));
 
 		}
 	}

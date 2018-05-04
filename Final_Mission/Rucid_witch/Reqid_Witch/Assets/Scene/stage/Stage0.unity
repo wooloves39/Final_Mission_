@@ -2925,6 +2925,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1283460107 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1147484443579816, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1283460106}
+--- !u!114 &1283460108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283460107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b881973e250f441b041fc9c2ad9c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeBalance: 1
 --- !u!1 &1408664283
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,6 +4027,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1938698606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938698604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b881973e250f441b041fc9c2ad9c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeBalance: 0.4
 --- !u!1 &2028727065
 GameObject:
   m_ObjectHideFlags: 0

@@ -4774,6 +4774,7 @@ GameObject:
   - component: {fileID: 189231250}
   - component: {fileID: 189231249}
   - component: {fileID: 189231248}
+  - component: {fileID: 189231257}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5032,6 +5033,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &189231257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 189231246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b881973e250f441b041fc9c2ad9c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeBalance: 1
 --- !u!1 &192260377
 GameObject:
   m_ObjectHideFlags: 0
@@ -22085,6 +22098,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &937014267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 937014265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b881973e250f441b041fc9c2ad9c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeBalance: 0.4
 --- !u!1 &958602741
 GameObject:
   m_ObjectHideFlags: 0

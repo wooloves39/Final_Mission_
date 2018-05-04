@@ -25,7 +25,6 @@ public class Skill_Info : MonoBehaviour {
 	public float ShockTime = 2.0f;
 	private void OnEnable()
 	{
-
 		PowerMemory[0] = Power;
 		PowerMemory[1] = AreaDmg;
 		PowerMemory[2] = DotDmg;
@@ -91,7 +90,7 @@ public class Skill_Info : MonoBehaviour {
 		for (int j = 0; j < ObjList.Count; ++j)
 		{
 			temp = ObjList[j].GetComponentInParent<ObjectLife>();
-			temp.SendMessage("SendDMG", PowerMemory[0]);
+			temp.SendMessage("SendDMG", PowerMemory[1]);
 			if(ElecShock)
 				temp.SendMessage("Shock",ShockTime);
 

@@ -5,10 +5,12 @@ using UnityEngine;
 public class BeejaeSkill : MonoBehaviour
 {
 	public GameObject[] magic;
-	public int[] CoolTime = {8,80,10,20,120};
+	public float[] playSkill = { 0.7f, 0.0f, 2.0f, 2.0f, 2.0f };
+	public int[] CoolTime = { 8, 80, 10, 20, 120 };
+	public int[] UseMp = { 8, 80, 10, 20, 120 };
 	public AudioSource audio;
 	public AudioClip[] sound;
-	private bool[] CoolDown = {false,false,false,false,false};
+	private bool[] CoolDown = { false, false, false, false, false };
 
 	private int skill;
 	private GameObject target;
@@ -33,26 +35,82 @@ public class BeejaeSkill : MonoBehaviour
 
 	private void Awake()
 	{
-		line = GetComponent<LineDraw>();
 		audio = GetComponent<AudioSource>();
 		handle = FindObjectOfType<AttackMethod>();
-		handle2 = FindObjectOfType<Beejea_Verbase_Setting>();
 		Player = FindObjectOfType<PlayerState>();
 		deltaTime = Time.deltaTime;
 		collider = GetComponent<Collider>();
+		line = FindObjectOfType<LineDraw>();
+	}
+	public void SetTarget(GameObject targets)
+	{
+		target = targets;
 	}
 	private void Update()
 	{
-		if(LineDraw.curType == 2 &&handle.Beejae_Marker[0].gameObject.activeInHierarchy == false && handle.Beejae_Marker[1].gameObject.activeInHierarchy == false && handle2 == true)
+		if (LineDraw.curType == 2 && handle.Beejae_Marker[0].gameObject.activeInHierarchy == false && handle.Beejae_Marker[1].gameObject.activeInHierarchy == false && handle2 == false 
+			&& ((line.Skills[2].getCurrentSkill() ==  3) || (line.Skills[2].getCurrentSkill() == 2)))
+		{
+			bool fail = false;
+			bool NoMp = false;
+			if (line.Skills[2].getCurrentSkill() == 2)
+			{
+				if (Player.Mp >= UseMp[1])
+				{
+					if (!CoolDown[1])
+					{
+						StartCoroutine("Buff");
+						Player.Mp -= UseMp[1];
+					}
+					else
+					{
+						fail = true;
+					}
+				}
+				else
+				{
+					NoMp = true;
+				}
+			}
+			else
+			{
+				if (Player.Mp >= UseMp[2])
+				{
+					if (!CoolDown[2])
+					{
+						StartCoroutine("ThunderShock");
+						Player.Mp -= UseMp[2];
+					}
+					else
+					{
+						fail = true;
+					}
+				}
+				else
+				{
+					NoMp = true;
+				}
+			}
+			if (fail)
+			{
+				Debug.Log("쿨타임 처리");
+			}
+			if (NoMp)
+			{
+				Debug.Log("엠피가 부족");
+			}
+			line.Skills[2].resetSkill();
+		}
+
+		if (LineDraw.curType == 2 && handle.Beejae_Marker[0].gameObject.activeInHierarchy == false && handle.Beejae_Marker[1].gameObject.activeInHierarchy == false && handle2 == true)
 		{
 			handle2 = false;
-			shoot(line.Skills[2].getCurrentSkill(), handle.PlayerTarget.getMytarget(), 0.0f);
+			shoot(line.Skills[2].getCurrentSkill(), 0.0f);
 		}
 	}
-
-	public void shoot(int skillIndex, GameObject targets, float handDistance)
+	
+	public void shoot(int skillIndex, float handDistance)
 	{
-		target = targets;
 		skill = skillIndex;
 		handDis = handDistance;
 		bool fail = false;
@@ -61,12 +119,12 @@ public class BeejaeSkill : MonoBehaviour
 		{
 			case 0:
 			case 1:
-				if (Player.Mp >= 20)
+				if (Player.Mp >= UseMp[0])
 				{
 					if (!CoolDown[0])
 					{
 						StartCoroutine("SkyThunder");
-						Player.Mp -= 20;
+						Player.Mp -= UseMp[0];
 					}
 					else
 					{
@@ -79,12 +137,12 @@ public class BeejaeSkill : MonoBehaviour
 				}
 				break;
 			case 2:
-				if (Player.Mp >= 40)
+				if (Player.Mp >= UseMp[1])
 				{
 					if (!CoolDown[1])
 					{
 						StartCoroutine("Buff");
-						Player.Mp -= 40;
+						Player.Mp -= UseMp[1];
 					}
 					else
 					{
@@ -97,12 +155,12 @@ public class BeejaeSkill : MonoBehaviour
 				}
 				break;
 			case 3:
-				if (Player.Mp >= 25)
+				if (Player.Mp >= UseMp[2])
 				{
 					if (!CoolDown[2])
 					{
 						StartCoroutine("ThunderShock");
-						Player.Mp -= 25;
+						Player.Mp -= UseMp[2];
 					}
 					else
 					{
@@ -115,12 +173,12 @@ public class BeejaeSkill : MonoBehaviour
 				}
 				break;
 			case 4:
-				if (Player.Mp >= 40)
+				if (Player.Mp >= UseMp[3])
 				{
 					if (!CoolDown[3])
 					{
 						StartCoroutine("ThunderBall");
-						Player.Mp -= 40;
+						Player.Mp -= UseMp[3];
 					}
 					else
 					{
@@ -133,13 +191,13 @@ public class BeejaeSkill : MonoBehaviour
 				}
 				break;
 			case 5:
-				if (Player.Mp >= 110)
+				if (Player.Mp >= UseMp[4])
 				{
 					if (!CoolDown[4])
 					{
 						StartCoroutine("BlackThunder");
 
-						Player.Mp -= 110;
+						Player.Mp -= UseMp[4];
 					}
 					else
 					{
@@ -160,10 +218,7 @@ public class BeejaeSkill : MonoBehaviour
 		{
 			Debug.Log("엠피가 부족");
 		}
-
-		if (skill > 1)
-			UseOtherObject();
-		target = null;
+		
 	}
 	IEnumerator SkyThunder()
 	{
@@ -173,14 +228,14 @@ public class BeejaeSkill : MonoBehaviour
 		yield return new WaitForSeconds(0.45f);
 		if (Player.LightningBolt)
 		{
-			handle.PlayerTarget.getMytarget().SendMessage("Shock");
+			target.GetComponent<ObjectLife>().SendMessage("Shock",2.0f);
 		}
-		handle.PlayerTarget.getMytarget().GetComponentInParent<ObjectLife>().SendMessage("SendDMG", 30.0f);
+		target.GetComponent<ObjectLife>().SendMessage("SendDMG", 30.0f);
 		yield return new WaitForSeconds(0.30f);
 		magic[0].SetActive(false);
 
 		yield return new WaitForSeconds(CoolTime[0]-1);
-		CoolDown[0] = true;
+		CoolDown[0] = false;
 	}
 
 	IEnumerator Buff()
@@ -194,10 +249,12 @@ public class BeejaeSkill : MonoBehaviour
 	}
 	IEnumerator ThunderShock()
 	{
-		magic[2].transform.position = target.transform.position;
+		magic[2].transform.position = Player.transform.position;
 		magic[2].SetActive(true);
 		CoolDown[2] = true;
-		yield return new WaitForSeconds(CoolTime[2]);
+		yield return new WaitForSeconds(playSkill[2]);
+		magic[2].SetActive(false);
+		yield return new WaitForSeconds(CoolTime[2]- playSkill[2]);
 		CoolDown[2] = false;
 	}
 	IEnumerator ThunderBall()
@@ -205,7 +262,9 @@ public class BeejaeSkill : MonoBehaviour
 		magic[3].transform.position = target.transform.position;
 		magic[3].SetActive(true);
 		CoolDown[3] = true;
-		yield return new WaitForSeconds(CoolTime[3]);
+		yield return new WaitForSeconds(playSkill[3]);
+		magic[3].SetActive(false);
+		yield return new WaitForSeconds(CoolTime[3]- playSkill[3]);
 		CoolDown[3] = false;
 	}
 	IEnumerator BlackThunder()
@@ -213,12 +272,10 @@ public class BeejaeSkill : MonoBehaviour
 		magic[4].transform.position = target.transform.position;
 		magic[4].SetActive(true);
 		CoolDown[4] = true;
-		yield return new WaitForSeconds(CoolTime[3]);
+		yield return new WaitForSeconds(playSkill[4]);
+		magic[4].SetActive(false);
+		yield return new WaitForSeconds(CoolTime[4]- playSkill[4]);
 		CoolDown[4] = false;
-	}
-	private void UseOtherObject()
-	{
-		collider.enabled = false;
 	}
 	IEnumerator SkillSound(int num,float delay)
 	{

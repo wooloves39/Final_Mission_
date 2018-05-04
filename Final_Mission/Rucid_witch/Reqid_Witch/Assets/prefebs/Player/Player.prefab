@@ -249,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076942765332114}
   - component: {fileID: 114664616759309416}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6161,7 +6161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1147484443579816}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.28, y: 5, z: 39.4}
+  m_LocalPosition: {x: 0, y: 2.5, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4693475038177952}
@@ -13137,7 +13137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a766dd430974cc4e8fd488df04ea6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPoint: {fileID: 0}
 --- !u!114 &114140154567246276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13354,8 +13353,11 @@ MonoBehaviour:
   StopIcon: {fileID: 1383447093565822}
   Me: {fileID: 1145206711958980}
   Boss: {fileID: 1287670369623862}
-  fileName: /Text/Episode5.txt
-  WaveStart: []
+  fileName: /Text/talk/Episode02.txt
+  WaveStart:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114241106249811784
 MonoBehaviour:
   m_ObjectHideFlags: 1

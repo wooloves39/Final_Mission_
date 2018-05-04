@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: a726d857a5d5d69439508c9954258aa2
+timeCreated: 1519007854
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Body
+    100002: Eyebrows
+    100004: Eyebrows_L
+    100006: Eyebrows_R
+    100008: Eyelids
+    100010: Eyes
+    100012: L_Eye
+    100014: Lower_eyelid_L
+    100016: Lower_eyelid_R
+    100018: Lower_tooths
+    100020: //RootNode
+    100022: R_Eye
+    100024: Tongue
+    100026: Tooths
+    100028: Upper_eyelid_L
+    100030: Upper_eyelid_R
+    100032: Upper_tooths
+    400000: Body
+    400002: Eyebrows
+    400004: Eyebrows_L
+    400006: Eyebrows_R
+    400008: Eyelids
+    400010: Eyes
+    400012: L_Eye
+    400014: Lower_eyelid_L
+    400016: Lower_eyelid_R
+    400018: Lower_tooths
+    400020: //RootNode
+    400022: R_Eye
+    400024: Tongue
+    400026: Tooths
+    400028: Upper_eyelid_L
+    400030: Upper_eyelid_R
+    400032: Upper_tooths
+    2300000: Body
+    2300002: Eyebrows_L
+    2300004: Eyebrows_R
+    2300006: L_Eye
+    2300008: Lower_eyelid_L
+    2300010: Lower_eyelid_R
+    2300012: Lower_tooths
+    2300014: R_Eye
+    2300016: Tongue
+    2300018: Upper_eyelid_L
+    2300020: Upper_eyelid_R
+    2300022: Upper_tooths
+    3300000: Body
+    3300002: Eyebrows_L
+    3300004: Eyebrows_R
+    3300006: L_Eye
+    3300008: Lower_eyelid_L
+    3300010: Lower_eyelid_R
+    3300012: Lower_tooths
+    3300014: R_Eye
+    3300016: Tongue
+    3300018: Upper_eyelid_L
+    3300020: Upper_eyelid_R
+    3300022: Upper_tooths
+    4300000: Body
+    4300002: Tongue
+    4300004: Upper_tooths
+    4300006: Lower_tooths
+    4300008: Upper_eyelid_L
+    4300010: Lower_eyelid_L
+    4300012: Upper_eyelid_R
+    4300014: Lower_eyelid_R
+    4300016: Eyebrows_L
+    4300018: Eyebrows_R
+    4300020: R_Eye
+    4300022: L_Eye
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

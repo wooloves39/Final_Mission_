@@ -1,0 +1,183 @@
+/// A sample to show vibration generation, using buffered input.
+/// Press A to generate a sine wave vibration in the right controller.
+/// Press B to generate a 320 Hz vibration that pans from the right controller to the left controller.
+/// Press X to generate a low-frequency buzz at 64 hz (320 Hz / 5) in the left controller.
+/// Press Y to generate a "messed up" low frequency vibration in the left controller, based on a tangent function.
+/// Hold any of the buttons down in order to repeat the pattern continuously.
+/// Note: In order to keep the sample minimal, the Touch controller is not graphically displayed within the VR scene.
+
+#include "../Common/Win32_DirectXAppUtil.h" // DirectX
+#include "../Common/Win32_BasicVR.h"        // Basic VR
+
+struct BufferedHaptics : BasicVR
+{
+       BufferedHaptics(HINSTANCE hinst) : BasicVR(hinst, L"BufferedHaptics") {}
+
+       void MainLoop()
+       {
+             Layer[0] = new VRLayer(Session);
+
+             // We create haptic buffers that will be associated with the A, B, X, and Y buttons. 
+             int bufferSize = 256;
+             unsigned char * dataBufferA = (unsigned char *)malloc(bufferSize);
+             unsigned char * dataBufferBRight = (unsigned char *)malloc(bufferSize);
+             unsigned char * dataBufferBLeft = (unsigned char *)malloc(bufferSize);
+             unsigned char * dataBufferX = (unsigned char *)malloc(bufferSize);
+             unsigned char * dataBufferY = (unsigned char *)malloc(bufferSize);
+
+             // Verify that the buffer format is what we expect.
+             ovrTouchHapticsDesc desc = ovr_GetTouchHapticsDesc(Session, ovrControllerType_LTouch);
+             if (desc.SampleSizeInBytes != 1)        FATALERROR("Our assumption of 1 byte per element, is no longer valid");
+             if (desc.SubmitMaxSamples < bufferSize) FATALERROR("Can't handle this many samples");
+             desc = ovr_GetTouchHapticsDesc(Session, ovrControllerType_RTouch);
+             if (desc.SampleSizeInBytes != 1)        FATALERROR("Our assumption of 1 byte per element, is no longer valid");
+             if (desc.SubmitMaxSamples < bufferSize) FATALERROR("Can't handle this many samples");
+
+             // Fill dataBufferA with a sine wave amplitude pattern that will smoothly 
+             // rise and fall over a cycle period of 0.8 seconds. The 0.8 value is 
+             // equal to 256/320, where 256 is the number of bytes that we will use 
+             // to define a single sine wave cycle, and the bytes are "played" 
+             // on the controller at 320 Hz. An interesting effect is added by lowering 
+             // the effective frequency in latter half of the cycle by setting 
+             // alternate intensities (amplitudes) to zero. The overall effect is a 
+             // smoothly repeating vibrational pattern that "buzzes down" at the end of 
+             // the wave cycle.
+             for (int i = 0; i < bufferSize; i++)
+             {
+                    dataBufferA[i] = (unsigned char)(255.0f*(sin(((3.14159265359f*i) / ((float)bufferSize)))));
+                    if ((i > bufferSize / 2) && (i % 2)) dataBufferA[i] = 0;
+             }
+
+             // Fill dataBufferBRight with values that decrement from 255 down to 0. 
+             // Similarly, fill dataBufferBLeft with values that increment from 0 up to 255. 
+             // An interesting effect is added by lowering the effective frequency in 
+             // latter half of dataBufferBLeft by setting intensities (amplitudes) to zero
+             // for odd numbered bytes that are not divisible by 3. The overall effect 
+             // is a right-to-left vibrational pan, with a distinct "buzzing down" feeling 
+             // at the end of the panning cycle.
+             for (int i = 0; i < bufferSize; i++)
+             {
+                    dataBufferBRight[i] = (unsigned char)(255.0f*(255 - i / ((float)bufferSize)));
+                    dataBufferBLeft[i] = (unsigned char)(255.0f*(i / ((float)bufferSize)));
+                    if ((i > bufferSize / 2) && ((i % 2) || (i % 3))) dataBufferBLeft[i] = 0;
+             }
+
+             // Fill dataBufferX with zeros, and set every fifth byte to 255. This creates
+             // maximum amplitude ticks at 64 Hz. (This is calculated by dividing
+             // the number of ticks in the buffer, 256/5 = 51.2, and dividing that 
+             // by the time period over which the buffer is played, 256/320 of a second, 
+             // which is 0.8 seconds.)  
+             for (int i = 0; i < bufferSize; i++)
+             {
+                    dataBufferX[i] = (unsigned char)0;
+                    if (i % 5 == 0) dataBufferX[i] = 255;
+             }
+
+             // Fill dataBufferY with a tangent wave function that varies the intensity 
+             // amplitude) between 0 and 255, but set every other byte to 0. This produces a
+             // "messed up" low frequency vibration. 
+             for (int i = 0; i < bufferSize; i++)
+             {
+                    dataBufferY[i] = (unsigned char)0;
+                    if (i % 2 == 0) dataBufferY[i] = (unsigned char)(255.0f*(tan(((3.14159265359f*i) / ((float)bufferSize)))));
+             }
+
+             // Create the SDK structures that contain the buffers, and prepare 
+             // them to be submitted to the controllers.
+             ovrHapticsBuffer bufferX;
+             bufferX.SubmitMode = ovrHapticsBufferSubmit_Enqueue;
+             bufferX.SamplesCount = bufferSize;
+             bufferX.Samples = (void *)dataBufferX;
+
+             ovrHapticsBuffer bufferY;
+             bufferY.SubmitMode = ovrHapticsBufferSubmit_Enqueue;
+             bufferY.SamplesCount = bufferSize;
+             bufferY.Samples = (void *)dataBufferY;
+
+             ovrHapticsBuffer bufferA;
+             bufferA.SubmitMode = ovrHapticsBufferSubmit_Enqueue;
+             bufferA.SamplesCount = bufferSize;
+             bufferA.Samples = (void *)dataBufferA;
+
+             ovrHapticsBuffer bufferBRight;
+             ovrHapticsBuffer bufferBLeft;
+             bufferBRight.SubmitMode = ovrHapticsBufferSubmit_Enqueue;
+             bufferBRight.SamplesCount = bufferSize;
+             bufferBRight.Samples = (void *)dataBufferBRight;
+             bufferBLeft.SubmitMode = ovrHapticsBufferSubmit_Enqueue;
+             bufferBLeft.SamplesCount = bufferSize;
+             bufferBLeft.Samples = (void *)dataBufferBLeft;
+
+             // Main Loop
+             while (HandleMessages())
+             {
+                    Layer[0]->GetEyePoses();
+
+                    // Submit the haptic buffers to "play" upon pressing A, B, X or Y buttons.
+                    ovrInputState inputState;
+                    ovr_GetInputState(Session, ovrControllerType_Touch, &inputState);
+                    if (inputState.Buttons & ovrTouch_A)
+                    {
+                           // Only submit the buffer if there is enough space available.
+                           ovrHapticsPlaybackState playbackState;
+                           ovrResult result = ovr_GetControllerVibrationState(Session, ovrControllerType_RTouch, &playbackState);
+                           if (playbackState.RemainingQueueSpace >= bufferSize)
+                           {
+                                 ovr_SubmitControllerVibration(Session, ovrControllerType_RTouch, &bufferA);
+                           }
+                    }
+                    if (inputState.Buttons & ovrTouch_B)
+                    {
+                           // Only submit the buffers if there is enough space available.
+                           ovrHapticsPlaybackState playbackState;
+                           ovrResult result = ovr_GetControllerVibrationState(Session, ovrControllerType_LTouch, &playbackState);
+                           if (playbackState.RemainingQueueSpace >= bufferSize)
+                           {
+                                 ovr_SubmitControllerVibration(Session, ovrControllerType_LTouch, &bufferBLeft);
+                           }
+                           result = ovr_GetControllerVibrationState(Session, ovrControllerType_RTouch, &playbackState);
+                           if (playbackState.RemainingQueueSpace >= bufferSize)
+                           {
+                                 ovr_SubmitControllerVibration(Session, ovrControllerType_RTouch, &bufferBRight);
+                           }
+                    }
+                    if (inputState.Buttons & ovrTouch_X)
+                    {
+                           // Only submit the buffer if there is enough space available.
+                           ovrHapticsPlaybackState playbackState;
+                           ovrResult result = ovr_GetControllerVibrationState(Session, ovrControllerType_LTouch, &playbackState);
+                           if (playbackState.RemainingQueueSpace >= bufferSize)
+                           {
+                                 ovr_SubmitControllerVibration(Session, ovrControllerType_LTouch, &bufferX);
+                           }
+                    }
+                    if (inputState.Buttons & ovrTouch_Y)
+                    {
+                           // Only submit the buffer if there is enough space available.
+                           ovrHapticsPlaybackState playbackState;
+                           ovrResult result = ovr_GetControllerVibrationState(Session, ovrControllerType_LTouch, &playbackState);
+                           if (playbackState.RemainingQueueSpace >= bufferSize)
+                           {
+                                 ovr_SubmitControllerVibration(Session, ovrControllerType_LTouch, &bufferY);
+                           }
+                    }
+
+                    // Just render a standard scene in the HMD, to keep the code as simple as possible.
+                    // The controllers are not rendered in the scene.
+                    for (int eye = 0; eye < 2; ++eye)
+                    {
+                           XMMATRIX viewProj = Layer[0]->RenderSceneToEyeBuffer(MainCam, RoomScene, eye);
+                    }
+
+                    Layer[0]->PrepareLayerHeader();
+                    DistortAndPresent(1);
+             }
+
+             free(dataBufferX);
+             free(dataBufferY);
+             free(dataBufferA);
+             free(dataBufferBLeft);
+             free(dataBufferBRight);
+       }
+};
+};

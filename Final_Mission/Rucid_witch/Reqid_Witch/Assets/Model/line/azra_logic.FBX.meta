@@ -1,0 +1,365 @@
+fileFormatVersion: 2
+guid: 4e4130017e1af30409e806b5674ad688
+timeCreated: 1523801060
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: circle
+    100004: circle001
+    100006: circle002
+    100008: circle003
+    100010: circle004
+    100012: circle005
+    100014: circle006
+    100016: circle007
+    100018: circle008
+    100020: line
+    100022: line001
+    100024: line002
+    100026: line003
+    100028: line004
+    100030: line005
+    100032: line006
+    100034: line007
+    100036: line008
+    100038: point
+    100040: point001
+    100042: point002
+    100044: point003
+    100046: point004
+    100048: point005
+    100050: point006
+    100052: point007
+    100054: point008
+    400000: //RootNode
+    400002: circle
+    400004: circle001
+    400006: circle002
+    400008: circle003
+    400010: circle004
+    400012: circle005
+    400014: circle006
+    400016: circle007
+    400018: circle008
+    400020: line
+    400022: line001
+    400024: line002
+    400026: line003
+    400028: line004
+    400030: line005
+    400032: line006
+    400034: line007
+    400036: line008
+    400038: point
+    400040: point001
+    400042: point002
+    400044: point003
+    400046: point004
+    400048: point005
+    400050: point006
+    400052: point007
+    400054: point008
+    2300000: circle
+    2300002: circle001
+    2300004: circle002
+    2300006: circle003
+    2300008: circle004
+    2300010: circle005
+    2300012: circle006
+    2300014: circle007
+    2300016: circle008
+    2300018: line
+    2300020: line001
+    2300022: line002
+    2300024: line003
+    2300026: line004
+    2300028: line005
+    2300030: line006
+    2300032: line007
+    2300034: line008
+    2300036: point
+    2300038: point001
+    2300040: point002
+    2300042: point003
+    2300044: point004
+    2300046: point005
+    2300048: point006
+    2300050: point007
+    2300052: point008
+    3300000: circle
+    3300002: circle001
+    3300004: circle002
+    3300006: circle003
+    3300008: circle004
+    3300010: circle005
+    3300012: circle006
+    3300014: circle007
+    3300016: circle008
+    3300018: line
+    3300020: line001
+    3300022: line002
+    3300024: line003
+    3300026: line004
+    3300028: line005
+    3300030: line006
+    3300032: line007
+    3300034: line008
+    3300036: point
+    3300038: point001
+    3300040: point002
+    3300042: point003
+    3300044: point004
+    3300046: point005
+    3300048: point006
+    3300050: point007
+    3300052: point008
+    4300000: line008
+    4300002: line007
+    4300004: line006
+    4300006: line005
+    4300008: line004
+    4300010: line003
+    4300012: line002
+    4300014: line001
+    4300016: line
+    4300018: circle008
+    4300020: circle007
+    4300022: circle006
+    4300024: circle005
+    4300026: circle004
+    4300028: circle003
+    4300030: circle002
+    4300032: circle001
+    4300034: circle
+    4300036: point008
+    4300038: point007
+    4300040: point006
+    4300042: point005
+    4300044: point004
+    4300046: point003
+    4300048: point002
+    4300050: point001
+    4300052: point
+    7400000: Skill1
+    7400002: Skill2
+    7400004: Skill3
+    7400006: Skill4
+    7400008: Skill5
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Skill1
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Skill2
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Skill3
+      takeName: Take 001
+      firstFrame: 85
+      lastFrame: 145
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Skill4
+      takeName: Take 001
+      firstFrame: 150
+      lastFrame: 210
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Skill5
+      takeName: Take 001
+      firstFrame: 215
+      lastFrame: 295
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

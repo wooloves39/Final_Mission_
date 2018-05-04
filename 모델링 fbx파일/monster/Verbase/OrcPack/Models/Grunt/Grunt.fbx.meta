@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: b171aaab2b5879b439acb9472dc8f6eb
+timeCreated: 18446744011573954816
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_R
+    100004: Chest
+    100006: club
+    100008: Foot_L
+    100010: Foot_R
+    100012: Forearm_L
+    100014: Forearm_R
+    100016: //RootNode
+    100018: Hand_L
+    100020: Hand_L_index01
+    100022: Hand_L_Index02
+    100024: Hand_L_Index03
+    100026: Hand_L_Ring01
+    100028: Hand_L_Ring02
+    100030: Hand_L_Ring03
+    100032: Hand_L_Thumb01
+    100034: Hand_L_Thumb02
+    100036: Hand_L_Thumb03
+    100038: Hand_R
+    100040: Hand_R_index01
+    100042: Hand_R_Index02
+    100044: Hand_R_Index03
+    100046: Hand_R_Ring01
+    100048: Hand_R_Ring02
+    100050: Hand_R_Ring03
+    100052: Hand_R_Thumb01
+    100054: Hand_R_Thumb02
+    100056: Hand_R_Thumb03
+    100058: Head
+    100060: hips
+    100062: jaw
+    100064: Leg_L
+    100066: Leg_R
+    100068: Neck
+    100070: OrcGrunt
+    100072: root
+    100074: shield
+    100076: shoulders_L
+    100078: shoulders_R
+    100080: Spine
+    100082: UpLeg_L
+    100084: UpLeg_R
+    100086: Weapon_L
+    100088: Weapon_R
+    400000: Arm_L
+    400002: Arm_R
+    400004: Chest
+    400006: club
+    400008: Foot_L
+    400010: Foot_R
+    400012: Forearm_L
+    400014: Forearm_R
+    400016: //RootNode
+    400018: Hand_L
+    400020: Hand_L_index01
+    400022: Hand_L_Index02
+    400024: Hand_L_Index03
+    400026: Hand_L_Ring01
+    400028: Hand_L_Ring02
+    400030: Hand_L_Ring03
+    400032: Hand_L_Thumb01
+    400034: Hand_L_Thumb02
+    400036: Hand_L_Thumb03
+    400038: Hand_R
+    400040: Hand_R_index01
+    400042: Hand_R_Index02
+    400044: Hand_R_Index03
+    400046: Hand_R_Ring01
+    400048: Hand_R_Ring02
+    400050: Hand_R_Ring03
+    400052: Hand_R_Thumb01
+    400054: Hand_R_Thumb02
+    400056: Hand_R_Thumb03
+    400058: Head
+    400060: hips
+    400062: jaw
+    400064: Leg_L
+    400066: Leg_R
+    400068: Neck
+    400070: OrcGrunt
+    400072: root
+    400074: shield
+    400076: shoulders_L
+    400078: shoulders_R
+    400080: Spine
+    400082: UpLeg_L
+    400084: UpLeg_R
+    400086: Weapon_L
+    400088: Weapon_R
+    2300000: club
+    2300002: shield
+    3300000: club
+    3300002: shield
+    4300000: OrcGrunt
+    4300002: shield
+    4300004: club
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: OrcGrunt
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

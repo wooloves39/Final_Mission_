@@ -15,15 +15,15 @@ public class Viberation : MonoBehaviour
 	{
 		int count = 0;
 		float power = startPower;
-		while (count!=(int)time)
+		while ((float)count>time)
 		{
 			++count;
 			if (power > EndPower) power -= 0.1f;
 			else if (power < EndPower) power += 0.1f;
 			OVRInput.SetControllerVibration(.1f, power, controller);
-			yield return new WaitForSeconds(1.0f);
+			yield return new WaitForSeconds(0.3f);
 		}
-		OVRInput.SetControllerVibration(.2f, 0, controller);
+		OVRInput.SetControllerVibration(.1f, 0, controller);
 		yield return null;
 	}
 }

@@ -6,8 +6,6 @@ public class TalkPoint : MonoBehaviour
 {
 	public Dia_Play player;
 	private PlayerState MyState;
-	public NextStage next;
-	public GameObject nextParticle;
 	//private PlayerState MyState;
 	private void Awake()
 	{
@@ -31,12 +29,6 @@ public class TalkPoint : MonoBehaviour
 		{
 			if (player.getEnd())
 			{
-				if (next)
-					next.setNextOn(true);
-
-				if (nextParticle)
-					nextParticle.SetActive(true);
-
 				MyState.SetMyState(PlayerState.State.Nomal);
 				player.setPlay(true);
 				gameObject.SetActive(false);

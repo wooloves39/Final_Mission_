@@ -38,7 +38,6 @@ public class PlayerState : MonoBehaviour
 	void Start()
 	{
 		fade = FindObjectOfType<OVRScreenFade>();
-		Debug.Log(fade);
 	}
 	private void Update()
 	{
@@ -150,10 +149,7 @@ public class PlayerState : MonoBehaviour
 	}
 	public void DamageHp(float Damage)
 	{
-		if (!fade.fadeOnStart)
-		{
-			fade.fadeSmoth(new Color(.3f, 0, 0), 0, .5f, .3f, 1.0f, 0.5f);
-		}
+		
 		playerSound.PlayerSound(PlayerSoundSetting.soundPack.Defance);
 		Hp -= Damage;
 		if (Hp < 0)
@@ -163,6 +159,12 @@ public class PlayerState : MonoBehaviour
 			playerSound.PlayerSound(PlayerSoundSetting.soundPack.Die);
 			Hp = 0;
 			MyState = State.Die;
+		}
+		if (!fade.fadeOnStart)
+		{
+			fade.fadeSmoth(new Color(.3f, 0, 0), 0, .5f, .3f, 1.0f, 0.5f);
+			PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.2f, 1.0f-Hp / 100.0f, OVRInput.Controller.RTouch));
+			PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.2f, 1.0f-Hp/100.0f, OVRInput.Controller.LTouch));
 		}
 	}
 	public void ConsumeMp(float Consume)

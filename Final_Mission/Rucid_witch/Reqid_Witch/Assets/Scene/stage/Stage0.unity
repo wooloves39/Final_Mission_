@@ -2922,6 +2922,16 @@ Prefab:
       propertyPath: fileName
       value: /Text/talk/Episode00.txt
       objectReference: {fileID: 0}
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: next
+      value: 
+      objectReference: {fileID: 2138432216}
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: nextParticle
+      value: 
+      objectReference: {fileID: 402807200}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0

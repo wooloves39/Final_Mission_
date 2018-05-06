@@ -1297,6 +1297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0556dc1217efbf441bc294af6627aeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAttdelay: 0
   AttackFrame: 0.4
   SkillFrame: []
   MobObj: {fileID: 0}
@@ -1460,6 +1461,7 @@ MonoBehaviour:
   - 0
   MomentInvincible: 0
   InvincibleTime: 0.2
+  ElecShock: {fileID: 0}
 --- !u!114 &114630718506021168
 MonoBehaviour:
   m_ObjectHideFlags: 1

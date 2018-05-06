@@ -28,6 +28,8 @@ public class Dialog : MonoBehaviour
 	public string fileName;
 
 	public GameObject[] WaveStart;
+	public NextStage next;
+	public GameObject nextParticle;
 	private int wavecnt = 0;
 	void Start()
 	{
@@ -45,7 +47,7 @@ public class Dialog : MonoBehaviour
 		StartCoroutine(StartDialogue());
 		file_parser.FileClose();
 	}
-	private IEnumerator StartDialogue()
+	private IEnumerator StartDialogue()//전체 다이얼로그 돌리기
 	{
 		yield return new WaitWhile(() => dia_Play.getPlay());
 		int dialogueLengh = DialogueStrings.Length;
@@ -73,17 +75,18 @@ public class Dialog : MonoBehaviour
 							}
 						}
 					}
-
-
 				}
 			}
 			yield return new WaitWhile(() => dia_Play.getPlay());
 		}
-
+		if (next)
+			next.setNextOn(true);
+		if (nextParticle)
+			nextParticle.SetActive(true);
 		HideIcons();
 
 	}
-	private IEnumerator DisplatStrings(string stringToDisplay)
+	private IEnumerator DisplatStrings(string stringToDisplay)//다이얼로그 한줄씩 돌리기
 	{
 		int stringLength = stringToDisplay.Length;
 		int currentCaracterIndex = 0;

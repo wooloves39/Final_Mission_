@@ -34,7 +34,7 @@ public class Stage5Boss: MonoBehaviour {
 	Queue Battle = null;
 	Queue Peace = null;
 	private Transform Player;
-	void Start()
+	void Awake()
 	{
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
 		ObjLife = GetComponent<ObjectLife>();

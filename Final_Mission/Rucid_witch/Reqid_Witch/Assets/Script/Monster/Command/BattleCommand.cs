@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,11 +17,10 @@ public class BattleCommand : MonoBehaviour {
 	MonsterSoundSetting MobSound;
 
 	public GameObject MobObj;
-	public GameObject[] skill;
 	private float DMG;
 
 
-	void Start()
+	void Awake()
 	{
 		MobSound = GetComponentInChildren<MonsterSoundSetting>();
 		GameObject temp = FindObjectOfType<PlayerState>().gameObject;
@@ -170,5 +168,5 @@ public class BattleCommand : MonoBehaviour {
 			yield return new WaitForSeconds(temp);
 		}
 	}
-
+	public GameObject getTarget() { return Player.gameObject; }
 }

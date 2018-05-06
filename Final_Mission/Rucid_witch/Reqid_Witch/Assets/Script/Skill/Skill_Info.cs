@@ -8,7 +8,7 @@ public class Skill_Info : MonoBehaviour {
 
 	public bool AreaHit = false;
 	public float AreaDmg = 40.0f; // 0~100
-	public float AreaTime = 0.5f;
+	public float AreaCycle = 0.5f;
 
 	public bool DotHit = false;
 	public float DotDmg = 50.0f;
@@ -86,16 +86,19 @@ public class Skill_Info : MonoBehaviour {
 	IEnumerator Area_Skill()
 	{
 		ObjectLife temp;
-		yield return new WaitForSeconds(AreaTime);
-		for (int j = 0; j < ObjList.Count; ++j)
+		while (PowerMemory [1] < 1) 
 		{
-			temp = ObjList[j].GetComponentInParent<ObjectLife>();
-			temp.SendMessage("SendDMG", PowerMemory[1]);
-			if(ElecShock)
-				temp.SendMessage("Shock",ShockTime);
+			yield return new WaitForSeconds (Cycle);
+			for (int j = 0; j < ObjList.Count; ++j) 
+			{
+				temp = ObjList [j].GetComponentInParent<ObjectLife> ();
+				temp.SendMessage ("SendDMG", PowerMemory [1]);
+				if (ElecShock)
+					temp.SendMessage ("Shock", ShockTime);
 
+			}
+			PowerMemory[1] -= Minus[1];
 		}
-		PowerMemory[1] = 0;
 		this.gameObject.SetActive(false);
 	}
 	IEnumerator DotSkill(ObjectLife obj)

@@ -154,6 +154,7 @@ public class SeiKwanSkill : MonoBehaviour
 	public bool IsShoot() { return Shoot; }
 	public void resetDelete()
 	{
+		transform.localScale = Vector3.one;
 		SeiKwanArrow.SetActive(true);
 		//collider.enabled = true;
 		Gate.transform.position = transform.position;

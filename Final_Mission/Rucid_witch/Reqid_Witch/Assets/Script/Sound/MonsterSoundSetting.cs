@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterSoundSetting : MonoBehaviour {
+public class MonsterSoundSetting : MonoBehaviour
+{
 
 	public AudioClip[] sounds;
 	public float AttackDelay = 0.0f;
@@ -10,7 +11,8 @@ public class MonsterSoundSetting : MonoBehaviour {
 	private AudioSource[] audio;
 	private float sound = Singletone.Instance.Sound;
 	// Use this for initialization
-	void OnEnable () {
+	void OnEnable()
+	{
 		audio = GetComponents<AudioSource>();
 	}
 	// idle = 0
@@ -19,14 +21,18 @@ public class MonsterSoundSetting : MonoBehaviour {
 	// die = 3
 	// electronic = 4
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
 	}
 	IEnumerator attack(int num)
 	{
 		yield return new WaitForSeconds(AttackDelay);
-		audio[1].clip = sounds[num];
-		audio[1].volume = sound;
-		audio[1].Play();
+		if (audio[1])
+		{
+			audio[1].clip = sounds[num];
+			audio[1].volume = sound;
+			audio[1].Play();
+		}
 	}
 	public void PlaySound(int num)
 	{
@@ -38,7 +44,7 @@ public class MonsterSoundSetting : MonoBehaviour {
 				audio[0].volume = sound;
 				if (num == 0)
 				{
-					audio[0].volume = sound*PlusSound;
+					audio[0].volume = sound * PlusSound;
 					audio[0].loop = true;
 				}
 				else

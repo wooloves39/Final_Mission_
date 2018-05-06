@@ -55,11 +55,17 @@ public class SeiKwanMonControll : MonoBehaviour {
 				Rigidbody r = Arrow[i].GetComponent<Rigidbody>();
 				r.useGravity = false;
 				r.velocity = new Vector3(0, 0, 0);
+				Vector3 initPos =transform.position;
+				initPos.y += 1.0f;
+				Arrow[i].transform.position = initPos;
 				break;
 			}
 			//5발 다쏘고 난다음도 생각해야함
 		}
-		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(1, target, Hp/100.0f,3.0f);
+		Vector3 shootPos = target.transform.position;
+		shootPos.y += 1.0f;
+		Arrow[ArrowNum].transform.LookAt(shootPos);
+		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(1, target, Hp/5000.0f,3.0f);
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void setTarget()

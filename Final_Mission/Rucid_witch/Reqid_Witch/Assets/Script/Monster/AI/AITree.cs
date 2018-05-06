@@ -54,6 +54,8 @@ public class AITree {
 		AIDic.Add(Dnum ,  "NomalSkill_3");
 		Dnum = 23;
 		AIDic.Add(Dnum ,  "NomalSkill_4");
+		Dnum = 24;
+		AIDic.Add(Dnum ,  "NomalSkill_5");
 
 		//조건 부 스킬(상황에 맞는)
 		Dnum = 30;

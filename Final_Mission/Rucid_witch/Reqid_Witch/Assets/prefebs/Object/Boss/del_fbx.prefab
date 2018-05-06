@@ -1629,6 +1629,7 @@ GameObject:
   - component: {fileID: 137047435179228596}
   - component: {fileID: 54244208435796920}
   - component: {fileID: 135063602645669332}
+  - component: {fileID: 114111825885101070}
   m_Layer: 10
   m_Name: Object004
   m_TagString: Monster
@@ -3251,10 +3252,11 @@ MonoBehaviour:
   Range: 12.5
   Attack: 0
   SkillDMG:
-  - 0
-  - 0
-  - 0
-  - 0
+  - 10
+  - 20
+  - 30
+  - 40
+  - 50
   MomentInvincible: 0
   InvincibleTime: 0.2
   ElecShock: {fileID: 1617372427335078}
@@ -3285,6 +3287,25 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114111825885101070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888359094881938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f545492815b6534785a5a9dfb9d160d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  AttackDelay: 0
+  PlusSound: 1
 --- !u!114 &114165353907158914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3557,6 +3578,8 @@ MonoBehaviour:
   Time_Skill_2: 3
   Time_Skill_3: 3
   Time_Skill_4: 6
+  Time_Skill_5: 6
+  Die_Time: 2
   Delay: 0
   Fight: 0
 --- !u!114 &114273719989593516
@@ -3828,8 +3851,8 @@ MonoBehaviour:
   - 0.3
   - 0.5
   - 0.5
+  - 0.5
   MobObj: {fileID: 0}
-  skill: []
 --- !u!114 &114636264471807004
 MonoBehaviour:
   m_ObjectHideFlags: 1

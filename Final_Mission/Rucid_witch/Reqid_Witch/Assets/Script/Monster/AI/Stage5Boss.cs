@@ -26,7 +26,9 @@ public class Stage5Boss: MonoBehaviour {
 	public float Time_Skill_2;		//21
 	public float Time_Skill_3;		//22
 	public float Time_Skill_4;		//23
+	public float Time_Skill_5;		//24
 
+	public float Die_Time = 2.0f;
 
 	public bool Delay = false;
 	public bool Fight = false;//false;
@@ -67,6 +69,18 @@ public class Stage5Boss: MonoBehaviour {
 		//평화
 		while (true) 
 		{
+			if (ObjLife.Hp <= 0)
+			{
+				//Targetting T;
+				//T = FindObjectOfType<Targetting>().GetComponent<Targetting>();
+				//Debug.Log(T);
+				ani.SetBool("Die", true);
+				Debug.Log ("죽음 사운드");
+
+				yield return new WaitForSeconds(Die_Time);
+				this.gameObject.SetActive(false);
+			}
+
 			if (Fight)
 				NCommand.StateChange(true);
 			else
@@ -108,7 +122,7 @@ public class Stage5Boss: MonoBehaviour {
 					//num = (int)Battle.Dequeue();//동작 처리시에 큐서 빠져나감
 
 					if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
-						num = getRandom(20, 24);
+						num = getRandom(20, 25);
 					else
 						num = 11;
 				}
@@ -181,7 +195,7 @@ public class Stage5Boss: MonoBehaviour {
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill1", true);
 							time = Time_Skill_1;
-							BCommand.Skill(time, 1);
+							BCommand.Skill(time, 0);
 							break;
 						}
 					case 21:
@@ -189,7 +203,7 @@ public class Stage5Boss: MonoBehaviour {
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill2", true);
 							time = Time_Skill_2;
-							BCommand.Skill(time, 2);
+							BCommand.Skill(time, 1);
 							break;
 						}
 					case 22:
@@ -197,7 +211,7 @@ public class Stage5Boss: MonoBehaviour {
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill3", true);
 							time = Time_Skill_3;
-							BCommand.Skill(time, 3);
+							BCommand.Skill(time, 2);
 							break;
 						}
 					case 23:
@@ -205,6 +219,14 @@ public class Stage5Boss: MonoBehaviour {
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill4", true);
 							time = Time_Skill_4;
+							BCommand.Skill(time, 3);
+							break;
+						}
+					case 24:
+						{
+							ani.SetBool("IsMove", false);
+							ani.SetBool("Skill5", true);
+							time = Time_Skill_5;
 							BCommand.Skill(time, 4);
 							break;
 						}

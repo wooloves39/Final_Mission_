@@ -23,9 +23,8 @@ public class BattleCommand : MonoBehaviour {
 	void Awake()
 	{
 		MobSound = GetComponentInChildren<MonsterSoundSetting>();
-		GameObject temp = FindObjectOfType<PlayerState>().gameObject;
-		Player = temp.GetComponent<PlayerState>();
-		MobInfo = GetComponentInChildren<ObjectLife>();
+		Player = FindObjectOfType<PlayerState>();
+		MobInfo = GetComponent<ObjectLife>();
 		ani = GetComponent<Animator>();
 		agent = GetComponent<NavMeshAgent>();
 	}
@@ -71,21 +70,25 @@ public class BattleCommand : MonoBehaviour {
 		{
 			switch (skill_index)
 			{
-				case 1:
+				case 0:
 					if (time >= SkillFrame[0])
 						ani.SetBool("Skill1", false);
 					break;
-				case 2:
+				case 1:
 					if (time >= SkillFrame[1])
 						ani.SetBool("Skill2", false);
 					break;
-				case 3:
+				case 2:
 					if (time >= SkillFrame[2])
 						ani.SetBool("Skill3", false);
 					break;
-				case 4:
+				case 3:
 					if (time >= SkillFrame[3])
 						ani.SetBool("Skill4", false);
+					break;
+				case 4:
+					if (time >= SkillFrame[4])
+						ani.SetBool("Skill5", false);
 					break;
 					
 			}

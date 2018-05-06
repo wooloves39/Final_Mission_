@@ -74,9 +74,9 @@ public class Stage5MobAI: MonoBehaviour {
 		{
 			if (ObjLife.Hp <= 0)
 			{
-				Targetting T;
-				T = FindObjectOfType<Targetting>().GetComponent<Targetting>();
-				Debug.Log(T);
+				//Targetting T;
+				//T = FindObjectOfType<Targetting>().GetComponent<Targetting>();
+				//Debug.Log(T);
 				ani.SetBool("Die", true);
 
 				MobSound.PlaySound(3);

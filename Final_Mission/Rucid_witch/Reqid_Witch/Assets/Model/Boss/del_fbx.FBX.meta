@@ -179,6 +179,7 @@ ModelImporter:
     7400018: Lose
     7400020: Defence
     7400022: Defence2
+    7400024: skill5
     9500000: //RootNode
     13700000: Object004
   materials:
@@ -208,8 +209,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Appear
       takeName: Take 001
-      firstFrame: 10
-      lastFrame: 135
+      firstFrame: 20
+      lastFrame: 120
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -349,7 +350,7 @@ ModelImporter:
       name: skill3
       takeName: Take 001
       firstFrame: 360
-      lastFrame: 410
+      lastFrame: 405
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -404,8 +405,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Run
       takeName: Take 001
-      firstFrame: 330
-      lastFrame: 335
+      firstFrame: 490
+      lastFrame: 515
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -432,8 +433,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Victory
       takeName: Take 001
-      firstFrame: 360
-      lastFrame: 480
+      firstFrame: 520
+      lastFrame: 640
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -460,8 +461,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Lose
       takeName: Take 001
-      firstFrame: 490
-      lastFrame: 590
+      firstFrame: 650
+      lastFrame: 750
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -488,8 +489,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Defence
       takeName: Take 001
-      firstFrame: 595
-      lastFrame: 615
+      firstFrame: 755
+      lastFrame: 775
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -516,8 +517,36 @@ ModelImporter:
     - serializedVersion: 16
       name: Defence2
       takeName: Take 001
-      firstFrame: 620
-      lastFrame: 650
+      firstFrame: 780
+      lastFrame: 810
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: skill5
+      takeName: Take 001
+      firstFrame: 820
+      lastFrame: 890
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

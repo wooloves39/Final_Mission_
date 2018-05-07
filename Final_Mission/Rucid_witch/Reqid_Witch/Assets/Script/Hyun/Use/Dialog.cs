@@ -121,7 +121,7 @@ public class Dialog : MonoBehaviour
 					{
 						myState.SetMyState(PlayerState.State.Nomal);
 						dia_Play.setPlay(true);
-						if (WaveStart[wavecnt] != null)
+						if (wavecnt <WaveStart.Length)
 						{
 							Debug.Log(WaveStart[wavecnt]);
 							WaveStart[wavecnt].GetComponent<MobGenerater>().Wave_Start = true;

@@ -29,7 +29,7 @@ public class TitleScene : MonoBehaviour
     {
         object_Color = Title.color;
 		Vector3 scale = Title.transform.localScale;
-		Title.gameObject.transform.localScale = new Vector3(scale.x * Screen_width * 25 / 48 * 0.005f, scale.y * Screen_height * 25 / 48 * 0.005f, 1);
+		Title.gameObject.transform.localScale = new Vector3(scale.x * Screen_width * 25 / 48 * 0.001f, scale.y * Screen_height * 25 / 48 * 0.001f, 1);
 		
 		Title.color = new Color(object_Color.r, object_Color.g, object_Color.b, 1);
 		opening = OpeningCourutine(Title);

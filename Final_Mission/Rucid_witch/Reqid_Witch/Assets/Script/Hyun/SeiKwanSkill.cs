@@ -17,7 +17,7 @@ public class SeiKwanSkill : MonoBehaviour
 
 	private bool Shoot = false;
 	private bool del_timer = false;
-
+	public bool Del_timer { get { return del_timer; } set { del_timer = value; } }
 	//private Collider collider;
 	public GameObject SeiKwanArrow;
 
@@ -151,7 +151,6 @@ public class SeiKwanSkill : MonoBehaviour
 		del_timer = true;
 		Shoot = false;
 	}
-	public bool IsDelete() { return del_timer; }
 	public bool IsShoot() { return Shoot; }
 	public void resetDelete()
 	{

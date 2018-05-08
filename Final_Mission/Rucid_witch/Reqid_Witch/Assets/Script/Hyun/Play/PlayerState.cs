@@ -152,15 +152,16 @@ public class PlayerState : MonoBehaviour
 		
 		playerSound.PlayerSound(PlayerSoundSetting.soundPack.Defance);
 		Hp -= Damage;
-		if (Hp < 0)
-			Hp = 0;
+		
 		if (Hp <= 0)
 		{
 			playerSound.PlayerSound(PlayerSoundSetting.soundPack.Die);
 			Hp = 0;
 			MyState = State.Die;
+			//죽는 사운드 필요
+			GetComponent<SceneChange>().sceneChange("Ready", Color.red);
 		}
-		if (!fade.fadeOnStart)
+		else if (!fade.fadeOnStart)
 		{
 			fade.fadeSmoth(new Color(.3f, 0, 0), 0, .5f, .3f, 1.0f, 0.5f);
 			PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.2f, 1.0f-Hp / 100.0f, OVRInput.Controller.RTouch));

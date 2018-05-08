@@ -33,7 +33,7 @@ public class SeiKwanMonControll : MonoBehaviour {
 		{
 			if (Arrow[i])
 			{
-				if (Arrow[i].GetComponent<SeiKwanSkill>().IsDelete())
+				if (Arrow[i].GetComponent<SeiKwanSkill>().Del_timer)
 				{
 					Arrow[i].GetComponent<SeiKwanSkill>().resetDelete();
 					Arrowpool.RemoveItem(Arrow[i]);

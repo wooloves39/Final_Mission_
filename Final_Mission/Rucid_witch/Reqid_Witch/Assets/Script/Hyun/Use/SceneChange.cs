@@ -23,15 +23,26 @@ public class SceneChange : MonoBehaviour {
 		scenefade.fade(Color.white, 0, 1, 2.0f);
 		StartCoroutine(SceneChangeCor(2.0f, SceneNum));
 	}
-	IEnumerator SceneChangeCor(float timer,int SceneNum)
-	{
-		yield return new WaitForSeconds(timer - .3f);
-		SceneManager.LoadScene(SceneNum);
-	}
 	public void sceneChange(string SceneName)
 	{
 		scenefade.fade(Color.white, 0, 1, 2.0f);
 		StartCoroutine(SceneChangeCor(2.0f, SceneName));
+	}
+	public void sceneChange(string SceneName, Color color)
+	{
+		scenefade.fade(color, 0, 1, 2.0f);
+		StartCoroutine(SceneChangeCor(2.0f, SceneName));
+	}
+	public void sceneChange(int SceneNum, Color color)
+	{
+		scenefade.fade(color, 0, 1, 2.0f);
+		StartCoroutine(SceneChangeCor(2.0f, SceneNum));
+	}
+
+	IEnumerator SceneChangeCor(float timer, int SceneNum)
+	{
+		yield return new WaitForSeconds(timer - .3f);
+		SceneManager.LoadScene(SceneNum);
 	}
 	IEnumerator SceneChangeCor(float timer, string SceneName)
 	{

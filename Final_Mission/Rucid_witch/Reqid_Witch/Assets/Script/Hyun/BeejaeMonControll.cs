@@ -7,7 +7,6 @@ public class BeejaeMonControll : MonoBehaviour {
 	private GameObject target;
 	private float Hp;
 	private BossSoundSetting sound;
-	public GameObject skill2;
 	private BeeJaeMonSkill beejaeManager;
 	// Use this for initialization
 	void Start () {
@@ -15,26 +14,30 @@ public class BeejaeMonControll : MonoBehaviour {
 		target = GetComponent<BattleCommand>().getTarget();
 		Hp = GetComponent<ObjectLife>().Hp;
 		beejaeManager=Instantiate(BeejeaPrefab).GetComponent<BeeJaeMonSkill>();
+		beejaeManager.MyCharacters=gameObject;
 	}
 	void Attack1()
 	{
+		beejaeManager.shoot(1, target);
 		//beejaeManager;
 	}
 	void Attack2()
 	{
-		
+		beejaeManager.shoot(2, target);
 	}
 	void Attack3()
 	{
-		
+		beejaeManager.shoot(3, target);
+
 	}
 	void Attack4()
 	{
-		
+		beejaeManager.shoot(4, target);
+
 	}
 	void Attack5()
 	{
-		
+		beejaeManager.shoot(5, target);
 	}
 	void setTarget()
 	{

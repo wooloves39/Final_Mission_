@@ -7,9 +7,11 @@ public class Sei_SkillAttack : MonoBehaviour
 
 	private float damage = 0.0f;
 	public float skillBalance;
+	private SeiKwanSkill seiKwanSkill;
 	private void OnEnable()
 	{
-		damage = transform.parent.GetComponent<SeiKwanSkill>().HandeDis * skillBalance;
+		seiKwanSkill = transform.parent.GetComponent<SeiKwanSkill>();
+		   damage = seiKwanSkill.HandeDis * skillBalance;
 		Debug.Log(damage);
 	}
 	void OnTriggerEnter(Collider other)
@@ -20,7 +22,7 @@ public class Sei_SkillAttack : MonoBehaviour
 			if (Player != null)
 			{
 				Player.DamageHp(damage);
-				this.gameObject.SetActive(false);
+				seiKwanSkill.Del_timer=true;
 			}
 		}
 	}

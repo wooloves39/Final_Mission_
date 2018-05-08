@@ -5500,6 +5500,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
   ElecShock: 1
   ShockTime: 2
 --- !u!1 &244196390
@@ -6922,7 +6923,7 @@ MonoBehaviour:
   - {fileID: 967227836}
   - {fileID: 292746025}
   - {fileID: 142836226}
-  next: {fileID: 1623479536}
+  next: {fileID: 0}
   nextParticle: {fileID: 1623479537}
 --- !u!1 &441664279
 GameObject:
@@ -37999,12 +38000,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 710c668c5cb938d4681dfb6e0f965ce6, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1623479536 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114663727389436046, guid: 710c668c5cb938d4681dfb6e0f965ce6,
-    type: 2}
-  m_PrefabInternal: {fileID: 1623479535}
-  m_Script: {fileID: 11500000, guid: f9035e037b71b0d46a41168eca0ecb78, type: 3}
 --- !u!1 &1623479537 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1365574565530988, guid: 710c668c5cb938d4681dfb6e0f965ce6,

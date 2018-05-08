@@ -12,7 +12,7 @@ public class Dialog : MonoBehaviour
 	private string[] DialogueStrings;
 	public int[] chatChar;
 	private float SecondsBetweenCharacters = 0.1f;
-	private float CharacterRateMultuplier = 0.001f;
+	private float CharacterRateMultuplier = 0.0001f;
 
 	private bool _isStringBeingRevealed = false;
 	private bool _isEndofDialogue = false;
@@ -80,7 +80,10 @@ public class Dialog : MonoBehaviour
 			yield return new WaitWhile(() => dia_Play.getPlay());
 		}
 		if (next)
+		{
+			next.gameObject.SetActive(true);
 			next.setNextOn(true);
+		}
 		if (nextParticle)
 			nextParticle.SetActive(true);
 		HideIcons();

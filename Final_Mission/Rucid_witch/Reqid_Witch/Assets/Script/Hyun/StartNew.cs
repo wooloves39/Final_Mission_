@@ -15,6 +15,13 @@ public class StartNew : MonoBehaviour
 		StartCoroutine(StartNewCor());
 		sceneChange = FindObjectOfType<SceneChange>();
 	}
+	private void Update()
+	{
+		if (InputManager_JHW.MenuButton())
+		{
+			sceneChange.sceneChange("Stage0");
+		}
+	}
 	IEnumerator StartNewCor()
 	{ int textCount = 0;
 		float colorAlpha = 0.0f;

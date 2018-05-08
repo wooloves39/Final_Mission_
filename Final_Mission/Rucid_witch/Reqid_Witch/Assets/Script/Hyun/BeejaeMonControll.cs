@@ -18,7 +18,7 @@ public class BeejaeMonControll : MonoBehaviour {
 	}
 	void Attack1()
 	{
-		beejaeManager;
+		//beejaeManager;
 	}
 	void Attack2()
 	{

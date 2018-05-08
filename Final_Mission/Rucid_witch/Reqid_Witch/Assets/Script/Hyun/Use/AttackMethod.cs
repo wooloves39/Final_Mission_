@@ -206,7 +206,7 @@ public class AttackMethod : MonoBehaviour
 					Beejae_Marker[1].transform.position = point;
 				}
 			}
-			yield return new WaitForSeconds(0.03f);
+			yield return null;
 		}
 	}
 	private IEnumerator AzuraControll()
@@ -289,7 +289,7 @@ public class AttackMethod : MonoBehaviour
 					Verbase_Marker[1].transform.position = point;
 				}
 			}
-			yield return new WaitForSeconds(0.03f);
+			yield return null;
 		}
 	}
 	private IEnumerator SeikwanControll()

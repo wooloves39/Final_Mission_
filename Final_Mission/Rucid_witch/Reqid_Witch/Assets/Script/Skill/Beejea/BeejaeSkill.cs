@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BeejaeSkill : MonoBehaviour
@@ -8,17 +7,12 @@ public class BeejaeSkill : MonoBehaviour
 	public float[] playSkill = { 0.7f, 3.0f, 2.0f, 2.0f, 2.0f };
 	public int[] CoolTime = { 8, 80, 10, 20, 120 };
 	public int[] UseMp = { 8, 80, 10, 20, 120 };
-	public AudioSource audio;
-	public AudioClip[] sound;
+	
 	private bool[] CoolDown = { false, false, false, false, false };
 
 	private int skill;
 	private GameObject target;
-	private float handDis;
-	float deltaTime;
 
-
-	private Collider collider;
 	private PlayerState Player;
 
 	private AttackMethod handle;
@@ -35,11 +29,8 @@ public class BeejaeSkill : MonoBehaviour
 
 	private void Awake()
 	{
-		audio = GetComponent<AudioSource>();
 		handle = FindObjectOfType<AttackMethod>();
 		Player = FindObjectOfType<PlayerState>();
-		deltaTime = Time.deltaTime;
-		collider = GetComponent<Collider>();
 		line = FindObjectOfType<LineDraw>();
 	}
 	public void SetTarget(GameObject targets)
@@ -48,71 +39,75 @@ public class BeejaeSkill : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (LineDraw.curType == 2 && handle.Beejae_Marker[0].gameObject.activeInHierarchy == false && handle.Beejae_Marker[1].gameObject.activeInHierarchy == false && handle2 == false 
-			&& ((line.Skills[2].getCurrentSkill() ==  3) || (line.Skills[2].getCurrentSkill() == 2)))
+		if (LineDraw.curType == 2)
 		{
-			bool fail = false;
-			bool NoMp = false;
-			if (line.Skills[2].getCurrentSkill() == 2)
-			{
-				if (Player.Mp >= UseMp[1])
+			if ((line.Skills[2].getCurrentSkill() == 3)
+				|| (line.Skills[2].getCurrentSkill() == 2))
+		{
+				bool fail = false;
+				bool NoMp = false;
+				if (line.Skills[2].getCurrentSkill() == 2)
 				{
-					if (!CoolDown[1])
+					if (Player.Mp >= UseMp[1])
 					{
-						StartCoroutine("Buff");
-						Player.Mp -= UseMp[1];
+						if (!CoolDown[1])
+						{
+							StartCoroutine("Buff");
+							Player.Mp -= UseMp[1];
+						}
+						else
+						{
+							fail = true;
+						}
 					}
 					else
 					{
-						fail = true;
+						NoMp = true;
 					}
 				}
 				else
 				{
-					NoMp = true;
-				}
-			}
-			else
-			{
-				if (Player.Mp >= UseMp[2])
-				{
-					if (!CoolDown[2])
+					if (Player.Mp >= UseMp[2])
 					{
-						StartCoroutine("ThunderShock");
-						Player.Mp -= UseMp[2];
+						if (!CoolDown[2])
+						{
+							StartCoroutine("ThunderShock");
+							Player.Mp -= UseMp[2];
+						}
+						else
+						{
+							fail = true;
+						}
 					}
 					else
 					{
-						fail = true;
+						NoMp = true;
 					}
 				}
-				else
+				if (fail)
 				{
-					NoMp = true;
+					Debug.Log("쿨타임 처리");
 				}
+				if (NoMp)
+				{
+					Debug.Log("엠피가 부족");
+				}
+				line.Skills[2].resetSkill();
 			}
-			if (fail)
+			else if (
+				!handle.Beejae_Marker[0].gameObject.activeInHierarchy &&
+				!handle.Beejae_Marker[1].gameObject.activeInHierarchy &&
+				handle2)
 			{
-				Debug.Log("쿨타임 처리");
+				handle2 = false;
+				shoot(line.Skills[2].getCurrentSkill());
 			}
-			if (NoMp)
-			{
-				Debug.Log("엠피가 부족");
-			}
-			line.Skills[2].resetSkill();
-		}
-
-		if (LineDraw.curType == 2 && handle.Beejae_Marker[0].gameObject.activeInHierarchy == false && handle.Beejae_Marker[1].gameObject.activeInHierarchy == false && handle2 == true)
-		{
-			handle2 = false;
-			shoot(line.Skills[2].getCurrentSkill(), 0.0f);
 		}
 	}
 	
-	public void shoot(int skillIndex, float handDistance)
+	public void shoot(int skillIndex)
 	{
 		skill = skillIndex;
-		handDis = handDistance;
 		bool fail = false;
 		bool NoMp = false;
 		switch (skill)
@@ -220,7 +215,7 @@ public class BeejaeSkill : MonoBehaviour
 		}
 		
 	}
-	IEnumerator SkyThunder()
+	IEnumerator SkyThunder()//1번스킬
 	{
 		magic[0].transform.position = target.transform.position;
 		magic[0].SetActive(true);
@@ -238,7 +233,7 @@ public class BeejaeSkill : MonoBehaviour
 		CoolDown[0] = false;
 	}
 
-	IEnumerator Buff()
+	IEnumerator Buff()//2번스킬
 	{
 		magic[1].SetActive(true);
 		CoolDown[1] = true;
@@ -250,7 +245,7 @@ public class BeejaeSkill : MonoBehaviour
 		yield return new WaitForSeconds(20.0f- playSkill[1]);
 		CoolDown[1] = false;
 	}
-	IEnumerator ThunderShock()
+	IEnumerator ThunderShock()//3번스킬
 	{
 		magic[2].transform.position = Player.transform.position;
 		magic[2].SetActive(true);
@@ -260,7 +255,7 @@ public class BeejaeSkill : MonoBehaviour
 		yield return new WaitForSeconds(CoolTime[2]- playSkill[2]);
 		CoolDown[2] = false;
 	}
-	IEnumerator ThunderBall()
+	IEnumerator ThunderBall()//4번스킬
 	{
 		magic[3].transform.position = target.transform.position;
 		magic[3].SetActive(true);
@@ -270,7 +265,7 @@ public class BeejaeSkill : MonoBehaviour
 		yield return new WaitForSeconds(CoolTime[3]- playSkill[3]);
 		CoolDown[3] = false;
 	}
-	IEnumerator BlackThunder()
+	IEnumerator BlackThunder()//5번스킬
 	{
 		magic[4].transform.position = target.transform.position;
 		magic[4].SetActive(true);
@@ -281,12 +276,5 @@ public class BeejaeSkill : MonoBehaviour
 		magic[4].SetActive(false);
 		yield return new WaitForSeconds(CoolTime[4] - playSkill[4]);
 		CoolDown[4] = false;
-	}
-	IEnumerator SkillSound(int num,float delay)
-	{
-		yield return new WaitForSeconds(delay);
-		audio.clip = sound[num];
-		audio.volume = Singletone.Instance.Sound;
-		audio.Play();
 	}
 }

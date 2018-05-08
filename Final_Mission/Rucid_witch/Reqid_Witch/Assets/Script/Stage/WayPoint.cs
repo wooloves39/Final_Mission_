@@ -13,13 +13,13 @@ public class WayPoint : MonoBehaviour {
 	}
 	private void delete()
 	{
-		GetComponent<Rigidbody>().gameObject.SetActive(false);
+		gameObject.SetActive(false);
 	}
 
 	void OnTriggerStay(Collider col)
 	{
 		if (once == 0)
-			if (col.tag == "Ground")
+			if (col.CompareTag("Ground"))
 			{
 				once++;
 				check = true;

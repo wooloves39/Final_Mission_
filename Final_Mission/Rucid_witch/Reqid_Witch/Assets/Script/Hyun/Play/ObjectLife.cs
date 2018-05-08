@@ -18,7 +18,7 @@ public class ObjectLife : MonoBehaviour {
 	public bool MomentInvincible = false;//순간무적
 	public float InvincibleTime = 0.2f;//순간무적 시간
 	
-	public GameObject ElecShock;
+	public GameObject ElecShock;//구조 바꿔야함
 	private Animator ani;
 
 	private void Start()

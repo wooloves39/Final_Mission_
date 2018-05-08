@@ -30,9 +30,6 @@ public class AttackMethod : MonoBehaviour
 	GameObject[] Arrow;
 
 	public GameObject BeejaePrefab;
-	MemoryPool Beejaepool = new MemoryPool();
-	GameObject[] Thunder;
-
 	public float RayLength = 50f;
 	private Coroutine currentCorutine;
 	private bool flug = false;
@@ -54,6 +51,10 @@ public class AttackMethod : MonoBehaviour
 		AzuraHands[0] = Hands[0].GetComponent<TouchCollision>();
 		AzuraHands[1] = Hands[1].GetComponent<TouchCollision>();
 		typecheck = GetComponentInChildren<LineDraw>();
+		if (typecheck.IsHaveSkill(2))
+		{
+			Instantiate(BeejaePrefab);
+		}
 		if (typecheck.IsHaveSkill(0))
 		{
 			int poolCount = 5;
@@ -75,7 +76,6 @@ public class AttackMethod : MonoBehaviour
 	{
 		Azurapool.Dispose();
 		Arrowpool.Dispose();
-		Beejaepool.Dispose();
 	}
 	// Update is called once per frame
 	void Update()

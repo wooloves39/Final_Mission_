@@ -4995,7 +4995,8 @@ MonoBehaviour:
     type: 2}
   ArrowPrefab: {fileID: 1902216250298378, guid: 7032b9c40bc7e7d48953518710c780f3,
     type: 2}
-  BeejaePrefab: {fileID: 0}
+  BeejaePrefab: {fileID: 1599457027783210, guid: 8210c10622c43b54294c5304dcd84936,
+    type: 2}
   RayLength: 50
   PlayerTarget: {fileID: 1369532294}
   typecheck: {fileID: 850553098}
@@ -5699,7 +5700,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1177604715762056, guid: d409736c4f9aff54ebdbcae33fb76612, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d409736c4f9aff54ebdbcae33fb76612, type: 2}
@@ -16375,12 +16376,12 @@ Prefab:
     - target: {fileID: 114311249443307544, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
       propertyPath: Wave_Start
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114787334104458518, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
       propertyPath: Wave_Start
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114787334104458518, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}

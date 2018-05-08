@@ -22,12 +22,10 @@ public class BeejaeMonControll : MonoBehaviour {
 	}
 	void Attack2()
 	{
-		int ArrowNum = 0;
 		
 	}
 	void Attack3()
 	{
-		int ArrowNum = 0;
 		
 	}
 	void Attack4()
@@ -36,7 +34,6 @@ public class BeejaeMonControll : MonoBehaviour {
 	}
 	void Attack5()
 	{
-		int ArrowNum = 0;
 		
 	}
 	void setTarget()

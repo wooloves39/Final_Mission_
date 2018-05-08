@@ -20,7 +20,7 @@ public class Skill_Info : MonoBehaviour {
 	private List<GameObject> ObjList = new List<GameObject>();
 
 	public float[] PowerMemory = { 0,0,0 };
-
+	public float Delete_Delay_Time = 0.0f;
 	public bool ElecShock = false;
 	public float ShockTime = 2.0f;
 	private void OnEnable()
@@ -40,12 +40,11 @@ public class Skill_Info : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Monster")
+		if (other.CompareTag ("Monster"))
 		{
 			ObjList.Add(other.gameObject);
 			ObjectLife temp;
 			temp = other.GetComponentInParent<ObjectLife>();
-			Debug.Log(temp.Hp);
 			if (OneHit)
 			{
 				if (!temp.MomentInvincible)
@@ -55,7 +54,7 @@ public class Skill_Info : MonoBehaviour {
 						temp.SendMessage("Shock",ShockTime);
 					PowerMemory[0] -= Minus[0];
 					if (PowerMemory[0] <= 0.0f)
-						this.gameObject.SetActive(false);
+						Invoke("Delete", Delete_Delay_Time);
 				}
 			}
 			if (AreaHit)
@@ -76,9 +75,13 @@ public class Skill_Info : MonoBehaviour {
 				
 		}
 	}
+	void Delete()
+	{
+		gameObject.SetActive(false);
+	}
 	void OnTriggerExit(Collider other)
 	{
-		if (other.tag == "Monster")
+		if (other.CompareTag( "Monster"))
 		{
 			ObjList.Remove(other.gameObject);
 		}
@@ -86,7 +89,7 @@ public class Skill_Info : MonoBehaviour {
 	IEnumerator Area_Skill()
 	{
 		ObjectLife temp;
-		while (PowerMemory [1] < 1) 
+		while (PowerMemory[1] > 0)
 		{
 			yield return new WaitForSeconds (Cycle);
 			for (int j = 0; j < ObjList.Count; ++j) 
@@ -99,19 +102,24 @@ public class Skill_Info : MonoBehaviour {
 			}
 			PowerMemory[1] -= Minus[1];
 		}
+		yield return new WaitForSeconds(Delete_Delay_Time);
 		this.gameObject.SetActive(false);
 	}
 	IEnumerator DotSkill(ObjectLife obj)
 	{
-		float Dmg = PowerMemory[2] / DotTime;
+		float Dmg = PowerMemory[2] / (DotTime / Cycle);
 		float time = 0.0f;
 		bool b = false;
 		PowerMemory[2] -= Minus[2];
 		if (PowerMemory[2] <= 0.0f)
-			this.gameObject.SetActive(false);
+		{
+			yield return new WaitForSeconds(Delete_Delay_Time);
+			gameObject.SetActive(false);
+		}
 		while (time <= DotTime)
 		{
-			obj.SendMessage("SendDMG", Dmg);
+			if (obj.isActiveAndEnabled)
+				obj.SendMessage("SendDMG", Dmg);
 			if (!b)
 			{
 				b = true;

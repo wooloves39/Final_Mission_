@@ -5,7 +5,7 @@ using UnityEngine;
 public class BeejaeSkill : MonoBehaviour
 {
 	public GameObject[] magic;
-	public float[] playSkill = { 0.7f, 0.0f, 2.0f, 2.0f, 2.0f };
+	public float[] playSkill = { 0.7f, 3.0f, 2.0f, 2.0f, 2.0f };
 	public int[] CoolTime = { 8, 80, 10, 20, 120 };
 	public int[] UseMp = { 8, 80, 10, 20, 120 };
 	public AudioSource audio;
@@ -240,11 +240,14 @@ public class BeejaeSkill : MonoBehaviour
 
 	IEnumerator Buff()
 	{
+		magic[1].SetActive(true);
 		CoolDown[1] = true;
 		Player.LightningBolt = true;
-		yield return new WaitForSeconds(60.0f);
+		yield return new WaitForSeconds(playSkill[1]);
+		magic[1].SetActive(false);
+		yield return new WaitForSeconds(60.0f - playSkill[1]);
 		Player.LightningBolt = false;
-		yield return new WaitForSeconds(20.0f);
+		yield return new WaitForSeconds(20.0f - playSkill[1]);
 		CoolDown[1] = false;
 	}
 	IEnumerator ThunderShock()
@@ -272,7 +275,9 @@ public class BeejaeSkill : MonoBehaviour
 		magic[4].transform.position = target.transform.position;
 		magic[4].SetActive(true);
 		CoolDown[4] = true;
+		target.GetComponent<ObjectLife>().SendMessage("Shock", 4.0f);
 		yield return new WaitForSeconds(playSkill[4]);
+		target.GetComponent<ObjectLife>().SendMessage("SendDMG", 100.0f);
 		magic[4].SetActive(false);
 		yield return new WaitForSeconds(CoolTime[4]- playSkill[4]);
 		CoolDown[4] = false;

@@ -20,7 +20,6 @@ public class ObjectLife : MonoBehaviour {
 	
 	public GameObject ElecShock;
 	private Animator ani;
-
 	private void Start()
 	{
 		MobSound = GetComponentInChildren<MonsterSoundSetting>();
@@ -60,8 +59,12 @@ public class ObjectLife : MonoBehaviour {
 		float time = 0;
 		float Cycle1 = 0.15f;
 		float Cycle2 = 0.10f;
+		float[] temp = { Speed, BattleSpeed };
+		Speed = 0.1f;
+		BattleSpeed = 0.1f;
 		while (time < t)
 		{
+			
 			yield return new WaitForSeconds(Cycle1);
 
 			ElecShock.SetActive(true);
@@ -70,5 +73,7 @@ public class ObjectLife : MonoBehaviour {
 			time += (Cycle1 + Cycle2);
 			ElecShock.SetActive(false);
 		}
+		Speed = temp[0];
+		BattleSpeed = temp[1];
 	}
 }

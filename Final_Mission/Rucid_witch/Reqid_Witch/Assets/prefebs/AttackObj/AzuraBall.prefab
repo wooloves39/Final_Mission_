@@ -1535,7 +1535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1602859929253076
 GameObject:
   m_ObjectHideFlags: 1
@@ -1957,7 +1957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1819387366177972
 GameObject:
   m_ObjectHideFlags: 1
@@ -2769,7 +2769,7 @@ Transform:
   m_GameObject: {fileID: 1672597136059964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4612299449934330}
   - {fileID: 4492410689604924}
@@ -6850,7 +6850,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -6860,6 +6860,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114407105533464538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6875,7 +6878,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -6885,6 +6888,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114407799192202466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6930,6 +6936,12 @@ MonoBehaviour:
   - {fileID: 1772244561137756}
   - {fileID: 1712323386131564}
   - {fileID: 1894328325043622}
+  Speed:
+  - 25
+  - 25
+  - 25
+  - 20
+  - 25
   AzuraBall: {fileID: 1599876311558846}
 --- !u!114 &114456517244044830
 MonoBehaviour:
@@ -6979,7 +6991,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -6989,6 +7001,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114497313541532178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7015,7 +7030,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7025,6 +7040,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114537585133576256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7106,7 +7124,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7116,6 +7134,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114604300950010792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7131,7 +7152,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7141,6 +7162,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114608707240012234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7211,7 +7235,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7221,6 +7245,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114682849440541568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7269,7 +7296,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7279,6 +7306,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114760255041307456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7371,7 +7401,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7381,6 +7411,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114888802131466718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7396,7 +7429,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7406,6 +7439,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114904093604757194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7465,7 +7501,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7475,6 +7511,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114934534155702204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7490,7 +7529,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7500,6 +7539,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114940071352312092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7537,7 +7579,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -7547,6 +7589,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
+  ElecShock: 0
+  ShockTime: 2
 --- !u!114 &114957083407696170
 MonoBehaviour:
   m_ObjectHideFlags: 1

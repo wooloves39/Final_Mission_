@@ -7,18 +7,22 @@ public class AzuraSkill : MonoBehaviour
     private int skill;
     private GameObject target;
     private float handDis;
+    private PlayerState player;
     float deltaTime;
     public GameObject Blast;
     public GameObject[] witchsHone;
     public GameObject[] SoulExp;
-
+    public float[] Speed = {25,20,15,25,25};
     private bool Shoot = false;
     private bool del_timer = false;
 
     private Collider collider;
     public GameObject AzuraBall;
+
+
     private void Awake()
     {
+        player = FindObjectOfType<PlayerState>();
         deltaTime = Time.deltaTime;
         collider = GetComponent<Collider>();     
     }
@@ -43,7 +47,7 @@ public class AzuraSkill : MonoBehaviour
                 SoulExplosion(target.transform.position);
                 break;
             case 3:
-                witchAging(2.0f, 10f);
+                witchAging( 10f);
                 break;
             case 4:
                 callofGad(target.transform.position,10f, 10f, 5f);
@@ -61,7 +65,7 @@ public class AzuraSkill : MonoBehaviour
     {
         Rigidbody r = GetComponent<Rigidbody>();
         Vector3 TargettingDir = Vector3.Normalize(target.transform.position - transform.position);//;
-        r.velocity = TargettingDir * 15f * handDis;
+        r.velocity = TargettingDir * Speed[0] * handDis;
 
     }
     //########################################################
@@ -90,13 +94,13 @@ public class AzuraSkill : MonoBehaviour
             }
             if (Vector3.Distance (soul.transform.position, target) < Vector3.Distance (soul.transform.position, target)/2) 
             {
-                speed = 20;
+                speed = Speed[1];
                 soul.transform.LookAt (target);
                 soul.transform.Translate(Vector3.forward * deltaTime * speed);
             }
             else 
             {
-                speed = 10;
+                speed = Speed[1]/2;
                 soul.transform.LookAt (Vector3.Normalize (dir) + normal);
                 soul.transform.Translate(Vector3.forward * deltaTime * speed);
             }
@@ -107,27 +111,32 @@ public class AzuraSkill : MonoBehaviour
         }
     }
     //########################################################
-    void witchAging(float speed, float deltime)//12개
+    void witchAging(float deltime)//12개
     {
         for (int i = 0; i < witchsHone.Length; ++i)
         {
-            witchsHone[i].SetActive(true);
+            witchsHone[i].transform.position = player.transform.position;
             witchsHone[i].transform.Rotate(0, i * 30, 0);
-            StartCoroutine(witchAgingCour(witchsHone[i], speed, deltime));
+            witchsHone[i].SetActive(true);
+            StartCoroutine(witchAgingCour(witchsHone[i], deltime));
         }
     }
-    IEnumerator witchAgingCour(GameObject hone, float speed, float deltime)
+    IEnumerator witchAgingCour(GameObject hone, float deltime)
     {
         float timer = 0.0f;
         Rigidbody r = hone.GetComponent<Rigidbody>();
-        r.velocity = hone.transform.forward * 15f * handDis;
+        r.velocity = hone.transform.forward * Speed[2] * handDis;
         while (true)//필요없을수도
         {
-            if (timer > deltime) break;
-            timer += deltaTime;
-            yield return null;
+            hone.transform.Rotate(0, 1, 0);
+            if (timer > deltime) 
+                break;
+            timer += 0.1f;
+            yield return new WaitForSeconds(0.1f);
         }
+        hone.SetActive(false);
     }
+    //########################################################
     void callofGad(Vector3 targetPos,float speed, float scale, float time)
     {
         SoulExp[0].SetActive(true);
@@ -150,6 +159,7 @@ public class AzuraSkill : MonoBehaviour
             yield return null;
         }
     }
+    //########################################################  
     private void LastBlast(Vector3 target)
     {
         Blast.SetActive(true);

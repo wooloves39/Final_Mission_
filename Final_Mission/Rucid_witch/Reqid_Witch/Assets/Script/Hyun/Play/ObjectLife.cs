@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ObjectLife : MonoBehaviour {
-	
 
+
+	private NavMeshAgent agent;
 	public float Hp;
 	public float MaxHp;
 	public float Speed;
@@ -24,6 +26,7 @@ public class ObjectLife : MonoBehaviour {
 	private void Start()
 	{
 		MobSound = GetComponentInChildren<MonsterSoundSetting>();
+		agent = GetComponent<NavMeshAgent>();
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -61,8 +64,12 @@ public class ObjectLife : MonoBehaviour {
 		float Cycle1 = 0.15f;
 		float Cycle2 = 0.10f;
 		float[] temp = { Speed, BattleSpeed };
+		Vector3 playerpos;
 		Speed = 0.1f;
 		BattleSpeed = 0.1f;
+		agent.speed = Speed;
+		playerpos = agent.destination;
+		agent.destination = this.transform.position;
 		while (time < t)
 		{
 			yield return new WaitForSeconds(Cycle1);
@@ -73,6 +80,7 @@ public class ObjectLife : MonoBehaviour {
 			time += (Cycle1 + Cycle2);
 			ElecShock.SetActive(false);
 		}
+		agent.destination =playerpos;
 		Speed = temp[0];
 		BattleSpeed = temp[1];
 	}

@@ -5036,7 +5036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31f7d58f88c54049b532ff11b0ce3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OneHit: 0
+  OneHit: 1
   Power: 0
   AreaHit: 0
   AreaDmg: 30
@@ -5050,7 +5050,7 @@ MonoBehaviour:
   - 0
   - 35
   - 50
-  Delete_Delay_Time: 0.1
+  Delete_Delay_Time: 2
   ElecShock: 1
   ShockTime: 2
 --- !u!114 &114094742759298172
@@ -5100,7 +5100,7 @@ MonoBehaviour:
   - 0
   - 35
   - 50
-  Delete_Delay_Time: 0
+  Delete_Delay_Time: 2
   ElecShock: 1
   ShockTime: 2
 --- !u!114 &114126380145458134
@@ -5155,13 +5155,12 @@ MonoBehaviour:
   - {fileID: 1727797861975442}
   - {fileID: 1146302748220244}
   - {fileID: 1985141604899838}
-  - {fileID: 1195617831738944}
   playSkill:
   - 2
   - 3
   - 3
   - 4
-  - 4
+  - 3
   CoolTime: 0400000050000000080000000c00000028000000
   UseMp: 080000001e0000000f0000001400000032000000
   sound: []
@@ -5625,7 +5624,7 @@ MonoBehaviour:
   - 100
   - 60
   - 50
-  Delete_Delay_Time: 0
+  Delete_Delay_Time: 3
   ElecShock: 0
   ShockTime: 2
 --- !u!120 &120056257934470126

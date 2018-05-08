@@ -10,7 +10,8 @@ public class AzuraSkill : MonoBehaviour
     private PlayerState player;
     float deltaTime;
     public GameObject Blast;
-    public GameObject[] witchsHone;
+	public GameObject God;
+	public GameObject[] witchsHone;
     public GameObject[] SoulExp;
     public float[] Speed = {25,20,15,25,25};
     private bool Shoot = false;
@@ -47,11 +48,12 @@ public class AzuraSkill : MonoBehaviour
                 SoulExplosion(target.transform.position);
                 break;
             case 3:
-                witchAging( 10f);
+                witchAging( 4f);
                 break;
             case 4:
                 callofGad(target.transform.position,10f, 10f, 5f);
-                break;
+				//gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
+				break;
             case 5:
                 LastBlast(target.transform.position);
                 break;
@@ -74,17 +76,17 @@ public class AzuraSkill : MonoBehaviour
         for (int i = 0; i < SoulExp.Length; ++i)
         {
             SoulExp[i].SetActive(true);
-            //SoulExp[i].transform.Rotate(0, 0, 45);
-            StartCoroutine(SoulExplosionCor(SoulExp[i], target));
+			SoulExp[i].transform.localScale = new Vector3(2, 2, 2);
+			//SoulExp[i].transform.Rotate(0, 0, 45);
+			StartCoroutine(SoulExplosionCor(SoulExp[i], target));
         }
     }
     IEnumerator SoulExplosionCor(GameObject soul, Vector3 target) 
     {
-        Vector3 normal = Vector3.Normalize( target - soul.transform.position);
-        Vector3 dir = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+        Vector3 dir = new Vector3(Random.Range(-15, 15), Random.Range(-15,15), 0);
         float speed = Random.Range(5, 10);
         float Timer = 0.0f;
-        float MaxTime = Vector3.Distance(soul.transform.position, target) / 20f;
+		float MaxTime = Vector3.Distance(soul.transform.position, target)/Speed[1] * 1.5f;
         while (true)
         {
             Timer += deltaTime;
@@ -92,7 +94,7 @@ public class AzuraSkill : MonoBehaviour
             {
                 break;
             }
-            if (Vector3.Distance (soul.transform.position, target) < Vector3.Distance (soul.transform.position, target)/2) 
+            if (Timer > 0.5f) 
             {
                 speed = Speed[1];
                 soul.transform.LookAt (target);
@@ -101,7 +103,7 @@ public class AzuraSkill : MonoBehaviour
             else 
             {
                 speed = Speed[1]/2;
-                soul.transform.LookAt (Vector3.Normalize (dir) + normal);
+                soul.transform.LookAt (this.transform.position+dir);
                 soul.transform.Translate(Vector3.forward * deltaTime * speed);
             }
             if (Timer >= MaxTime)
@@ -121,27 +123,30 @@ public class AzuraSkill : MonoBehaviour
             StartCoroutine(witchAgingCour(witchsHone[i], deltime));
         }
     }
-    IEnumerator witchAgingCour(GameObject hone, float deltime)
+	IEnumerator witchAgingCour(GameObject hone, float  Limit)
     {
         float timer = 0.0f;
-        Rigidbody r = hone.GetComponent<Rigidbody>();
-        r.velocity = hone.transform.forward * Speed[2] * handDis;
         while (true)//필요없을수도
-        {
-            hone.transform.Rotate(0, 1, 0);
-            if (timer > deltime) 
-                break;
-            timer += 0.1f;
-            yield return new WaitForSeconds(0.1f);
+		{
+			hone.transform.Translate(Vector3.forward * Speed[2] * handDis * deltaTime);
+			hone.transform.Rotate(0, 1.5f, 0);
+
+			if (timer > Limit) 
+			  break;
+            timer += deltaTime;
+            yield return new WaitForSeconds(deltaTime);
         }
         hone.SetActive(false);
     }
-    //########################################################
-    void callofGad(Vector3 targetPos,float speed, float scale, float time)
+	//########################################################
+
+	//callofGad(target.transform.position,10f, 10f, 5f);
+	void callofGad(Vector3 targetPos,float speed, float scale, float time)
     {
-        SoulExp[0].SetActive(true);
-        SoulExp[0].transform.LookAt(targetPos);
-        StartCoroutine(callofGadCor(SoulExp[0],targetPos, speed, scale, time));
+       God.SetActive(true);
+       God.transform.LookAt(targetPos);
+       StartCoroutine(callofGadCor(God, targetPos, speed, scale, time));
+		//gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
     }
     IEnumerator callofGadCor(GameObject Soul, Vector3 targetPos, float speed, float scale, float time)
     {
@@ -152,7 +157,10 @@ public class AzuraSkill : MonoBehaviour
             timer += deltaTime;
             cur_Scale = scale * (timer / time);
             Vector3 scaleVector = Vector3.one;
-            if (cur_Scale < 1.0f) cur_Scale = 1.0f;
+			if (cur_Scale < 1.0f)
+			{
+				cur_Scale = 1.0f;
+			}
             Soul.transform.localScale = scaleVector * cur_Scale;
             Soul.transform.Translate(Vector3.forward * deltaTime * speed);
             if (timer > time) break;

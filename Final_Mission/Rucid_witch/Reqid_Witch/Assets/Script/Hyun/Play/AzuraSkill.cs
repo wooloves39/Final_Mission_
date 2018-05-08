@@ -64,7 +64,6 @@ public class AzuraSkill : MonoBehaviour
 		r.velocity = TargettingDir * 15f * handDis;
 		
 	}
-    //########################################################
 	void SoulExplosion(Vector3 target)//12개의 스킬 날리기
 	{
 		for (int i = 0; i < SoulExp.Length; ++i)
@@ -74,39 +73,36 @@ public class AzuraSkill : MonoBehaviour
 			StartCoroutine(SoulExplosionCor(SoulExp[i], target));
 		}
 	}
-	IEnumerator SoulExplosionCor(GameObject soul, Vector3 target) 
+	IEnumerator SoulExplosionCor(GameObject soul, Vector3 target)
 	{
-	Vector3 normal = Vector3.Normalize( target - soul.transform.position);
-		Vector3 dir = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+		Vector3 dir = new Vector3(Random.Range(-10, 10), Random.Range(-5, 5), 0);
 		float speed = Random.Range(5, 10);
 		float Timer = 0.0f;
 		float MaxTime = Vector3.Distance(soul.transform.position, target) / 20f;
 		while (true)
 		{
 			Timer += deltaTime;
-			if (Vector3.Distance(soul.transform.position, target) < 0.5f) 
-			{
+			if (Vector3.Distance(soul.transform.position, target) < 0.5f ||
+			Timer>=4.0f) {
 				break;
 			}
-            if (Vector3.Distance (soul.transform.position, target) < Vector3.Distance (soul.transform.position, target)/2) 
-            {
-                speed = 20;
-				soul.transform.LookAt (target);
-                soul.transform.Translate(Vector3.forward * deltaTime * speed);
-			}
-			else 
+			soul.transform.LookAt(target);
+
+			Vector3 lookPos = Vector3.forward;
+			if (Timer < MaxTime)
 			{
-                speed = 10;
-                soul.transform.LookAt (Vector3.Normalize (dir) + normal);
-                soul.transform.Translate(Vector3.forward * deltaTime * speed);
+				lookPos += dir / 2.0f;
+				soul.transform.Translate(Vector3.Normalize(lookPos) * deltaTime * speed);
 			}
-            if (Timer >= MaxTime)
-                break;
-            else
-			    yield return null;
+			else
+			{
+				Debug.Log("dd");
+				soul.transform.LookAt(target);
+				soul.transform.Translate(Vector3.forward * deltaTime * speed);
+			}
+			yield return null;
 		}
 	}
-    //########################################################
 	void witchAging(float speed, float deltime)//12개
 	{
 		for (int i = 0; i < witchsHone.Length; ++i)

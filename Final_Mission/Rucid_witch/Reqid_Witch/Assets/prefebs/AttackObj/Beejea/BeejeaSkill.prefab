@@ -381,23 +381,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1195617831738944
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4060654875650062}
-  - component: {fileID: 114690966561953394}
-  - component: {fileID: 135914767234773074}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &1216405501962762
 GameObject:
   m_ObjectHideFlags: 1
@@ -1737,6 +1720,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4733215973741794}
+  - component: {fileID: 135473468153359060}
+  - component: {fileID: 114577432696407064}
   m_Layer: 0
   m_Name: BlackThunder
   m_TagString: Untagged
@@ -1931,19 +1916,6 @@ Transform:
   m_Father: {fileID: 4627137631175424}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!4 &4060654875650062
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1195617831738944}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4733215973741794}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4071314196351020
 Transform:
   m_ObjectHideFlags: 1
@@ -2809,7 +2781,6 @@ Transform:
   - {fileID: 4363384831859056}
   - {fileID: 4238091961850896}
   - {fileID: 4813910694742190}
-  - {fileID: 4060654875650062}
   m_Father: {fileID: 4906777880459156}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5038,19 +5009,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OneHit: 0
   Power: 0
-  AreaHit: 0
-  AreaDmg: 30
+  AreaHit: 1
+  AreaDmg: 35
   AreaCycle: 0.5
-  DotHit: 1
-  DotDmg: 30
-  DotTime: 3
+  DotHit: 0
+  DotDmg: 50
+  DotTime: 5
   Cycle: 0.3
-  HitCount: 1
+  HitCount: 4
   PowerMemory:
   - 0
   - 35
   - 50
-  Delete_Delay_Time: 0.1
   ElecShock: 1
   ShockTime: 2
 --- !u!114 &114094742759298172
@@ -5100,7 +5070,6 @@ MonoBehaviour:
   - 0
   - 35
   - 50
-  Delete_Delay_Time: 0
   ElecShock: 1
   ShockTime: 2
 --- !u!114 &114126380145458134
@@ -5155,11 +5124,10 @@ MonoBehaviour:
   - {fileID: 1727797861975442}
   - {fileID: 1146302748220244}
   - {fileID: 1985141604899838}
-  - {fileID: 1195617831738944}
   playSkill:
+  - 1
   - 2
-  - 3
-  - 3
+  - 1.5
   - 4
   - 4
   CoolTime: 0400000050000000080000000c00000028000000
@@ -5356,6 +5324,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 2.5
   play: {fileID: 8300000, guid: 10f96e8ac8787c54d8cb263d21dced06, type: 3}
+--- !u!114 &114577432696407064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985141604899838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31f7d58f88c54049b532ff11b0ce3fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OneHit: 1
+  Power: 100
+  AreaHit: 0
+  AreaDmg: 40
+  AreaCycle: 0.5
+  DotHit: 0
+  DotDmg: 50
+  DotTime: 5
+  Cycle: 0.3
+  HitCount: 1
+  PowerMemory:
+  - 0
+  - 0
+  - 0
+  ElecShock: 1
+  ShockTime: 4
 --- !u!114 &114599114313508440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5440,34 +5435,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 2
   play: {fileID: 8300000, guid: 35da7a894dc5b7540af0832f2d15e1e9, type: 3}
---- !u!114 &114690966561953394
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1195617831738944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c31f7d58f88c54049b532ff11b0ce3fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OneHit: 1
-  Power: 100
-  AreaHit: 0
-  AreaDmg: 40
-  AreaCycle: 0.5
-  DotHit: 0
-  DotDmg: 50
-  DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
-  PowerMemory:
-  - 0
-  - 0
-  - 0
-  Delete_Delay_Time: 2
-  ElecShock: 1
-  ShockTime: 4
 --- !u!114 &114703632791706076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5626,7 +5593,6 @@ MonoBehaviour:
   - 100
   - 60
   - 50
-  Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
 --- !u!120 &120056257934470126
@@ -7059,6 +7025,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!135 &135473468153359060
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1985141604899838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135565149265836862
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -7094,18 +7072,6 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 4
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135914767234773074
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1195617831738944}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198000460169598982
 ParticleSystem:

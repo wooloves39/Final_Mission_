@@ -2989,6 +2989,12 @@ Prefab:
       propertyPath: nextParticle
       value: 
       objectReference: {fileID: 578812414}
+    - target: {fileID: 114544344718867694, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 0dabe6c7c1dc9ac41b920f17dc046b81,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0

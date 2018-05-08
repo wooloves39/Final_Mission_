@@ -9,6 +9,7 @@ public class SeiKwanSkill : MonoBehaviour
 	private int skill;
 	private GameObject target;
 	private float handDis;
+	public float HandeDis { get { return handDis; } set {handDis=value; } }
 	float deltaTime;
 	public GameObject Gate;
 	public GameObject[] sky_Arraws;

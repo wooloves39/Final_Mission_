@@ -16,9 +16,12 @@ public class RangedAttack : MonoBehaviour {
 
 
 	// Use this for initialization
-	void OnEnable()
+	private void Awake()
 	{
 		Rigi = GetComponent<Rigidbody>();
+	}
+	void OnEnable()
+	{
 		this.transform.position = StartPlace.transform.position;
 		Direction =  Vector3.Normalize(new Vector3(PlayerPos.x, 0.0f, PlayerPos.z) - new Vector3(this.transform.position.x, 0.0f, this.transform.position.z));
 		MyTime = 0.0f;
@@ -38,7 +41,7 @@ public class RangedAttack : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player")
+		if (other.CompareTag("Player"))
 		{
 			PlayerState Player = other.GetComponentInParent<PlayerState>();
 			if (Player != null)

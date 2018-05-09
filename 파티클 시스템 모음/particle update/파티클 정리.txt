@@ -9,7 +9,29 @@ magic_effect_캐릭터이름
 > 마법진 그릴 때 문양에 닿을 때마다 나오는 효과
 
 par3
-> 발 밑을 따라다님
+> 발 밑을 따라다님-몬스터 등장할때 모든 몬스터 등장 시
+
+
+
+carge_01.2
+> 차징 효과
+
+
+Magic_Ring_05
+> 속성 변경 시 속성이 바뀜에 따라 색으로 표시, 속성 변경을 완료하면 사라짐-안나옴
+
+
+
+whirl_11
+> 정면에 떠 있는 포탈 -안나옴
+
+particle core glow
+> 속성 변경 후 그 속성에 맞게 장착되는 효과 -속성바꾸기 변경
+
+
+현웅
+
+
 
 magic_boom
 > 범위 공격의 폭발 효과, 마법진 그리기 성공시 나오는 효과
@@ -24,11 +46,6 @@ shot_shock_aura
 shot_aura_ex
 > shot_shock_aura의 예시인데 shot_shock_aura의 주기 조절 필요
 
-carge_01.2
-> 차징 효과
-
-Magic_Ring_06
-> 메뉴 선택창에서 UI활성화 시 그 창에 머무름(튀어나오기 전)
 
 particle trail master
 > 연쇄 폭발
@@ -38,24 +55,17 @@ Liberate_03 Megido
 > 파티클을 모두 구 바깥으로 퍼지도록 변경 (현재는 랜덤으로 일부의 파티클만 바깥으로 나감)
 > star06과 함께 사용
 
-whirl_11
-> 정면에 떠 있는 포탈
 
 Liberate_04.1 Darkness
 > 파티클 하나만 주위를 돌면서 디버프 표현(디버프에 따라 색 다름)
 
-Spiral_01.1.3 Portal
+Spiral_02.1.3 Portal
 > 파티클 하나만 주위를 돌면서 버프 표현(버프에 따라 색 다름)
 
-Spiral_01.1.2 Fairydust
+Spiral_02.1.2 Fairydust
 > 버프 사용시 나타나는 효과(루프x)
 
-Magic_Ring_05
-> 속성 변경 시 속성이 바뀜에 따라 색으로 표시, 속성 변경을 완료하면 사라짐
 
-particle core glow
-> 속성 변경 후 그 속성에 맞게 장착되는 효과
 
 projectile_01 Noise
 > 빠른 피사체의 궤적(ex, 화살의 궤적, 마법구의 궤적)
-

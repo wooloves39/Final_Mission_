@@ -30,33 +30,41 @@ public class BattleCommand : MonoBehaviour {
 	}
 	public void BattleMove(MoveMsg msg)
 	{
-		agent.destination = msg.destination;
-		agent.speed = msg.Speed;
-		TimeLimit = msg.time;
-		time = 0.0f;
-
-		StartCoroutine("BMove");
+		if (this.gameObject.activeInHierarchy)
+		{
+			agent.destination = msg.destination;
+			agent.speed = msg.Speed;
+			TimeLimit = msg.time;
+			time = 0.0f;
+			StartCoroutine("BMove");
+		}
 	}
 	public void Attack(float T, bool b)
 	{
-		DMG = MobInfo.Attack;
-		agent.speed = 0;
-		TimeLimit = T;
-		time = 0.0f;
-		MobSound.PlaySound(2);
-		if(b)
-			StartCoroutine("RangeAtt");
-		else
-			StartCoroutine("MeleeAtt");
+		if (this.gameObject.activeInHierarchy)
+		{
+			DMG = MobInfo.Attack;
+			agent.speed = 0;
+			TimeLimit = T;
+			time = 0.0f;
+			MobSound.PlaySound(2);
+			if (b)
+				StartCoroutine("RangeAtt");
+			else
+				StartCoroutine("MeleeAtt");
+		}
 	}
 	public void Skill(float T,int n)
 	{
-		agent.speed = 0;
-		TimeLimit = T;
-		time = 0.0f;
-		skill_index = n;
-		DMG = MobInfo.SkillDMG[skill_index];
-		StartCoroutine("SkillCoroutine");
+		if (this.gameObject.activeInHierarchy)
+		{
+			agent.speed = 0;
+			TimeLimit = T;
+			time = 0.0f;
+			skill_index = n;
+			DMG = MobInfo.SkillDMG[skill_index];
+			StartCoroutine("SkillCoroutine");
+		}
 	}
 
 

@@ -7,11 +7,12 @@ public class SkillChange : MonoBehaviour
 	public LineDraw Draw_Rtouch;
 	public Material[] MpMaterial;
 	private Color Color;
-	public GameObject ChangeParticle;
+	public SetChangeParticle ChangeParticle;
 	public GameObject[] Hand;
 	public GameObject Seikwan;
 	public GameObject[] Dell;
 	private Color[] HandColor;
+	private int Index = 0;
 	// Use this for initialization
 	private void Awake()
 	{
@@ -38,7 +39,11 @@ public class SkillChange : MonoBehaviour
 			Color = HandColor[LineDraw.curType];
 			for (int i = 0; i < MpMaterial.Length; ++i)
 				MpMaterial[i].SetColor("_EmissionColor", Color);
-			ChangeParticle.SetActive(true);
+			++Index;
+			if (Index > 2) Index = 0;
+			ChangeParticle.gameObject.SetActive(true);
+
+			ChangeParticle.setChange(Index);
 			StartCoroutine(ChangeObject());
 		}
 	}

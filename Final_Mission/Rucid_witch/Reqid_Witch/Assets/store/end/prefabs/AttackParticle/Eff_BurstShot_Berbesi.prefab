@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4686896333051158}
+  - component: {fileID: 114175425026634704}
   m_Layer: 0
   m_Name: Eff_BurstShot_Berbesi
   m_TagString: Untagged
@@ -163,6 +164,18 @@ Transform:
   m_Father: {fileID: 4209854491437398}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114175425026634704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132335418259268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a05f66794b506864687c79989fce924b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndTime: 1.8
 --- !u!198 &198278941310719278
 ParticleSystem:
   m_ObjectHideFlags: 1

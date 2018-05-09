@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeObject : MonoBehaviour {
-	private ParticleSystem particle;
-	// Use this for initialization
+	private SetChangeParticle skillChange;
 	private void Awake()
 	{
-		particle = GetComponent<ParticleSystem>();
+		skillChange = transform.parent.GetComponent<SetChangeParticle>();
 	}
 	private void OnEnable()
 	{
@@ -16,7 +15,7 @@ public class ChangeObject : MonoBehaviour {
 	IEnumerator changeParticle()
 	{
 		yield return new WaitForSeconds(2.0f);
-		transform.parent.gameObject.SetActive(false);
+		skillChange.reset();
 	}
 	// Update is called once per frame
 	void Update () {

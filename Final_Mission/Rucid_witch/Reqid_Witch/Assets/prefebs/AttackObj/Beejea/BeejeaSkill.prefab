@@ -3203,7 +3203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1599457027783210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4023841219811710}
@@ -5053,6 +5053,7 @@ MonoBehaviour:
   Delete_Delay_Time: 2
   ElecShock: 1
   ShockTime: 2
+  effect: {fileID: 1340773277856334, guid: 07956b9507f8d9e4494e4a3dea60d334, type: 2}
 --- !u!114 &114094742759298172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5103,6 +5104,7 @@ MonoBehaviour:
   Delete_Delay_Time: 2
   ElecShock: 1
   ShockTime: 2
+  effect: {fileID: 1340773277856334, guid: 07956b9507f8d9e4494e4a3dea60d334, type: 2}
 --- !u!114 &114126380145458134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5163,7 +5165,6 @@ MonoBehaviour:
   - 3
   CoolTime: 0400000050000000080000000c00000028000000
   UseMp: 080000001e0000000f0000001400000032000000
-  sound: []
   handle2: 0
 --- !u!114 &114236269091876912
 MonoBehaviour:
@@ -5466,6 +5467,7 @@ MonoBehaviour:
   Delete_Delay_Time: 2
   ElecShock: 1
   ShockTime: 4
+  effect: {fileID: 0}
 --- !u!114 &114703632791706076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5627,6 +5629,7 @@ MonoBehaviour:
   Delete_Delay_Time: 3
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1340773277856334, guid: 07956b9507f8d9e4494e4a3dea60d334, type: 2}
 --- !u!120 &120056257934470126
 LineRenderer:
   m_ObjectHideFlags: 1

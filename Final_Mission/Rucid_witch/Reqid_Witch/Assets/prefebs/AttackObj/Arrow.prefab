@@ -570,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1915954164937626
 GameObject:
   m_ObjectHideFlags: 1
@@ -1453,7 +1453,7 @@ MonoBehaviour:
   Power: 20
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -1463,8 +1463,10 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114384292155368832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1480,7 +1482,7 @@ MonoBehaviour:
   Power: 20
   AreaHit: 0
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -1490,8 +1492,10 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114493414959360648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1507,7 +1511,7 @@ MonoBehaviour:
   Power: 50
   AreaHit: 1
   AreaDmg: 40
-  AreaTime: 0.5
+  AreaCycle: 0.5
   DotHit: 0
   DotDmg: 50
   DotTime: 5
@@ -1517,8 +1521,10 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114803221524516594
 MonoBehaviour:
   m_ObjectHideFlags: 1

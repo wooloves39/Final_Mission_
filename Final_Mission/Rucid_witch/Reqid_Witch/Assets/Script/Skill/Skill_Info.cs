@@ -25,6 +25,8 @@ public class Skill_Info : MonoBehaviour {
 
 	public bool ElecShock = false;
 	public float ShockTime = 2.0f;
+
+	public GameObject effect;
 	private void OnEnable()
 	{
 		PowerMemory[0] = Power;
@@ -42,11 +44,12 @@ public class Skill_Info : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Monster")
+		if (other.CompareTag( "Monster"))
 		{
 			ObjList.Add(other.gameObject);
 			ObjectLife temp;
 			temp = other.GetComponentInParent<ObjectLife>();
+			Instantiate(effect,other.transform.position,Quaternion.identity);
 			if (OneHit)
 			{
 				if (!temp.MomentInvincible)

@@ -2508,7 +2508,7 @@ Transform:
   - {fileID: 4546753867971770}
   - {fileID: 4971929258339786}
   m_Father: {fileID: 4226235083719384}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4013855743997166
 Transform:
@@ -2900,9 +2900,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4322901136394922}
-  - {fileID: 4492410689604924}
   - {fileID: 4012879512772246}
   - {fileID: 4990561866607344}
+  - {fileID: 4492410689604924}
   - {fileID: 4143204967088772}
   - {fileID: 4753341944812820}
   - {fileID: 4013855743997166}
@@ -3442,7 +3442,7 @@ Transform:
   - {fileID: 4773638178527014}
   - {fileID: 4049104589874050}
   m_Father: {fileID: 4226235083719384}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4494093012681310
 Transform:
@@ -4507,7 +4507,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4226235083719384}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23004343019274152
 MeshRenderer:
@@ -7285,6 +7285,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114407105533464538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7313,6 +7314,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114407799192202466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7427,6 +7429,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114497313541532178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7466,6 +7469,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114537585133576256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7538,6 +7542,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114604300950010792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7566,6 +7571,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114608707240012234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7660,6 +7666,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114682849440541568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7743,6 +7750,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114760255041307456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7859,6 +7867,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114888802131466718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7887,6 +7896,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114904093604757194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7959,6 +7969,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114934534155702204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7987,6 +7998,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114940071352312092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8037,6 +8049,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
+  effect: {fileID: 1287406811504554, guid: b8e4a931cd5372445b126c0234e653ae, type: 2}
 --- !u!114 &114957083407696170
 MonoBehaviour:
   m_ObjectHideFlags: 1

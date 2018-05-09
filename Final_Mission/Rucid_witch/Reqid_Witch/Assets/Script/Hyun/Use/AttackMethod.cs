@@ -38,7 +38,7 @@ public class AttackMethod : MonoBehaviour
 	private PlayerState MyState;
 	private Viberation PlayerViberation;
 	public Targetting PlayerTarget;
-	public LineDraw typecheck;
+	private LineDraw typecheck;
 	// Use this for initialization
 	private void Awake()
 	{

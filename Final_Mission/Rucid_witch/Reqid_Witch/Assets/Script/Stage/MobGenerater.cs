@@ -85,9 +85,10 @@ public class MobGenerater : MonoBehaviour {
 
 				}
 				myTime++;
-				if (myTime >= 1200)
-					break;
-				else
+                //웨이브 여러개의 오브젝트로 관리해서 안씀
+				//if (myTime >= 1200)
+				//	break;
+				//else
 					yield return new WaitForSeconds(1);
 			}
 			yield return new WaitForSeconds(1);

@@ -23,6 +23,7 @@ public class PlayerState : MonoBehaviour
 
 	private PlayerSoundSetting playerSound;
 	public bool LightningBolt;
+	public GameObject chraging;
 	// Use this for initialization
 	void Awake()
 	{
@@ -72,19 +73,32 @@ public class PlayerState : MonoBehaviour
 	public void SetMyState(State state)
 	{
 		MyState = state;
-		if (state != State.Charging) ChargingTime = 0.0f;
+		if (MyState != State.Charging) { ChargingTime = 0.0f; chraging.SetActive(false); }
+		else
+		{
+			chraging.SetActive(true);
+		}
 
 	}
 	public void SetMyState(State state, float time)
 	{
 		MyState = state;
 		MaxChargingTime = time;
-		if (state != State.Charging) ChargingTime = 0.0f;
+		if (MyState != State.Charging) { ChargingTime = 0.0f; chraging.SetActive(false); }
+		else
+		{
+			chraging.SetActive(true);
+		}
 
 	}
 	public void SetMyState(int state)
 	{
 		MyState = (State)state;
+		if (MyState != State.Charging) { ChargingTime = 0.0f; chraging.SetActive(false); }
+		else
+		{
+			chraging.SetActive(true);
+		}
 	}
 	public float GetHp()
 	{

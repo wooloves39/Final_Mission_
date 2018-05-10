@@ -7,6 +7,7 @@ public class SeiKwanSkill : MonoBehaviour
 
 	// Use this for initialization
 	private int skill;
+    private PlayerState player;
 	private GameObject target;
 	private float handDis;
 	public float HandeDis { get { return handDis; } set { handDis = value; } }
@@ -21,40 +22,70 @@ public class SeiKwanSkill : MonoBehaviour
 	//private Collider collider;
 	public GameObject SeiKwanArrow;
 
+    public float[] UseMp = {5,10,15,40,70};
+    public float[] CoolTime = {5,10,15,40,70};
+    private bool[] CoolDown = {false,false,false,false,false};
 
 	private Vector3 curScale;
 	private void Awake()
 	{
+        player = FindObjectOfType<PlayerState>();
 		deltaTime = Time.deltaTime;
+        for (int i = 0; i < 5; ++i)
+        {
+            CoolDown[i] = false;
+        }
 		//collider = GetComponent<Collider>();
 	}
 	public void shoot(int skillIndex, GameObject targets, float handDistance, float del_time = 10.0f)
 	{
+        bool Mp = false;
+        bool Cool = false;
 		transform.localScale = transform.localScale * 3;
 		target = targets;
 		skill = skillIndex;
 		handDis = handDistance;
-		switch (skill)
-		{
-			case 1:
-				BraveArrow();
-				break;
-			case 2:
-				ArrowTrab();
-				break;
-			case 3:
-				SkyArrow(targets.transform.position);
-				break;
-			case 5:
-				HavensGate(targets.transform.position);
-				break;
-		}
+        if (CoolDown[skill - 1])
+        {
+            Cool = true;
+        }
+        if (player.Mp < UseMp[skill - 1])
+        {
+            Mp = true;
+        }
+        if (!Cool && !Mp)
+        {
+            switch (skill)
+            {
+                case 1:
+                    BraveArrow();
+                    break;
+                case 2:
+                    ArrowTrab();
+                    break;
+                case 3:
+                    SkyArrow(targets.transform.position);
+                    break;
+                case 5:
+                    HavensGate(targets.transform.position);
+                    break;
+            }
+            ChangeCoolDown(skill-1,CoolTime[skill-1]);
+        }
+        else
+        {
+            if (Mp)
+                Debug.Log("Mp부족 처리 부분");
+            if (Cool)
+                Debug.Log("쿨타임 중 처리 부분");
+        }
 		if (skill == 5) del_time += 20f;
 		//if (skill > 1) UseOtherObject();
 		Shoot = true;
 		StartCoroutine(Shooting(del_time));
 		target = null;
 	}
+    //#### #### #### #### 기본
 	private void BraveArrow()
 	{
 		Rigidbody r = GetComponent<Rigidbody>();
@@ -73,7 +104,8 @@ public class SeiKwanSkill : MonoBehaviour
 			TargettingDir += Arrowforward;
 			r.velocity = TargettingDir * 15f * handDis;
 		}
-	}
+    }
+    //#### #### #### #### 
 	private void ArrowTrab()
 	{
 		Rigidbody r = GetComponent<Rigidbody>();
@@ -94,13 +126,14 @@ public class SeiKwanSkill : MonoBehaviour
 		}
 		Debug.Log(handDis);
 		StartCoroutine(ArrowTrabCor(.5f));
-	}
+    }
 	IEnumerator ArrowTrabCor(float timer)
 	{
 		yield return new WaitForSeconds(timer);
 		arrow_trab_particle.SetActive(true);
 		arrow_trab_particle.transform.LookAt(SeiKwanArrow.transform);
-	}
+    }
+    //#### #### #### #### 
 	private void SkyArrow(Vector3 targetPoint)
 	{
 		Vector3 Arrowforward = transform.forward;
@@ -122,7 +155,8 @@ public class SeiKwanSkill : MonoBehaviour
 		Vector3 TargettingDir = Vector3.Normalize(target - skyArrow.transform.position);
 		skyArrow.transform.LookAt(target);
 		r.velocity = TargettingDir * 30f * handDis;
-	}
+    }
+    //#### #### #### #### 
 	private void HavensGate(Vector3 targetPoint)
 	{
 		SeiKwanArrow.SetActive(false);
@@ -144,7 +178,8 @@ public class SeiKwanSkill : MonoBehaviour
 		r.velocity = Vector3.zero;
 		transform.LookAt(Vector3.up);
 		Gate.SetActive(true);
-	}
+    }
+    //#### #### #### #### 
 	IEnumerator Shooting(float delTime = 2.0f)
 	{
 		yield return new WaitForSeconds(delTime);
@@ -179,4 +214,14 @@ public class SeiKwanSkill : MonoBehaviour
 		SeiKwanArrow.SetActive(false);
 		//collider.enabled = false;
 	}
+    private void ChangeCoolDown(int n,float time)   
+    {
+        CoolDown[n] = true;
+        StartCoroutine(CheckCoolTime(n,time));
+    }
+    IEnumerator CheckCoolTime(int n,float time)    
+    {
+        yield return new WaitForSeconds(time);
+        CoolDown[n] = false;
+    }
 }

@@ -1010,9 +1010,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31f7d58f88c54049b532ff11b0ce3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OneHit: 1
+  OneHit: 0
   Power: 20
-  AreaHit: 0
+  AreaHit: 1
   AreaDmg: 40
   AreaCycle: 0.5
   DotHit: 0

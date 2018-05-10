@@ -16,6 +16,7 @@ public class AzuraSkill : MonoBehaviour
     public float[] Speed = {25,20,15,15,25};
     private bool Shoot = false;
     private bool del_timer = false;
+    private CoolDown CoolTime;
 
     private Collider collider;
     public GameObject AzuraBall;
@@ -25,7 +26,8 @@ public class AzuraSkill : MonoBehaviour
     {
         player = FindObjectOfType<PlayerState>();
         deltaTime = Time.deltaTime;
-        collider = GetComponent<Collider>();     
+        collider = GetComponent<Collider>();    
+        CoolTime = FindObjectOfType<CoolDown>();
     }
 
     // Update is called once per frame
@@ -35,32 +37,54 @@ public class AzuraSkill : MonoBehaviour
     }
     public void shoot(int skillIndex, GameObject targets, float handDistance)
     {
+        bool Mp = false;
+        bool Cool = false;
         transform.localScale = transform.localScale * 3;
         target = targets;
         skill = skillIndex;
         handDis = handDistance;
-        switch (skill)
+
+        if (CoolTime.CheckCool(1,skill))
         {
-            case 1:
-                WitchsHone();
-                break;
-            case 2:
-                SoulExplosion(target.transform.position);
-                break;
-            case 3:
-                witchAging( 4f);
-                break;
-            case 4:
-                callofGad(target.transform.position, 20f, 3f);
-				//gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
-				break;
-            case 5:
-                LastBlast(target.transform.position);
-                break;
+            Cool = true;
         }
-        if (skill > 1) UseOtherObject();
-        Shoot = true;
-        StartCoroutine(Shooting());
+        if (CoolTime.CheckMp(1,skill))
+        {
+            Mp = true;
+        }
+        if (!Cool && !Mp)
+        {
+            CoolTime.SetCool(1, skill);
+            switch (skill)
+            {
+                case 1:
+                    WitchsHone();
+                    break;
+                case 2:
+                    SoulExplosion(target.transform.position);
+                    break;
+                case 3:
+                    witchAging(4f);
+                    break;
+                case 4:
+                    callofGad(target.transform.position, 20f, 3f);
+				//gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
+                    break;
+                case 5:
+                    LastBlast(target.transform.position);
+                    break;
+            }
+            if (skill > 1) UseOtherObject();
+            Shoot = true;
+            StartCoroutine(Shooting());
+        }
+        else
+        {
+            if (Mp)
+                Debug.Log("Mp부족 처리 부분");
+            if (Cool)
+                Debug.Log("쿨타임 중 처리 부분");
+        }
         target = null;
     }
     private void WitchsHone()

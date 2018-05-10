@@ -7,7 +7,6 @@ public class SeiKwanSkill : MonoBehaviour
 
 	// Use this for initialization
 	private int skill;
-    private PlayerState player;
 	private GameObject target;
 	private float handDis;
 	public float HandeDis { get { return handDis; } set { handDis = value; } }
@@ -21,21 +20,13 @@ public class SeiKwanSkill : MonoBehaviour
 	public bool Del_timer { get { return del_timer; } set { del_timer = value; } }
 	//private Collider collider;
 	public GameObject SeiKwanArrow;
-
-    public float[] UseMp = {5,10,15,40,70};
-    public float[] CoolTime = {5,10,15,40,70};
-    private bool[] CoolDown = {false,false,false,false,false};
+    private CoolDown CoolTime;
 
 	private Vector3 curScale;
 	private void Awake()
 	{
-        player = FindObjectOfType<PlayerState>();
 		deltaTime = Time.deltaTime;
-        for (int i = 0; i < 5; ++i)
-        {
-            CoolDown[i] = false;
-        }
-		//collider = GetComponent<Collider>();
+        CoolTime = FindObjectOfType<CoolDown>();
 	}
 	public void shoot(int skillIndex, GameObject targets, float handDistance, float del_time = 10.0f)
 	{
@@ -45,16 +36,17 @@ public class SeiKwanSkill : MonoBehaviour
 		target = targets;
 		skill = skillIndex;
 		handDis = handDistance;
-        if (CoolDown[skill - 1])
+        if (CoolTime.CheckCool(3,skill))
         {
             Cool = true;
         }
-        if (player.Mp < UseMp[skill - 1])
+        if (CoolTime.CheckMp(3,skill))
         {
             Mp = true;
         }
         if (!Cool && !Mp)
         {
+            CoolTime.SetCool(3, skill);
             switch (skill)
             {
                 case 1:
@@ -70,7 +62,10 @@ public class SeiKwanSkill : MonoBehaviour
                     HavensGate(targets.transform.position);
                     break;
             }
-            ChangeCoolDown(skill-1,CoolTime[skill-1]);
+            if (skill == 5) del_time += 20f;
+            //if (skill > 1) UseOtherObject();
+            Shoot = true;
+            StartCoroutine(Shooting(del_time));
         }
         else
         {
@@ -79,11 +74,7 @@ public class SeiKwanSkill : MonoBehaviour
             if (Cool)
                 Debug.Log("쿨타임 중 처리 부분");
         }
-		if (skill == 5) del_time += 20f;
-		//if (skill > 1) UseOtherObject();
-		Shoot = true;
-		StartCoroutine(Shooting(del_time));
-		target = null;
+        target = null;
 	}
     //#### #### #### #### 기본
 	private void BraveArrow()
@@ -214,14 +205,4 @@ public class SeiKwanSkill : MonoBehaviour
 		SeiKwanArrow.SetActive(false);
 		//collider.enabled = false;
 	}
-    private void ChangeCoolDown(int n,float time)   
-    {
-        CoolDown[n] = true;
-        StartCoroutine(CheckCoolTime(n,time));
-    }
-    IEnumerator CheckCoolTime(int n,float time)    
-    {
-        yield return new WaitForSeconds(time);
-        CoolDown[n] = false;
-    }
 }

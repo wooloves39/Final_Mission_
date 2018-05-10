@@ -81,9 +81,6 @@ public class MobGenerater : MonoBehaviour {
 							check = true;
 						}
 						num++;
-
-                        //웨이브 리스트에서 오브젝트로 관리 하면서 사용 안ㅁ
-                        break;
 					}
 
 				}

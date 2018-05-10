@@ -178,7 +178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1194609951376182
 GameObject:
   m_ObjectHideFlags: 1
@@ -2025,6 +2025,7 @@ MonoBehaviour:
   AttackFrame: 0.6
   SkillFrame: []
   MobObj: {fileID: 0}
+  skill: []
 --- !u!114 &114750194868987210
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -61,6 +61,7 @@ public class SkillChange : MonoBehaviour
 		if (LineDraw.curType == 1)
 		{
 			Seikwan.SetActive(true);
+			Hand[1].SetActive(true);
 		}
 		else if(LineDraw.curType == 4)
 		{

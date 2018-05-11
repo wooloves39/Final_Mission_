@@ -10,8 +10,8 @@ public class AzuraSkill : MonoBehaviour
     private PlayerState player;
     float deltaTime;
     public GameObject Blast;
-	public GameObject God;
-	public GameObject[] witchsHone;
+    public GameObject God;
+    public GameObject[] witchsHone;
     public GameObject[] SoulExp;
     public float[] Speed = {25,20,15,15,25};
     private bool Shoot = false;
@@ -46,6 +46,7 @@ public class AzuraSkill : MonoBehaviour
 
         if (CoolTime.CheckCool(1,skill))
         {
+            Debug.Log(CoolTime.CheckCool(1, skill));
             Cool = true;
         }
         if (CoolTime.CheckMp(1,skill))
@@ -54,7 +55,6 @@ public class AzuraSkill : MonoBehaviour
         }
         if (!Cool && !Mp)
         {
-            CoolTime.SetCool(1, skill);
             switch (skill)
             {
                 case 1:
@@ -68,12 +68,13 @@ public class AzuraSkill : MonoBehaviour
                     break;
                 case 4:
                     callofGad(target.transform.position, 20f, 3f);
-				//gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
+                    //gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
                     break;
                 case 5:
                     LastBlast(target.transform.position);
                     break;
             }
+            CoolTime.SetCool(1, skill);
             if (skill > 1) UseOtherObject();
             Shoot = true;
             StartCoroutine(Shooting());
@@ -100,9 +101,9 @@ public class AzuraSkill : MonoBehaviour
         for (int i = 0; i < SoulExp.Length; ++i)
         {
             SoulExp[i].SetActive(true);
-			SoulExp[i].transform.localScale = new Vector3(2, 2, 2);
-			//SoulExp[i].transform.Rotate(0, 0, 45);
-			StartCoroutine(SoulExplosionCor(SoulExp[i], target));
+            SoulExp[i].transform.localScale = new Vector3(2, 2, 2);
+            //SoulExp[i].transform.Rotate(0, 0, 45);
+            StartCoroutine(SoulExplosionCor(SoulExp[i], target));
         }
     }
     IEnumerator SoulExplosionCor(GameObject soul, Vector3 target) 
@@ -110,7 +111,7 @@ public class AzuraSkill : MonoBehaviour
         Vector3 dir = new Vector3(Random.Range(-15, 15), Random.Range(-15,15), 0);
         float speed = Random.Range(5, 10);
         float Timer = 0.0f;
-		float MaxTime = Vector3.Distance(soul.transform.position, target)/Speed[1] * 2.5f;
+        float MaxTime = Vector3.Distance(soul.transform.position, target)/Speed[1] * 2.5f;
         while (true)
         {
             Timer += deltaTime;
@@ -147,54 +148,58 @@ public class AzuraSkill : MonoBehaviour
             StartCoroutine(witchAgingCour(witchsHone[i], deltime));
         }
     }
-	IEnumerator witchAgingCour(GameObject hone, float  Limit)
+    IEnumerator witchAgingCour(GameObject hone, float  Limit)
     {
         float timer = 0.0f;
         while (true)//필요없을수도
-		{
-			hone.transform.Translate(Vector3.forward * Speed[2] * handDis * deltaTime);
-			hone.transform.Rotate(0, 1.5f, 0);
+        {
+            hone.transform.Translate(Vector3.forward * Speed[2] * handDis * deltaTime);
+            hone.transform.Rotate(0, 1.5f, 0);
 
-			if (timer > Limit) 
-			  break;
+            if (timer > Limit) 
+                break;
             timer += deltaTime;
             yield return new WaitForSeconds(deltaTime);
         }
         hone.SetActive(false);
     }
-	//########################################################
+    //########################################################
 
-	//callofGad(target.transform.position,10f, 10f, 5f);
-	void callofGad(Vector3 targetPos, float scale, float time)
+    //callofGad(target.transform.position,10f, 10f, 5f);
+    void callofGad(Vector3 targetPos, float scale, float time)
     {
-       God.SetActive(true);
-       God.transform.LookAt(targetPos);
-       StartCoroutine(callofGadCor(God, targetPos, scale, time));
-		//gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
+        God.SetActive(true);
+        God.transform.LookAt(targetPos);
+        StartCoroutine(callofGadCor(God, targetPos, scale, time));
+        //gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
     }
     IEnumerator callofGadCor(GameObject Soul, Vector3 targetPos, float scale, float time)
     {
         float timer = 0.0f;
         float cur_Scale = 1.0f;
-		float limit = 1.0f;
+        float limit = 1.0f;
         while (true)
         {
             timer += deltaTime;
             Vector3 scaleVector = Vector3.one;
-			if (time < 0.5f)
-				cur_Scale = 1.05f;
-			else
-				cur_Scale = 1.1f;
+            if (time < 0.5f)
+                cur_Scale = 1.05f;
+            else
+                cur_Scale = 1.1f;
 
-			limit *= cur_Scale;
-			if (limit < scale)
-			{
-				Soul.transform.localScale = Soul.transform.localScale * cur_Scale;
-				Soul.transform.Translate(Vector3.forward * 0.05f * Speed[3]);
-			}
+            limit *= cur_Scale;
+            if (limit < scale)
+            {
+                Soul.transform.localScale = Soul.transform.localScale * cur_Scale;
+                Soul.transform.Translate(Vector3.forward * 0.05f * Speed[3]);
+            }
 
-			if (timer > time) break;
-			yield return new WaitForSeconds(0.05f);
+            if (timer > time)
+            {
+                God.SetActive(false);
+                break;
+            }
+            yield return new WaitForSeconds(0.05f);
         }
     }
     //########################################################  
@@ -233,8 +238,9 @@ public class AzuraSkill : MonoBehaviour
     public void resetDelete() {
         AzuraBall.SetActive(true);
         collider.enabled = true;
-		God.transform.localScale = Vector3.one;
-		God.transform.position = transform.position;
+        God.SetActive(false);
+        God.transform.localScale = Vector3.one;
+        God.transform.position = transform.position;
         Blast.transform.position = transform.position;
         Blast.transform.localScale = transform.localScale;
         Blast.transform.rotation = transform.rotation;

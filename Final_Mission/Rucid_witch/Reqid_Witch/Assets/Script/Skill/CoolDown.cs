@@ -32,26 +32,26 @@ public class CoolDown : MonoBehaviour {
         {
             Azu_Cool[i] = false;
             Sei_Cool[i] = false;
-	        Bee_Cool[i] = false;
+            Bee_Cool[i] = false;
         }
     }
     public bool CheckMp(int cha, int n)
     {
-        bool send = true;
+        bool send = false;
         n = n - 1;
         switch (cha)
         {
             case 1:
                 if (player.Mp < Azu_UseMp[n])
-                    send = false;
+                    send = true;
                 break;
             case 2: 
                 if (player.Mp < Sei_UseMp[n])
-                    send = false;
+                    send = true;
                 break;
             case 3:
                 if (player.Mp < Bee_UseMp[n])
-                    send = false;
+                    send = true;
                 break;
         }
         return send;
@@ -68,7 +68,7 @@ public class CoolDown : MonoBehaviour {
             case 3:
                 return Bee_Cool[n];
         }
-        return false;
+        return true;
     }
     public void SetCool(int cha, int n)
     {

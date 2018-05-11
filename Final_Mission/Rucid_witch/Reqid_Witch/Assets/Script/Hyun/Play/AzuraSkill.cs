@@ -45,8 +45,9 @@ public class AzuraSkill : MonoBehaviour
         handDis = handDistance;
 
         if (CoolTime.CheckCool(1,skill))
-        {
-            Cool = true;
+		{
+			Debug.Log(CoolTime.CheckCool(1, skill));
+			Cool = true;
         }
         if (CoolTime.CheckMp(1,skill))
         {
@@ -54,7 +55,6 @@ public class AzuraSkill : MonoBehaviour
         }
         if (!Cool && !Mp)
         {
-            CoolTime.SetCool(1, skill);
             switch (skill)
             {
                 case 1:
@@ -73,8 +73,9 @@ public class AzuraSkill : MonoBehaviour
                 case 5:
                     LastBlast(target.transform.position);
                     break;
-            }
-            if (skill > 1) UseOtherObject();
+			}
+			CoolTime.SetCool(1, skill);
+			if (skill > 1) UseOtherObject();
             Shoot = true;
             StartCoroutine(Shooting());
         }
@@ -193,7 +194,11 @@ public class AzuraSkill : MonoBehaviour
 				Soul.transform.Translate(Vector3.forward * 0.05f * Speed[3]);
 			}
 
-			if (timer > time) break;
+			if (timer > time)
+			{
+				God.SetActive(false);
+				break;
+			}
 			yield return new WaitForSeconds(0.05f);
         }
     }
@@ -233,9 +238,10 @@ public class AzuraSkill : MonoBehaviour
     public void resetDelete() {
         AzuraBall.SetActive(true);
         collider.enabled = true;
+		God.SetActive(false);
 		God.transform.localScale = Vector3.one;
 		God.transform.position = transform.position;
-        Blast.transform.position = transform.position;
+		Blast.transform.position = transform.position;
         Blast.transform.localScale = transform.localScale;
         Blast.transform.rotation = transform.rotation;
         Blast.SetActive(false);

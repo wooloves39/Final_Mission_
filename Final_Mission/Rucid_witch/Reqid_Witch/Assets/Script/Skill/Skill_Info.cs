@@ -98,20 +98,20 @@ public class Skill_Info : MonoBehaviour {
 		ObjectLife temp;
 		while (PowerMemory [1] > 0) 
 		{
-			yield return new WaitForSeconds (Cycle);
-			for (int j = 0; j < ObjList.Count; ++j) 
+			for (int j = 0; j < ObjList.Count; ++j)
 			{
+				if (ObjList[j].activeInHierarchy == false)
+					continue;
 				temp = ObjList [j].GetComponentInParent<ObjectLife> ();
-				temp.SendMessage ("SendDMG", PowerMemory [1]);
+				temp.SendMessage ("SendAreaDMG", Minus[1]);
 				if (ElecShock)
 					temp.SendMessage ("Shock", ShockTime);
 
 			}
-
+			yield return new WaitForSeconds(Cycle);
 			PowerMemory[1] -= Minus[1];
 		}
 		yield return new WaitForSeconds(Delete_Delay_Time);
-		this.gameObject.SetActive(false);
 	}
 	IEnumerator DotSkill(ObjectLife obj)
 	{

@@ -67,7 +67,7 @@ public class AzuraSkill : MonoBehaviour
                     witchAging(4f);
                     break;
                 case 4:
-                    callofGad(target.transform.position, 20f, 3f);
+                    callofGad(target.transform.position, 15f, 3f);
                     //gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
                     break;
                 case 5:

@@ -48,6 +48,11 @@ public class ObjectLife : MonoBehaviour {
 			StartCoroutine("SetInvincible");
 		}
 	}
+	private void SendAreaDMG(float dmg)
+	{
+		Hp -= dmg;
+		MobSound.PlaySound(1);
+	}
 	IEnumerator SetInvincible()
 	{
 		MomentInvincible = true;

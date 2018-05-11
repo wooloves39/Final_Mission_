@@ -944,6 +944,18 @@ MonoBehaviour:
   - {fileID: 1902216250298378}
   arrow_trab_particle: {fileID: 1614433395567630}
   SeiKwanArrow: {fileID: 1195537860169114}
+  UseMp:
+  - 5
+  - 10
+  - 15
+  - 40
+  - 70
+  CoolTime:
+  - 5
+  - 10
+  - 15
+  - 40
+  - 70
 --- !u!114 &114058499071982960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1012,7 +1024,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  Delete_Delay_Time: 3
+  Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
@@ -1066,7 +1078,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 12
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135477035291807936
 SphereCollider:

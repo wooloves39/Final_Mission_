@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MobGenerater : MonoBehaviour {
+public class MobGenerater : MonoBehaviour
+{
 
 	public List<GameObject> Position;
 
@@ -11,7 +12,7 @@ public class MobGenerater : MonoBehaviour {
 	public List<int> Prefab_Count;
 
 	public bool Wave_Start = false;
-	public List<int> GenTime;	
+	public List<int> GenTime;
 	public MemoryPool pool = new MemoryPool();
 
 	int myTime = 0;
@@ -24,7 +25,7 @@ public class MobGenerater : MonoBehaviour {
 	{
 		MyState = player.transform.parent.GetComponent<PlayerState>();
 		myTime = 0;
-		for(int i = 0 ; i < Prefab.Count;++i)
+		for (int i = 0; i < Prefab.Count; ++i)
 		{
 			pool.Create(Prefab[i], Prefab_Count[i]);
 		}
@@ -33,7 +34,7 @@ public class MobGenerater : MonoBehaviour {
 
 	IEnumerator MobDie()
 	{
-		while(pool.AllDie() == true)
+		while (pool.AllDie() == true)
 		{
 			yield return new WaitForSeconds(1);
 		}
@@ -54,12 +55,12 @@ public class MobGenerater : MonoBehaviour {
 		{
 			if (Wave_Start)
 			{
-				
+
 				if (num < Prefab_Count.Count)
 				{
 					if (myTime >= GenTime[num])
 					{
-						
+
 						for (int i = 0; i < Prefab_Count[num]; ++i)
 						{
 							if (i % 3 == 0)
@@ -85,11 +86,7 @@ public class MobGenerater : MonoBehaviour {
 
 				}
 				myTime++;
-                //웨이브 여러개의 오브젝트로 관리해서 안씀
-				//if (myTime >= 1200)
-				//	break;
-				//else
-					yield return new WaitForSeconds(1);
+				yield return new WaitForSeconds(1);
 			}
 			yield return new WaitForSeconds(1);
 		}

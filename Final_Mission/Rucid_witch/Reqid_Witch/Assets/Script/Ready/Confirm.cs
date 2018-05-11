@@ -23,7 +23,26 @@ public class Confirm : MonoBehaviour
 			if (choice)
 			{
 				Debug.Log(Singletone.Instance.stage + 3);
-				sceneChange.sceneChange(Singletone.Instance.stage + 3);
+				
+				switch (Singletone.Instance.stage)
+				{
+					case 1:
+						sceneChange.sceneChange("Stage2");
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					case 4:
+						break;
+					case 5:
+						sceneChange.sceneChange("Stage5");
+						break;
+					case 6:
+						break;
+					case 7:
+						break;
+				}
 			}
 			else
 			{

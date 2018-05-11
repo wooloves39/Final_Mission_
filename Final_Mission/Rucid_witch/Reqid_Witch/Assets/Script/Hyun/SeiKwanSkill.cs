@@ -23,11 +23,14 @@ public class SeiKwanSkill : MonoBehaviour
     private CoolDown CoolTime;
 
     private Vector3 curScale;
+	private Rigidbody rigi;
     private void Awake()
     {
         deltaTime = Time.deltaTime;
         CoolTime = FindObjectOfType<CoolDown>();
-    }
+		rigi = GetComponent<Rigidbody>();
+
+	}
     public void shoot(int skillIndex, GameObject targets, float handDistance, float del_time = 10.0f)
     {
         bool Mp = false;
@@ -79,7 +82,7 @@ public class SeiKwanSkill : MonoBehaviour
     //#### #### #### #### 기본
     private void BraveArrow()
     {
-        Rigidbody r = GetComponent<Rigidbody>();
+       
         Vector3 Arrowforward = transform.forward;
         Vector3 TargettingDir = Vector3.zero;
         if (target)
@@ -88,18 +91,17 @@ public class SeiKwanSkill : MonoBehaviour
         }
         if (Vector3.Dot(TargettingDir, Arrowforward) < 0.8f || TargettingDir == Vector3.zero)
         {
-            r.velocity = Arrowforward * 15f * handDis;
+			rigi.velocity = Arrowforward * 15f * handDis;
         }
         else
         {
             TargettingDir += Arrowforward;
-            r.velocity = TargettingDir * 15f * handDis;
+			rigi.velocity = TargettingDir * 15f * handDis;
         }
     }
     //#### #### #### #### 
     private void ArrowTrab()
     {
-        Rigidbody r = GetComponent<Rigidbody>();
         Vector3 Arrowforward = transform.forward;
         Vector3 TargettingDir = Vector3.zero;
         if (target)
@@ -108,12 +110,12 @@ public class SeiKwanSkill : MonoBehaviour
         }
         if (Vector3.Dot(TargettingDir, Arrowforward) < 0.8f || TargettingDir == Vector3.zero)
         {
-            r.velocity = Arrowforward * 15f * handDis;
+			rigi.velocity = Arrowforward * 15f * handDis;
         }
         else
         {
             TargettingDir += Arrowforward;
-            r.velocity = TargettingDir * 15f * handDis;
+			rigi.velocity = TargettingDir * 15f * handDis;
         }
         Debug.Log(handDis);
         StartCoroutine(ArrowTrabCor(.5f));
@@ -128,8 +130,7 @@ public class SeiKwanSkill : MonoBehaviour
     private void SkyArrow(Vector3 targetPoint)
     {
         Vector3 Arrowforward = transform.forward;
-        Rigidbody r = GetComponent<Rigidbody>();
-        r.velocity = (Vector3.up / .5f + Arrowforward) * 15f * handDis;
+		rigi.velocity = (Vector3.up / .5f + Arrowforward) * 15f * handDis;
         for (int i = 0; i < sky_Arraws.Length; ++i)
         {
             StartCoroutine(SkyArrowCor(sky_Arraws[i], targetPoint, 2.0f));
@@ -151,10 +152,9 @@ public class SeiKwanSkill : MonoBehaviour
     private void HavensGate(Vector3 targetPoint)
     {
         SeiKwanArrow.SetActive(false);
-        Rigidbody r = GetComponent<Rigidbody>();
         Vector3 Arrowforward = transform.forward;
         Vector3 TargettingDir = Vector3.Normalize(targetPoint - transform.position);
-        r.velocity = TargettingDir * 15f * handDis;
+		rigi.velocity = TargettingDir * 15f * handDis;
         StartCoroutine(HavensGateCor(targetPoint));
     }
     IEnumerator HavensGateCor(Vector3 targetPoint)
@@ -165,8 +165,7 @@ public class SeiKwanSkill : MonoBehaviour
                 break;
             yield return null;
         }
-        Rigidbody r = GetComponent<Rigidbody>();
-        r.velocity = Vector3.zero;
+		rigi.velocity = Vector3.zero;
         transform.LookAt(Vector3.up);
         Gate.SetActive(true);
     }
@@ -180,7 +179,9 @@ public class SeiKwanSkill : MonoBehaviour
     public bool IsShoot() { return Shoot; }
     public void resetDelete()
     {
-        transform.localScale = Vector3.one;
+		rigi.velocity = Vector3.zero;
+
+		transform.localScale = Vector3.one;
         SeiKwanArrow.SetActive(true);
         //collider.enabled = true;
         Gate.transform.position = transform.position;
@@ -197,6 +198,7 @@ public class SeiKwanSkill : MonoBehaviour
             sky_Arraws[i].transform.localScale = transform.localScale;
             sky_Arraws[i].transform.rotation = transform.rotation;
             sky_Arraws[i].SetActive(false);
+			sky_Arraws[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
         del_timer = false;
     }

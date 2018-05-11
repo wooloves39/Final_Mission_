@@ -63,9 +63,13 @@ public class SelectMenu_Ready : MonoBehaviour
 		}
 		if (InputManager_JHW.RTriggerOn() && InputManager_JHW.LTriggerOn())
 		{
-			//준비 완료되었냐고 물어보는 거 확인후!!
-			source.clip = clips[0];
-			source.Play();
+			if (SelectMenu > -1)
+			{
+				Menus[SelectMenu].transform.rotation = Quaternion.identity;
+				Menus[SelectMenu].transform.Translate(0, 0, 10);
+				ui_arr[SelectMenu].GetComponent<Image>().color = new Color(1, 1, 1);
+				SelectMenu = -1;
+			}
 			confirm = true;
 			GameStart.gameObject.SetActive(true);
 			//

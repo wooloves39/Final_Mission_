@@ -19,7 +19,7 @@ public class MobGenerater : MonoBehaviour
 
 	public Dia_Play player;
 	private PlayerState MyState;
-
+    private IEnumerator temp;
 
 	void Start()
 	{
@@ -29,6 +29,7 @@ public class MobGenerater : MonoBehaviour
 		{
 			pool.Create(Prefab[i], Prefab_Count[i]);
 		}
+        temp = MobGen();
 		StartCoroutine("MobGen");
 	}
 
@@ -43,7 +44,7 @@ public class MobGenerater : MonoBehaviour
 		{
 			MyState.SetMyState(PlayerState.State.Talk);
 			player.setPlay(false);
-
+            StopCoroutine(temp);
 		}
 	}
 	// Update is called once per frame

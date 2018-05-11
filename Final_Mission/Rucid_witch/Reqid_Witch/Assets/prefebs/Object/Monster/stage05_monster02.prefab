@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1524568579106860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1835,10 +1835,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0556dc1217efbf441bc294af6627aeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAttdelay: 0
   AttackFrame: 0.4
   SkillFrame: []
   MobObj: {fileID: 1186254569984266}
-  skill: []
 --- !u!114 &114302561820106884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1524568579106860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -2946,7 +2946,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1524568579106860}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}

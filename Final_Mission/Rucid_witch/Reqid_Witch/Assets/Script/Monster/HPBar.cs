@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HPBar : MonoBehaviour {
-	private ObjectLife life;
+    private ObjectLife life;
+    private Canvas CV;
 	public GameObject TargetFrame;
 	public GameObject BarFrame;
 	public GameObject[] Level;
@@ -13,6 +14,7 @@ public class HPBar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        CV = GetComponent<Canvas>();
 		life = GetComponentInParent<ObjectLife>();
 		BarFrame.SetActive(false);
 		for (int i = 0; i < Level.Length; ++i)
@@ -20,37 +22,40 @@ public class HPBar : MonoBehaviour {
 			Level[i].SetActive(false);
 		}
 	}
+    void Update()
+    {
+        Tageting();
+        if (check)
+        {
+            CV.enabled = true;
+            BarFrame.SetActive(true);
+            here = (float)life.Hp / (float)life.MaxHp;
+            here *= (Level.Length - 1);
+            this.transform.LookAt(Camera.main.transform);
+            for (int i = 0; i < Level.Length; ++i)
+            {
+                if (i == (int)here)
+                    Level[i].SetActive(true);
+                else
+                    Level[i].SetActive(false);
+            }
+        }
+        else
+        {
+            CV.enabled = false;
+            BarFrame.SetActive(false);
+            for (int i = 0; i < Level.Length; ++i)
+            {
+                Level[i].SetActive(false);
+            }
+        }
+    }
 	
 	// Update is called once per frame
-	void Update () {
-		Tageting();
-		if (check)
-		{
-			BarFrame.SetActive(true);
-			here = (float)life.Hp / (float)life.MaxHp;
-			here *= (Level.Length - 1);
-			this.transform.LookAt(Camera.main.transform);
-			for (int i = 0; i < Level.Length; ++i)
-			{
-				if (i == (int)here)
-					Level[i].SetActive(true);
-				else
-					Level[i].SetActive(false);
-			}
-		}
-		else
-		{
-			BarFrame.SetActive(false);
-			for (int i = 0; i < Level.Length; ++i)
-			{
-				Level[i].SetActive(false);
-			}
-		}
-	}
 	void Tageting()
 	{
 		if (taget == true)
-		{
+        {
 			TargetFrame.SetActive(true);
 			check = true;
 		}
@@ -60,7 +65,7 @@ public class HPBar : MonoBehaviour {
 			TargetFrame.SetActive(false);
 		}
 		if (life.Hp != life.MaxHp)
-		{
+        {
 			check = true;
 		}
 	}

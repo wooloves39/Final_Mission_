@@ -131,22 +131,34 @@ public class SeiKwanSkill : MonoBehaviour
     {
         Vector3 Arrowforward = transform.forward;
 		rigi.velocity = (Vector3.up / .5f + Arrowforward) * 15f * handDis;
-        for (int i = 0; i < sky_Arraws.Length; ++i)
-        {
-            StartCoroutine(SkyArrowCor(sky_Arraws[i], targetPoint, 2.0f));
-        }
+        StartCoroutine(SkyArrowCor( targetPoint, 2.0f));
     }
-    IEnumerator SkyArrowCor(GameObject skyArrow, Vector3 target, float timer)
-    {
-        Vector3 dir = new Vector3(Random.Range(-3, 4), Random.Range(-3, 4), Random.Range(-3, 4));
-        float speed = Random.Range(20, 30);
-        yield return new WaitForSeconds(timer);
-		skyArrow.transform.position = target + dir + new Vector3(0,0,20);
-        skyArrow.SetActive(true);
+	IEnumerator SkyArrowCor(Vector3 target, float timer)
+	{
+		float speed = 22.5f;
+		this.transform.localScale = Vector3.one;
+		this.transform.rotation = Quaternion.identity;
+		yield return new WaitForSeconds(timer);
+		SeiKwanArrow.SetActive(false);
 		rigi.velocity = Vector3.zero;
-		skyArrow.transform.LookAt(target+dir);
+
+		Vector3 dir;
+		for (int i = 0; i < sky_Arraws.Length; ++i)
+		{
+			dir = new Vector3(Random.Range(-3, 4), Random.Range(-8, 9), Random.Range(-3, 4));
+			sky_Arraws[i].transform.position = target + dir + new Vector3(0, 20, 0);
+			sky_Arraws[i].transform.LookAt(target + dir);
+			sky_Arraws[i].SetActive(true);
+		}
+
+		while(this.transform.position.y > -8)
+		{
+			this.transform.Translate(Vector3.down * speed * deltaTime);
+			yield return null;
+		}
 		Debug.Log("Sound 땅에 닿음");
-    }
+		SeiKwanArrow.SetActive(true);
+	}
     //#### #### #### #### 
     private void HavensGate(Vector3 targetPoint)
     {

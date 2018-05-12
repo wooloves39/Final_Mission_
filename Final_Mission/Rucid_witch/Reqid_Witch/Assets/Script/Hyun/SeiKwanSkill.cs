@@ -124,6 +124,7 @@ public class SeiKwanSkill : MonoBehaviour
     }
     IEnumerator ArrowTrabCor(float timer)
     {
+<<<<<<< HEAD
 		
 		yield return new WaitForSeconds(timer);
 		SeiKwanArrow.SetActive(false);
@@ -141,6 +142,12 @@ public class SeiKwanSkill : MonoBehaviour
 			yield return null;
 		}
 	}
+=======
+        yield return new WaitForSeconds(timer);
+        arrow_trab_particle.SetActive(true);
+        //arrow_trab_particle.transform.LookAt(SeiKwanArrow.transform);
+    }
+>>>>>>> 85e0cf89abd54a23b67b0ffcf58cdb1d980bf42e
     //#### #### #### #### 
     private void SkyArrow(Vector3 targetPoint)
     {
@@ -228,8 +235,9 @@ public class SeiKwanSkill : MonoBehaviour
             sky_Arraws[i].transform.position = transform.position;
             sky_Arraws[i].transform.localScale = transform.localScale;
             sky_Arraws[i].transform.rotation = transform.rotation;
-            sky_Arraws[i].SetActive(false);
 			sky_Arraws[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+			sky_Arraws[i].SetActive(false);
+			
         }
         del_timer = false;
     }

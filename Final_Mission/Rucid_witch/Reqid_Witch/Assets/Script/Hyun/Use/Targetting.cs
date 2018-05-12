@@ -36,11 +36,6 @@ public class Targetting : MonoBehaviour
 		}
 		if (Mytarget)
 		{
-			//if (!targetPoint.activeSelf)
-			//	targetPoint.SetActive(true);
-			Vector3 pos = Mytarget.transform.position;
-			pos.y += 4;
-			//targetPoint.transform.position = pos;
 			for (int i = 0; i < TargetCount; ++i)
 			{
 				if(TargetMonster[i].GetComponentInChildren<HPBar>() != null)
@@ -48,10 +43,6 @@ public class Targetting : MonoBehaviour
 			}
 			Mytarget.GetComponentInChildren<HPBar>().taget = true;
 		}
-		//else
-		//{
-		//	targetPoint.SetActive(false);
-		//}
 	}
 	private void OnTriggerEnter(Collider other)
 	{

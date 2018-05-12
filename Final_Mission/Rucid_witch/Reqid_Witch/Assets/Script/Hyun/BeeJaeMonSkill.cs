@@ -53,7 +53,7 @@ public class BeeJaeMonSkill : MonoBehaviour
 
 	IEnumerator Buff()//2번스킬
 	{
-		magic[1].transform.position = MyCharacter.transform.position;
+		magic[1].transform.position = target.transform.position;
 		magic[1].SetActive(true);
 	
 		yield return new WaitForSeconds(3.0f);

@@ -14,6 +14,7 @@ public class ObjectLife : MonoBehaviour {
 	public float Range;
 	MonsterSoundSetting MobSound;
 
+	public bool boss;
 	public float Attack;
 	public float[] SkillDMG = {0,0,0,0};
 
@@ -27,14 +28,22 @@ public class ObjectLife : MonoBehaviour {
 	{
 		MobSound = GetComponentInChildren<MonsterSoundSetting>();
 		agent = GetComponent<NavMeshAgent>();
+		ani = GetComponent<Animator>();
 	}
 	
 	private void SendDMG(float dmg)
 	{
 		if (!MomentInvincible)
 		{
-			Hp -= dmg;
+			if (boss)
+			{
+				if (dmg < 50.0)
+					ani.Play("Defence");
+				else
+					ani.Play("Defence2");
+			}
 			MobSound.PlaySound(1);
+			Hp -= dmg;
 			StartCoroutine("SetInvincible");
 		}
 	}

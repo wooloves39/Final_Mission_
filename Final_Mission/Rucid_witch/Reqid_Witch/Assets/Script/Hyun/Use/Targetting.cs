@@ -19,7 +19,7 @@ public class Targetting : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		for(int i = 0; i< TargetMonster.Count;++i)
+		for (int i = 0; i < TargetMonster.Count; ++i)
 		{
 			if (TargetMonster[i].GetComponentInParent<ObjectLife>().Hp <= 0)
 			{
@@ -39,8 +39,8 @@ public class Targetting : MonoBehaviour
 		{
 			for (int i = 0; i < TargetCount; ++i)
 			{
-				if(TargetMonster[i].GetComponentInChildren<HPBar>() != null)
-					TargetMonster[i].GetComponentInChildren<HPBar>().taget= false;
+				if (TargetMonster[i].GetComponentInChildren<HPBar>() != null)
+					TargetMonster[i].GetComponentInChildren<HPBar>().taget = false;
 			}
 			Mytarget.GetComponentInChildren<HPBar>().taget = true;
 		}
@@ -63,7 +63,7 @@ public class Targetting : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Monster"))
 		{
-			other.GetComponentInChildren<HPBar>().taget= false;
+			other.GetComponentInChildren<HPBar>().taget = false;
 			if (Mytarget == other.gameObject)
 			{
 				Mytarget = null;
@@ -87,7 +87,7 @@ public class Targetting : MonoBehaviour
 		if (TargetCount <= 0)
 		{
 			TargetCount = 0;
-			   firstCheck = false;
+			firstCheck = false;
 			return;
 		}
 		for (int i = 0; i < TargetCount; ++i)
@@ -129,7 +129,7 @@ public class Targetting : MonoBehaviour
 				index = 0;
 			else if (Stick.x > 0)
 				index = 1;
-			Vector3 RorL=Vector3.zero;
+			Vector3 RorL = Vector3.zero;
 			if (index != 5)
 			{
 				SortTargetList();
@@ -169,8 +169,12 @@ public class Targetting : MonoBehaviour
 			return 0;
 		});
 	}
-	public GameObject getMytarget() {
-		return null; }
+	public GameObject getMytarget()
+	{
+		if (Mytarget == null)
+		{
+			return null;
+		}
 		return Mytarget.gameObject;
 	}
 }

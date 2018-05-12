@@ -2203,7 +2203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156858615862002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 16.4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4780522298195066}
@@ -4389,6 +4389,7 @@ MonoBehaviour:
   Speed: 2
   BattleSpeed: 6
   Range: 12.5
+  boss: 1
   Attack: 0
   SkillDMG:
   - 10
@@ -4505,6 +4506,12 @@ MonoBehaviour:
   Time_Skill_4: 6
   Time_Skill_5: 6
   Die_Time: 2
+  SkillValue:
+  - 0
+  - 35
+  - 60
+  - 85
+  - 100
   Delay: 0
   Fight: 0
 --- !u!114 &114312853433716232

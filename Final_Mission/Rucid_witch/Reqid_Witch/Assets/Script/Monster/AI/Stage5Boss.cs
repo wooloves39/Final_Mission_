@@ -30,9 +30,12 @@ public class Stage5Boss: MonoBehaviour {
 
 	public float Die_Time = 2.0f;
 
+
+	public float[] SkillValue = {0,35,60,85,100 };      
+
 	public bool Delay = false;
 	public bool Fight = false;//false;
-
+	private bool Ulti = false;
 	Queue Battle = null;
 	Queue Peace = null;
 	private Transform Player;
@@ -114,7 +117,26 @@ public class Stage5Boss: MonoBehaviour {
 				{
 
 					if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
-						num = getRandom(20, 25);
+					{
+						int NUM = getRandom(0, 100);
+						if (!Ulti && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
+						{
+							Debug.Log("Ulti");
+							num = 24;
+							Ulti = true;
+						}
+						else
+						{
+							if (SkillValue[0] <= NUM && NUM < SkillValue[1])
+								num = 20;
+							else if (SkillValue[1] <= NUM && NUM < SkillValue[2])
+								num = 21;
+							else if (SkillValue[2] <= NUM && NUM < SkillValue[3])
+								num = 22;
+							else
+								num = 23;
+						}
+					}
 					else
 						num = 11;
 				}

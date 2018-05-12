@@ -20,7 +20,7 @@ public class Bee_MonBuff : MonoBehaviour {
 		while (timer <= 3.0f)
 		{
 			timer += .6f;
-			if (mych.Hp < mych.MaxHp) mych.Hp += 1;
+			if (mych.Hp < mych.MaxHp) mych.Hp +=5;
 			yield return new WaitForSeconds(.6f);
 		}
 		gameObject.SetActive(false);

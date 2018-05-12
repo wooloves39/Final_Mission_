@@ -124,7 +124,6 @@ public class SeiKwanSkill : MonoBehaviour
     }
     IEnumerator ArrowTrabCor(float timer)
     {
-<<<<<<< HEAD
 		
 		yield return new WaitForSeconds(timer);
 		SeiKwanArrow.SetActive(false);
@@ -138,17 +137,11 @@ public class SeiKwanSkill : MonoBehaviour
 		while(t<5.0f)
 		{
 			t += deltaTime;
-			arrow_trab_particle.transform.Rotate(new Vector3(30, 30, 30) * t, Space.Self);
+			arrow_trab_particle.transform.Rotate(new Vector3(30, 30, 30) * deltaTime, Space.Self);
 			yield return null;
 		}
-	}
-=======
-        yield return new WaitForSeconds(timer);
-        arrow_trab_particle.SetActive(true);
-        //arrow_trab_particle.transform.LookAt(SeiKwanArrow.transform);
+	
     }
->>>>>>> 85e0cf89abd54a23b67b0ffcf58cdb1d980bf42e
-    //#### #### #### #### 
     private void SkyArrow(Vector3 targetPoint)
     {
         Vector3 Arrowforward = transform.forward;

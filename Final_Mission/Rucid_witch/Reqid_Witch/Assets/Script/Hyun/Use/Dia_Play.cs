@@ -6,12 +6,10 @@ public class Dia_Play : MonoBehaviour
 {
 	private bool Play = true;
 	private bool TalkEnd = false;
-	//public MouseLook mouseLook;
 	public GameObject TalkCanvas;
 	// Use this for initialization
 	void Start()
 	{
-		//mouseLook.enabled = false;
 		TalkCanvas.SetActive(false);
 		StartCoroutine(TalkCoroutine());
 	}

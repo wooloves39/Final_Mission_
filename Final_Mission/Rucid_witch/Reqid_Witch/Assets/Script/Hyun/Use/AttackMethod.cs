@@ -228,7 +228,6 @@ public class AttackMethod : MonoBehaviour
 					{
 						AzuraBallNum = i;
 						AzuraBall[i] = Azurapool.NewItem();
-						Debug.Log(AzuraBall[AzuraBallNum]);
 						AzuraBall[i].transform.position = AttackPoint;
 						Rigidbody r = AzuraBall[i].GetComponent<Rigidbody>();
 						r.useGravity = false;
@@ -374,7 +373,6 @@ public class AttackMethod : MonoBehaviour
 					}
 					else
 					{
-						Debug.Log(Hands[0].transform.localPosition.x);
 						if (Hands[0].transform.localPosition.x < 0)
 						{
 							LookAtpos.z += 0.06f;

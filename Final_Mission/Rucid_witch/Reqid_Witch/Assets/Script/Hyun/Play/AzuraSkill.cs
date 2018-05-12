@@ -48,7 +48,6 @@ public class AzuraSkill : MonoBehaviour
 
         if (CoolTime.CheckCool(1,skill))
         {
-            Debug.Log(CoolTime.CheckCool(1, skill));
             Cool = true;
         }
         if (CoolTime.CheckMp(1,skill))

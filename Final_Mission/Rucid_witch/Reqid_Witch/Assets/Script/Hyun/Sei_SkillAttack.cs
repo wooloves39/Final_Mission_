@@ -8,11 +8,11 @@ public class Sei_SkillAttack : MonoBehaviour
 	private float damage = 0.0f;
 	public float skillBalance;
 	private SeiKwanSkill seiKwanSkill;
+	public float skill_Del_Time = 0.0f;
 	private void OnEnable()
 	{
 		seiKwanSkill = transform.GetComponentInParent<SeiKwanSkill>();
-		   damage = seiKwanSkill.HandeDis * skillBalance;
-		Debug.Log(damage);
+		damage = seiKwanSkill.HandeDis * skillBalance;
 	}
 	void OnTriggerEnter(Collider other)
 	{
@@ -22,8 +22,13 @@ public class Sei_SkillAttack : MonoBehaviour
 			if (Player != null)
 			{
 				Player.DamageHp(damage);
-				seiKwanSkill.Del_timer=true;
+				StartCoroutine(Del_time());
 			}
 		}
+	}
+	IEnumerator Del_time()
+	{
+		yield return new WaitForSeconds(skill_Del_Time);
+		seiKwanSkill.Del_timer = true;
 	}
 }

@@ -57,9 +57,6 @@ public class Stage5MobAI: MonoBehaviour {
 			Peace.Enqueue (BasicPeace [i]);
 		for (int i = 0; i<BasicBattle.Length ; ++i)
 			Battle.Enqueue (BasicBattle [i]);
-		//while (Peace.Count > 0) {
-		//	Debug.Log (Peace.Dequeue ());
-		//}
 		StartCoroutine("AISearching");
 	}
 	IEnumerator AISearching(){
@@ -74,9 +71,6 @@ public class Stage5MobAI: MonoBehaviour {
 		{
 			if (ObjLife.Hp <= 0)
 			{
-				//Targetting T;
-				//T = FindObjectOfType<Targetting>().GetComponent<Targetting>();
-				//Debug.Log(T);
 				ani.SetBool("Die", true);
 
 				MobSound.PlaySound(3);
@@ -131,20 +125,12 @@ public class Stage5MobAI: MonoBehaviour {
 							num = 11;
 					}
 
-			//	//	
-			//	//실행할 동작 - 삭제할 부분
-			//	Debug.Log(num);
-			//	string temp;
-			//	AITree.Instance.AIDic.TryGetValue(num, out temp);
-			//	Debug.Log(temp);
-			//	//실행할 동작 - 삭제할 부분
-
+			
 					switch (num)
 					{
 						case 0:
 							{
-								//ani.SetBool("Stop", true);
-								ani.SetBool("IsMove", false);
+									ani.SetBool("IsMove", false);
 								time = Time_Nature_Stop;
 								break;
 							}

@@ -45,22 +45,6 @@ public class Skill_Info : MonoBehaviour {
 		Minus[1] = (float)(AreaDmg/ HitCount);
 		Minus[2] = (float)(DotDmg / HitCount);
 	}
-//	rivate void OnTriggerStay(Collider other)
-//	
-//	if(Once)
-//	{
-//		if (time > DotTime)
-//		{
-//			for (int i = 0; i < ObjList.Count; ++i)
-//			{
-//				Debug.Log(ObjList[i].transform.position);
-//				Instantiate(effect, ObjList[i].transform.position, Quaternion.identity);
-//			}
-//			time = 0;
-//		}
-//	}
-//	time += Time.deltaTime;
-//	
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag( "Monster"))

@@ -20,10 +20,9 @@ public class TitleScene : MonoBehaviour
     {
         // 스크린 해상도 맞추기
         //실제 플레이에선 3번째 인자 true
-        Screen.SetResolution(Screen.width, Screen.width *( 9 / 5), false);
+        Screen.SetResolution(Screen.width, Screen.width *( 9 / 5), true);
         Screen_width = Screen.width;
         Screen_height = Screen_width*(9/5);
-
     }
     void Start()
     {

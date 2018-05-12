@@ -84,7 +84,7 @@ public class SeiKwanSkill : MonoBehaviour
     //#### #### #### #### 기본
     private void BraveArrow()
     {
-        GetComponentInChildren<Skill_Sound_Set>().check = true; 
+        SeiKwanArrow.GetComponentInChildren<Skill_Sound_Set>().check = true; 
         Vector3 Arrowforward = transform.forward;
         Vector3 TargettingDir = Vector3.zero;
         if (target)
@@ -165,13 +165,19 @@ public class SeiKwanSkill : MonoBehaviour
 			sky_Arraws[i].transform.LookAt(target + dir);
 			sky_Arraws[i].SetActive(true);
 		}
-
+		bool once = false;
 		while(this.transform.position.y > -8)
 		{
+			if (this.transform.position.y < -4 && !once)
+			{
+				sky_Arraws[0].GetComponentInChildren<Skill_Sound_Set>().check = true;
+				once = true;
+			}
 			this.transform.Translate(Vector3.down * speed * deltaTime);
 			yield return null;
 		}
 		Debug.Log("Sound 땅에 닿음");
+		
 		SeiKwanArrow.SetActive(true);
 	}
     //#### #### #### #### 
@@ -193,7 +199,8 @@ public class SeiKwanSkill : MonoBehaviour
         }
 		rigi.velocity = Vector3.zero;
         transform.LookAt(Vector3.up);
-        Gate.SetActive(true);
+		Gate.GetComponentInChildren<Skill_Sound_Set>().check = true;
+		Gate.SetActive(true);
     }
     //#### #### #### #### 
     IEnumerator Shooting(float delTime = 2.0f)
@@ -232,7 +239,8 @@ public class SeiKwanSkill : MonoBehaviour
 			sky_Arraws[i].SetActive(false);
 			
         }
-        del_timer = false;
+		Gate.SetActive(false);
+		del_timer = false;
     }
     private void UseOtherObject()
     {

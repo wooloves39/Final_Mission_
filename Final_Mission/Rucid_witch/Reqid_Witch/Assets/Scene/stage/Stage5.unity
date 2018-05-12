@@ -11243,7 +11243,7 @@ Prefab:
       objectReference: {fileID: 8300000, guid: fd91eccd6195003479e508c5d9595a2f, type: 3}
     - target: {fileID: 1070848978108374, guid: ad03fda53e1fafa49a4af4f758a93d2c, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad03fda53e1fafa49a4af4f758a93d2c, type: 2}
@@ -14660,6 +14660,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 710c668c5cb938d4681dfb6e0f965ce6, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1623479536 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114524165559138468, guid: 710c668c5cb938d4681dfb6e0f965ce6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1623479535}
+  m_Script: {fileID: 11500000, guid: f9035e037b71b0d46a41168eca0ecb78, type: 3}
 --- !u!1 &1623479537 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1365574565530988, guid: 710c668c5cb938d4681dfb6e0f965ce6,
@@ -14976,6 +14982,47 @@ Prefab:
       propertyPath: nextParticle
       value: 
       objectReference: {fileID: 1623479537}
+    - target: {fileID: 1182652138424312, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114787154163575040, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a78f13890ac53c54eb336ee1210ff912,
+        type: 3}
+    - target: {fileID: 114982011670219816, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 04a696f1ed835df499f0acabe851f315,
+        type: 3}
+    - target: {fileID: 114982011670219816, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114982011670219816, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114982011670219816, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: fileName
+      value: /Text/talk/Episode04.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: next
+      value: 
+      objectReference: {fileID: 1623479536}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0

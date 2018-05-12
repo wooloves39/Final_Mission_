@@ -73,7 +73,9 @@ public class PlayerState : MonoBehaviour
 	public void SetMyState(State state)
 	{
 		MyState = state;
-		if (MyState != State.Charging) { ChargingTime = 0.0f; chraging.SetActive(false); }
+		if (MyState != State.Charging) {
+			ChargingTime = 0.0f;
+			chraging.SetActive(false); }
 		else
 		{
 			chraging.SetActive(true);

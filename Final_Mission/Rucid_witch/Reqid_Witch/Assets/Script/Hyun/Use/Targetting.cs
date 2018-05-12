@@ -114,7 +114,7 @@ public class Targetting : MonoBehaviour
 			{
 				TargetMonster.Remove(TargetMonster[i]);
 				TargetCount--;
-				break;
+				--i;
 			}
 		}
 	}
@@ -170,8 +170,11 @@ public class Targetting : MonoBehaviour
 		});
 	}
 	public GameObject getMytarget() {
+
 		Debug.Log(Mytarget);
-		if (Mytarget == null) return null;
+		if (Mytarget == null){
+			Debug.Log(TargetMonster.Count);
+		return null; }
 		return Mytarget.gameObject;
 	}
 }

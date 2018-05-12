@@ -126,12 +126,8 @@ public class Dialog : MonoBehaviour
 						if (wavecnt < WaveStart.Length)
 						{
 							Debug.Log(WaveStart[wavecnt]);
-							WaveStart[wavecnt].GetComponent<MobGenerater>().Wave_Start = true;
+							WaveStart[wavecnt].GetComponent<MobGenerater>().waveOn();
 							wavecnt++;
-						}
-						else
-						{
-							Debug.Log(WaveStart[wavecnt]);
 						}
 					}
 				}
@@ -172,11 +168,10 @@ public class Dialog : MonoBehaviour
 	{
 		if (currentDialogueIndex == 0) return;
 		if (chatChar[currentDialogueIndex] == 0)
-			iTween.ShakePosition(Me, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 1.0f));
+			iTween.ShakePosition(Me, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 0.5f));
 		else if (chatChar[currentDialogueIndex] == 1)
 		{
-			iTween.ShakePosition(Boss, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 1.0f));
-
+			iTween.ShakePosition(Boss, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 0.5f));
 		}
 	}
 

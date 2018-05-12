@@ -33,6 +33,7 @@ public class MobGenerater : MonoBehaviour
 	IEnumerator Waving()
 	{
 		bool alldie = false;
+		yield return new WaitForSeconds(5);
 		while (true)
 		{
 			alldie = false;

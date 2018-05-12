@@ -8,6 +8,10 @@ public class Skill_Sound_Set : MonoBehaviour {
 	public float Wait_Time;
 	public AudioClip play;
 
+    public bool Shoot = false;
+    public GameObject ShootSound;
+    public bool check = false;
+
 	// Use this for initialization
 	void Start () {
 		sound = GetComponent<AudioSource> ();
@@ -15,6 +19,7 @@ public class Skill_Sound_Set : MonoBehaviour {
 	}
 	void OnEnable()
 	{
+        check = false;
 		sound = GetComponent<AudioSource> ();
 		sound.volume = Singletone.Instance.Sound;
 		Invoke ("PlaySound", Wait_Time);
@@ -23,5 +28,21 @@ public class Skill_Sound_Set : MonoBehaviour {
 	{
 		sound.clip = play;
 		sound.Play ();
+        if (Shoot)
+            StartCoroutine("PlayShoot");
 	}
+    IEnumerator PlayShoot()
+    {
+        while (!check)
+        {
+            if (!this.gameObject.activeInHierarchy)
+                break;
+            yield return null;
+        }
+        if (this.gameObject.activeInHierarchy)
+        {
+            AudioSource temp = ShootSound.GetComponent<AudioSource>();
+            temp.Play();
+        }
+    }
 }

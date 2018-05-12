@@ -25,10 +25,13 @@ public class Skill_Info : MonoBehaviour {
 
 	public bool ElecShock = false;
 	public float ShockTime = 2.0f;
-
+	public float time = 0.0f;
+	private bool Once = false;
 	public GameObject effect;
 	private void OnEnable()
 	{
+		Once = false;
+		time = 0.0f;
 		PowerMemory[0] = Power;
 		PowerMemory[1] = AreaDmg;
 		PowerMemory[2] = DotDmg;
@@ -42,6 +45,22 @@ public class Skill_Info : MonoBehaviour {
 		Minus[1] = (float)(AreaDmg/ HitCount);
 		Minus[2] = (float)(DotDmg / HitCount);
 	}
+//	rivate void OnTriggerStay(Collider other)
+//	
+//	if(Once)
+//	{
+//		if (time > DotTime)
+//		{
+//			for (int i = 0; i < ObjList.Count; ++i)
+//			{
+//				Debug.Log(ObjList[i].transform.position);
+//				Instantiate(effect, ObjList[i].transform.position, Quaternion.identity);
+//			}
+//			time = 0;
+//		}
+//	}
+//	time += Time.deltaTime;
+//	
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag( "Monster"))
@@ -54,28 +73,30 @@ public class Skill_Info : MonoBehaviour {
 			{
 				if (!temp.MomentInvincible)
 				{
-					temp.SendMessage("SendDMG", PowerMemory[0]);
+					if (PowerMemory[0] > 0)
+						temp.SendMessage("SendDMG", PowerMemory[0]);
 					if(ElecShock)
 						temp.SendMessage("Shock",ShockTime);
+					if(PowerMemory[0]>0)
 					PowerMemory[0] -= Minus[0];
-					if (PowerMemory[0] <= 0.0f)
-					{
-						Invoke("Delete", Delete_Delay_Time);
-					}
 				}
 			}
 			if (AreaHit)
 			{
 				if (!temp.MomentInvincible)
 				{
-					StartCoroutine("Area_Skill");
+					if(!Once)
+						StartCoroutine("Area_Skill");
+					Once = true;
 				}
 			}
 			if (DotHit)
 			{
 				if (!temp.MomentInvincible)
 				{
-					StartCoroutine("DotSkill", temp);
+					if (!Once)
+						StartCoroutine("DotSkill", temp);
+					Once = true;
 				}
 			}
 			
@@ -95,6 +116,7 @@ public class Skill_Info : MonoBehaviour {
 	}
 	IEnumerator Area_Skill()
 	{
+		yield return new WaitForSeconds(0.1f);
 		ObjectLife temp;
 		while (PowerMemory [1] > 0) 
         {

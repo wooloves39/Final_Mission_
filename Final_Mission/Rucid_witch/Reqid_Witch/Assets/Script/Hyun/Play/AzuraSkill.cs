@@ -17,6 +17,7 @@ public class AzuraSkill : MonoBehaviour
     private bool Shoot = false;
     private bool del_timer = false;
     private CoolDown CoolTime;
+	private Skill_Info info;
 
     private Collider collider;
     public GameObject AzuraBall;
@@ -24,6 +25,7 @@ public class AzuraSkill : MonoBehaviour
 
     private void Awake()
     {
+		info = GetComponent<Skill_Info>();
         player = FindObjectOfType<PlayerState>();
         deltaTime = Time.deltaTime;
         collider = GetComponent<Collider>();    
@@ -54,8 +56,9 @@ public class AzuraSkill : MonoBehaviour
             Mp = true;
         }
         if (!Cool && !Mp)
-        {
-            switch (skill)
+		{
+			if (skill > 1) UseOtherObject();
+			switch (skill)
             {
                 case 1:
                     WitchsHone();
@@ -67,7 +70,7 @@ public class AzuraSkill : MonoBehaviour
                     witchAging(4f);
                     break;
                 case 4:
-                    callofGad(target.transform.position, 15f, 3f);
+                    callofGad(target.transform.position, 15.0f, 3f);
                     //gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
                     break;
                 case 5:
@@ -75,7 +78,6 @@ public class AzuraSkill : MonoBehaviour
                     break;
             }
             CoolTime.SetCool(1, skill);
-            if (skill > 1) UseOtherObject();
             Shoot = true;
             StartCoroutine(Shooting());
         }
@@ -168,7 +170,8 @@ public class AzuraSkill : MonoBehaviour
     //callofGad(target.transform.position,10f, 10f, 5f);
     void callofGad(Vector3 targetPos, float scale, float time)
     {
-        God.SetActive(true);
+		info.PowerMemory[0] = 0.0f;
+		God.SetActive(true);
         God.transform.LookAt(targetPos);
         StartCoroutine(callofGadCor(God, targetPos, scale, time));
         //gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
@@ -182,17 +185,27 @@ public class AzuraSkill : MonoBehaviour
         {
             timer += deltaTime;
             Vector3 scaleVector = Vector3.one;
-            if (time < 0.5f)
-                cur_Scale = 1.05f;
-            else
-                cur_Scale = 1.1f;
+			if (timer < 0.5f)
+			{
+				Soul.transform.Translate(Vector3.forward * 0.05f * Speed[3]);
+
+				cur_Scale = 1.1f;
+			}
+			else
+				cur_Scale = 1.05f;
 
             limit *= cur_Scale;
             if (limit < scale)
-            {
-                Soul.transform.localScale = Soul.transform.localScale * cur_Scale;
-                Soul.transform.Translate(Vector3.forward * 0.05f * Speed[3]);
-            }
+			{
+				Soul.transform.localScale = Soul.transform.localScale * cur_Scale;
+				Soul.transform.position = targetPos;
+
+			}
+			else
+			{
+				God.SetActive(false);
+				break;
+			}
 
             if (timer > time)
             {
@@ -204,7 +217,9 @@ public class AzuraSkill : MonoBehaviour
     }
     //########################################################  
     private void LastBlast(Vector3 target)
-    {
+	{
+		info.PowerMemory[0] = 0.0f;
+		Blast.transform.localScale = Vector3.one*3;
         Blast.SetActive(true);
         Blast.transform.position = target;
         StartCoroutine(LastBlastCor(Blast,2.0f));
@@ -219,7 +234,8 @@ public class AzuraSkill : MonoBehaviour
             if (timer >= Timer)
             {
                 timer = 0;
-                Blast.transform.rotation = Quaternion.identity;
+				Blast.transform.localScale = Vector3.one*3 * (1-timer / Timer);
+				Blast.transform.rotation = Quaternion.identity;
                 Blast.gameObject.SetActive(false);
                 break;
                 //내위치 변경
@@ -236,7 +252,10 @@ public class AzuraSkill : MonoBehaviour
     public bool IsDelete() { return del_timer; }
     public bool IsShoot() { return Shoot; }
     public void resetDelete() {
-        AzuraBall.SetActive(true);
+
+
+		info.PowerMemory[0] = 50.0f;
+		AzuraBall.SetActive(true);
         collider.enabled = true;
         God.SetActive(false);
         God.transform.localScale = Vector3.one;

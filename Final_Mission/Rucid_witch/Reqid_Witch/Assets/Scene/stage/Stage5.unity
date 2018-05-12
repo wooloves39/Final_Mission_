@@ -3613,6 +3613,7 @@ MonoBehaviour:
   Delete_Delay_Time: 0
   ElecShock: 1
   ShockTime: 2
+  time: 0
   effect: {fileID: 0}
 --- !u!1001 &244858179
 Prefab:
@@ -7522,7 +7523,7 @@ Prefab:
     - target: {fileID: 114787334104458518, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
       propertyPath: Prefab_Count.Array.data[0]
-      value: 18
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4817385644351382, guid: 480b50d78952ea745b85c674444a6d87, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11240,6 +11241,10 @@ Prefab:
       propertyPath: sounds.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: fd91eccd6195003479e508c5d9595a2f, type: 3}
+    - target: {fileID: 1070848978108374, guid: ad03fda53e1fafa49a4af4f758a93d2c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad03fda53e1fafa49a4af4f758a93d2c, type: 2}
   m_IsPrefabParent: 0
@@ -15137,6 +15142,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 708137150}
+    - target: {fileID: 1002774873942240, guid: ff052447bd1e15149abc3db12d4c7495, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff052447bd1e15149abc3db12d4c7495, type: 2}
   m_IsPrefabParent: 0
@@ -15178,11 +15187,6 @@ Prefab:
     - target: {fileID: 4226235083719384, guid: d06c184cebac8c0449f1bc393a77aa18, type: 2}
       propertyPath: m_RootOrder
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114739577285570026, guid: d06c184cebac8c0449f1bc393a77aa18,
-        type: 2}
-      propertyPath: Delete_Delay_Time
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d06c184cebac8c0449f1bc393a77aa18, type: 2}

@@ -138,15 +138,14 @@ public class SeiKwanSkill : MonoBehaviour
     }
     IEnumerator SkyArrowCor(GameObject skyArrow, Vector3 target, float timer)
     {
-        Vector3 dir = new Vector3(Random.Range(-10, 10), Random.Range(-5, 5), 0);
-        float speed = Random.Range(5, 10);
+        Vector3 dir = new Vector3(Random.Range(-3, 4), Random.Range(-3, 4), Random.Range(-3, 4));
+        float speed = Random.Range(20, 30);
         yield return new WaitForSeconds(timer);
+		skyArrow.transform.position = target + dir + new Vector3(0,0,20);
         skyArrow.SetActive(true);
-        skyArrow.transform.position = transform.position + dir;
-        Rigidbody r = skyArrow.GetComponent<Rigidbody>();
-        Vector3 TargettingDir = Vector3.Normalize(target - skyArrow.transform.position);
-        skyArrow.transform.LookAt(target);
-        r.velocity = TargettingDir * 30f * handDis;
+		rigi.velocity = Vector3.zero;
+		skyArrow.transform.LookAt(target+dir);
+		Debug.Log("Sound 땅에 닿음");
     }
     //#### #### #### #### 
     private void HavensGate(Vector3 targetPoint)

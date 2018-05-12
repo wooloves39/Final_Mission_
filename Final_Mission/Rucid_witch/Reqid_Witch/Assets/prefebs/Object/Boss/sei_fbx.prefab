@@ -384,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1158000304555676
 GameObject:
   m_ObjectHideFlags: 1
@@ -2203,7 +2203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156858615862002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.28, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 16.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4780522298195066}
@@ -4781,7 +4781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArrowPrefab: {fileID: 1692142197464032, guid: 3641f3baff8278043b06e80af29fed44,
     type: 2}
-  skill4: {fileID: 1246397462069010, guid: 12cfb18ce672f3046a42afbaf30435e8, type: 2}
+  skill4: {fileID: 1937242130202054}
 --- !u!114 &114564222598460956
 MonoBehaviour:
   m_ObjectHideFlags: 1

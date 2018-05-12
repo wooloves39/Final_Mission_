@@ -10,7 +10,7 @@ public class Sei_SkillAttack : MonoBehaviour
 	private SeiKwanSkill seiKwanSkill;
 	private void OnEnable()
 	{
-		seiKwanSkill = transform.parent.GetComponent<SeiKwanSkill>();
+		seiKwanSkill = transform.GetComponentInParent<SeiKwanSkill>();
 		   damage = seiKwanSkill.HandeDis * skillBalance;
 		Debug.Log(damage);
 	}

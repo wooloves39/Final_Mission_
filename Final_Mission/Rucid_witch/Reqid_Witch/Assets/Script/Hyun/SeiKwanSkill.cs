@@ -41,17 +41,17 @@ public class SeiKwanSkill : MonoBehaviour
         target = targets;
         skill = skillIndex;
         handDis = handDistance;
-        if (CoolTime.CheckCool(3,skill))
+        if (CoolTime.CheckCool(2,skill))
         {
             Cool = true;
         }
-        if (CoolTime.CheckMp(3,skill))
+        if (CoolTime.CheckMp(2,skill))
         {
             Mp = true;
         }
         if (!Cool && !Mp)
         {
-            CoolTime.SetCool(3, skill);
+            CoolTime.SetCool(2, skill);
             switch (skill)
             {
                 case 1:
@@ -67,6 +67,7 @@ public class SeiKwanSkill : MonoBehaviour
                     HavensGate(targets.transform.position);
                     break;
             }
+			//CoolTime.MpDown(2, skill);
             if (skill == 5) del_time += 20f;
             //if (skill > 1) UseOtherObject();
             Shoot = true;
@@ -146,13 +147,14 @@ public class SeiKwanSkill : MonoBehaviour
     {
         Vector3 Arrowforward = transform.forward;
 		rigi.velocity = (Vector3.up / .5f + Arrowforward) * 15f * handDis;
-        StartCoroutine(SkyArrowCor( targetPoint, 2.0f));
+        StartCoroutine(SkyArrowCor( targetPoint, 1.0f));
     }
 	IEnumerator SkyArrowCor(Vector3 target, float timer)
 	{
 		float speed = 22.5f;
 		this.transform.localScale = Vector3.one;
 		this.transform.rotation = Quaternion.identity;
+
 		yield return new WaitForSeconds(timer);
 		SeiKwanArrow.SetActive(false);
 		rigi.velocity = Vector3.zero;
@@ -168,7 +170,7 @@ public class SeiKwanSkill : MonoBehaviour
 		bool once = false;
 		while(this.transform.position.y > -8)
 		{
-			if (this.transform.position.y < -4 && !once)
+			if (this.transform.position.y < 0 && !once)
 			{
 				sky_Arraws[0].GetComponentInChildren<Skill_Sound_Set>().check = true;
 				once = true;
@@ -191,16 +193,13 @@ public class SeiKwanSkill : MonoBehaviour
     }
     IEnumerator HavensGateCor(Vector3 targetPoint)
     {
-        while (true)
-        {
-            if (Vector3.Distance(transform.position, targetPoint) < 0.1f)
-                break;
-            yield return null;
-        }
+		yield return new WaitForSeconds(1.0f);
 		rigi.velocity = Vector3.zero;
-        transform.LookAt(Vector3.up);
+		this.transform.rotation = bagicRota;
 		Gate.GetComponentInChildren<Skill_Sound_Set>().check = true;
 		Gate.SetActive(true);
+		yield return new WaitForSeconds(3.0f);
+		Gate.SetActive(false);
     }
     //#### #### #### #### 
     IEnumerator Shooting(float delTime = 2.0f)

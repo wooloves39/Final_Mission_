@@ -384,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1158000304555676
 GameObject:
   m_ObjectHideFlags: 1
@@ -4387,7 +4387,7 @@ MonoBehaviour:
   Hp: 500
   MaxHp: 500
   Speed: 2
-  BattleSpeed: 3
+  BattleSpeed: 6
   Range: 12.5
   Attack: 0
   SkillDMG:
@@ -4499,7 +4499,6 @@ MonoBehaviour:
   Time_Nomal_MoveWay: 3
   Time_Taget_Search: 1
   Time_Battle_Move: 1
-  Time_Normal_Attack: 5
   Time_Skill_1: 8
   Time_Skill_2: 3
   Time_Skill_3: 3

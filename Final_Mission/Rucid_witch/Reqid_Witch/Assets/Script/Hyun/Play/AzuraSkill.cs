@@ -76,8 +76,9 @@ public class AzuraSkill : MonoBehaviour
                 case 5:
                     LastBlast(target.transform.position);
                     break;
-            }
-            CoolTime.SetCool(1, skill);
+			}
+			//CoolTime.MpDown(1, skill);
+			CoolTime.SetCool(1, skill);
             Shoot = true;
             StartCoroutine(Shooting());
         }

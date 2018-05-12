@@ -39,6 +39,7 @@ public class BeeJaeMonSkill : MonoBehaviour
 
 				break;
 		}
+		Debug.Log(MyCharacter.transform.position);
 	}
 	IEnumerator SkyThunder()//1번스킬
 	{
@@ -52,6 +53,7 @@ public class BeeJaeMonSkill : MonoBehaviour
 
 	IEnumerator Buff()//2번스킬
 	{
+		magic[1].transform.position = MyCharacter.transform.position;
 		magic[1].SetActive(true);
 	
 		yield return new WaitForSeconds(3.0f);
@@ -79,7 +81,7 @@ public class BeeJaeMonSkill : MonoBehaviour
 	{
 		magic[4].transform.position = target.transform.position;
 		magic[4].SetActive(true);
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(3.0f);
 		magic[4].SetActive(false);
 	
 	}

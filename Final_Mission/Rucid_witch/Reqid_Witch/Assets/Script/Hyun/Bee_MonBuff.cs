@@ -17,7 +17,7 @@ public class Bee_MonBuff : MonoBehaviour {
 	IEnumerator buff()
 	{
 		float timer = 0.0f;
-		while (timer >= 3.0f)
+		while (timer <= 3.0f)
 		{
 			timer += .6f;
 			if (mych.Hp < mych.MaxHp) mych.Hp += 1;

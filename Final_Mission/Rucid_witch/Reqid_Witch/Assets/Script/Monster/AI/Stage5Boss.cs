@@ -20,7 +20,7 @@ public class Stage5Boss: MonoBehaviour {
 
 	public float Time_Taget_Search;		//10
 	public float Time_Battle_Move;		//11
-	public float Time_Normal_Attack;	//12
+	//public float Time_Normal_Attack;	//12
 
 	public float Time_Skill_1;		//20
 	public float Time_Skill_2;		//21
@@ -167,13 +167,14 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 10:
 						{
-
+							ani.SetBool("Run", false);
 							time = Time_Taget_Search;
 							break;
 						}
 					case 11:
 						{
-							ani.SetBool("IsMove", true);
+							ani.SetBool("Run", true);
+							ani.SetBool("IsMove", false);
 							ani.SetBool("IsAttack", false);
 							time = Time_Battle_Move;
 							msg.time = time;
@@ -192,6 +193,7 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 20:
 						{
+							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill1", true);
 							time = Time_Skill_1;
@@ -200,6 +202,7 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 21:
 						{
+							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill2", true);
 							time = Time_Skill_2;
@@ -208,6 +211,7 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 22:
 						{
+							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill3", true);
 							time = Time_Skill_3;
@@ -216,6 +220,7 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 23:
 						{
+							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill4", true);
 							time = Time_Skill_4;
@@ -224,6 +229,7 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 24:
 						{
+							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill5", true);
 							time = Time_Skill_5;

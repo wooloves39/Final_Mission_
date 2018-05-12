@@ -5142,6 +5142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 0.2
   play: {fileID: 8300000, guid: 10f96e8ac8787c54d8cb263d21dced06, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114168165948143266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5165,8 +5168,8 @@ MonoBehaviour:
   - 3
   - 4
   - 3
-  CoolTime: 0400000050000000080000000c00000028000000
-  UseMp: 080000001e0000000f0000001400000032000000
+  CoolTime: 0100000001000000010000000100000001000000
+  UseMp: 0100000001000000010000000100000001000000
   handle2: 0
 --- !u!114 &114236269091876912
 MonoBehaviour:
@@ -5269,6 +5272,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 0
   play: {fileID: 8300000, guid: 810ecd9882ddfd6409fd4791b6816f46, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114424085002444850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5282,6 +5288,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 1
   play: {fileID: 8300000, guid: db34852f1aa7ba246be7c1991e4dc75f, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114424779604691288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5295,6 +5304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 0
   play: {fileID: 8300000, guid: db34852f1aa7ba246be7c1991e4dc75f, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114523858161513908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5308,6 +5320,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 0
   play: {fileID: 8300000, guid: 2f497780aedd2e24bb3d31ab8ee8b68b, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114533819368824784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5355,8 +5370,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ce6224e6ee1d44d98ad1af941a2875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wait_Time: 2.5
+  Wait_Time: 2.3
   play: {fileID: 8300000, guid: 10f96e8ac8787c54d8cb263d21dced06, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114599114313508440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5406,6 +5424,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 0.03
   play: {fileID: 8300000, guid: daaa1306b6013a84cb554b5c31e47c52, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114657749209281922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5441,6 +5462,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 2
   play: {fileID: 8300000, guid: 35da7a894dc5b7540af0832f2d15e1e9, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114690966561953394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5567,6 +5591,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 0
   play: {fileID: 8300000, guid: a4e8bc9f5e76f0e4694b5d42694a129c, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114848257259179958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5580,6 +5607,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 0
   play: {fileID: 8300000, guid: daaa1306b6013a84cb554b5c31e47c52, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114899272306854348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5593,6 +5623,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 0
   play: {fileID: 8300000, guid: 2f497780aedd2e24bb3d31ab8ee8b68b, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114902414452473820
 MonoBehaviour:
   m_ObjectHideFlags: 1

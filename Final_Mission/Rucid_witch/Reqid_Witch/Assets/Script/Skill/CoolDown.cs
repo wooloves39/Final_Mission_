@@ -89,7 +89,23 @@ public class CoolDown : MonoBehaviour {
                 break;
         }
     }
-    IEnumerator StartCoolTime(int cha,int n)
+	public void MpDown(int cha, int n)
+	{
+		n = n - 1;
+		switch (cha)
+		{
+			case 1:
+				player.Mp -= Azu_UseMp[n];
+				break;
+			case 2:
+				player.Mp -= Sei_UseMp[n];
+				break;
+			case 3:
+				player.Mp -= Bee_UseMp[n];
+				break;
+		}
+	}
+	IEnumerator StartCoolTime(int cha,int n)
     {
         switch (cha)
         {

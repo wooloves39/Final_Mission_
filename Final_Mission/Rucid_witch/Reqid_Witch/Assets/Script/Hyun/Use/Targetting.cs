@@ -55,6 +55,7 @@ public class Targetting : MonoBehaviour
 			{
 				firstCheck = true;
 				Mytarget = other.gameObject;
+				TargetCount = 0;
 			}
 			TargetCount++;
 		}
@@ -85,9 +86,11 @@ public class Targetting : MonoBehaviour
 	{
 		GameObject target = null;
 		Vector3 mypos = transform.position;
-		if (TargetCount == 0)
+		if (TargetCount <= 0)
 		{
-			firstCheck = false;
+			Debug.Log("TargetCOunt: " + TargetCount);
+			TargetCount = 0;
+			   firstCheck = false;
 			return;
 		}
 		for (int i = 0; i < TargetCount; ++i)
@@ -114,6 +117,7 @@ public class Targetting : MonoBehaviour
 			{
 				TargetMonster.Remove(TargetMonster[i]);
 				TargetCount--;
+				Debug.Log("TargetCOunt: " + TargetCount);
 				--i;
 			}
 		}
@@ -170,8 +174,6 @@ public class Targetting : MonoBehaviour
 		});
 	}
 	public GameObject getMytarget() {
-
-		Debug.Log(Mytarget);
 		if (Mytarget == null){
 			Debug.Log(TargetMonster.Count);
 		return null; }

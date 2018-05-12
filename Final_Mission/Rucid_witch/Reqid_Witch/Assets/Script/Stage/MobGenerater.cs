@@ -7,102 +7,126 @@ public class MobGenerater : MonoBehaviour
 {
 
 	public List<GameObject> Position;
-
-	public List<GameObject> Prefab;
-	public List<int> Prefab_Count;
-
 	public bool Wave_Start = false;
-	public List<int> GenTime;
-	public MemoryPool pool = new MemoryPool();
-
-	int myTime = 0;
-
+	public int GenTime;
 	public Dia_Play player;
 	private PlayerState MyState;
-    private IEnumerator temp;
 	public GameObject[] ReaspwanParticles;
+	private MonsterWaveGenerate[] monsterWaves;
 	void Start()
 	{
 		MyState = player.transform.parent.GetComponent<PlayerState>();
-		myTime = 0;
-		for (int i = 0; i < Prefab.Count; ++i)
-		{
-			pool.Create(Prefab[i], Prefab_Count[i]);
-		}
-        temp = MobGen();
-		StartCoroutine("MobGen");
+		monsterWaves = GetComponents<MonsterWaveGenerate>();
 	}
-
-	IEnumerator MobDie()
+	private void Update()
 	{
-		while (pool.AllDie() == true)
+	}
+	public void waveOn()
+	{
+		Wave_Start = true;
+		for (int i = 0; i < ReaspwanParticles.Length; ++i)
 		{
-			yield return new WaitForSeconds(1);
+			ReaspwanParticles[i].SetActive(true);
 		}
+		StartCoroutine(Waving());
+	}
+	IEnumerator Waving()
+	{
+		bool alldie = false;
+		while (true)
+		{
+			alldie = false;
+			for (int i = 0; i < monsterWaves.Length; ++i)
+			{
+				if (monsterWaves[i].MondieAll())
+				{
+					alldie = true;
+					break;
+				}
+			}
+			if (alldie) yield return new WaitForSeconds(1);
+			else
+			{
+				break;
+			}
+		}
+		yield return new WaitForSeconds(1);
 		Debug.Log("다음 다이어로그 시작 부분");
 		if (player.getPlay())
 		{
 			MyState.SetMyState(PlayerState.State.Talk);
 			player.setPlay(false);
-            StopCoroutine(temp);
-			for(int i=0;i< ReaspwanParticles.Length; ++i)
+
+		}
+	}
+	public void checkInit()
+	{
+		bool flug = false;
+		for (int i = 0; i < monsterWaves.Length; ++i)
+		{
+			if (!monsterWaves[i].InitFinish) { flug = true; break; }
+		}
+		if (!flug)
+		{
+			for (int i = 0; i < ReaspwanParticles.Length; ++i)
 			{
 				ReaspwanParticles[i].SetActive(false);
 			}
 		}
 	}
+	//IEnumerator MobDie()
+	//{
+	//	yield return new WaitUntil(() => (!pool.AllDie()&& !pool.AllDie()));//풀 종료 
+	//	yield return new WaitForSeconds(1);
+	//	Debug.Log("다음 다이어로그 시작 부분");
+	//	if (player.getPlay())
+	//	{
+	//		MyState.SetMyState(PlayerState.State.Talk);
+	//		player.setPlay(false);
+	//		StopCoroutine(temp);
+	//		for (int i = 0; i < ReaspwanParticles.Length; ++i)
+	//		{
+	//			ReaspwanParticles[i].SetActive(false);
+	//		}
+	//	}
+	//}
 	// Update is called once per frame
-	IEnumerator MobGen()
-	{
-		int num = 0;
-		bool check = false;
-		for (int i = 0; i < ReaspwanParticles.Length; ++i)
-		{
-			ReaspwanParticles[i].SetActive(true);
-		}
-		while (true)
-		{
-			if (Wave_Start)
-			{
+	//IEnumerator MobGen()
+	//{
+	//	int num = 0;
+	//	bool check = false;
 
-				if (num < Prefab_Count.Count)
-				{
-					if (myTime >= GenTime[num])
-					{
+	//	while (true)
+	//	{
+	//		if (Wave_Start)
+	//		{
 
-						for (int i = 0; i < Prefab_Count[num]; ++i)
-						{
-							if (i % 3 == 0)
-							{
-								pool.NewItem(Position[0].transform.position);
-							}
-							if (i % 3 == 1)
-							{
-								pool.NewItem(Position[1].transform.position);
-							}
-							if (i % 3 == 2)
-							{
-								pool.NewItem(Position[2].transform.position);
-							}
-						}
-						if (!check)
-						{
-							StartCoroutine("MobDie");
-							check = true;
-						}
-						num++;
-					}
+	//			if (num < Prefab_Count.Count)
+	//			{
+	//				if (myTime >= GenTime[num])
+	//				{
 
-				}
-				myTime++;
-				yield return new WaitForSeconds(1);
-			}
-			yield return new WaitForSeconds(1);
-		}
-	}
-
-	private void OnApplicationQuit()
-	{
-		pool.Dispose();
-	}
+	//					for (int i = 0; i < Prefab_Count[num]; ++i)
+	//					{
+	//						int initPos = i % 3;
+	//						pool.NewItem(Position[initPos].transform.position);
+	//					}
+	//					if (!check)
+	//					{
+	//						StartCoroutine("MobDie");
+	//						check = true;
+	//					}
+	//					num++;
+	//				}
+	//			}
+	//			myTime++;
+	//			yield return new WaitForSeconds(1);
+	//		}
+	//		yield return new WaitForSeconds(1);
+	//	}
+	//}
+	//private void OnApplicationQuit()
+	//{
+	//	pool.Dispose();
+	//}
 }

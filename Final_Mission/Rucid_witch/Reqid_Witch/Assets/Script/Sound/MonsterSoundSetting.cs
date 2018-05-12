@@ -14,6 +14,7 @@ public class MonsterSoundSetting : MonoBehaviour
 	void OnEnable()
 	{
 		audio = GetComponents<AudioSource>();
+		audio[0].priority = 100;
 	}
 	// idle = 0
 	// hit = 1

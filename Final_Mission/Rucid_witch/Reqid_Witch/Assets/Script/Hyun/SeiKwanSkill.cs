@@ -14,8 +14,9 @@ public class SeiKwanSkill : MonoBehaviour
     public GameObject Gate;
     public GameObject[] sky_Arraws;
     public GameObject arrow_trab_particle;
+	public GameObject[] trab_object;
 
-    private bool Shoot = false;
+	private bool Shoot = false;
     private bool del_timer = false;
     public bool Del_timer { get { return del_timer; } set { del_timer = value; } }
     //private Collider collider;
@@ -24,12 +25,13 @@ public class SeiKwanSkill : MonoBehaviour
 
     private Vector3 curScale;
 	private Rigidbody rigi;
+	private Quaternion bagicRota;
     private void Awake()
     {
         deltaTime = Time.deltaTime;
         CoolTime = FindObjectOfType<CoolDown>();
 		rigi = GetComponent<Rigidbody>();
-
+		bagicRota = this.transform.rotation;
 	}
     public void shoot(int skillIndex, GameObject targets, float handDistance, float del_time = 10.0f)
     {
@@ -118,14 +120,27 @@ public class SeiKwanSkill : MonoBehaviour
 			rigi.velocity = TargettingDir * 15f * handDis;
         }
         Debug.Log(handDis);
-        StartCoroutine(ArrowTrabCor(.5f));
+        StartCoroutine(ArrowTrabCor(.15f));
     }
     IEnumerator ArrowTrabCor(float timer)
     {
-        yield return new WaitForSeconds(timer);
-        arrow_trab_particle.SetActive(true);
-        arrow_trab_particle.transform.LookAt(SeiKwanArrow.transform);
-    }
+		
+		yield return new WaitForSeconds(timer);
+		SeiKwanArrow.SetActive(false);
+		arrow_trab_particle.SetActive(true);
+		for (int i = 0; i < trab_object.Length; ++i)
+		{
+			trab_object[i].transform.position = this.transform.position + new Vector3(Random.Range(-1.50f, 1.50f), Random.Range(-1.50f, 1.50f), Random.Range(-1.50f, 1.50f));
+			trab_object[i].SetActive(true);
+		}
+		float t = 0.0f;
+		while(t<5.0f)
+		{
+			t += deltaTime;
+			arrow_trab_particle.transform.Rotate(new Vector3(30, 30, 30) * t, Space.Self);
+			yield return null;
+		}
+	}
     //#### #### #### #### 
     private void SkyArrow(Vector3 targetPoint)
     {
@@ -191,7 +206,7 @@ public class SeiKwanSkill : MonoBehaviour
     public void resetDelete()
     {
 		rigi.velocity = Vector3.zero;
-
+		transform.rotation = bagicRota;
 		transform.localScale = Vector3.one;
         SeiKwanArrow.SetActive(true);
         //collider.enabled = true;
@@ -203,7 +218,12 @@ public class SeiKwanSkill : MonoBehaviour
         arrow_trab_particle.transform.localScale = transform.localScale;
         arrow_trab_particle.transform.rotation = transform.rotation;
         arrow_trab_particle.SetActive(false);
-        for (int i = 0; i < sky_Arraws.Length; ++i)
+		for (int i = 0; i < trab_object.Length; ++i)
+		{
+			trab_object[i].transform.position = Vector3.zero;
+			trab_object[i].SetActive(false);
+		}
+		for (int i = 0; i < sky_Arraws.Length; ++i)
         {
             sky_Arraws[i].transform.position = transform.position;
             sky_Arraws[i].transform.localScale = transform.localScale;

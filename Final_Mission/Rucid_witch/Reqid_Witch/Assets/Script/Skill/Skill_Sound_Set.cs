@@ -28,7 +28,7 @@ public class Skill_Sound_Set : MonoBehaviour {
 	{
 		sound.clip = play;
 		sound.Play ();
-        if (Shoot)
+        if (Shoot && this.gameObject.activeInHierarchy)
             StartCoroutine("PlayShoot");
 	}
     IEnumerator PlayShoot()

@@ -30,6 +30,7 @@ public class Targetting : MonoBehaviour
 				}
 				TargetMonster.Remove(TargetMonster[i]);
 				TargetCount--;
+				checkList();
 				checkTarget();
 				break;
 			}
@@ -104,6 +105,18 @@ public class Targetting : MonoBehaviour
 			}
 		}
 		Mytarget = target;
+	}
+	private void checkList()
+	{
+		for (int i = 0; i < TargetMonster.Count; ++i)
+		{
+			if (!TargetMonster[i].activeSelf)
+			{
+				TargetMonster.Remove(TargetMonster[i]);
+				TargetCount--;
+				break;
+			}
+		}
 	}
 	private IEnumerator targetChange()
 	{

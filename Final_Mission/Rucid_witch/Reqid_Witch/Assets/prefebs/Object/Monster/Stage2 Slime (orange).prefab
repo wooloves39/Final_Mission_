@@ -292,11 +292,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4186107478239754}
   - component: {fileID: 54436995443035964}
-  - component: {fileID: 135623879060341190}
   - component: {fileID: 82454252689698392}
   - component: {fileID: 82303663401112114}
   - component: {fileID: 82962479062723652}
   - component: {fileID: 114684989807540814}
+  - component: {fileID: 136735298591239512}
   m_Layer: 10
   m_Name: RIG
   m_TagString: Monster
@@ -2602,8 +2602,8 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135623879060341190
-SphereCollider:
+--- !u!136 &136735298591239512
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -2611,9 +2611,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.01
-  m_Center: {x: 0, y: 0.005, z: 0}
+  m_Radius: 0.015
+  m_Height: 0.05
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.014, z: 0}
 --- !u!137 &137535406102863832
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

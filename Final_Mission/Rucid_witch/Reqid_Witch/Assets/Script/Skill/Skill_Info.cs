@@ -97,7 +97,8 @@ public class Skill_Info : MonoBehaviour {
 	{
 		ObjectLife temp;
 		while (PowerMemory [1] > 0) 
-		{
+        {
+            yield return new WaitForSeconds(Cycle);
 			for (int j = 0; j < ObjList.Count; ++j)
 			{
 				if (ObjList[j].activeInHierarchy == false)
@@ -108,7 +109,6 @@ public class Skill_Info : MonoBehaviour {
 					temp.SendMessage ("Shock", ShockTime);
 
 			}
-			yield return new WaitForSeconds(Cycle);
 			PowerMemory[1] -= Minus[1];
 		}
 		yield return new WaitForSeconds(Delete_Delay_Time);

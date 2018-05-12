@@ -24,7 +24,6 @@ public class Dialog : MonoBehaviour
 	public GameObject Boss;
 	private Dia_Play dia_Play;
 	private PlayerState myState;
-	private File_parser file_parser;
 	public string fileName;
 
 	public GameObject[] WaveStart;
@@ -33,9 +32,9 @@ public class Dialog : MonoBehaviour
 	private int wavecnt = 0;
 	void Start()
 	{
+		File_parser file_parser = new File_parser(); 
 		dia_Play = GetComponent<Dia_Play>();
 		myState = transform.parent.GetComponent<PlayerState>();
-		file_parser = new File_parser();
 		file_parser.FileOpen(fileName);
 		file_parser.Parse();
 		DialogueStrings = file_parser.GetText();
@@ -124,7 +123,7 @@ public class Dialog : MonoBehaviour
 					{
 						myState.SetMyState(PlayerState.State.Nomal);
 						dia_Play.setPlay(true);
-						if (wavecnt <WaveStart.Length)
+						if (wavecnt < WaveStart.Length)
 						{
 							Debug.Log(WaveStart[wavecnt]);
 							WaveStart[wavecnt].GetComponent<MobGenerater>().Wave_Start = true;

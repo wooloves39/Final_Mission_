@@ -20,7 +20,7 @@ public class MobGenerater : MonoBehaviour
 	public Dia_Play player;
 	private PlayerState MyState;
     private IEnumerator temp;
-
+	public GameObject[] ReaspwanParticles;
 	void Start()
 	{
 		MyState = player.transform.parent.GetComponent<PlayerState>();
@@ -45,6 +45,10 @@ public class MobGenerater : MonoBehaviour
 			MyState.SetMyState(PlayerState.State.Talk);
 			player.setPlay(false);
             StopCoroutine(temp);
+			for(int i=0;i< ReaspwanParticles.Length; ++i)
+			{
+				ReaspwanParticles[i].SetActive(false);
+			}
 		}
 	}
 	// Update is called once per frame
@@ -52,6 +56,10 @@ public class MobGenerater : MonoBehaviour
 	{
 		int num = 0;
 		bool check = false;
+		for (int i = 0; i < ReaspwanParticles.Length; ++i)
+		{
+			ReaspwanParticles[i].SetActive(true);
+		}
 		while (true)
 		{
 			if (Wave_Start)

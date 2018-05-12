@@ -82,7 +82,7 @@ public class SeiKwanSkill : MonoBehaviour
     //#### #### #### #### 기본
     private void BraveArrow()
     {
-       
+        GetComponentInChildren<Skill_Sound_Set>().check = true; 
         Vector3 Arrowforward = transform.forward;
         Vector3 TargettingDir = Vector3.zero;
         if (target)

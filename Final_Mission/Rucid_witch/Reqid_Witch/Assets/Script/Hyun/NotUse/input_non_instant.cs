@@ -274,11 +274,8 @@ public class input_non_instant : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		//SkillTime();
-		Debug.Log(initPos.Count);
 		for(int i = 0; i < PointsVec.Count; ++i)
 		{
-			Debug.Log((Player.position - initPos[i]));
 			line.SetPosition(i, PointsVec[i] + (Player.position - initPos[i]));
 		}
 		PointChecks();

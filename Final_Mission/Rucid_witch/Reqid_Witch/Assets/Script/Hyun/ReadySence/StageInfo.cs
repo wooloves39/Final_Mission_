@@ -18,7 +18,6 @@ public class StageInfo : MonoBehaviour {
 	{
 		textArea = GetComponent<Text>();
 		stage = Singletone.Instance.stage;
-		Debug.Log(stage);
 		file_parser = new File_parser();
 		file_parser.FileOpen(FileName[stage]);
 		file_parser.Reading();

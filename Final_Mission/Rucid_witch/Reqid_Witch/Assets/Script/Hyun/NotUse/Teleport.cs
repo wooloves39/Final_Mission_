@@ -230,7 +230,6 @@ public class Teleport : MonoBehaviour
 					{
 						AzuraBallNum = i;
 						AzuraBall[i] = Azurapool.NewItem();
-						Debug.Log(AzuraBall[AzuraBallNum]);
 						AzuraBall[i].transform.position = AttackPoint;
 						Rigidbody r = AzuraBall[i].GetComponent<Rigidbody>();
 						r.useGravity = false;

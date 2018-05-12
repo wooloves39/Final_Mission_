@@ -10,7 +10,6 @@ public class Bee_SkillAttack : MonoBehaviour {
 	{
 		beejaeSkill = transform.parent.GetComponent<BeeJaeMonSkill>();
 		damage =  skillBalance;
-		Debug.Log(damage);
 	}
 	void OnTriggerEnter(Collider other)
 	{

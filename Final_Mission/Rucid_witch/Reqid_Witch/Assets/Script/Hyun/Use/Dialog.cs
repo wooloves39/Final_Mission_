@@ -125,7 +125,6 @@ public class Dialog : MonoBehaviour
 						dia_Play.setPlay(true);
 						if (wavecnt < WaveStart.Length)
 						{
-							Debug.Log(WaveStart[wavecnt]);
 							WaveStart[wavecnt].GetComponent<MobGenerater>().waveOn();
 							wavecnt++;
 						}

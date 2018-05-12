@@ -56,9 +56,6 @@ public class Stage5Boss: MonoBehaviour {
 			Peace.Enqueue (BasicPeace [i]);
 		for (int i = 0; i<BasicBattle.Length ; ++i)
 			Battle.Enqueue (BasicBattle [i]);
-		//while (Peace.Count > 0) {
-		//	Debug.Log (Peace.Dequeue ());
-		//}
 		StartCoroutine("AISearching");
 	}
 	IEnumerator AISearching(){
@@ -71,11 +68,7 @@ public class Stage5Boss: MonoBehaviour {
 		{
 			if (ObjLife.Hp <= 0)
 			{
-				//Targetting T;
-				//T = FindObjectOfType<Targetting>().GetComponent<Targetting>();
-				//Debug.Log(T);
 				ani.SetBool("Die", true);
-				Debug.Log ("죽음 사운드");
 
 				yield return new WaitForSeconds(Die_Time);
 				this.gameObject.SetActive(false);
@@ -116,10 +109,9 @@ public class Stage5Boss: MonoBehaviour {
 			{
 				Limit = 0.0f;
 				if (!Fight)
-					num = (int)Peace.Dequeue();//동작 처리시에 큐서 빠져나감
+					num = (int)Peace.Dequeue();
 				else
 				{
-					//num = (int)Battle.Dequeue();//동작 처리시에 큐서 빠져나감
 
 					if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
 						num = getRandom(20, 25);
@@ -127,19 +119,14 @@ public class Stage5Boss: MonoBehaviour {
 						num = 11;
 				}
 
-
-				//실행할 동작 - 삭제할 부분
-				Debug.Log(num);
+				
 				string temp;
 				AITree.Instance.AIDic.TryGetValue(num, out temp);
-				Debug.Log(temp);
-				//실행할 동작 - 삭제할 부분
 
 				switch (num)
 				{
 					case 0:
 						{
-							//ani.SetBool("Stop", true);
 							ani.SetBool("IsMove", false);
 							time = Time_Nature_Stop;
 							break;

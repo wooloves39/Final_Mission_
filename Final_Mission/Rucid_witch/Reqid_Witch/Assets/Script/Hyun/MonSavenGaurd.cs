@@ -17,7 +17,7 @@ public class MonSavenGaurd : MonoBehaviour
 	IEnumerator SavenGaurdCor()
 	{
 		float timer = 0.0f;
-		while (timer >= 5.0f)
+		while (timer <= 5.0f)
 		{
 			timer += .6f;
 			if (objectLife.Hp < 500)

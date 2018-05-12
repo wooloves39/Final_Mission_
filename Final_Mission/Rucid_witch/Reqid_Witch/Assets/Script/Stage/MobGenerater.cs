@@ -52,7 +52,6 @@ public class MobGenerater : MonoBehaviour
 			}
 		}
 		yield return new WaitForSeconds(1);
-		Debug.Log("다음 다이어로그 시작 부분");
 		if (player.getPlay())
 		{
 			MyState.SetMyState(PlayerState.State.Talk);
@@ -75,59 +74,4 @@ public class MobGenerater : MonoBehaviour
 			}
 		}
 	}
-	//IEnumerator MobDie()
-	//{
-	//	yield return new WaitUntil(() => (!pool.AllDie()&& !pool.AllDie()));//풀 종료 
-	//	yield return new WaitForSeconds(1);
-	//	Debug.Log("다음 다이어로그 시작 부분");
-	//	if (player.getPlay())
-	//	{
-	//		MyState.SetMyState(PlayerState.State.Talk);
-	//		player.setPlay(false);
-	//		StopCoroutine(temp);
-	//		for (int i = 0; i < ReaspwanParticles.Length; ++i)
-	//		{
-	//			ReaspwanParticles[i].SetActive(false);
-	//		}
-	//	}
-	//}
-	// Update is called once per frame
-	//IEnumerator MobGen()
-	//{
-	//	int num = 0;
-	//	bool check = false;
-
-	//	while (true)
-	//	{
-	//		if (Wave_Start)
-	//		{
-
-	//			if (num < Prefab_Count.Count)
-	//			{
-	//				if (myTime >= GenTime[num])
-	//				{
-
-	//					for (int i = 0; i < Prefab_Count[num]; ++i)
-	//					{
-	//						int initPos = i % 3;
-	//						pool.NewItem(Position[initPos].transform.position);
-	//					}
-	//					if (!check)
-	//					{
-	//						StartCoroutine("MobDie");
-	//						check = true;
-	//					}
-	//					num++;
-	//				}
-	//			}
-	//			myTime++;
-	//			yield return new WaitForSeconds(1);
-	//		}
-	//		yield return new WaitForSeconds(1);
-	//	}
-	//}
-	//private void OnApplicationQuit()
-	//{
-	//	pool.Dispose();
-	//}
 }

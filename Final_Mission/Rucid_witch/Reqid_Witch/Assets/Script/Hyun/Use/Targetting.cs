@@ -49,7 +49,6 @@ public class Targetting : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Monster"))
 		{
-			Debug.Log("Add Mon");
 			TargetMonster.Add(other.gameObject);
 			if (!firstCheck)
 			{
@@ -65,7 +64,6 @@ public class Targetting : MonoBehaviour
 		if (other.gameObject.CompareTag("Monster"))
 		{
 			other.GetComponentInChildren<HPBar>().taget= false;
-			Debug.Log("Del Mon");
 			if (Mytarget == other.gameObject)
 			{
 				Mytarget = null;
@@ -88,7 +86,6 @@ public class Targetting : MonoBehaviour
 		Vector3 mypos = transform.position;
 		if (TargetCount <= 0)
 		{
-			Debug.Log("TargetCOunt: " + TargetCount);
 			TargetCount = 0;
 			   firstCheck = false;
 			return;
@@ -117,7 +114,6 @@ public class Targetting : MonoBehaviour
 			{
 				TargetMonster.Remove(TargetMonster[i]);
 				TargetCount--;
-				Debug.Log("TargetCOunt: " + TargetCount);
 				--i;
 			}
 		}
@@ -174,8 +170,6 @@ public class Targetting : MonoBehaviour
 		});
 	}
 	public GameObject getMytarget() {
-		if (Mytarget == null){
-			Debug.Log(TargetMonster.Count);
 		return null; }
 		return Mytarget.gameObject;
 	}

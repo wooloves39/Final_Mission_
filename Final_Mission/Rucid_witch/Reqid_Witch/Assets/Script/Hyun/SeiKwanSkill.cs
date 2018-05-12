@@ -170,7 +170,7 @@ public class SeiKwanSkill : MonoBehaviour
 		{
 			if (this.transform.position.y < -4 && !once)
 			{
-				sky_Arraws[0].GetComponentInChildren<Skill_Sound_Set>().check = true;
+				//sky_Arraws[0].GetComponentInChildren<Skill_Sound_Set>().check = true;
 				once = true;
 			}
 			this.transform.Translate(Vector3.down * speed * deltaTime);

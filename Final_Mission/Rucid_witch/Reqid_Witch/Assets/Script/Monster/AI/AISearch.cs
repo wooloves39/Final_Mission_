@@ -94,7 +94,6 @@ public class AISearch: MonoBehaviour
 				}
 				num = (int)Battle.Dequeue ();
 			}
-			Debug.Log(num);
 			switch (num) 
 			{
 			case 0:

@@ -28,19 +28,9 @@ public class ObjectLife : MonoBehaviour {
 		MobSound = GetComponentInChildren<MonsterSoundSetting>();
 		agent = GetComponent<NavMeshAgent>();
 	}
-
-	private void OnTriggerEnter(Collider other)
-	{
-		//if (other.gameObject.CompareTag("Attacker"))
-		//{
-		//	Debug.Log("윽 맞음 ㅠㅠㅠ");
-		//	attacker attacker = other.gameObject.GetComponent<attacker>();
-		//	Hp=attacker.attack(Hp);
-		//}
-	}
+	
 	private void SendDMG(float dmg)
 	{
-		Debug.Log("recv");
 		if (!MomentInvincible)
 		{
 			Hp -= dmg;

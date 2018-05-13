@@ -43,7 +43,7 @@ public class BeejaeSkill : MonoBehaviour
 		{
 			if ((line.Skills[2].getCurrentSkill() == 3)
 				|| (line.Skills[2].getCurrentSkill() == 2))
-		{
+				{
 				bool fail = false;
 				bool NoMp = false;
 				if (line.Skills[2].getCurrentSkill() == 2)
@@ -93,7 +93,7 @@ public class BeejaeSkill : MonoBehaviour
 					Debug.Log("엠피가 부족");
 				}
 				line.Skills[2].resetSkill();
-			}
+				}
 			else if (
 				!handle.Beejae_Marker[0].gameObject.activeInHierarchy &&
 				!handle.Beejae_Marker[1].gameObject.activeInHierarchy &&
@@ -238,6 +238,7 @@ public class BeejaeSkill : MonoBehaviour
 		magic[1].SetActive(true);
 		CoolDown[1] = true;
 		Player.LightningBolt = true;
+		magic[1].transform.position = this.transform.position;
 		yield return new WaitForSeconds(playSkill[1]);
 		magic[1].SetActive(false);
 		yield return new WaitForSeconds(60.0f- playSkill[1]);

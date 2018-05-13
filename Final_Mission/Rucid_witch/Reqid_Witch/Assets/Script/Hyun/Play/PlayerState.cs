@@ -118,6 +118,10 @@ public class PlayerState : MonoBehaviour
 		{
 			HpMaterial[i].SetColor("_EmissionColor", HpColor);
 		}
+		for (int i = 0; i < 5 - checkHpFull; ++i)
+		{
+			HpMaterial[i].SetColor("_EmissionColor", HpColor * 0.0f);
+		}
 		int checkHpSub = (int)Hp - checkHpFull * 20;
 
 		if (Hp < 100)
@@ -144,6 +148,10 @@ public class PlayerState : MonoBehaviour
 		for (int i = 4; i >= 5 - checkMpFull; --i)
 		{
 			MpMaterial[i].SetColor("_EmissionColor", MpColor);
+		}
+		for (int i = 0; i < 5 - checkMpFull; ++i)
+		{
+			MpMaterial[i].SetColor("_EmissionColor", MpColor*0.0f);
 		}
 		int checkMpSub = (int)Mp - checkMpFull * 20;
 

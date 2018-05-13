@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1087816176447920
 GameObject:
   m_ObjectHideFlags: 1
@@ -3789,11 +3789,11 @@ MonoBehaviour:
   Time_Nomal_MoveWay: 3
   Time_Taget_Search: 1
   Time_Battle_Move: 1
-  Time_Skill_1: 5
-  Time_Skill_2: 3
-  Time_Skill_3: 3
-  Time_Skill_4: 6
-  Time_Skill_5: 8
+  Time_Skill_1: 3
+  Time_Skill_2: 4
+  Time_Skill_3: 4
+  Time_Skill_4: 4
+  Time_Skill_5: 6
   Die_Time: 2
   SkillValue:
   - 0

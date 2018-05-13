@@ -5031,17 +5031,17 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760040421705450}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c31f7d58f88c54049b532ff11b0ce3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OneHit: 1
+  OneHit: 0
   Power: 0
   AreaHit: 0
   AreaDmg: 30
   AreaCycle: 0.5
-  DotHit: 1
+  DotHit: 0
   DotDmg: 30
   DotTime: 3
   Cycle: 0.3
@@ -7129,7 +7129,7 @@ SphereCollider:
   m_GameObject: {fileID: 1760040421705450}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}

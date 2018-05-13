@@ -219,7 +219,7 @@ public class AzuraSkill : MonoBehaviour
     private void LastBlast(Vector3 target)
 	{
 		info.PowerMemory[0] = 0.0f;
-		Blast.transform.localScale = Vector3.one*3;
+		Blast.transform.localScale = Vector3.one*2;
         Blast.SetActive(true);
         Blast.transform.position = target;
         StartCoroutine(LastBlastCor(Blast,2.0f));
@@ -234,7 +234,7 @@ public class AzuraSkill : MonoBehaviour
             if (timer >= Timer)
             {
                 timer = 0;
-				Blast.transform.localScale = Vector3.one*3 * (1-timer / Timer);
+				Blast.transform.localScale = Vector3.one*2 * (1-timer / Timer);
 				Blast.transform.rotation = Quaternion.identity;
                 Blast.gameObject.SetActive(false);
                 break;

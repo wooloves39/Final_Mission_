@@ -238,7 +238,7 @@ public class BeejaeSkill : MonoBehaviour
 		magic[1].SetActive(true);
 		CoolDown[1] = true;
 		Player.LightningBolt = true;
-		magic[1].transform.position = this.transform.position;
+		magic[1].transform.position = Player.transform.position;
 		yield return new WaitForSeconds(playSkill[1]);
 		magic[1].SetActive(false);
 		yield return new WaitForSeconds(60.0f- playSkill[1]);

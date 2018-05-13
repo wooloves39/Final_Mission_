@@ -58,6 +58,7 @@ public class BattleCommand : MonoBehaviour {
 	{
 		if (this.gameObject.activeInHierarchy)
 		{
+			this.transform.LookAt(Player.transform.position);
 			agent.speed = 0;
 			TimeLimit = T;
 			time = 0.0f;

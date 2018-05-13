@@ -26,7 +26,7 @@ public class Singletone
 	public int Charnumber = -1;
 	public float Sound = 1.0f;
 	public string name;
-	public int stage = 1;
+	public int stage = 5;
 	public string saveTime;
 	public int[] Myskill = { 0 , 2, 1};
 	public void Save()

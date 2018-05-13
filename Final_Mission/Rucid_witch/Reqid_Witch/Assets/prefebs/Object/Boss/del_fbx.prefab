@@ -3463,8 +3463,8 @@ MonoBehaviour:
   Hp: 500
   MaxHp: 500
   Speed: 2
-  BattleSpeed: 3
-  Range: 12.5
+  BattleSpeed: 5
+  Range: 17
   boss: 1
   Attack: 0
   SkillDMG:
@@ -4702,7 +4702,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 180
-  m_StoppingDistance: 12.5
+  m_StoppingDistance: 17
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1

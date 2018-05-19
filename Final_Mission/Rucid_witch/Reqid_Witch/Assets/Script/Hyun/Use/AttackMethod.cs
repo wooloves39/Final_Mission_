@@ -11,9 +11,14 @@ public class AttackMethod : MonoBehaviour
 
 
 	//#2번 공격
+	public GameObject SweetMelody;
 	public DellHeadTracker HeadTracker;
-	private int Dellcount = 0;
-	private bool DellTouch = false;
+	public FirstTouch Dell_First;
+	public SecondTouch Dell_Second;
+
+	public GameObject DellAttackObjPrefab;
+	MemoryPool Dellpool = new MemoryPool();
+	GameObject[] DellAttackObj;
 	//#1,3번 공격
 	public GameObject[] Beejae_Marker;
 	public GameObject[] Verbase_Marker;
@@ -33,6 +38,7 @@ public class AttackMethod : MonoBehaviour
 	public float RayLength = 50f;
 	private Coroutine currentCorutine;
 	private bool flug = false;
+	public bool Flug { get { return flug; } set { flug = value; } }
 	private Transform camTr;
 	private Quaternion MarkerRotate;
 	private PlayerState MyState;
@@ -71,11 +77,20 @@ public class AttackMethod : MonoBehaviour
 			for (int i = 0; i < Arrow.Length; ++i)
 				Arrow[i] = null;
 		}
+		if (typecheck.IsHaveSkill(4))
+		{
+			int poolCount = 5;
+			Dellpool.Create(DellAttackObjPrefab, poolCount);
+			DellAttackObj = new GameObject[poolCount];
+			for (int i = 0; i < DellAttackObj.Length; ++i)
+				DellAttackObj[i] = null;
+		}
 	}
 	private void OnApplicationQuit()
 	{
 		Azurapool.Dispose();
 		Arrowpool.Dispose();
+		Dellpool.Dispose();
 	}
 	// Update is called once per frame
 	void Update()
@@ -160,6 +175,23 @@ public class AttackMethod : MonoBehaviour
 						AzuraBall[i].GetComponent<AzuraSkill>().resetDelete();
 						Azurapool.RemoveItem(AzuraBall[i]);
 						AzuraBall[i] = null;
+					}
+					//어떤 조건에 의거 AzuraBall삭제
+				}
+			}
+		}
+		else if (LineDraw.curType == 4)
+		{
+			for (int i = 0; i < DellAttackObj.Length; ++i)
+			{
+				if (DellAttackObj[i])
+				{
+
+					if (DellAttackObj[i].GetComponent<DellSkill>().IsDelete())
+					{
+						DellAttackObj[i].GetComponent<DellSkill>().resetDelete();
+						Dellpool.RemoveItem(DellAttackObj[i]);
+						DellAttackObj[i] = null;
 					}
 					//어떤 조건에 의거 AzuraBall삭제
 				}
@@ -338,7 +370,7 @@ public class AttackMethod : MonoBehaviour
 						}
 						else
 						{
-							if (typecheck.Skills[1].getCurrentSkill() <3)
+							if (typecheck.Skills[1].getCurrentSkill() < 3)
 							{
 								playerSound.PlayerSound(PlayerSoundSetting.soundPack.AttackSkill);
 								Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(typecheck.Skills[1].getCurrentSkill(), myTarget, handDis);
@@ -350,7 +382,7 @@ public class AttackMethod : MonoBehaviour
 								Arrow[ArrowNum] = null;
 							}
 						}
-						
+
 						instance = false;
 						distance = 0.0f;
 						MyState.CharginTimeReset();
@@ -402,30 +434,95 @@ public class AttackMethod : MonoBehaviour
 	private IEnumerator DellControll()
 	{
 		bool instance = false;
+		bool attacking = false;
+		float attackTimer = 0.0f;
+		float deltaTime = Time.deltaTime;
+		int skillIndex = typecheck.Skills[4].getCurrentSkill();
+		int chargingCount = 0;
+		int DellNum;
+		
 		while (flug)
 		{
-			if (!instance)
+			if (HeadTracker.getHeadOn())
 			{
 				instance = true;
+				if (skillIndex == 1)
+				{
+					SweetMelody.SetActive(true);
+				}
+				else if (skillIndex == 4)
+				{
+					MyState.SetMyState(PlayerState.State.Charging, 9.0f);
+				}
 			}
 			else
 			{
-				if (HeadTracker.getHeadOn())
+				if (instance)
 				{
-					Debug.Log(Dellcount);
+					SweetMelody.SetActive(false);
+					Debug.Log("델 해드에서 떨어짐");
+					PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.RTouch));
+					PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.LTouch));
+					instance = false;
+					break;
+				}
+				instance = false;
+			}
+			if (instance)
+			{
+				attackTimer += deltaTime;
+				if (!attacking)
+				{
+					if (Dell_First.Touch)
+					{
+						attacking = true;
+						attackTimer = 0.0f;
+					}
+				}
+				else
+				{
+					if (Dell_Second.Touch)
+					{
+						++chargingCount;
+						attacking = false;
+						attackTimer = 0.0f;
+					}
+				}
+				if (skillIndex == 4)
+				{
+					if ((!InputManager_JHW.RTriggerOn() && InputManager_JHW.LTriggerOn()))
+					{
+						GameObject myTarget = PlayerTarget.getMytarget();
+						if (myTarget != null)
+						{
+							DellNum = 0;
+							for (int i = 0; i < DellAttackObj.Length; ++i)
+							{
+								if (DellAttackObj[i] == null)
+								{
+									DellNum = i;
+									DellAttackObj[i] = Dellpool.NewItem();
+									break;
+								}
+							}
+							DellAttackObj[DellNum].GetComponent<DellSkill>().shoot(chargingCount, myTarget);
+						}
+					}
+				}
+				if (attackTimer > .5f)
+				{
+					SweetMelody.SetActive(false);
+					Debug.Log("델 스킬 종료");
+					PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.RTouch));
+					PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.LTouch));
+					break;
 				}
 			}
-
-			yield return new WaitForSeconds(0.03f);
+			yield return new WaitForSeconds(0.01f);
 		}
 
 	}
-	public int getDellcount() { return Dellcount; }
-	public bool getDelltouch() { return DellTouch; }
-	public void setDellcount(int count) { Dellcount += count; }
-	public void setDellcount() { ++Dellcount; }
-	public void setDelltouch(bool val) { DellTouch = val; }
-	public void DellCharging(float time)
+	public void Charging(float time)
 	{
 		MyState.SetMyState(PlayerState.State.Charging, time);
 	}
@@ -500,8 +597,19 @@ public class AttackMethod : MonoBehaviour
 				break;
 			case 4: //바이올린 상태 전체 공격 위주, 한정된 시간에 여러번 좌우 이동을 통해 차징 공격
 				{
-					DellTouch = false;
-					Dellcount = 0;
+					SweetMelody.SetActive(false);
+					for (int i = 0; i < DellAttackObj.Length; ++i)
+					{
+						if (DellAttackObj[i])
+						{
+							if (!DellAttackObj[i].GetComponent<DellSkill>().IsShoot())
+							{
+								DellAttackObj[i].GetComponent<DellSkill>().resetDelete();
+								Dellpool.RemoveItem(DellAttackObj[i]);
+								DellAttackObj[i] = null;
+							}
+						}
+					}
 				}
 				break;
 		}

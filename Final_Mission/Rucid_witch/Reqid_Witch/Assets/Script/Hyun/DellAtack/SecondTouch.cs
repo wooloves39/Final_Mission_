@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class SecondTouch : MonoBehaviour {
 	private AttackMethod attackMethod;
+	public bool Touch { get; set; }
 	// Use this for initialization
 	private void Awake()
 	{
-		attackMethod = gameObject.transform.parent.parent.parent.parent.GetComponent<AttackMethod>();
+		Touch = false;
+		attackMethod = gameObject.transform.GetComponentInParent<AttackMethod>();
 	}
 	private void OnTriggerEnter(Collider other)
 	{
+		if (attackMethod.Flug)
+		{
+			if (other.gameObject.CompareTag("DellAttack"))
+			{
+
+				Touch = true;
+			}
+
+		}
+	}
+	private void OnTriggerExit(Collider other)
+	{
 		if (other.gameObject.CompareTag("DellAttack"))
 		{
-			if (attackMethod.getDelltouch())
-			{
-				Debug.Log("활 뒷대가리 맞음");
-				attackMethod.setDelltouch(false);
-				attackMethod.setDellcount();
-			}
+
+			Touch = false;
 		}
 	}
 }

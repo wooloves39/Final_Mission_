@@ -475,6 +475,7 @@ public class AttackMethod : MonoBehaviour
 				{
 					if (Dell_First.Touch)
 					{
+						PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.3f, 0.3f, OVRInput.Controller.RTouch));
 						attacking = true;
 						attackTimer = 0.0f;
 					}
@@ -483,7 +484,9 @@ public class AttackMethod : MonoBehaviour
 				{
 					if (Dell_Second.Touch)
 					{
+						PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.3f, 0.3f, OVRInput.Controller.RTouch));
 						++chargingCount;
+						Debug.Log("델 카운트 "+chargingCount);
 						attacking = false;
 						attackTimer = 0.0f;
 					}
@@ -502,14 +505,16 @@ public class AttackMethod : MonoBehaviour
 								{
 									DellNum = i;
 									DellAttackObj[i] = Dellpool.NewItem();
+									DellAttackObj[i].transform.position = transform.position;
 									break;
 								}
 							}
 							DellAttackObj[DellNum].GetComponent<DellSkill>().shoot(chargingCount, myTarget);
+							chargingCount = 0;
 						}
 					}
 				}
-				if (attackTimer > .5f)
+				if (attackTimer > 1.0f)
 				{
 					SweetMelody.SetActive(false);
 					Debug.Log("델 스킬 종료");

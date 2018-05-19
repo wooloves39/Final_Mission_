@@ -292,6 +292,17 @@ GameObject:
   m_PrefabParentObject: {fileID: 1333073437615248, guid: 480b50d78952ea745b85c674444a6d87,
     type: 2}
   m_PrefabInternal: {fileID: 1960955978}
+--- !u!1 &649228814 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1088598348626696, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 899955907}
+--- !u!114 &654870601 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114659913604514990, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 899955907}
+  m_Script: {fileID: 11500000, guid: d85fff1a2474f6f4f98bee82f775483d, type: 3}
 --- !u!1001 &899955907
 Prefab:
   m_ObjectHideFlags: 0
@@ -356,6 +367,87 @@ Prefab:
       propertyPath: nextParticle
       value: 
       objectReference: {fileID: 929166924}
+    - target: {fileID: 114389319886559842, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Dell_First
+      value: 
+      objectReference: {fileID: 654870601}
+    - target: {fileID: 114389319886559842, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Dell_Second
+      value: 
+      objectReference: {fileID: 2093600193}
+    - target: {fileID: 114389319886559842, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: SweetMelody
+      value: 
+      objectReference: {fileID: 649228814}
+    - target: {fileID: 114389319886559842, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: DellAttackObjPrefab
+      value: 
+      objectReference: {fileID: 1660617179606106, guid: 0ba62ea33526d604bae5cfcfbe718031,
+        type: 2}
+    - target: {fileID: 120192146271276594, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120192146271276594, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23859947608488334, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23859947608488334, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23391322810938538, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23391322810938538, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23274009742879354, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23274009742879354, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23602049757508130, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23602049757508130, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23972979190719456, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23972979190719456, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0
@@ -639,7 +731,7 @@ Prefab:
     - target: {fileID: 114787334104458518, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
       propertyPath: Wave_Start
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 480b50d78952ea745b85c674444a6d87, type: 2}
@@ -696,6 +788,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2027470150}
   m_Script: {fileID: 11500000, guid: f9035e037b71b0d46a41168eca0ecb78, type: 3}
+--- !u!114 &2093600193 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114029442961763984, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 899955907}
+  m_Script: {fileID: 11500000, guid: 94bf76d8eb752cf42b4ca3804d431618, type: 3}
 --- !u!1001 &2095366803
 Prefab:
   m_ObjectHideFlags: 0

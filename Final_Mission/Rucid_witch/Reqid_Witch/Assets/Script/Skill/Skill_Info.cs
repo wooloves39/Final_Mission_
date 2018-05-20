@@ -93,7 +93,7 @@ public class Skill_Info : MonoBehaviour {
 	}
 	void OnTriggerExit(Collider other)
 	{
-		if (other.tag == "Monster")
+		if (other.CompareTag("Monster"))
 		{
 			ObjList.Remove(other.gameObject);
 		}

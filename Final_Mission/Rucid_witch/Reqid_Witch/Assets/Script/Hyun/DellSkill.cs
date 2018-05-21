@@ -7,13 +7,11 @@ public class DellSkill : MonoBehaviour
 	// Use this for initialization
 	private int skill;
 	private GameObject target;
-	private float handDis;
-	public float HandeDis { get { return handDis; } set { handDis = value; } }
 	float deltaTime;
 	private bool Shoot = false;
 	private bool del_timer = false;
 	public bool Del_timer { get { return del_timer; } set { del_timer = value; } }
-	
+
 	//private Collider collider;
 	private Vector3 curScale;
 	private Rigidbody rigi;

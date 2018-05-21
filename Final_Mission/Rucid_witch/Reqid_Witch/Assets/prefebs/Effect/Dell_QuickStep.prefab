@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4767148922162822}
   - component: {fileID: 198892762454169296}
   - component: {fileID: 199474454027534940}
+  - component: {fileID: 114566949801289562}
   m_Layer: 0
   m_Name: Dell_QuickStep
   m_TagString: Untagged
@@ -69,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579856257499076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0, z: -0.07}
+  m_LocalScale: {x: 1.7179669, y: 1.717969, z: 1.717969}
   m_Children: []
   m_Father: {fileID: 4767148922162822}
   m_RootOrder: 0
@@ -82,8 +83,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064443256484896}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.07000017}
+  m_LocalScale: {x: 1.7179669, y: 1.717969, z: 1.717969}
   m_Children: []
   m_Father: {fileID: 4767148922162822}
   m_RootOrder: 1
@@ -94,15 +95,30 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1067676645943866}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 12.69}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: -2.4888887, z: 0}
+  m_LocalScale: {x: 2.2222233, y: 2.2222233, z: 2.2222233}
   m_Children:
   - {fileID: 4321672236562780}
   - {fileID: 4655481580524362}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114566949801289562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1067676645943866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f35e0b4305b0db41ad64c3d6080ce8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 1579856257499076}
+  - {fileID: 1064443256484896}
+  BuffTime: 40
 --- !u!198 &198267548663826154
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -162,7 +178,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1453588983
+  randomSeed: -1850273319
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3429,7 +3445,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -654401813
+  randomSeed: -1470437398
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6696,7 +6712,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1555079587
+  randomSeed: 1968770427
   InitialModule:
     serializedVersion: 3
     enabled: 1

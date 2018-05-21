@@ -23,5 +23,9 @@ public class Dell_Buff_Active : MonoBehaviour {
 		}
 		gameObject.SetActive(false);
 	}
-
+	public void BuffReset()
+	{
+		StopAllCoroutines();
+		StartCoroutine(Buff(BuffTime));
+	}
 }

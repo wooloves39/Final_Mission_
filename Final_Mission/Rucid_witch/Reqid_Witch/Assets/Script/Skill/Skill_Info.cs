@@ -13,25 +13,22 @@ public class Skill_Info : MonoBehaviour {
 	public bool DotHit = false;
 	public float DotDmg = 50.0f;
 	public float DotTime = 5.0f;
-	public float Cycle = 0.3f;
 
+    public float[] PowerMemory = { 0,0,0 }; 
 	public int HitCount = 4;
 	private float[] Minus  = { 0,0,0};
 	private List<GameObject> ObjList = new List<GameObject>();
 
-	public float[] PowerMemory = { 0,0,0 };
 
 	public float Delete_Delay_Time = 0.0f;
 
 	public bool ElecShock = false;
 	public float ShockTime = 2.0f;
-	public float time = 0.0f;
 	private bool Once = false;
 	public GameObject effect;
 	private void OnEnable()
 	{
 		Once = false;
-		time = 0.0f;
 		PowerMemory[0] = Power;
 		PowerMemory[1] = AreaDmg;
 		PowerMemory[2] = DotDmg;
@@ -78,9 +75,7 @@ public class Skill_Info : MonoBehaviour {
 			{
 				if (!temp.MomentInvincible)
 				{
-					if (!Once)
-						StartCoroutine("DotSkill", temp);
-					Once = true;
+					StartCoroutine("DotSkill", temp);
 				}
 			}
 			
@@ -104,7 +99,7 @@ public class Skill_Info : MonoBehaviour {
 		ObjectLife temp;
 		while (PowerMemory [1] > 0) 
         {
-            yield return new WaitForSeconds(Cycle);
+            yield return new WaitForSeconds(AreaCycle);
 			for (int j = 0; j < ObjList.Count; ++j)
 			{
 				if (ObjList[j].activeInHierarchy == false)
@@ -121,27 +116,16 @@ public class Skill_Info : MonoBehaviour {
 	}
 	IEnumerator DotSkill(ObjectLife obj)
 	{
-		float Dmg = PowerMemory[2] / (DotTime/Cycle);
-		float time = 0.0f;
-		bool b = false;
-		PowerMemory[2] -= Minus[2];
-		if (PowerMemory[2] <= 0.0f)
-		{
-			yield return new WaitForSeconds(Delete_Delay_Time);
-			this.gameObject.SetActive(false);
-		}
-		while (time <= DotTime)
-		{
-			if(obj.isActiveAndEnabled)
-				obj.SendMessage("SendDMG", Dmg);
-			if (!b)
-			{
-				b = true;
-				if (ElecShock)
-					obj.SendMessage("Shock",ShockTime);
-			}
-			time += Cycle;
-			yield return new WaitForSeconds(Cycle);
-		}
+        float DotCycle = DotTime / HitCount;
+		
+        obj.SendDotDMG(PowerMemory[2]/HitCount, DotTime, DotCycle);
+        
+        yield return new WaitForSeconds(DotCycle);
+        if (!Once)
+        {
+            Once = true;
+            yield return new WaitForSeconds(Delete_Delay_Time);
+            this.gameObject.SetActive(false);
+        }
 	}
 }

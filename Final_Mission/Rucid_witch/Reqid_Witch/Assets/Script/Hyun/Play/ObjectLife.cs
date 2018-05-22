@@ -23,7 +23,7 @@ public class ObjectLife : MonoBehaviour {
 	
 	public GameObject ElecShock;//구조 바꿔야함
 	private Animator ani;
-
+    private bool dot = false;
 	private void Start()
 	{
 		MobSound = GetComponentInChildren<MonsterSoundSetting>();
@@ -62,7 +62,29 @@ public class ObjectLife : MonoBehaviour {
 			StartCoroutine("SetInvincible");
 		}
 	}
-	private void SendAreaDMG(float dmg)
+    public void SendDotDMG(float dmg,float time,float cycleTime)
+    {
+        if (!dot)
+        {
+            dot = true;
+            StartCoroutine(DotDMG( dmg, time, cycleTime));
+        }
+    }
+    IEnumerator DotDMG(float dmg,float time,float cycleTime)
+    {
+        float T = 0.0f;
+        while(T < time)
+        {
+            if(!this.gameObject.activeInHierarchy)
+                break;
+            Hp -= dmg;
+            MobSound.PlaySound(1);
+            T += cycleTime;
+            yield return new WaitForSeconds(cycleTime);
+        }
+        dot = false;
+    }
+    public void SendAreaDMG(float dmg)
 	{
 		Hp -= dmg;
 		MobSound.PlaySound(1);

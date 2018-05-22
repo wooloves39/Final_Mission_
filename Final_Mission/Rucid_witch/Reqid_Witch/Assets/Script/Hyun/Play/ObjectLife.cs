@@ -75,6 +75,7 @@ public class ObjectLife : MonoBehaviour {
         float T = 0.0f;
         while(T < time)
         {
+
             if(!this.gameObject.activeInHierarchy)
                 break;
             Hp -= dmg;
@@ -86,6 +87,12 @@ public class ObjectLife : MonoBehaviour {
     }
     public void SendAreaDMG(float dmg)
 	{
+		if (!ani.GetCurrentAnimatorStateInfo(0).IsName("skill1") &&
+			!ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
+			!ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
+			!ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
+			!ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
+			ani.Play("Defence");
 		Hp -= dmg;
 		MobSound.PlaySound(1);
 	}

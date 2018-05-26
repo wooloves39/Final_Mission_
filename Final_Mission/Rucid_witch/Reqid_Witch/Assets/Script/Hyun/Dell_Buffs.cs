@@ -21,82 +21,34 @@ public class Dell_Buffs : MonoBehaviour {
 		bool Cool = false;
 		switch (pointChecker.getCurrentSkill())
 		{
-			case 1:
+			case 2:
 				{
-					if (CoolTime.CheckCool(4, pointChecker.getCurrentSkill()))
-					{
-						Cool = true;
-					}
-					if (CoolTime.CheckMp(4, pointChecker.getCurrentSkill()))
-					{
-						Mp = true;
-					}
-					if (!Cool && !Mp)
-					{
+					
 						CoolTime.SetCool(4, 4);
 						CoolTime.MpDown(4, 4);
 						buffs[0].SetActive(true);
-					}
-					else
-					{
-						if (Mp)
-							Debug.Log("Mp부족 처리 부분");
-						if (Cool)
-							Debug.Log("쿨타임 중 처리 부분");
-					}
+					pointChecker.resetSkill();
 				}
 				break;
-			case 2:
+			case 3:
 				{
-					if (CoolTime.CheckCool(4, pointChecker.getCurrentSkill()))
-					{
-						Cool = true;
-					}
-					if (CoolTime.CheckMp(4, pointChecker.getCurrentSkill()))
-					{
-						Mp = true;
-					}
-					if (!Cool && !Mp)
-					{
+					
 						CoolTime.SetCool(4, 4);
 						CoolTime.MpDown(4, 4);
 						buffs[1].SetActive(true);
-					}
-					else
-					{
-						if (Mp)
-							Debug.Log("Mp부족 처리 부분");
-						if (Cool)
-							Debug.Log("쿨타임 중 처리 부분");
-					}
+					pointChecker.resetSkill();
 				}
 				break;
-			case 4:
+			case 5:
 				{
-					if (CoolTime.CheckCool(4, pointChecker.getCurrentSkill()))
-					{
-						Cool = true;
-					}
-					if (CoolTime.CheckMp(4, pointChecker.getCurrentSkill()))
-					{
-						Mp = true;
-					}
-					if (!Cool && !Mp)
-					{
+					
 						CoolTime.SetCool(4, 4);
 						CoolTime.MpDown(4, 4);
 						buffs[2].SetActive(true);
-					}
-					else
-					{
-						if (Mp)
-							Debug.Log("Mp부족 처리 부분");
-						if (Cool)
-							Debug.Log("쿨타임 중 처리 부분");
-					}
+					pointChecker.resetSkill();
 				}
 				break;
 		}
-		pointChecker.resetSkill();
+		
 	}
 }

@@ -16,6 +16,25 @@ public class SkillChange : MonoBehaviour
 	// Use this for initialization
 	private void Awake()
 	{
+		Dell[0].SetActive(false);
+		Dell[1].SetActive(false);
+		Seikwan.SetActive(false);
+		Hand[0].SetActive(false);
+		if (LineDraw.curType == 1)
+		{
+			Seikwan.SetActive(true);
+			Hand[1].SetActive(true);
+		}
+		else if (LineDraw.curType == 4)
+		{
+			Dell[0].SetActive(true);
+			Dell[1].SetActive(true);
+		}
+		else
+		{
+			Hand[0].SetActive(true);
+			Hand[1].SetActive(true);
+		}
 	}
 	void Start()
 	{

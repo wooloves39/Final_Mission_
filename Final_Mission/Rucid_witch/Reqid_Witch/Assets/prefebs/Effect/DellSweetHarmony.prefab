@@ -142,9 +142,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1272693987450220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7656606bbe4b10b4699f29e2ac569ab7, type: 3}
+  m_Script: {fileID: 11500000, guid: c31f7d58f88c54049b532ff11b0ce3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OneHit: 0
+  Power: 100
+  AreaHit: 1
+  AreaDmg: 40
+  AreaCycle: 0.2
+  DotHit: 0
+  DotDmg: 50
+  DotTime: 5
+  PowerMemory:
+  - 0
+  - 0
+  - 0
+  HitCount: 8
+  Delete_Delay_Time: 2
+  ElecShock: 0
+  ShockTime: 2
+  effect: {fileID: 1272687918067090, guid: f62f0ccd89fbc8941aa435c18dcb6cc6, type: 2}
 --- !u!135 &135675090467676908
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -152,7 +169,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272693987450220}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -216,7 +233,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 198332263
+  randomSeed: -390408774
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3483,7 +3500,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 470512703
+  randomSeed: 1079897646
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6751,7 +6768,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1229934201
+  randomSeed: -1857118472
   InitialModule:
     serializedVersion: 3
     enabled: 1

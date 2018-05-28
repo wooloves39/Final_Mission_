@@ -200,12 +200,14 @@ public class AttackMethod : MonoBehaviour
 	}
 	private IEnumerator BeejaeControll()
 	{
+		int layerMask = (-1) - (1 << LayerMask.NameToLayer("UserSkill"));
+
 		//왼손
 		while (flug)
 		{
 			Ray ray = new Ray(Hands[0].transform.position, Hands[0].transform.forward);
 			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit, RayLength))
+			if (Physics.Raycast(ray, out hit, RayLength,layerMask))
 			{
 				if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Monster"))
 				{
@@ -223,7 +225,7 @@ public class AttackMethod : MonoBehaviour
 			}
 			//오른손
 			ray = new Ray(Hands[1].transform.position, Hands[1].transform.forward);
-			if (Physics.Raycast(ray, out hit, RayLength))
+			if (Physics.Raycast(ray, out hit, RayLength, layerMask))
 			{
 				if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Monster"))
 				{
@@ -287,13 +289,16 @@ public class AttackMethod : MonoBehaviour
 	}
 	private IEnumerator VerbaseControll()
 	{
+		int layerMask = (-1) - (1 << LayerMask.NameToLayer("UserSkill"));
+
 		//왼손
 		while (flug)
 		{
 			Ray ray = new Ray(Hands[0].transform.position, Hands[0].transform.forward);
 			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit, RayLength))
+			if (Physics.Raycast(ray, out hit, RayLength, layerMask))
 			{
+				//Debug.Log(hit.collider.gameObject.name);
 				if (hit.collider.CompareTag("Ground"))
 				{
 					if (!Verbase_Marker[0].activeSelf)
@@ -307,7 +312,7 @@ public class AttackMethod : MonoBehaviour
 			}
 			//오른손
 			ray = new Ray(Hands[1].transform.position, Hands[1].transform.forward);
-			if (Physics.Raycast(ray, out hit, RayLength))
+			if (Physics.Raycast(ray, out hit, RayLength, layerMask))
 			{
 				if (hit.collider.CompareTag("Ground"))
 				{

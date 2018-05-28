@@ -6,19 +6,20 @@ public class TreeSkill : MonoBehaviour {
 
     public float offset = -7.0f;
     public float glowTime = 1.0f;
-    public Transform target;
+	public Transform target;
+	private Vector3 SetPos;
 	// Use this for initialization
-	
-    void Awake () {
-        this.transform.position = this.transform.position + Vector3.up * offset;
-        StartCoroutine("GrowUp");
+	void OnEnable ()
+	{
+		StartCoroutine("GrowUp");
     }
-    void Disable()
-    {
-        this.transform.position =Vector3.up * offset;
-    }
+    void OnDisable()
+	{
+		StopCoroutine("GrowUp");
+	}
     IEnumerator GrowUp()
     {
+		this.transform.position += this.transform.up * offset;
         float cycle = 0.05f;
         float size = 7.0f / (glowTime / cycle);
         while (this.transform.position.y < 0.1f)

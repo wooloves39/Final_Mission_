@@ -7,7 +7,9 @@ public class Beejea_Verbase_Setting : MonoBehaviour {
 
 	public GameObject berbash;
 	public GameObject beejae;
+	public bool lefthand = false;
 	private BeejaeSkill Bskill;
+	public VerbashSkill Vskill;
 	private Image PointImage;
 	private Color cur_Color;//평소
 	private Color touch_Color;//점끼리 마주쳤을때
@@ -52,8 +54,11 @@ public class Beejea_Verbase_Setting : MonoBehaviour {
 				break;
 			case 3:
 				{
-					if (other.gameObject.CompareTag("Point"))
+					if (other.gameObject.CompareTag("Monster"))
 					{
+						Vskill.SetTarget(other.gameObject.GetComponentInParent<ObjectLife>().gameObject);
+						Vskill.handle2 = true;
+
 						isTouch = true;
 					}
 				}
@@ -76,8 +81,9 @@ public class Beejea_Verbase_Setting : MonoBehaviour {
 				break;
 			case 3:
 				{
-					if (other.gameObject.CompareTag("Point"))
+					if (other.gameObject.CompareTag("Monster"))
 					{
+						Vskill.handle2 = false;
 						isTouch = false;
 					}
 				}

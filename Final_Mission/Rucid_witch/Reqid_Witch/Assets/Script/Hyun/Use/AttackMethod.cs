@@ -209,6 +209,8 @@ public class AttackMethod : MonoBehaviour
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, RayLength,layerMask))
 			{
+				Debug.Log(hit.collider.tag);
+				Debug.Log(hit.collider.gameObject.name);
 				if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Monster"))
 				{
 					if (!Beejae_Marker[0].activeSelf)
@@ -298,7 +300,7 @@ public class AttackMethod : MonoBehaviour
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, RayLength, layerMask))
 			{
-				//Debug.Log(hit.collider.gameObject.name);
+				Debug.Log(hit.collider.gameObject.name);
 				if (hit.collider.CompareTag("Ground"))
 				{
 					if (!Verbase_Marker[0].activeSelf)
@@ -519,7 +521,7 @@ public class AttackMethod : MonoBehaviour
 						}
 					}
 				}
-				if (attackTimer > 1.0f)
+				if (attackTimer > 4.0f)
 				{
 					SweetMelody.SetActive(false);
 					Debug.Log("델 스킬 종료");

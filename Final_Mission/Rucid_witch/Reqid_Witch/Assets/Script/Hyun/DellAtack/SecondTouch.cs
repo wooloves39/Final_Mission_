@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SecondTouch : MonoBehaviour {
 	private AttackMethod attackMethod;
+	public GameObject particle;
 	public bool Touch { get; set; }
 	// Use this for initialization
 	private void Awake()
@@ -17,7 +18,7 @@ public class SecondTouch : MonoBehaviour {
 		{
 			if (other.gameObject.CompareTag("DellAttack"))
 			{
-
+				particle.SetActive(true);
 				Touch = true;
 			}
 
@@ -27,7 +28,7 @@ public class SecondTouch : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("DellAttack"))
 		{
-
+			particle.SetActive(false);
 			Touch = false;
 		}
 	}

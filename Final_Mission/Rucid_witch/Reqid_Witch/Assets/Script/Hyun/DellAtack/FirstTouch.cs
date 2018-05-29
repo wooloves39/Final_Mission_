@@ -5,6 +5,7 @@ using UnityEngine;
 public class FirstTouch : MonoBehaviour
 {
 	private AttackMethod attackMethod;
+	public GameObject particle;
 	public bool Touch { get; set; }
 	private void Awake()
 	{
@@ -17,7 +18,7 @@ public class FirstTouch : MonoBehaviour
 		{
 			if (other.gameObject.CompareTag("DellAttack"))
 			{
-
+				particle.SetActive(true);
 				Touch = true;
 			}
 
@@ -27,7 +28,7 @@ public class FirstTouch : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("DellAttack"))
 		{
-
+			particle.SetActive(false);
 			Touch = false;
 		}
 	}

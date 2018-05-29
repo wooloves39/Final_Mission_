@@ -206,7 +206,7 @@ public class VerbashSkill : MonoBehaviour
     }
     IEnumerator Skill4()
     {
-        magic[3].transform.position = Player.gameObject.transform.position + Player.Back;
+		magic[3].transform.position = Player.gameObject.transform.position;// + Player.Back;
        // magic[3].GetComponentsInChildren
         magic[3].SetActive(true);
         CoolDown[3] = true;

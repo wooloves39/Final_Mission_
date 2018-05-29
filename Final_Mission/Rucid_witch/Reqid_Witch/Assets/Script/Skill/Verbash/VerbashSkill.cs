@@ -86,8 +86,8 @@ public class VerbashSkill : MonoBehaviour
 				if (Player.Mp >= UseMp[1])
 				{
 					if (!CoolDown[1])
-					{
-						//
+                    {
+                        StartCoroutine("Skill2");
 						Player.Mp -= UseMp[1];
 					}
 					else
@@ -104,8 +104,8 @@ public class VerbashSkill : MonoBehaviour
 				if (Player.Mp >= UseMp[2])
 				{
 					if (!CoolDown[2])
-					{
-						//
+                    {
+                        StartCoroutine("Skill3");
 						Player.Mp -= UseMp[2];
 					}
 					else
@@ -174,8 +174,46 @@ public class VerbashSkill : MonoBehaviour
 		yield return new WaitForSeconds(1.5f);
 
 		magic[0].SetActive(false);
-		yield return new WaitForSeconds(CoolTime[0]-0.5f);
+		yield return new WaitForSeconds(CoolTime[0]-1.5f);
 		CoolDown[0] = false;
 
 	}
+    IEnumerator Skill2()
+    {
+        magic[1].transform.position = target.transform.position;
+
+        magic[1].SetActive(true);
+        CoolDown[1] = true;
+        yield return new WaitForSeconds(5.0f);
+
+        magic[1].SetActive(false);
+        yield return new WaitForSeconds(CoolTime[2]-5.0f);
+        CoolDown[1] = false;
+
+    }
+    IEnumerator Skill3()
+    {
+        magic[2].transform.position = target.transform.position;
+
+        magic[2].SetActive(true);
+        CoolDown[2] = true;
+        yield return new WaitForSeconds(1.5f);
+
+        magic[2].SetActive(false);
+        yield return new WaitForSeconds(CoolTime[2]-1.5f);
+        CoolDown[2] = false;
+
+    }
+    IEnumerator Skill4()
+    {
+        magic[3].transform.position = Player.gameObject.transform.position + Player.Back;
+       // magic[3].GetComponentsInChildren
+        magic[3].SetActive(true);
+        CoolDown[3] = true;
+        yield return new WaitForSeconds(8.0f);
+
+        magic[3].SetActive(false);
+        yield return new WaitForSeconds(CoolTime[3]-8.0f);
+        CoolDown[3] = false;
+    }
 }

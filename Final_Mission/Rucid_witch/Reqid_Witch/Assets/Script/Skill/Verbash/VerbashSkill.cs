@@ -11,6 +11,7 @@ public class VerbashSkill : MonoBehaviour
 
 	private bool[] CoolDown = { false, false, false, false, false };
 
+    private VerbashSkill4[] V4 = {null,null};
 	private int skill;
 	private GameObject target;
 
@@ -29,6 +30,7 @@ public class VerbashSkill : MonoBehaviour
 
 	private void Awake()
 	{
+        V4 = magic[3].GetComponentsInChildren<VerbashSkill4>();
 		handle = FindObjectOfType<AttackMethod>();
 		Player = FindObjectOfType<PlayerState>();
 		line = FindObjectOfType<LineDraw>();
@@ -206,14 +208,32 @@ public class VerbashSkill : MonoBehaviour
     }
     IEnumerator Skill4()
     {
-		magic[3].transform.position = Player.gameObject.transform.position;// + Player.Back;
-       // magic[3].GetComponentsInChildren
+		magic[3].transform.position = Player.gameObject.transform.position;
         magic[3].SetActive(true);
         CoolDown[3] = true;
-        yield return new WaitForSeconds(8.0f);
+
+        yield return new WaitForSeconds(0.2f);
+        V4[0].shoot(target);
+        yield return new WaitForSeconds(0.1f);
+        V4[1].shoot(target);
+        yield return new WaitForSeconds(7.7f);
 
         magic[3].SetActive(false);
+        V4[0].reset();
+        V4[1].reset();
         yield return new WaitForSeconds(CoolTime[3]-8.0f);
         CoolDown[3] = false;
+    }
+    IEnumerator Skill5()
+    {
+        magic[4].transform.position = Player.gameObject.transform.position;
+        magic[4].SetActive(true);
+        CoolDown[4] = true;
+
+        yield return new WaitForSeconds(4.0f);
+
+        magic[4].SetActive(false);
+        yield return new WaitForSeconds(CoolTime[4]-4.0f);
+        CoolDown[4] = false;
     }
 }

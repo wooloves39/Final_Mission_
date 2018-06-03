@@ -74,6 +74,10 @@ public class SelectMenu_Ready : MonoBehaviour
 			GameStart.gameObject.SetActive(true);
 			//
 		}
+		if (Input.GetKeyDown(KeyCode.D))
+		{
+			Singletone.Instance.Save("/Text/Save/save01.txt");
+		}
 	}
 	IEnumerator KeyPad()
 	{

@@ -22,17 +22,17 @@ public class Singletone
 
 	//여기에 싱글톤 변수를 추가한다.
 	//처음에 -1로 초기화 디파인이 안됨. 
-	public int Mapnumber = -1;
-	public int Charnumber = -1;
 	public float Sound = 1.0f;
-	public string name;
+	public string name= "Reqid_Witch";
 	public int stage = 5;
 	public string saveTime;
-	public int[] Myskill = { 3	 , 4, 1};
-	public void Save()
+	public int[] Myskill = { 3 , 4, 1};
+	public void Save(string FileName)
 	{
-		string saveTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-
+		string saveTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH");
+		File_parser Files=new File_parser();
+		Files.FileSave(FileName, name, stage, saveTime, Sound, Myskill[0], Myskill[1], Myskill[2]);
+		Files.FileClose();
 	}
 	public void Load(string FileName)
 	{
@@ -40,14 +40,26 @@ public class Singletone
 		FileStream fs = new FileStream(strPath, FileMode.Open);
 		StreamReader sr = new StreamReader(fs);
 		string stage_str;
+		string sound_str;
+		string Myskill_str;
 		name = sr.ReadLine();
 		stage_str = sr.ReadLine();
 		int.TryParse(stage_str, out stage);
 		saveTime = sr.ReadLine();
+		sound_str = sr.ReadLine();
+		float.TryParse(sound_str, out Sound);
+		for (int i = 0; i < Myskill.Length; ++i)
+		{
+			Myskill_str = sr.ReadLine();
+			int.TryParse(Myskill_str, out Myskill[i]);
+		}
 		Debug.Log(name);
 		Debug.Log(stage);
 		Debug.Log(saveTime);
+		fs.Close();
+		sr.Close();
 	}
+
 	//사용 예
 	//  int myPlayernumber = Singletone.Instance.Charnumber - 1;
 	//  Singletone.Instance.Charnumber = choice;

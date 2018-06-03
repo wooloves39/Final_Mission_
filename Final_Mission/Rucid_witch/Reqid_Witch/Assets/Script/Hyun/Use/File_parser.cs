@@ -6,7 +6,9 @@ public class File_parser : MonoBehaviour
 {
 	private string strPath;
 	private FileStream fs;
+	private FileStream Ws;
 	private StreamReader strRead;
+	private StreamWriter strWrite;
 	private string[] textValue;//실제 대화
 	private int[] textCharacter;//대화를 내뱉는 캐릭터
 	int count;
@@ -22,10 +24,36 @@ public class File_parser : MonoBehaviour
 		fs = new FileStream(strPath, FileMode.Open);
 		strRead = new StreamReader(fs);
 	}
+	public void FileOpen(string FileName,int val=1)
+	{
+		strPath = Application.dataPath + FileName;
+		fs = new FileStream(strPath, FileMode.Create);
+		fs.Flush();
+		strWrite = new StreamWriter(fs);
+	}
+	public void FileSave(string FileName, string name, int stage, string saveTime, float sound, int skill1, int skill2, int skill3)
+	{
+		FileOpen(FileName,2);
+		strWrite.Flush();
+		strWrite.WriteLine(name);
+		strWrite.WriteLine(stage);
+		strWrite.WriteLine(saveTime);
+		strWrite.WriteLine(sound);
+		strWrite.WriteLine(skill1);
+		strWrite.WriteLine(skill2);
+		strWrite.WriteLine(skill3);
+	}
 	public void FileClose()
 	{
-		fs.Close();
-		strRead.Close();
+
+		if (strRead != null)
+		{
+			fs.Close();
+			strRead.Close();
+		} 
+		if (strWrite != null)
+			strWrite.Close();
+
 	}
 	public void Parse()
 	{
@@ -49,6 +77,10 @@ public class File_parser : MonoBehaviour
 	public string[] GetText()
 	{
 		return textValue;
+	}
+	public string getTextOne(int count)
+	{
+		return textValue[count];
 	}
 	public int[] GetTextChar()
 	{

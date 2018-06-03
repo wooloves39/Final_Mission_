@@ -30,14 +30,12 @@ public class Confirm : MonoBehaviour
 						sceneChange.sceneChange("Stage2");
 						break;
 					case 2:
-						Singletone.Instance.Myskill[0] = 0;
-						Singletone.Instance.Myskill[1] = 1;
-						Singletone.Instance.Myskill[2] = 2;
 						sceneChange.sceneChange("Stage5");
 						break;
 					case 3:
 						break;
 					case 4:
+						sceneChange.sceneChange("Stage4");
 						break;
 					case 5:
 						sceneChange.sceneChange("Stage5");

@@ -9,6 +9,7 @@ public class ConfirmMenu : MonoBehaviour {
 	public GameObject load;
 	public AudioClip[] clips;//0 OK 1 NO 2 Move 
 	private AudioSource source;
+	public int SaveDataIndex { get; set; }
 	private void Awake()
 	{
 		sceneChange = FindObjectOfType<SceneChange>();
@@ -25,6 +26,18 @@ public class ConfirmMenu : MonoBehaviour {
 		{
 			if (index == 1)
 			{//파일입출력으로 파일 읽어오는 코드가 필요
+				switch (SaveDataIndex)
+				{
+					case 0:
+						Singletone.Instance.Load("/Text/Save/save01.txt");
+						break;
+					case 1:
+						Singletone.Instance.Load("/Text/Save/save02.txt");
+						break;
+					case 2:
+						Singletone.Instance.Load("/Text/Save/save03.txt");
+						break;
+				}
 				source.clip = clips[0];
 				source.Play();
 				sceneChange.sceneChange("Ready");

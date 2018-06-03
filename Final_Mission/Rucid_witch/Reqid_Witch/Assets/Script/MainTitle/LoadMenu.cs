@@ -8,6 +8,7 @@ public class LoadMenu : MonoBehaviour
 	public GameObject[] Select;
 	public GameObject Main;
 	public GameObject Confirm;
+	private ConfirmMenu confirmMenu;
 	public bool confirm = false;
 	int index = 0;
 	// Use this for initialization
@@ -17,6 +18,7 @@ public class LoadMenu : MonoBehaviour
 	private void Awake()
 	{
 		source = GetComponent<AudioSource>();
+		confirmMenu = Confirm.GetComponent<ConfirmMenu>();
 	}
 	void OnEnable()
 	{
@@ -34,16 +36,19 @@ public class LoadMenu : MonoBehaviour
 			{
 				confirm = true;
 				Confirm.SetActive(true);
+				confirmMenu.SaveDataIndex = 0;
 			}
 			if (index == 1)
 			{
 				confirm = true;
 				Confirm.SetActive(true);
+				confirmMenu.SaveDataIndex = 1;
 			}
 			if (index == 2)
 			{
 				confirm = true;
 				Confirm.SetActive(true);
+				confirmMenu.SaveDataIndex = 2;
 			}
 			if (index == 3)
 			{

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SelectMenu_Ready : MonoBehaviour
 {
 	public GameObject GameStart;
+	public GameObject SaveConfirm;
 	public GameObject[] ui_arr;
 	public GameObject[] Menus;
 	public GameObject selMenu;
@@ -72,7 +73,18 @@ public class SelectMenu_Ready : MonoBehaviour
 			}
 			confirm = true;
 			GameStart.gameObject.SetActive(true);
-			//
+		}
+		if (InputManager_JHW.MenuButton())
+		{
+			if (SelectMenu > -1)
+			{
+				Menus[SelectMenu].transform.rotation = Quaternion.identity;
+				Menus[SelectMenu].transform.Translate(0, 0, 10);
+				ui_arr[SelectMenu].GetComponent<Image>().color = new Color(1, 1, 1);
+				SelectMenu = -1;
+			}
+			confirm = true;
+			SaveConfirm.gameObject.SetActive(true);
 		}
 		if (Input.GetKeyDown(KeyCode.D))
 		{

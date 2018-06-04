@@ -300,8 +300,8 @@ public class AttackMethod : MonoBehaviour
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, RayLength, layerMask))
 			{
-				Debug.Log(hit.collider.gameObject.name);
-				if (hit.collider.CompareTag("Ground"))
+                Debug.Log(hit.collider.gameObject.name);
+                if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Monster"))
 				{
 					if (!Verbase_Marker[0].activeSelf)
 					{
@@ -315,8 +315,8 @@ public class AttackMethod : MonoBehaviour
 			//오른손
 			ray = new Ray(Hands[1].transform.position, Hands[1].transform.forward);
 			if (Physics.Raycast(ray, out hit, RayLength, layerMask))
-			{
-				if (hit.collider.CompareTag("Ground"))
+            {
+                if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Monster"))
 				{
 					if (!Verbase_Marker[1].activeSelf)
 					{

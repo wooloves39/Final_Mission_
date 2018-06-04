@@ -36,7 +36,7 @@ public class Stage5MobAI: MonoBehaviour {
 	void Start()
 	{
 		MobSound = GetComponentInChildren<MonsterSoundSetting>();
-		MobSound.PlaySound(0);
+		//MobSound.PlaySound(0);
 		Time_Nature_Move = getRandom(1, 5);
 		Time_Battle_Move = getRandom(1, 5);
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();

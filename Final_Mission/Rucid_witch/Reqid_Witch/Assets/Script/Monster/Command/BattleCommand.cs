@@ -47,7 +47,8 @@ public class BattleCommand : MonoBehaviour {
 			agent.speed = 0;
 			TimeLimit = T;
 			time = 0.0f;
-			MobSound.PlaySound(2);
+            if(MobSound != null)
+			    MobSound.PlaySound(2);
 			if (b)
 				StartCoroutine("RangeAtt");
 			else

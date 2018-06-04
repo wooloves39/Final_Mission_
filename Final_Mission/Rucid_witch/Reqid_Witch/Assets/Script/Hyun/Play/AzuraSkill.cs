@@ -222,7 +222,7 @@ public class AzuraSkill : MonoBehaviour
 		Blast.transform.localScale = Vector3.one*2;
         Blast.SetActive(true);
         Blast.transform.position = target;
-        StartCoroutine(LastBlastCor(Blast,2.0f));
+        StartCoroutine(LastBlastCor(Blast,3.0f));
     }
     IEnumerator LastBlastCor(GameObject Blast, float Timer)
     {
@@ -230,7 +230,7 @@ public class AzuraSkill : MonoBehaviour
         while (true)
         {
             timer += deltaTime;
-            Blast.transform.Rotate(0, 10 * timer, 0);
+            Blast.transform.Rotate(0, 5 * timer, 0);
             if (timer >= Timer)
             {
                 timer = 0;

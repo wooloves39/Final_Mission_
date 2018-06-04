@@ -11,6 +11,7 @@ public class BossSoundSetting : MonoBehaviour {
 	void Start () {
 		sound = BosssoundPack.Appearance;
 		audio = GetComponent<AudioSource>();
+        audio.volume = Singletone.Instance.Sound;
 	}
 	public void PlayerSound(int soundNum)
 	{

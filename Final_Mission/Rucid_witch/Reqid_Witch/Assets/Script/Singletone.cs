@@ -22,7 +22,8 @@ public class Singletone
 
 	//여기에 싱글톤 변수를 추가한다.
 	//처음에 -1로 초기화 디파인이 안됨. 
-	public float Sound = 1.0f;
+    public float Sound = 0.0f;
+    public float BGMSound = 1.0f;
 	public string name= "Reqid_Witch";
 	public int stage = 5;
 	public string saveTime;

@@ -94,7 +94,7 @@ public class ObjectLife : MonoBehaviour {
 			!ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
 			ani.Play("Defence");
 		Hp -= dmg;
-		MobSound.PlaySound(1);
+	
 	}
 	IEnumerator SetInvincible()
 	{

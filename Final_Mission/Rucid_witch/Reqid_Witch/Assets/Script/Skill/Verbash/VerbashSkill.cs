@@ -226,8 +226,8 @@ public class VerbashSkill : MonoBehaviour
     }
     IEnumerator Skill5()
     {
-        magic[4].transform.position = Player.gameObject.transform.position;
-        magic[4].SetActive(true);
+        magic[4].transform.position = target.transform.position;
+		magic[4].SetActive(true);
         CoolDown[4] = true;
 
         yield return new WaitForSeconds(4.0f);

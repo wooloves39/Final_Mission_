@@ -308,7 +308,9 @@ public class AttackMethod : MonoBehaviour
 						Verbase_Marker[0].SetActive(true);
 					}
 					Vector3 point = hit.point;
-					point.y += 0.2f;
+					point.y += 0.4f;
+					Verbase_Marker[0].transform.LookAt(camTr.position);
+					Verbase_Marker[0].transform.Rotate(90, 0, 0);
 					Verbase_Marker[0].transform.position = point;
 				}
 			}
@@ -323,7 +325,9 @@ public class AttackMethod : MonoBehaviour
 						Verbase_Marker[1].SetActive(true);
 					}
 					Vector3 point = hit.point;
-					point.y += 0.2f;
+					point.y += 0.4f;
+					Verbase_Marker[1].transform.LookAt(camTr.position);
+					Verbase_Marker[1].transform.Rotate(90, 0, 0);
 					Verbase_Marker[1].transform.position = point;
 				}
 			}

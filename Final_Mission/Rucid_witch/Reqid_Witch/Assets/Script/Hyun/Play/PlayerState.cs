@@ -72,6 +72,10 @@ public class PlayerState : MonoBehaviour
 	{
 		return MyState;
 	}
+	public int GetMyStateInt()
+	{
+		return (int)MyState;
+	}
 	public void SetMyState(State state)
 	{
 		MyState = state;
@@ -83,6 +87,10 @@ public class PlayerState : MonoBehaviour
 			chraging.SetActive(true);
 		}
 
+	}
+	public float chargingRate()
+	{
+		return ChargingTime / MaxChargingTime;
 	}
 	public void SetMyState(State state, float time)
 	{

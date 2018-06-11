@@ -63,8 +63,9 @@ public class ObjectLife : MonoBehaviour {
 		}
 	}
     public void SendDotDMG(float dmg,float time,float cycleTime)
-    {
-        if (!dot)
+	{
+		Debug.Log("Dot start");
+		if (!dot)
         {
             dot = true;
             StartCoroutine(DotDMG( dmg, time, cycleTime));
@@ -73,13 +74,14 @@ public class ObjectLife : MonoBehaviour {
     IEnumerator DotDMG(float dmg,float time,float cycleTime)
     {
         float T = 0.0f;
-        while(T < time)
+		Debug.Log("Dot start Co");
+		while (T < time)
         {
-
             if(!this.gameObject.activeInHierarchy)
                 break;
+			Debug.Log(dmg);
             Hp -= dmg;
-            MobSound.PlaySound(1);
+            //MobSound.PlaySound(1);
             T += cycleTime;
             yield return new WaitForSeconds(cycleTime);
         }

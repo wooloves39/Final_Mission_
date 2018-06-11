@@ -75,7 +75,7 @@ public class Skill_Info : MonoBehaviour {
 			{
 				if (!temp.MomentInvincible)
 				{
-					StartCoroutine("DotSkill", temp);
+					StartCoroutine("DotSkill", other.GetComponentInParent<ObjectLife>());
 				}
 			}
 			
@@ -120,12 +120,12 @@ public class Skill_Info : MonoBehaviour {
 		
         obj.SendDotDMG(PowerMemory[2]/HitCount, DotTime, DotCycle);
         
-        yield return new WaitForSeconds(DotCycle);
         if (!Once)
         {
             Once = true;
             yield return new WaitForSeconds(Delete_Delay_Time);
-            this.gameObject.SetActive(false);
+			Once = false;
+			this.gameObject.SetActive(false);
         }
 	}
 }

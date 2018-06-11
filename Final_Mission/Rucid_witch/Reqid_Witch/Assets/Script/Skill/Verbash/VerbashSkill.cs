@@ -125,7 +125,7 @@ public class VerbashSkill : MonoBehaviour
 				{
 					if (!CoolDown[3])
 					{
-						//
+						StartCoroutine("Skill4");
 						Player.Mp -= UseMp[3];
 					}
 					else
@@ -143,7 +143,7 @@ public class VerbashSkill : MonoBehaviour
 				{
 					if (!CoolDown[4])
 					{
-						//
+						StartCoroutine("Skill5");
 						Player.Mp -= UseMp[4];
 					}
 					else

@@ -17,6 +17,7 @@ public class ConfirmMenu : MonoBehaviour {
 	}
 	void OnEnable ()
 	{
+		source.volume = Singletone.Instance.Sound;
 		index = 1;
 		StartCoroutine (KeyPad());
 	}

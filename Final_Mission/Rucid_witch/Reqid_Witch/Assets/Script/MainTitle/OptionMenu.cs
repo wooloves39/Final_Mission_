@@ -26,6 +26,7 @@ public class OptionMenu : MonoBehaviour
 	// Update is called once per frame
 	void OnEnable()
 	{
+		source.volume = Singletone.Instance.Sound;
 		index = 0;
 		timer = 0.0f;
 		StartCoroutine("KeyPad");
@@ -45,6 +46,12 @@ public class OptionMenu : MonoBehaviour
 					Sound[i].SetActive(false);
 				}
 				Sound[sound - 11].SetActive(true);
+				if (index == 11)
+					Singletone.Instance.BGMSound = 0.0f;
+				if(index == 12)			
+					Singletone.Instance.BGMSound = 0.5f;
+				if (index == 13)		
+					Singletone.Instance.BGMSound = 1.0f;
 			}
 
 			if (21 <= index && index <= 23)
@@ -55,6 +62,14 @@ public class OptionMenu : MonoBehaviour
 					Sound2[i].SetActive(false);
 				}
 				Sound2[sound2 - 21].SetActive(true);
+
+				if (index == 21)
+					Singletone.Instance.Sound = 0.0f;
+				if (index == 22)	   
+					Singletone.Instance.Sound = 0.5f;
+				if (index == 23)	   
+					Singletone.Instance.Sound = 1.0f;
+				source.volume = Singletone.Instance.Sound;
 			}
 
 			if (30 <= index && index <= 33)

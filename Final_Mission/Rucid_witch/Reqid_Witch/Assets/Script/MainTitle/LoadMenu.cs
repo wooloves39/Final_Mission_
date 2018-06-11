@@ -22,6 +22,7 @@ public class LoadMenu : MonoBehaviour
 	}
 	void OnEnable()
 	{
+		source.volume = Singletone.Instance.Sound;
 		confirm = false;
 		index = 0;
 		StartCoroutine(KeyPad());

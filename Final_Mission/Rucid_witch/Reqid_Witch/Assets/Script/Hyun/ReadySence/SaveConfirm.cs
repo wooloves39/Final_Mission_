@@ -13,6 +13,7 @@ public class SaveConfirm : MonoBehaviour
 	}
 	private void OnEnable()
 	{
+		GetComponent<AudioSource>().volume = Singletone.Instance.Sound;
 		StartCoroutine(KeyPad());
 		index = 0;
 		ui_arr[index].SetActive(true);

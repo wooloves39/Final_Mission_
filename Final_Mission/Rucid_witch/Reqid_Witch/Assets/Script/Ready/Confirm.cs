@@ -13,6 +13,7 @@ public class Confirm : MonoBehaviour
 	}
 	private void OnEnable()
 	{
+		GetComponent<AudioSource>().volume = Singletone.Instance.Sound;
 		StartCoroutine(KeyPad());
 	}
 	// Update is called once per frame

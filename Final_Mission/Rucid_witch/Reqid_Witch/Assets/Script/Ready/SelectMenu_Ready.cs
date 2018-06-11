@@ -32,6 +32,7 @@ public class SelectMenu_Ready : MonoBehaviour
 		if (InputManager_JHW.AButtonDown())
 		{
 			source.clip = clips[0];
+			source.volume = Singletone.Instance.Sound;
 			source.Play();
 			if (!confirm)
 			{

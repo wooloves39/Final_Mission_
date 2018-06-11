@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
 	{
 		confirm = false;
 		StartCoroutine(KeyPad());
+		source.volume = Singletone.Instance.Sound;
 	}
 	private void Update()
 	{

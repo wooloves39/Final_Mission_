@@ -20,6 +20,7 @@ public class SelectSkillUI : MonoBehaviour
 		stage = Singletone.Instance.stage;
 		StartCoroutine(SkillSet());
 		source = GetComponent<AudioSource>();
+		source.volume = Singletone.Instance.Sound;
 	}
 	private void Update()
 	{

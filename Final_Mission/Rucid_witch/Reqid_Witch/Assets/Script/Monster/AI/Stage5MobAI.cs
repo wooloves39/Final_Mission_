@@ -41,7 +41,10 @@ public class Stage5MobAI: MonoBehaviour {
 		Time_Battle_Move = getRandom(1, 5);
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
 		ObjLife = GetComponent<ObjectLife>();
+
 		ani = GetComponent<Animator>();
+        if(ani == null)
+            ani = GetComponentInChildren<Animator>();
 		NCommand = GetComponent<NatureCommand>();
 		BCommand = GetComponent<BattleCommand>();
 		Player = GameObject.FindWithTag("Player").GetComponent<Transform>();

@@ -217,6 +217,46 @@ Prefab:
       propertyPath: nextParticle
       value: 
       objectReference: {fileID: 578812414}
+    - target: {fileID: 224321273548051404, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224321273548051404, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114842851148552876, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: DirectionArrow
+      value: 
+      objectReference: {fileID: 1165918879859046, guid: 5a6deb3a6a7c9d14bb09e0724259baa6,
+        type: 2}
+    - target: {fileID: 114695895641003858, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: DirectionArrow
+      value: 
+      objectReference: {fileID: 1165918879859046, guid: 5a6deb3a6a7c9d14bb09e0724259baa6,
+        type: 2}
+    - target: {fileID: 114555785761869224, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: DirectionArrow
+      value: 
+      objectReference: {fileID: 1165918879859046, guid: 5a6deb3a6a7c9d14bb09e0724259baa6,
+        type: 2}
+    - target: {fileID: 114960612398332522, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: DirectionArrow
+      value: 
+      objectReference: {fileID: 1165918879859046, guid: 5a6deb3a6a7c9d14bb09e0724259baa6,
+        type: 2}
+    - target: {fileID: 114158244457927442, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: DirectionArrow
+      value: 
+      objectReference: {fileID: 1165918879859046, guid: 5a6deb3a6a7c9d14bb09e0724259baa6,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0

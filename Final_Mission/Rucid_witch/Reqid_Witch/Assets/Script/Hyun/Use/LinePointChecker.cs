@@ -34,6 +34,9 @@ public class LinePointChecker : MonoBehaviour
 	private PlayerSoundSetting playerSound;
 	private List<Vector3> initPos = new List<Vector3>();
 	private List<Vector3> PointsVec = new List<Vector3>();
+
+
+	public GameObject DirectionArrow;
 	// Use this for initialization
 	private void Awake()
 	{
@@ -49,6 +52,36 @@ public class LinePointChecker : MonoBehaviour
 		CompleteSound.volume = Singletone.Instance.Sound;
 		reset();
 		gameObject.SetActive(false);
+		for (int i = 0; i < Points.Length; ++i)
+		{
+			int Pointcount = 0;
+			for (int j = 0; j < skill1.Length - 1; ++j)
+			{
+				if (i == skill1[j]) ++Pointcount;
+			}
+			for (int j = 0; j < skill2.Length - 1; ++j)
+			{
+				if (i == skill2[j]) ++Pointcount;
+			}
+			for (int j = 0; j < skill3.Length - 1; ++j)
+			{
+				if (i == skill3[j]) ++Pointcount;
+			}
+			for (int j = 0; j < skill4.Length - 1; ++j)
+			{
+				if (i == skill4[j]) ++Pointcount;
+			}
+			for (int j = 0; j < skill5.Length - 1; ++j)
+			{
+				if (i == skill5[j]) ++Pointcount;
+			}
+
+			//생성
+			for (int z = 0; z < Pointcount; ++z)
+			{
+				Instantiate(DirectionArrow, Points[i].transform.position, Quaternion.identity, Points[i].transform);
+			}
+		}
 	}
 	public bool getTimerOn() { return TimerOn; }
 	public int UpCount()
@@ -161,7 +194,15 @@ public class LinePointChecker : MonoBehaviour
 				{
 					for (int i = 0; i <= count + 1; ++i)
 					{
-						Points[skill[i]].turnon();
+						if (i == count )
+						{
+							Points[skill[i]].turnon(Points[skill[i + 1]].transform);
+						}
+						else
+						{
+							Points[skill[i]].turnon();
+							Points[skill[i]].ArrowOff() ;
+						}
 					}
 				}
 			}

@@ -10,13 +10,21 @@ public class VerbashSkill4 : MonoBehaviour {
     {
         deltatime = Time.deltaTime;
     }
+
     public void shoot(GameObject target)
+    {
+        this.gameObject.SetActive(true);
+        StartCoroutine("shooting",target);
+    }
+    IEnumerator shooting(GameObject target)
     {
         while(Vector3.Distance(target.transform.position,transform.position) > 0.2f)
         {
-            this.transform.TransformPoint(target.transform.position * deltatime * speed);
+            this.transform.Translate((target.transform.position - this.transform.position) * deltatime * speed);
+            return null;
         }
         this.gameObject.SetActive(false);
+        return null;
     }
     public void reset()
     {

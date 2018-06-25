@@ -140,13 +140,13 @@ public class Stage5Boss: MonoBehaviour {
 					else
 						num = 11;
 				}
-				//실행할 동작 - 삭제할 부분
-				Debug.Log(num);
-
-				string temp;
-				AITree.Instance.AIDic.TryGetValue(num, out temp);
-				Debug.Log(temp);
-				//실행할 동작 - 삭제할 부분
+				////실행할 동작 - 삭제할 부분
+				//Debug.Log(num);
+				//
+				//string temp;
+				//AITree.Instance.AIDic.TryGetValue(num, out temp);
+				//Debug.Log(temp);
+				////실행할 동작 - 삭제할 부분
 
 				switch (num)
 				{

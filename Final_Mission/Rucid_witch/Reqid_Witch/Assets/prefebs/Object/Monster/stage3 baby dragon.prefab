@@ -737,7 +737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1532829882176020
 GameObject:
   m_ObjectHideFlags: 1
@@ -1710,7 +1710,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1207785583918858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224417326978076786}
@@ -2242,7 +2242,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1735920506349184}
   m_LocalRotation: {x: 0.027348986, y: 0.00000066603167, z: -2.8397792e-10, w: 0.999626}
-  m_LocalPosition: {x: 0.001276046, y: 1.5887632, z: -0.0397228}
+  m_LocalPosition: {x: 0.001276046, y: 1.6, z: -0.0397228}
   m_LocalScale: {x: 100, y: 99.99999, z: 99.99999}
   m_Children:
   - {fileID: 4709569318652838}
@@ -3468,7 +3468,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1516672222777650}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 15
@@ -3480,11 +3480,11 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1207785583918858}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137887308473324938
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

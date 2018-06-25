@@ -77,7 +77,7 @@ public class SubMenuSelect : MonoBehaviour {
 					EFF[0].SetActive(true);
 					Singletone.Instance.Sound = 0.0f;
 				}
-				else if (temp.z > 2.5f)
+				else if (temp.z > -2.5f)
 				{
 					for (int i = 0; i < 3; ++i)
 						EFF[i].SetActive(false);

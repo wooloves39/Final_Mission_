@@ -57,7 +57,7 @@ public class ObjectLife : MonoBehaviour {
                         ani.Play("Defence2");
                 }
 			}
-			MobSound.PlaySound(1);
+			//MobSound.PlaySound(1);
 			Hp -= dmg;
 			StartCoroutine("SetInvincible");
 		}

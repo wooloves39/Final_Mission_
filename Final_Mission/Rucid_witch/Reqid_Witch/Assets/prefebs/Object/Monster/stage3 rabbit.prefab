@@ -110,13 +110,14 @@ GameObject:
   - component: {fileID: 114336564116520246}
   - component: {fileID: 114551410067835586}
   - component: {fileID: 195343337868428282}
+  - component: {fileID: 114581330917904304}
   m_Layer: 12
   m_Name: stage3 rabbit
   m_TagString: MobSearch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1096563079478042
 GameObject:
   m_ObjectHideFlags: 1
@@ -1245,7 +1246,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1231477313641078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224065718561052186}
@@ -1878,6 +1879,17 @@ MonoBehaviour:
   AttackFrame: 0.4
   SkillFrame: []
   MobObj: {fileID: 0}
+--- !u!114 &114581330917904304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1082659963072908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6cc7de2dc5c154099afc58c3889a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114589427110772378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2584,7 +2596,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082659963072908}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 15
@@ -2596,7 +2608,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1231477313641078}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.5
@@ -2886,7 +2898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.5}
+  m_AnchoredPosition: {x: 0, y: 5}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224098009201483536

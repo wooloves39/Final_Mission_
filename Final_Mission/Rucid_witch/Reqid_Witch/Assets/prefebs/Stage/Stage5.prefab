@@ -331,7 +331,6 @@ GameObject:
   - component: {fileID: 4251681829326406}
   - component: {fileID: 33640233787093900}
   - component: {fileID: 23642188693399390}
-  - component: {fileID: 64524896313048606}
   m_Layer: 0
   m_Name: Ground02
   m_TagString: Ground
@@ -5556,20 +5555,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300036, guid: 97ccadfcb74838548aeaeb5c681e1e0b, type: 3}
---- !u!64 &64524896313048606
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1238458540810008}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300008, guid: 97ccadfcb74838548aeaeb5c681e1e0b, type: 3}
 --- !u!64 &64605657429240032
 MeshCollider:
   m_ObjectHideFlags: 1

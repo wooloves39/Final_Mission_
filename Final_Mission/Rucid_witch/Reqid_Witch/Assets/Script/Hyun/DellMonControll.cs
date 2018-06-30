@@ -45,6 +45,10 @@ public class DellMonControll : MonoBehaviour {
 	{
 		SweetMelody.SetActive(true);
 	}
+	void Attack3_Off()
+	{
+		SweetMelody.SetActive(false);
+	}
 	void Attack4()
 	{
 		rainBow.gameObject.SetActive(true);

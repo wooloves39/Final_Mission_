@@ -9,7 +9,7 @@ public class Verbash_SkillAttack : MonoBehaviour {
 	private VerbashMonSkill VerSkill;
 	private void OnEnable()
 	{
-		VerSkill = transform.parent.GetComponent<VerbashMonSkill>();
+		VerSkill = transform.GetComponentInParent<VerbashMonSkill>();
 		damage = skillBalance;
 	}
 	void OnTriggerEnter(Collider other)

@@ -1,0 +1,716 @@
+fileFormatVersion: 2
+guid: 4362f7c509d864747b27d01761dbd2ad
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: MikoMole_REF_Bakcpack_JNT
+    100004: MikoMole_REF_Bakcpack_TIP
+    100006: MikoMole_REF_Bedroll_JNT
+    100008: MikoMole_REF_Bedroll_TIP
+    100010: MikoMole_REF_Belly_Joint
+    100012: MikoMole_REF_Belly_TIP
+    100014: MikoMole_REF_Char_Top_Grp
+    100016: MikoMole_REF_Cup_Joint
+    100018: MikoMole_REF_Cup_TIP
+    100020: MikoMole_REF_dyn_local_grp
+    100022: MikoMole_REF_Hat_JNT
+    100024: MikoMole_REF_Hat_TIP
+    100026: MikoMole_REF_Head_JNT
+    100028: MikoMole_REF_Head_TIP
+    100030: MikoMole_REF_Helicopter_01_JNT
+    100032: MikoMole_REF_Helicopter_02_JNT
+    100034: MikoMole_REF_Helicopter_IK_JNT
+    100036: MikoMole_REF_Helicopter_Spinning_JOINT
+    100038: MikoMole_REF_Helicopter_TIP
+    100040: MikoMole_REF_Hips_JNT
+    100042: MikoMole_REF_Jaw_JNT
+    100044: MikoMole_REF_Jaw_TIP
+    100046: MikoMole_REF_L_Ankle_JNT
+    100048: MikoMole_REF_L_Ball_JNT
+    100050: MikoMole_REF_L_Blade_01_JNT
+    100052: MikoMole_REF_L_Blade_02_JNT
+    100054: MikoMole_REF_L_Blade_TIP
+    100056: MikoMole_REF_L_Clav_JNT
+    100058: MikoMole_REF_L_Elbow_JNT
+    100060: MikoMole_REF_L_Index_01_JNT
+    100062: MikoMole_REF_L_Index_02_JNT
+    100064: MikoMole_REF_L_Index_03_JNT
+    100066: MikoMole_REF_L_Index_TIP
+    100068: MikoMole_REF_L_Knee_JNT
+    100070: MikoMole_REF_L_Mid_Fing_01_JNT
+    100072: MikoMole_REF_L_Mid_Fing_02_JNT
+    100074: MikoMole_REF_L_Mid_Fing_03_JNT
+    100076: MikoMole_REF_L_Mid_Fing_TIP
+    100078: MikoMole_REF_L_Mouth_Corner_JNT
+    100080: MikoMole_REF_L_Mouth_Corner_TIP
+    100082: MikoMole_REF_L_Pinky_01_JNT
+    100084: MikoMole_REF_L_Pinky_02_JNT
+    100086: MikoMole_REF_L_Pinky_03_JNT
+    100088: MikoMole_REF_L_Pinky_TIP
+    100090: MikoMole_REF_L_Shoulder_JNT
+    100092: MikoMole_REF_L_Thigh_JNT
+    100094: MikoMole_REF_L_Thumb_01_JNT
+    100096: MikoMole_REF_L_Thumb_02_JNT
+    100098: MikoMole_REF_L_Thumb_03_JNT
+    100100: MikoMole_REF_L_Thumbj_TIP
+    100102: MikoMole_REF_L_Toe_TIP
+    100104: MikoMole_REF_L_Wrist_JNT
+    100106: MikoMole_REF_Miko_Mole_Geo
+    100108: MikoMole_REF_Neck_JNT
+    100110: MikoMole_REF_Nose_01_JNT
+    100112: MikoMole_REF_Nose_02_JNT
+    100114: MikoMole_REF_Nose_03_JNT
+    100116: MikoMole_REF_Nose_TIP
+    100118: MikoMole_REF_R_Ankle_JNT
+    100120: MikoMole_REF_R_Ball_JNT
+    100122: MikoMole_REF_R_Blade_01_JNT
+    100124: MikoMole_REF_R_Blade_02_JNT
+    100126: MikoMole_REF_R_Blade_TIP
+    100128: MikoMole_REF_R_Clav_JNT
+    100130: MikoMole_REF_R_Elbow_JNT
+    100132: MikoMole_REF_R_Index_01_JNT
+    100134: MikoMole_REF_R_Index_02_JNT
+    100136: MikoMole_REF_R_Index_03_JNT
+    100138: MikoMole_REF_R_Index_TIP
+    100140: MikoMole_REF_R_Knee_JNT
+    100142: MikoMole_REF_R_Mid_Fing_01_JNT
+    100144: MikoMole_REF_R_Mid_Fing_02_JNT
+    100146: MikoMole_REF_R_Mid_Fing_03_JNT
+    100148: MikoMole_REF_R_Mid_Fing_TIP
+    100150: MikoMole_REF_R_Mouth_Corner_JNT
+    100152: MikoMole_REF_R_Mouth_Corner_TIP
+    100154: MikoMole_REF_R_Pinky_01_JNT
+    100156: MikoMole_REF_R_Pinky_02_JNT
+    100158: MikoMole_REF_R_Pinky_03_JNT
+    100160: MikoMole_REF_R_Pinky_TIP
+    100162: MikoMole_REF_R_Shoulder_JNT
+    100164: MikoMole_REF_R_Thigh_JNT
+    100166: MikoMole_REF_R_Thumb_01_JNT
+    100168: MikoMole_REF_R_Thumb_02_JNT
+    100170: MikoMole_REF_R_Thumb_03_JNT
+    100172: MikoMole_REF_R_Thumbj_TIP
+    100174: MikoMole_REF_R_Toe_TIP
+    100176: MikoMole_REF_R_Wrist_JNT
+    100178: MikoMole_REF_Root_JNT
+    100180: MikoMole_REF_Spine_01_JNT
+    100182: MikoMole_REF_Spine_02_JNT
+    100184: MikoMole_REF_Tail_01_JNT
+    100186: MikoMole_REF_Tail_02_JNT
+    100188: MikoMole_REF_Tail_TIP
+    100190: MikoMole_REF_Top_Blade_01_JNT
+    100192: MikoMole_REF_Top_Blade_02_JNT
+    100194: MikoMole_REF_Top_Blade_TIP
+    100196: MikoMole_REF_World_Control
+    100198: MikoMole_REF_WORLD_NODE
+    100200: Bakcpack_JNT
+    100202: Bakcpack_TIP
+    100204: Bedroll_JNT
+    100206: Bedroll_TIP
+    100208: Belly_Joint
+    100210: Belly_TIP
+    100212: Cup_Joint
+    100214: Cup_TIP
+    100216: dyn_local_grp
+    100218: Hat_JNT
+    100220: Hat_TIP
+    100222: Head_JNT
+    100224: Head_TIP
+    100226: Helicopter_01_JNT
+    100228: Helicopter_02_JNT
+    100230: Helicopter_IK_JNT
+    100232: Helicopter_Spinning_JOINT
+    100234: Helicopter_TIP
+    100236: Hips_JNT
+    100238: Jaw_JNT
+    100240: Jaw_TIP
+    100242: L_Ankle_JNT
+    100244: L_Ball_JNT
+    100246: L_Blade_01_JNT
+    100248: L_Blade_02_JNT
+    100250: L_Blade_TIP
+    100252: L_Clav_JNT
+    100254: L_Elbow_JNT
+    100256: L_Index_01_JNT
+    100258: L_Index_02_JNT
+    100260: L_Index_03_JNT
+    100262: L_Index_TIP
+    100264: L_Knee_JNT
+    100266: L_Mid_Fing_01_JNT
+    100268: L_Mid_Fing_02_JNT
+    100270: L_Mid_Fing_03_JNT
+    100272: L_Mid_Fing_TIP
+    100274: L_Mouth_Corner_JNT
+    100276: L_Mouth_Corner_TIP
+    100278: L_Pinky_01_JNT
+    100280: L_Pinky_02_JNT
+    100282: L_Pinky_03_JNT
+    100284: L_Pinky_TIP
+    100286: L_Shoulder_JNT
+    100288: L_Thigh_JNT
+    100290: L_Thumb_01_JNT
+    100292: L_Thumb_02_JNT
+    100294: L_Thumb_03_JNT
+    100296: L_Thumbj_TIP
+    100298: L_Toe_TIP
+    100300: L_Wrist_JNT
+    100302: Miko_Mole_Geo
+    100304: Neck_JNT
+    100306: Nose_01_JNT
+    100308: Nose_02_JNT
+    100310: Nose_03_JNT
+    100312: Nose_TIP
+    100314: R_Ankle_JNT
+    100316: R_Ball_JNT
+    100318: R_Blade_01_JNT
+    100320: R_Blade_02_JNT
+    100322: R_Blade_TIP
+    100324: R_Clav_JNT
+    100326: R_Elbow_JNT
+    100328: R_Index_01_JNT
+    100330: R_Index_02_JNT
+    100332: R_Index_03_JNT
+    100334: R_Index_TIP
+    100336: R_Knee_JNT
+    100338: R_Mid_Fing_01_JNT
+    100340: R_Mid_Fing_02_JNT
+    100342: R_Mid_Fing_03_JNT
+    100344: R_Mid_Fing_TIP
+    100346: R_Mouth_Corner_JNT
+    100348: R_Mouth_Corner_TIP
+    100350: R_Pinky_01_JNT
+    100352: R_Pinky_02_JNT
+    100354: R_Pinky_03_JNT
+    100356: R_Pinky_TIP
+    100358: R_Shoulder_JNT
+    100360: R_Thigh_JNT
+    100362: R_Thumb_01_JNT
+    100364: R_Thumb_02_JNT
+    100366: R_Thumb_03_JNT
+    100368: R_Thumbj_TIP
+    100370: R_Toe_TIP
+    100372: R_Wrist_JNT
+    100374: Root_JNT
+    100376: Spine_01_JNT
+    100378: Spine_02_JNT
+    100380: Tail_01_JNT
+    100382: Tail_02_JNT
+    100384: Tail_TIP
+    100386: Top_Blade_01_JNT
+    100388: Top_Blade_02_JNT
+    100390: Top_Blade_TIP
+    100392: WORLD_NODE
+    100394: Bubbles_Base_JNT
+    100396: Bubbles_Base_TIP
+    100398: Bubbles_Lid_JNT
+    100400: Bubbles_Lid_TIP
+    100402: Cup_JNT
+    100404: Plunger_Handle_01_JNT
+    100406: Plunger_Handle_02_JNT
+    100408: Plunger_Handle_TIP
+    100410: Plunger_Root_JNT
+    400000: //RootNode
+    400002: MikoMole_REF_Bakcpack_JNT
+    400004: MikoMole_REF_Bakcpack_TIP
+    400006: MikoMole_REF_Bedroll_JNT
+    400008: MikoMole_REF_Bedroll_TIP
+    400010: MikoMole_REF_Belly_Joint
+    400012: MikoMole_REF_Belly_TIP
+    400014: MikoMole_REF_Char_Top_Grp
+    400016: MikoMole_REF_Cup_Joint
+    400018: MikoMole_REF_Cup_TIP
+    400020: MikoMole_REF_dyn_local_grp
+    400022: MikoMole_REF_Hat_JNT
+    400024: MikoMole_REF_Hat_TIP
+    400026: MikoMole_REF_Head_JNT
+    400028: MikoMole_REF_Head_TIP
+    400030: MikoMole_REF_Helicopter_01_JNT
+    400032: MikoMole_REF_Helicopter_02_JNT
+    400034: MikoMole_REF_Helicopter_IK_JNT
+    400036: MikoMole_REF_Helicopter_Spinning_JOINT
+    400038: MikoMole_REF_Helicopter_TIP
+    400040: MikoMole_REF_Hips_JNT
+    400042: MikoMole_REF_Jaw_JNT
+    400044: MikoMole_REF_Jaw_TIP
+    400046: MikoMole_REF_L_Ankle_JNT
+    400048: MikoMole_REF_L_Ball_JNT
+    400050: MikoMole_REF_L_Blade_01_JNT
+    400052: MikoMole_REF_L_Blade_02_JNT
+    400054: MikoMole_REF_L_Blade_TIP
+    400056: MikoMole_REF_L_Clav_JNT
+    400058: MikoMole_REF_L_Elbow_JNT
+    400060: MikoMole_REF_L_Index_01_JNT
+    400062: MikoMole_REF_L_Index_02_JNT
+    400064: MikoMole_REF_L_Index_03_JNT
+    400066: MikoMole_REF_L_Index_TIP
+    400068: MikoMole_REF_L_Knee_JNT
+    400070: MikoMole_REF_L_Mid_Fing_01_JNT
+    400072: MikoMole_REF_L_Mid_Fing_02_JNT
+    400074: MikoMole_REF_L_Mid_Fing_03_JNT
+    400076: MikoMole_REF_L_Mid_Fing_TIP
+    400078: MikoMole_REF_L_Mouth_Corner_JNT
+    400080: MikoMole_REF_L_Mouth_Corner_TIP
+    400082: MikoMole_REF_L_Pinky_01_JNT
+    400084: MikoMole_REF_L_Pinky_02_JNT
+    400086: MikoMole_REF_L_Pinky_03_JNT
+    400088: MikoMole_REF_L_Pinky_TIP
+    400090: MikoMole_REF_L_Shoulder_JNT
+    400092: MikoMole_REF_L_Thigh_JNT
+    400094: MikoMole_REF_L_Thumb_01_JNT
+    400096: MikoMole_REF_L_Thumb_02_JNT
+    400098: MikoMole_REF_L_Thumb_03_JNT
+    400100: MikoMole_REF_L_Thumbj_TIP
+    400102: MikoMole_REF_L_Toe_TIP
+    400104: MikoMole_REF_L_Wrist_JNT
+    400106: MikoMole_REF_Miko_Mole_Geo
+    400108: MikoMole_REF_Neck_JNT
+    400110: MikoMole_REF_Nose_01_JNT
+    400112: MikoMole_REF_Nose_02_JNT
+    400114: MikoMole_REF_Nose_03_JNT
+    400116: MikoMole_REF_Nose_TIP
+    400118: MikoMole_REF_R_Ankle_JNT
+    400120: MikoMole_REF_R_Ball_JNT
+    400122: MikoMole_REF_R_Blade_01_JNT
+    400124: MikoMole_REF_R_Blade_02_JNT
+    400126: MikoMole_REF_R_Blade_TIP
+    400128: MikoMole_REF_R_Clav_JNT
+    400130: MikoMole_REF_R_Elbow_JNT
+    400132: MikoMole_REF_R_Index_01_JNT
+    400134: MikoMole_REF_R_Index_02_JNT
+    400136: MikoMole_REF_R_Index_03_JNT
+    400138: MikoMole_REF_R_Index_TIP
+    400140: MikoMole_REF_R_Knee_JNT
+    400142: MikoMole_REF_R_Mid_Fing_01_JNT
+    400144: MikoMole_REF_R_Mid_Fing_02_JNT
+    400146: MikoMole_REF_R_Mid_Fing_03_JNT
+    400148: MikoMole_REF_R_Mid_Fing_TIP
+    400150: MikoMole_REF_R_Mouth_Corner_JNT
+    400152: MikoMole_REF_R_Mouth_Corner_TIP
+    400154: MikoMole_REF_R_Pinky_01_JNT
+    400156: MikoMole_REF_R_Pinky_02_JNT
+    400158: MikoMole_REF_R_Pinky_03_JNT
+    400160: MikoMole_REF_R_Pinky_TIP
+    400162: MikoMole_REF_R_Shoulder_JNT
+    400164: MikoMole_REF_R_Thigh_JNT
+    400166: MikoMole_REF_R_Thumb_01_JNT
+    400168: MikoMole_REF_R_Thumb_02_JNT
+    400170: MikoMole_REF_R_Thumb_03_JNT
+    400172: MikoMole_REF_R_Thumbj_TIP
+    400174: MikoMole_REF_R_Toe_TIP
+    400176: MikoMole_REF_R_Wrist_JNT
+    400178: MikoMole_REF_Root_JNT
+    400180: MikoMole_REF_Spine_01_JNT
+    400182: MikoMole_REF_Spine_02_JNT
+    400184: MikoMole_REF_Tail_01_JNT
+    400186: MikoMole_REF_Tail_02_JNT
+    400188: MikoMole_REF_Tail_TIP
+    400190: MikoMole_REF_Top_Blade_01_JNT
+    400192: MikoMole_REF_Top_Blade_02_JNT
+    400194: MikoMole_REF_Top_Blade_TIP
+    400196: MikoMole_REF_World_Control
+    400198: MikoMole_REF_WORLD_NODE
+    400200: Bakcpack_JNT
+    400202: Bakcpack_TIP
+    400204: Bedroll_JNT
+    400206: Bedroll_TIP
+    400208: Belly_Joint
+    400210: Belly_TIP
+    400212: Cup_Joint
+    400214: Cup_TIP
+    400216: dyn_local_grp
+    400218: Hat_JNT
+    400220: Hat_TIP
+    400222: Head_JNT
+    400224: Head_TIP
+    400226: Helicopter_01_JNT
+    400228: Helicopter_02_JNT
+    400230: Helicopter_IK_JNT
+    400232: Helicopter_Spinning_JOINT
+    400234: Helicopter_TIP
+    400236: Hips_JNT
+    400238: Jaw_JNT
+    400240: Jaw_TIP
+    400242: L_Ankle_JNT
+    400244: L_Ball_JNT
+    400246: L_Blade_01_JNT
+    400248: L_Blade_02_JNT
+    400250: L_Blade_TIP
+    400252: L_Clav_JNT
+    400254: L_Elbow_JNT
+    400256: L_Index_01_JNT
+    400258: L_Index_02_JNT
+    400260: L_Index_03_JNT
+    400262: L_Index_TIP
+    400264: L_Knee_JNT
+    400266: L_Mid_Fing_01_JNT
+    400268: L_Mid_Fing_02_JNT
+    400270: L_Mid_Fing_03_JNT
+    400272: L_Mid_Fing_TIP
+    400274: L_Mouth_Corner_JNT
+    400276: L_Mouth_Corner_TIP
+    400278: L_Pinky_01_JNT
+    400280: L_Pinky_02_JNT
+    400282: L_Pinky_03_JNT
+    400284: L_Pinky_TIP
+    400286: L_Shoulder_JNT
+    400288: L_Thigh_JNT
+    400290: L_Thumb_01_JNT
+    400292: L_Thumb_02_JNT
+    400294: L_Thumb_03_JNT
+    400296: L_Thumbj_TIP
+    400298: L_Toe_TIP
+    400300: L_Wrist_JNT
+    400302: Miko_Mole_Geo
+    400304: Neck_JNT
+    400306: Nose_01_JNT
+    400308: Nose_02_JNT
+    400310: Nose_03_JNT
+    400312: Nose_TIP
+    400314: R_Ankle_JNT
+    400316: R_Ball_JNT
+    400318: R_Blade_01_JNT
+    400320: R_Blade_02_JNT
+    400322: R_Blade_TIP
+    400324: R_Clav_JNT
+    400326: R_Elbow_JNT
+    400328: R_Index_01_JNT
+    400330: R_Index_02_JNT
+    400332: R_Index_03_JNT
+    400334: R_Index_TIP
+    400336: R_Knee_JNT
+    400338: R_Mid_Fing_01_JNT
+    400340: R_Mid_Fing_02_JNT
+    400342: R_Mid_Fing_03_JNT
+    400344: R_Mid_Fing_TIP
+    400346: R_Mouth_Corner_JNT
+    400348: R_Mouth_Corner_TIP
+    400350: R_Pinky_01_JNT
+    400352: R_Pinky_02_JNT
+    400354: R_Pinky_03_JNT
+    400356: R_Pinky_TIP
+    400358: R_Shoulder_JNT
+    400360: R_Thigh_JNT
+    400362: R_Thumb_01_JNT
+    400364: R_Thumb_02_JNT
+    400366: R_Thumb_03_JNT
+    400368: R_Thumbj_TIP
+    400370: R_Toe_TIP
+    400372: R_Wrist_JNT
+    400374: Root_JNT
+    400376: Spine_01_JNT
+    400378: Spine_02_JNT
+    400380: Tail_01_JNT
+    400382: Tail_02_JNT
+    400384: Tail_TIP
+    400386: Top_Blade_01_JNT
+    400388: Top_Blade_02_JNT
+    400390: Top_Blade_TIP
+    400392: WORLD_NODE
+    400394: Bubbles_Base_JNT
+    400396: Bubbles_Base_TIP
+    400398: Bubbles_Lid_JNT
+    400400: Bubbles_Lid_TIP
+    400402: Cup_JNT
+    400404: Plunger_Handle_01_JNT
+    400406: Plunger_Handle_02_JNT
+    400408: Plunger_Handle_TIP
+    400410: Plunger_Root_JNT
+    4300000: MikoMole_REF_Miko_Mole_Geo
+    4300002: Miko_Mole_Geo
+    7400000: Anim_Fly-Dig_Down_001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: MikoMole_REF_Miko_Mole_Geo
+    13700002: Miko_Mole_Geo
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Anim_Fly-Dig_Down_001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Miko_Mole_Geo
+        weight: 1
+      - path: WORLD_NODE
+        weight: 1
+      - path: WORLD_NODE/Cup_Joint
+        weight: 1
+      - path: WORLD_NODE/Cup_Joint/Cup_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/L_Thigh_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/L_Thigh_JNT/L_Knee_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/L_Thigh_JNT/L_Knee_JNT/L_Ankle_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/L_Thigh_JNT/L_Knee_JNT/L_Ankle_JNT/L_Ball_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/L_Thigh_JNT/L_Knee_JNT/L_Ankle_JNT/L_Ball_JNT/L_Toe_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/R_Thigh_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/R_Thigh_JNT/R_Knee_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/R_Thigh_JNT/R_Knee_JNT/R_Ankle_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/R_Thigh_JNT/R_Knee_JNT/R_Ankle_JNT/R_Ball_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/R_Thigh_JNT/R_Knee_JNT/R_Ankle_JNT/R_Ball_JNT/R_Toe_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/Tail_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/Tail_01_JNT/Tail_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Hips_JNT/Tail_01_JNT/Tail_02_JNT/Tail_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/dyn_local_grp
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/dyn_local_grp/Belly_Joint
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/dyn_local_grp/Belly_Joint/Belly_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Bakcpack_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Bedroll_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Bedroll_JNT/Bedroll_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT/L_Blade_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT/L_Blade_01_JNT/L_Blade_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT/L_Blade_01_JNT/L_Blade_02_JNT/L_Blade_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT/R_Blade_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT/R_Blade_01_JNT/R_Blade_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT/R_Blade_01_JNT/R_Blade_02_JNT/R_Blade_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT/Top_Blade_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT/Top_Blade_01_JNT/Top_Blade_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_Spinning_JOINT/Top_Blade_01_JNT/Top_Blade_02_JNT/Top_Blade_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Bakcpack_JNT/Helicopter_01_JNT/Helicopter_02_JNT/Helicopter_IK_JNT/Helicopter_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Index_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Index_01_JNT/L_Index_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Index_01_JNT/L_Index_02_JNT/L_Index_03_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Index_01_JNT/L_Index_02_JNT/L_Index_03_JNT/L_Index_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Mid_Fing_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Mid_Fing_01_JNT/L_Mid_Fing_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Mid_Fing_01_JNT/L_Mid_Fing_02_JNT/L_Mid_Fing_03_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Mid_Fing_01_JNT/L_Mid_Fing_02_JNT/L_Mid_Fing_03_JNT/L_Mid_Fing_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Pinky_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Pinky_01_JNT/L_Pinky_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Pinky_01_JNT/L_Pinky_02_JNT/L_Pinky_03_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Pinky_01_JNT/L_Pinky_02_JNT/L_Pinky_03_JNT/L_Pinky_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Thumb_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Thumb_01_JNT/L_Thumb_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Thumb_01_JNT/L_Thumb_02_JNT/L_Thumb_03_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/L_Clav_JNT/L_Shoulder_JNT/L_Elbow_JNT/L_Wrist_JNT/L_Thumb_01_JNT/L_Thumb_02_JNT/L_Thumb_03_JNT/L_Thumbj_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/Hat_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/Hat_JNT/Hat_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/Head_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/Jaw_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/Jaw_JNT/Jaw_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/L_Mouth_Corner_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/L_Mouth_Corner_JNT/L_Mouth_Corner_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/Nose_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/Nose_01_JNT/Nose_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/Nose_01_JNT/Nose_02_JNT/Nose_03_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/Nose_01_JNT/Nose_02_JNT/Nose_03_JNT/Nose_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/R_Mouth_Corner_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/Neck_JNT/Head_JNT/R_Mouth_Corner_JNT/R_Mouth_Corner_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Index_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Index_01_JNT/R_Index_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Index_01_JNT/R_Index_02_JNT/R_Index_03_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Index_01_JNT/R_Index_02_JNT/R_Index_03_JNT/R_Index_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Mid_Fing_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Mid_Fing_01_JNT/R_Mid_Fing_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Mid_Fing_01_JNT/R_Mid_Fing_02_JNT/R_Mid_Fing_03_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Mid_Fing_01_JNT/R_Mid_Fing_02_JNT/R_Mid_Fing_03_JNT/R_Mid_Fing_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Pinky_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Pinky_01_JNT/R_Pinky_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Pinky_01_JNT/R_Pinky_02_JNT/R_Pinky_03_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Pinky_01_JNT/R_Pinky_02_JNT/R_Pinky_03_JNT/R_Pinky_TIP
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Thumb_01_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Thumb_01_JNT/R_Thumb_02_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Thumb_01_JNT/R_Thumb_02_JNT/R_Thumb_03_JNT
+        weight: 1
+      - path: WORLD_NODE/Root_JNT/Spine_01_JNT/Spine_02_JNT/R_Clav_JNT/R_Shoulder_JNT/R_Elbow_JNT/R_Wrist_JNT/R_Thumb_01_JNT/R_Thumb_02_JNT/R_Thumb_03_JNT/R_Thumbj_TIP
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

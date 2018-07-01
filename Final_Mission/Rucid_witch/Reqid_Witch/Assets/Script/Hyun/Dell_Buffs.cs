@@ -24,8 +24,8 @@ public class Dell_Buffs : MonoBehaviour {
 			case 2:
 				{
 					
-						CoolTime.SetCool(4, 4);
-						CoolTime.MpDown(4, 4);
+						CoolTime.SetCool(5, 2);
+						CoolTime.MpDown(5, 2);
 						buffs[0].SetActive(true);
 					pointChecker.resetSkill();
 				}
@@ -33,8 +33,8 @@ public class Dell_Buffs : MonoBehaviour {
 			case 3:
 				{
 					
-						CoolTime.SetCool(4, 4);
-						CoolTime.MpDown(4, 4);
+						CoolTime.SetCool(5, 3);
+						CoolTime.MpDown(5, 3);
 						buffs[1].SetActive(true);
 					pointChecker.resetSkill();
 				}
@@ -42,8 +42,8 @@ public class Dell_Buffs : MonoBehaviour {
 			case 5:
 				{
 					
-						CoolTime.SetCool(4, 4);
-						CoolTime.MpDown(4, 4);
+						CoolTime.SetCool(5, 5);
+						CoolTime.MpDown(5, 5);
 						buffs[2].SetActive(true);
 					pointChecker.resetSkill();
 				}

@@ -11,6 +11,7 @@ public class SecondTouch : MonoBehaviour {
 	{
 		Touch = false;
 		attackMethod = gameObject.transform.GetComponentInParent<AttackMethod>();
+		particle.SetActive(false);
 	}
 	private void OnTriggerEnter(Collider other)
 	{

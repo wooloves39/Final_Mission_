@@ -10,7 +10,8 @@ public class FirstTouch : MonoBehaviour
 	private void Awake()
 	{
 		Touch = false;
-		   attackMethod = gameObject.transform.GetComponentInParent<AttackMethod>();
+		attackMethod = gameObject.transform.GetComponentInParent<AttackMethod>();
+		particle.SetActive(false);
 	}
 	private void OnTriggerEnter(Collider other)
 	{

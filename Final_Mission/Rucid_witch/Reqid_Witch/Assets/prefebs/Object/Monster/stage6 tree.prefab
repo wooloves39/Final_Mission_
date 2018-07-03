@@ -1622,7 +1622,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308848699612016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.67, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4707302669146756}
@@ -1783,7 +1783,7 @@ MonoBehaviour:
   - 0
   MomentInvincible: 0
   InvincibleTime: 0.2
-  ElecShock: {fileID: 0}
+  ElecShock: {fileID: 1825513047773572}
 --- !u!114 &114082774999519776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6847,6 +6847,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2.9}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}

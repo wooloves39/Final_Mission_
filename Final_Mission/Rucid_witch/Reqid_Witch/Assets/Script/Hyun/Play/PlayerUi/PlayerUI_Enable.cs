@@ -19,10 +19,12 @@ public class PlayerUI_Enable : MonoBehaviour {
 		if (playerState.GetMyState() == PlayerState.State.Drawing)
 		{
 			SkillLine.SetActive(true);
+			ChargingSet.SetActive(false);
 		}
 		else if(playerState.GetMyState() == PlayerState.State.Charging)
 		{
 			ChargingSet.SetActive(true);
+			SkillLine.SetActive(false);
 		}
 		else
 		{

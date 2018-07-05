@@ -6,11 +6,7 @@ public class SaveConfirm : MonoBehaviour
 {
 	public GameObject[] ui_arr;
 	private int index = 0;
-	// Use this for initialization
-	void Start()
-	{
-
-	}
+	public GameObject[] selectParticles;
 	private void OnEnable()
 	{
 		GetComponent<AudioSource>().volume = Singletone.Instance.Sound;
@@ -23,6 +19,9 @@ public class SaveConfirm : MonoBehaviour
 		ui_arr[0].SetActive(false);
 		ui_arr[1].SetActive(false);
 		ui_arr[2].SetActive(false);
+		selectParticles[0].SetActive(false);
+		selectParticles[1].SetActive(false);
+		selectParticles[2].SetActive(false);
 	}
 	// Update is called once per frame
 	void Update()
@@ -33,17 +32,20 @@ public class SaveConfirm : MonoBehaviour
 			{
 				case 0:
 					Singletone.Instance.Save("/Text/Save/save01.txt");
+					selectParticles[0].SetActive(true);
 					break;
 				case 1:
 					Singletone.Instance.Save("/Text/Save/save02.txt");
+					selectParticles[1].SetActive(true);
 					break;
 				case 2:
 					Singletone.Instance.Save("/Text/Save/save03.txt");
+					selectParticles[2].SetActive(true);
 					break;
 			}
 			Debug.Log("저장완료");
 			transform.parent.GetComponent<SelectMenu_Ready>().confirm = false;
-			gameObject.SetActive(false);
+			Invoke("setoff", 0.5f);
 		}
 		if (InputManager_JHW.BButtonDown())
 		{
@@ -51,6 +53,10 @@ public class SaveConfirm : MonoBehaviour
 			transform.parent.GetComponent<SelectMenu_Ready>().confirm = false;
 			gameObject.SetActive(false);
 		}
+	}
+	void setoff()
+	{
+		gameObject.SetActive(false);
 	}
 	IEnumerator KeyPad()
 	{

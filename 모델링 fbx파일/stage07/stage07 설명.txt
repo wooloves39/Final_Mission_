@@ -1,0 +1,9 @@
+- ground의 크기에 맞춰서 사이즈는 커보여도 실재 전투 영역은 비슷함
+- 다른 오브젝트 다 무시하고 ground더미 밑의 데이터만 모두 바닥임
+- cris1,2,3 알파 처리90
+- uv8(middle), uv9(effect)는 png알파값 처리
+
+추가fbx stage07_ending350(바닥 터지는 애니메이션)
+- stage07_ending350 사이즈 키워서 사용 가능하면 이걸로 앤딩 장면
+cis01,2,3을 stage07_ending350로 교환
+- stage07_ending350_02 사이즈 키우는 게 불가능할 경우 이걸로 대체

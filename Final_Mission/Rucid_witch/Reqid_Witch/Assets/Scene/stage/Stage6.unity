@@ -468,6 +468,48 @@ GameObject:
   m_PrefabParentObject: {fileID: 1658053999434286, guid: cd4184ba12fefda4ebe20adef91f5ab8,
     type: 2}
   m_PrefabInternal: {fileID: 2079748096}
+--- !u!1001 &1293436984
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4389332735573614, guid: a0714a86ab2ea56419a7f7610f21c62f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389332735573614, guid: a0714a86ab2ea56419a7f7610f21c62f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389332735573614, guid: a0714a86ab2ea56419a7f7610f21c62f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389332735573614, guid: a0714a86ab2ea56419a7f7610f21c62f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389332735573614, guid: a0714a86ab2ea56419a7f7610f21c62f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389332735573614, guid: a0714a86ab2ea56419a7f7610f21c62f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389332735573614, guid: a0714a86ab2ea56419a7f7610f21c62f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389332735573614, guid: a0714a86ab2ea56419a7f7610f21c62f, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a0714a86ab2ea56419a7f7610f21c62f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1471565450 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1127155278728094, guid: cd4184ba12fefda4ebe20adef91f5ab8,

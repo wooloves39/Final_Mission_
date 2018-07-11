@@ -100,6 +100,16 @@ public class BattleCommand : MonoBehaviour {
 					if (time >= SkillFrame[4])
 						ani.SetBool("Skill5", false);
 					break;
+
+                case 5:
+                    if (time >= SkillFrame[5])
+                        ani.SetBool("Skill6", false);
+                    break;
+
+                case 6:
+                    if (time >= SkillFrame[6])
+                        ani.SetBool("Skill7", false);
+                    break;
 					
 			}
 			if (time >= TimeLimit)

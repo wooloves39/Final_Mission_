@@ -55,15 +55,19 @@ public class AITree {
 		Dnum = 23;
 		AIDic.Add(Dnum ,  "NomalSkill_4");
 		Dnum = 24;
-		AIDic.Add(Dnum ,  "NomalSkill_5");
+        AIDic.Add(Dnum ,  "NomalSkill_5");
+        Dnum = 25;
+        AIDic.Add(Dnum ,  "NomalSkill_6");
+        Dnum = 26;
+        AIDic.Add(Dnum ,  "NomalSkill_7");
 
 		//조건 부 스킬(상황에 맞는)
 		Dnum = 30;
-		AIDic.Add(Dnum ,  "SpecialSkill_1");
+		AIDic.Add(Dnum ,  "Kali_1");
 		Dnum = 31;
-		AIDic.Add(Dnum ,  "SpecialSkill_2");
-		Dnum = 32;
-		AIDic.Add(Dnum ,  "SpecialSkill_3");
+        AIDic.Add(Dnum ,  "Kali_2");
+		//Dnum = 32;
+		//AIDic.Add(Dnum ,  "SpecialSkill_3");
 
 		//상태이상 치료
 		Dnum = 40;

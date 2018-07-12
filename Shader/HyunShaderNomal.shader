@@ -1,100 +1,61 @@
 ﻿Shader "Custom/HyunShaderNomal" {
 	Properties{
-		_Color("Color", Color) = (1,1,1,1)
-		_MainTex("Albedo (RGB)", 2D) = "white" {}
-	//_Glossiness ("Smoothness", Range(0,1)) = 0.5
-	//_Metallic ("Metallic", Range(0,1)) = 0.0
+		_Color("Main Color", Color) = (.5,.5,.5,1)
+		_MainTex("Base (RGB)", 2D) = "white" {}
+	_ToonShade("ToonShader Cubemap(RGB)", CUBE) = "" { }
 	}
+
+
 		SubShader{
-			Tags { "RenderType" = "Opaque" }
-			LOD 200
+		Tags{ "RenderType" = "Opaque" }
+		Pass{
+		Name "BASE"
+		Cull Off
 
-			CGPROGRAM
-		// Physically based Standard lighting model, and enable shadows on all light types
-		#pragma surface surf Standard fullforwardshadows
+		CGPROGRAM
+#pragma vertex vert
+#pragma fragment frag
+#pragma multi_compile_fog
 
-		// Use shader model 3.0 target, to get nicer looking lighting
-		#pragma target 3.0
+#include "UnityCG.cginc"
 
 		sampler2D _MainTex;
+	samplerCUBE _ToonShade;
+	float4 _MainTex_ST;
+	float4 _Color;
 
-		struct Input {
-			float2 uv_MainTex;
-		};
+	struct appdata {
+		float4 vertex : POSITION;
+		float2 texcoord : TEXCOORD0;
+		float3 normal : NORMAL;
+	};
 
-		half _Glossiness;
-		half _Metallic;
-		fixed4 _Color;
+	struct v2f {
+		float4 pos : SV_POSITION;
+		float2 texcoord : TEXCOORD0;
+		float3 cubenormal : TEXCOORD1;
+		UNITY_FOG_COORDS(2)
+	};
 
-		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
-		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
-		// #pragma instancing_options assumeuniformscaling
-		UNITY_INSTANCING_CBUFFER_START(Props)
-			// put more per-instance properties here
-		UNITY_INSTANCING_CBUFFER_END
+	v2f vert(appdata v)
+	{
+		v2f o;
+		o.pos = UnityObjectToClipPos(v.vertex);
+		o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
+		o.cubenormal = mul(UNITY_MATRIX_MV, float4(v.normal, 0));
+			return o;
+	}
 
-		void surf(Input IN, inout SurfaceOutputStandard o) {
-			// Albedo comes from a texture tinted by color
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-			o.Albedo = c.rgb;
-			// Metallic and smoothness come from slider variables
-			o.Metallic = _Metallic;
-			o.Smoothness = _Glossiness;
-			o.Alpha = c.a;
-		}
+	fixed4 frag(v2f i) : SV_Target
+	{
+		fixed4 col = _Color * tex2D(_MainTex, i.texcoord);
+	fixed4 cube = texCUBE(_ToonShade, i.cubenormal);
+	fixed4 c = fixed4(2.0 * cube.rgb* cube.rgb * col.rgb, col.a);
+	return c;
+	}
 		ENDCG
 	}
-		FallBack "Diffuse"
+	}
+
+		Fallback "Toon/Lit"
 }
-		//Properties{
-		//	_Color("Main Color", Color) = (0.5,0.5,0.5,1)
-		//	_MainTex("Base (RGB)", 2D) = "white" {}
-		//_Ramp("Toon Ramp (RGB)", 2D) = "gray" {}
-		//}
-		//
-		//	SubShader{
-		//	Tags{ "RenderType" = "Opaque" }
-		//	LOD 200
-		//
-		//	CGPROGRAM
-		//#pragma surface surf ToonRamp
-		//
-		//	sampler2D _Ramp;
-		//
-		//// custom lighting function that uses a texture ramp based
-		//// on angle between light direction and normal
-		//#pragma lighting ToonRamp exclude_path:prepass
-		//inline half4 LightingToonRamp(SurfaceOutput s, half3 lightDir, half atten)
-		//{
-		//#ifndef USING_DIRECTIONAL_LIGHT
-		//	lightDir = normalize(lightDir);
-		//#endif
-		//
-		//	half d = dot(s.Normal, lightDir)*0.5 + 0.5;
-		//	half3 ramp = tex2D(_Ramp, float2(d,d)).rgb;
-		//
-		//	half4 c;
-		//	c.rgb = s.Albedo * _LightColor0.rgb * ramp * (atten * 2);
-		//	c.a = 0;
-		//	return c;
-		//}
-		//
-		//
-		//sampler2D _MainTex;
-		//float4 _Color;
-		//
-		//struct Input {
-		//	float2 uv_MainTex : TEXCOORD0;
-		//};
-		//
-		//void surf(Input IN, inout SurfaceOutput o) {
-		//	half4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-		//	o.Albedo = c.rgb;
-		//	o.Alpha = c.a;
-		//}
-		//ENDCG
-		//
-		//}
-		//
-		//	Fallback "Diffuse"
-		//}

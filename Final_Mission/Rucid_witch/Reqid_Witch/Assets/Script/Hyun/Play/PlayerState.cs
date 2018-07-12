@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
-	public enum State { Nomal, Drawing, Charging, Attack, Damage, Talk, Die, ChargingOver }
+	public enum State { Nomal, Drawing, Charging, Attack, Damage, Talk, Die, ChargingOver, Pause }
 
 	private State MyState;
 	private float ChargingTime;

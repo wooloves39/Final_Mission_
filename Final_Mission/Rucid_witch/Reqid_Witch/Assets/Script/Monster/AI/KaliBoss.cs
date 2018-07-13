@@ -34,7 +34,7 @@ public class KaliBoss : MonoBehaviour {
     public float Die_Time = 2.0f;
 
     private bool spire = false;
-    public float[] SkillValue = {0,25,50,70,85,95,100 }; 
+    public float[] SkillValue = {0,25,50,70,85,95,100 }; // 25 25 20 15 10 0.
     public float[] BossCoolTime = {0,0,3,9,12,15,100 };   
     public bool[] BossCoolDown = {false,false,false,false,false };      
 

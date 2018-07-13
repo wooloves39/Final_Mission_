@@ -78,6 +78,13 @@ public class BattleCommand : MonoBehaviour {
 		float temp = Time.deltaTime;
 		while (true)
 		{
+            if (Player.GetMyState() == PlayerState.State.Pause)
+            {
+                ani.speed = 0;
+            }
+            if (Player.GetMyState() == PlayerState.State.Nomal)
+            {
+                ani.speed = 1;
 			switch (skill_index)
 			{
 				case 0:
@@ -111,14 +118,18 @@ public class BattleCommand : MonoBehaviour {
                         ani.SetBool("Skill7", false);
                     break;
 					
-			}
+                }
+            }
 			if (time >= TimeLimit)
 			{
 				break;
 			}
 			else
-			{
-				time += temp;
+            { 
+                if (Player.GetMyState() == PlayerState.State.Nomal)
+                {
+                    time += temp;
+                }
 			}
 			yield return new WaitForSeconds(temp);
 

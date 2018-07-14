@@ -20,12 +20,12 @@ public class SubMenu : MonoBehaviour {
 			if (mystate)
 			{
 				once = true;
-				Invoke("OffSubMenu", 0.2f);
+				OffSubMenu();
 			}
 			else
 			{
 				once = true;
-				Invoke("OnSubMenu", 0.2f);
+				OnSubMenu();
 			}
 		}
       
@@ -37,13 +37,15 @@ public class SubMenu : MonoBehaviour {
 		once = false;
 		mystate = false;
 		menuClick.SetActive(false);
+		Time.timeScale = 1;
 	}
 	private void OnSubMenu()
 	{
         menuClick.SetActive(true);
-        State.SetMyState(PlayerState.State.Pause);
+		State.SetMyState(PlayerState.State.Pause);
 		submenu.SetActive(true);
 		once = false;
 		mystate = true;
+		Time.timeScale = 0;
 	}
 }

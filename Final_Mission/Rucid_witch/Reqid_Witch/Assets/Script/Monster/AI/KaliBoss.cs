@@ -9,6 +9,7 @@ public class KaliBoss : MonoBehaviour {
     public int[] BasicBattle;
 
     StagePosition Stage5Pos;
+	PlayerState playerstate;
     ObjectLife ObjLife;
     NatureCommand NCommand;
     BattleCommand BCommand;
@@ -53,8 +54,9 @@ public class KaliBoss : MonoBehaviour {
         BCommand = GetComponent<BattleCommand>();
         Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
 
-        //가져와서 적용해야 할 부분
-        msg = new MoveMsg();
+		playerstate = Player.gameObject.GetComponentInParent<PlayerState>();
+		//가져와서 적용해야 할 부분
+		msg = new MoveMsg();
         //가져와서 적용해야 할 부분
 
 
@@ -74,6 +76,17 @@ public class KaliBoss : MonoBehaviour {
         //평화
         while (true) 
         {
+			if (playerstate.GetMyState() == PlayerState.State.Pause)
+			{
+				yield return null;
+				ani.SetBool("Skill1", false);
+				ani.SetBool("Skill2", false);
+				ani.SetBool("Skill3", false);
+				ani.SetBool("Skill4", false);
+				ani.SetBool("Skill5", false);
+				ani.SetBool("Skill6", false);
+				ani.SetBool("Skill7", false);
+			}
             if (ObjLife.Hp <= 0)
             {
                 ani.SetBool("Die", true);

@@ -7,12 +7,9 @@ public class SubMenuSelect : MonoBehaviour {
 	public GameObject[] BGM;
 	public GameObject[] SAVE;
 	private SubMenu sub;
-	private float mytime = 0.0f;
-	
 	private void OnEnable()
 	{
 		sub = FindObjectOfType<SubMenu>();
-		mytime = 0.0f;
 		for (int i = 0; i < 3; ++i)
 		{
 			EFF[i].SetActive(false);
@@ -48,15 +45,11 @@ public class SubMenuSelect : MonoBehaviour {
 	{
 		if (InputManager_JHW.AButtonDown())
 		{
-			mytime += 2.0f;
-		}
-		if (mytime >= 1.0f)
-		{
 			Vector3 temp;
 			int layerMask = ((-1) - (1 << LayerMask.NameToLayer("Default")| 1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Monster")));
-			Ray ray = new Ray(this.transform.position,-this.transform.forward);
+			Ray ray = new Ray(this.transform.position,this.transform.up);
 			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit, 3, layerMask))
+			if (Physics.Raycast(ray, out hit, 10, layerMask))
 			{
 				Debug.Log(hit.collider.tag);
 				Debug.Log(hit.collider.gameObject.name);
@@ -137,7 +130,6 @@ public class SubMenuSelect : MonoBehaviour {
 				}
 			}
 		}
-		mytime = 0.0f;
 		   
 	}
 }

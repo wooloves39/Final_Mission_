@@ -49,7 +49,7 @@ public class SubMenuSelect : MonoBehaviour {
 			int layerMask = ((-1) - (1 << LayerMask.NameToLayer("Default")| 1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Monster")));
 			Ray ray = new Ray(this.transform.position,this.transform.up);
 			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit, 10, layerMask))
+			if (Physics.Raycast(ray, out hit, 20, layerMask))
 			{
 				Debug.Log(hit.collider.tag);
 				Debug.Log(hit.collider.gameObject.name);

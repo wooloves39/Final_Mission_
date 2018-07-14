@@ -230,7 +230,7 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 21:
 						{
-                            StartCoroutine("Coll", 1);
+                            StartCoroutine("Cool", 1);
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill2", true);
@@ -240,7 +240,7 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 22:
                         {
-                            StartCoroutine("Coll", 2);
+                            StartCoroutine("Cool", 2);
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill3", true);
@@ -250,7 +250,7 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 23:
                         {
-                            StartCoroutine("Coll", 3);
+                            StartCoroutine("Cool", 3);
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill4", true);

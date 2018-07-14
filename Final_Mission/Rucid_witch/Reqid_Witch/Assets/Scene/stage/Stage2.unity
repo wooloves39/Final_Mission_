@@ -335,6 +335,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: WaveStart.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4751355359674346, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -345,7 +350,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4751355359674346, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.72
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4751355359674346, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -402,6 +407,38 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: fileName
+      value: /Text/talk/Episode01.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 114787154163575040, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 086b8329f1128334a98dc7a6dd406e51,
+        type: 3}
+    - target: {fileID: 114982011670219816, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55ffa548d75b50e4789b72463958a47e,
+        type: 3}
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: WaveStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 1093656198}
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: WaveStart.Array.data[1]
+      value: 
+      objectReference: {fileID: 1984184177}
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: WaveStart.Array.data[2]
+      value: 
+      objectReference: {fileID: 1288926334}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0
@@ -410,6 +447,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1365574565530988, guid: 710c668c5cb938d4681dfb6e0f965ce6,
     type: 2}
   m_PrefabInternal: {fileID: 2027470150}
+--- !u!1 &1093656198 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1099770979329912, guid: 480b50d78952ea745b85c674444a6d87,
+    type: 2}
+  m_PrefabInternal: {fileID: 1960955978}
 --- !u!1001 &1149055616
 Prefab:
   m_ObjectHideFlags: 0
@@ -594,6 +636,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c245e851990e9054f9bff21d1e463c07, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1288926334 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1333073437615248, guid: 480b50d78952ea745b85c674444a6d87,
+    type: 2}
+  m_PrefabInternal: {fileID: 1960955978}
 --- !u!1001 &1715639957
 Prefab:
   m_ObjectHideFlags: 0
@@ -707,34 +754,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114787334104458518, guid: 480b50d78952ea745b85c674444a6d87,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2119584371}
-    - target: {fileID: 114311249443307544, guid: 480b50d78952ea745b85c674444a6d87,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2119584371}
     - target: {fileID: 114313204129265000, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 2119584371}
-    - target: {fileID: 114311249443307544, guid: 480b50d78952ea745b85c674444a6d87,
-        type: 2}
-      propertyPath: Wave_Start
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114787334104458518, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
-      propertyPath: Wave_Start
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2119584371}
+    - target: {fileID: 114311249443307544, guid: 480b50d78952ea745b85c674444a6d87,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2119584371}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 480b50d78952ea745b85c674444a6d87, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1984184177 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1144980746354922, guid: 480b50d78952ea745b85c674444a6d87,
+    type: 2}
+  m_PrefabInternal: {fileID: 1960955978}
 --- !u!1001 &2027470150
 Prefab:
   m_ObjectHideFlags: 0

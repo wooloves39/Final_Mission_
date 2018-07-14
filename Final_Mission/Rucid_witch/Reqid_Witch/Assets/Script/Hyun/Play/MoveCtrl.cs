@@ -40,6 +40,10 @@ public class MoveCtrl : MonoBehaviour
 		if (MyState.GetMyState()==PlayerState.State.Talk) {
 			return;
 		}
+		if (MyState.GetMyState() == PlayerState.State.Pause)
+		{
+			return;
+		}
 		switch (moveType)
 		{
 			case MoveType.WAY_POINT:

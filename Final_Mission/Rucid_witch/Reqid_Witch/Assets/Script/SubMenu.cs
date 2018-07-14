@@ -5,8 +5,6 @@ using UnityEngine;
 public class SubMenu : MonoBehaviour {
 	public GameObject submenu;
 	public GameObject menuClick;
-    public GameObject menu1;
-    public GameObject menu2;
     private PlayerState State;
 	bool mystate = false;
 	bool once = false;
@@ -30,20 +28,7 @@ public class SubMenu : MonoBehaviour {
 				Invoke("OnSubMenu", 0.2f);
 			}
 		}
-        if(State.GetMyState()==PlayerState.State.Pause)
-        {
-            if (InputManager_JHW.MainHorizontal() > 0.0f)
-            {
-                menu1.SetActive(true);
-                menu2.SetActive(false);
-            }
-            else if (InputManager_JHW.MainHorizontal() < 0.0f)
-            {
-                menu2.SetActive(true);
-                menu1.SetActive(false);
-            }
-
-        }
+      
 	}
 	public void OffSubMenu()
 	{

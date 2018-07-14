@@ -31,15 +31,11 @@ public class AzuraSkill : MonoBehaviour
         collider = GetComponent<Collider>();    
         CoolTime = FindObjectOfType<CoolDown>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+	
     public void shoot(int skillIndex, GameObject targets, float handDistance)
     {
-        bool Mp = false;
+		deltaTime = Time.deltaTime;
+		bool Mp = false;
         bool Cool = false;
         transform.localScale = transform.localScale * 3;
         target = targets;
@@ -102,9 +98,9 @@ public class AzuraSkill : MonoBehaviour
     {
         for (int i = 0; i < SoulExp.Length; ++i)
         {
-            SoulExp[i].SetActive(true);
+			SoulExp[i].transform.position=player.transform.position;
+			SoulExp[i].SetActive(true);
             SoulExp[i].transform.localScale = new Vector3(2, 2, 2);
-            //SoulExp[i].transform.Rotate(0, 0, 45);
             StartCoroutine(SoulExplosionCor(SoulExp[i], target));
         }
     }

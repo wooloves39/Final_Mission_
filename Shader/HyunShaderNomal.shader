@@ -1,61 +1,72 @@
-﻿Shader "Custom/HyunShaderNomal" {
+﻿
+Shader "Custom/HyunShaderNomal"   {
 	Properties{
 		_Color("Main Color", Color) = (.5,.5,.5,1)
 		_MainTex("Base (RGB)", 2D) = "white" {}
 	_ToonShade("ToonShader Cubemap(RGB)", CUBE) = "" { }
+	_Brightness("Brightness = neutral", Float) = 2.0
+_Shadow("ShadowValue",  Range(0.0, 1.0)) = 0.2
 	}
-
-
 		SubShader{
 		Tags{ "RenderType" = "Opaque" }
+		LOD 250
+		ZWrite On
+		Lighting Off
+		Fog{ Mode Off }
 		Pass{
-		Name "BASE"
-		Cull Off
+		Name "HYUNNOMAL"
+		Cull Off//프레임 드랍의 원인일 수도 있다.
 
 		CGPROGRAM
 #pragma vertex vert
-#pragma fragment frag
-#pragma multi_compile_fog
+#pragma fragment frag    
+#pragma fragmentoption ARB_precision_hint_fastest  //공부
 
 #include "UnityCG.cginc"
+#pragma glsl_no_auto_normalization //공부
+#pragma multi_compile_fog //공부
+
 
 		sampler2D _MainTex;
-	samplerCUBE _ToonShade;
-	float4 _MainTex_ST;
-	float4 _Color;
-
-	struct appdata {
+		float4 _MainTex_ST;
+		float _Shadow;
+		struct appdata {
 		float4 vertex : POSITION;
 		float2 texcoord : TEXCOORD0;
 		float3 normal : NORMAL;
-	};
+		};
 
 	struct v2f {
 		float4 pos : SV_POSITION;
 		float2 texcoord : TEXCOORD0;
 		float3 cubenormal : TEXCOORD1;
-		UNITY_FOG_COORDS(2)
 	};
 
 	v2f vert(appdata v)
 	{
 		v2f o;
 		o.pos = UnityObjectToClipPos(v.vertex);
+		float3 n = mul(UNITY_MATRIX_IT_MV, normalize(float4(v.normal,0)));
+		normalize(n);
+		n = n +float3(_Shadow, _Shadow, _Shadow);
+		o.cubenormal = n;
 		o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
-		o.cubenormal = mul(UNITY_MATRIX_MV, float4(v.normal, 0));
-			return o;
+		return o;
 	}
+	samplerCUBE _ToonShade;
+	fixed _Brightness;
+	float4 _Color;
 
-	fixed4 frag(v2f i) : SV_Target
-	{
-		fixed4 col = _Color * tex2D(_MainTex, i.texcoord);
+	fixed4 frag(v2f i) : COLOR
+	{ 
 	fixed4 cube = texCUBE(_ToonShade, i.cubenormal);
-	fixed4 c = fixed4(2.0 * cube.rgb* cube.rgb * col.rgb, col.a);
-	return c;
+	fixed4 col  = tex2D(_MainTex, i.texcoord)*_Color;
+	fixed4 c= fixed4(_Brightness * cube.rgb * col.rgb, col.a);
+	return _Brightness*col*cube;
 	}
 		ENDCG
 	}
 	}
 
-		Fallback "Toon/Lit"
+		Fallback "VertexLit"
 }

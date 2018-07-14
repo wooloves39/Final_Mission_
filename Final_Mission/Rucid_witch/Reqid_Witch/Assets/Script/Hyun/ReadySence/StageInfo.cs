@@ -42,7 +42,7 @@ public class StageInfo : MonoBehaviour {
 				textArea.color = new Color(0, 1, 1);
 				break;
 			case 5:
-				textArea.color = new Color(0, 1, 1);
+				textArea.color = new Color(1, 1, 1);
 				break;
 			case 6:
 				textArea.color = new Color(1, 0, 1);

@@ -8,6 +8,6 @@ public class ModInfo : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		stage = Singletone.Instance.stage;
-		Objects[stage-1].SetActive(true);
+		Objects[stage].SetActive(true);
 	}
 }

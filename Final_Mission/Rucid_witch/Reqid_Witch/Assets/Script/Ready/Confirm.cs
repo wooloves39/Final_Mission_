@@ -31,19 +31,19 @@ public class Confirm : MonoBehaviour
 						sceneChange.sceneChange("Stage2");
 						break;
 					case 2:
-						sceneChange.sceneChange("Stage5");
+						sceneChange.sceneChange("Stage3");
 						break;
 					case 3:
-						break;
-					case 4:
 						sceneChange.sceneChange("Stage4");
 						break;
-					case 5:
+					case 4:
 						sceneChange.sceneChange("Stage5");
 						break;
-					case 6:
+					case 5:
+						sceneChange.sceneChange("Stage6");
 						break;
-					case 7:
+					case 6:
+						sceneChange.sceneChange("Stage7");
 						break;
 				}
 			}

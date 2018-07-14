@@ -66,14 +66,4 @@ public class Singletone
 	//  Singletone.Instance.Charnumber = choice;
 	//    Application.LoadLevel(Singletone.Instance.Mapnumber + 4);
 	// Use this for initialization
-	void Start()
-	{
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-	}
-
 }

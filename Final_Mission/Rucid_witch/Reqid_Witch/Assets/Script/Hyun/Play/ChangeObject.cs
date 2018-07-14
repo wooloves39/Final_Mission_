@@ -17,7 +17,4 @@ public class ChangeObject : MonoBehaviour {
 		yield return new WaitForSeconds(2.0f);
 		skillChange.reset();
 	}
-	// Update is called once per frame
-	void Update () {
-	}
 }

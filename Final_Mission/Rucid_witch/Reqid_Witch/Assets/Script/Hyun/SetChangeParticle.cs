@@ -34,7 +34,6 @@ public class SetChangeParticle : MonoBehaviour
 			if (ChangeParticle[i])
 				ChangeParticle[i].SetActive(false);
 		}
-
 		gameObject.SetActive(false);
 	}
 

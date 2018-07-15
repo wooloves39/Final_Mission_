@@ -34,7 +34,8 @@ public class AttackMethod : MonoBehaviour
 	MemoryPool Arrowpool = new MemoryPool();
 	GameObject[] Arrow;
 
-	public GameObject BeejaePrefab;
+    public GameObject BeejaePrefab;
+    public GameObject[] VerbashPrefab;
 	public float RayLength = 50f;
 	private Coroutine currentCorutine;
 	private bool flug = false;
@@ -57,6 +58,11 @@ public class AttackMethod : MonoBehaviour
 		AzuraHands[0] = Hands[0].GetComponent<TouchCollision>();
 		AzuraHands[1] = Hands[1].GetComponent<TouchCollision>();
 		typecheck = GetComponentInChildren<LineDraw>();
+        if (typecheck.IsHaveSkill(3))
+        {
+            Instantiate(VerbashPrefab[0]);
+            Instantiate(VerbashPrefab[1]);
+        }
 		if (typecheck.IsHaveSkill(2))
 		{
 			Instantiate(BeejaePrefab);

@@ -221,16 +221,25 @@ public class BeejaeSkill : MonoBehaviour
 		magic[0].SetActive(true);
 		CoolDown[0] = true;
 		yield return new WaitForSeconds(0.45f);
-		if (Player.LightningBolt)
+		if (target.GetComponent<ObjectLife>().Hp > 0)
 		{
-			target.GetComponent<ObjectLife>().SendMessage("Shock",2.0f);
-		}
-		target.GetComponent<ObjectLife>().SendMessage("SendDMG", 30.0f);
-		yield return new WaitForSeconds(0.30f);
-		magic[0].SetActive(false);
 
-		yield return new WaitForSeconds(CoolTime[0]-1);
-		CoolDown[0] = false;
+			if (Player.LightningBolt)
+			{
+				target.GetComponent<ObjectLife>().SendMessage("Shock", 2.0f);
+			}
+			target.GetComponent<ObjectLife>().SendMessage("SendDMG", 30.0f);
+			yield return new WaitForSeconds(0.30f);
+			magic[0].SetActive(false);
+
+			yield return new WaitForSeconds(CoolTime[0] - 1);
+			CoolDown[0] = false;
+		}
+		else
+		{
+			magic[0].SetActive(false);
+			CoolDown[0] = false;
+		}
 	}
 
 	IEnumerator Buff()//2번스킬

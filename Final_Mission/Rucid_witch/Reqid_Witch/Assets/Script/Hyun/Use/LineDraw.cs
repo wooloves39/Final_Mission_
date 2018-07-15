@@ -92,6 +92,7 @@ public class LineDraw : MonoBehaviour {
 		if (mySkills[mytype] == -1)
 		{
 			++mytype;
+			if (mytype > 2) mytype = 0;
 			if (mySkills[mytype] == -1)
 			{
 				++mytype;

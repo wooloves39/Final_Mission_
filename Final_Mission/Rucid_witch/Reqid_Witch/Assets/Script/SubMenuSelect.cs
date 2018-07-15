@@ -51,8 +51,6 @@ public class SubMenuSelect : MonoBehaviour {
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, 20, layerMask))
 			{
-				Debug.Log(hit.collider.tag);
-				Debug.Log(hit.collider.gameObject.name);
 				if (hit.collider.CompareTag("Menu"))
 				{
 					temp = hit.collider.GetComponent<RectTransform>().localScale;

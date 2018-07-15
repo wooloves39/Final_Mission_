@@ -133,6 +133,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114236043011852988, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: WaveStart.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4751355359674346, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -284,7 +289,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1372492347105586, guid: 701b2590cbb72e8458529df584c59dcf, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198783033975275104, guid: 701b2590cbb72e8458529df584c59dcf,
         type: 2}

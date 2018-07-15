@@ -88,8 +88,13 @@ public class LineDraw : MonoBehaviour {
 	public void myType()
 	{
 		++mytype;
-		if (mySkills[mytype] == -1) ++mytype;
 		if (mytype > 2) mytype = 0;
+		if (mySkills[mytype] == -1)
+		{
+			++mytype;
+			if (mytype > 2) mytype = 0;
+		}
+		//수정 필요
 		curType = mySkills[mytype];
 		Skills[curType].resetSkill();
 	}

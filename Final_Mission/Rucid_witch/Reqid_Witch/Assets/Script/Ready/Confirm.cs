@@ -23,7 +23,6 @@ public class Confirm : MonoBehaviour
 		{
 			if (choice)
 			{
-				Debug.Log(Singletone.Instance.stage + 3);
 				
 				switch (Singletone.Instance.stage)
 				{

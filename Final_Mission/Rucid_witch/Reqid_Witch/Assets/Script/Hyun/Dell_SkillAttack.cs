@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dell_SkillAttack : MonoBehaviour {
 	private float damage = 0.0f;
 	public float skillBalance;
+
 	private void OnEnable()
 	{
 		damage = skillBalance;

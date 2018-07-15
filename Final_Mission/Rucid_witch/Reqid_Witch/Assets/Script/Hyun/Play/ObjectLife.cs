@@ -125,7 +125,8 @@ public class ObjectLife : MonoBehaviour {
 			yield return new WaitForSeconds(Cycle1);
 
 			ElecShock.SetActive(true);
-			MobSound.PlaySound(4);
+			Debug.Log("감전 사운드");
+			//MobSound.PlaySound(4);
 			yield return new WaitForSeconds(Cycle2);
 			time += (Cycle1 + Cycle2);
 			ElecShock.SetActive(false);

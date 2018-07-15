@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 114551410067835586}
   - component: {fileID: 195343337868428282}
   - component: {fileID: 114581330917904304}
+  - component: {fileID: 95800106481455696}
   m_Layer: 12
   m_Name: stage3 rabbit
   m_TagString: MobSearch
@@ -273,7 +274,6 @@ GameObject:
   - component: {fileID: 4514949471067298}
   - component: {fileID: 54256683844403432}
   - component: {fileID: 135565017481995592}
-  - component: {fileID: 64485711548144982}
   m_Layer: 10
   m_Name: GameObject
   m_TagString: Monster
@@ -571,7 +571,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4365701359478934}
-  - component: {fileID: 95634705768263708}
   m_Layer: 0
   m_Name: Rabbit_Level_1
   m_TagString: Untagged
@@ -1480,27 +1479,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64485711548144982
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1231477313641078}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
---- !u!95 &95634705768263708
+--- !u!95 &95800106481455696
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1563964191345418}
+  m_GameObject: {fileID: 1082659963072908}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
   m_Controller: {fileID: 9100000, guid: 71111efbf7fee244da70fdbf1c259d51, type: 2}
@@ -2624,7 +2609,7 @@ SphereCollider:
   m_GameObject: {fileID: 1231477313641078}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: 0, y: 1, z: 0}

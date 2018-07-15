@@ -363,13 +363,14 @@ GameObject:
   - component: {fileID: 114054039089271868}
   - component: {fileID: 195819471864206866}
   - component: {fileID: 114962646763878660}
+  - component: {fileID: 114409429243765776}
   m_Layer: 12
   m_Name: stage6 tree
   m_TagString: MobSearch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1316296392860016
 GameObject:
   m_ObjectHideFlags: 1
@@ -1624,7 +1625,7 @@ Transform:
   m_GameObject: {fileID: 1308848699612016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 4707302669146756}
   - {fileID: 4034787835387702}
@@ -1903,7 +1904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0556dc1217efbf441bc294af6627aeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAttdelay: 0
+  MAttdelay: 0.4
   AttackFrame: 0.4
   SkillFrame: []
   MobObj: {fileID: 0}
@@ -2037,6 +2038,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114409429243765776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308848699612016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a658c7dc301f14d82f1cce1bc5db9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Search: 0
+  PlayerPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114426081702345146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6817,7 +6831,7 @@ RectTransform:
   m_GameObject: {fileID: 1251305098359586}
   m_LocalRotation: {x: 0.49999997, y: -0.49999997, z: 0.50000006, w: 0.50000006}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 224033624705681218}
   - {fileID: 224433781455793538}
@@ -6847,6 +6861,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.9000001, y: 0}
+  m_AnchoredPosition: {x: -2.67, y: 0}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}

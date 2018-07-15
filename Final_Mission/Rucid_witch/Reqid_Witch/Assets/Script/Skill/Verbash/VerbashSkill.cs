@@ -34,6 +34,7 @@ public class VerbashSkill : MonoBehaviour
 		handle = FindObjectOfType<AttackMethod>();
 		Player = FindObjectOfType<PlayerState>();
 		line = FindObjectOfType<LineDraw>();
+		target = this.gameObject;
 	}
 	public void SetTarget(GameObject targets)
 	{

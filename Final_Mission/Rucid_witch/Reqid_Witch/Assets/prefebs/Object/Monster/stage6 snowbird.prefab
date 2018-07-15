@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 114096219729796012}
   - component: {fileID: 195762311068568860}
   - component: {fileID: 114605788734264048}
+  - component: {fileID: 114165163498891540}
   m_Layer: 12
   m_Name: stage6 snowbird
   m_TagString: MobSearch
@@ -2069,7 +2070,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1029638197969834}
-  m_LocalRotation: {x: 0.62218875, y: -0.33597794, z: -0.62218875, w: 0.33597785}
+  m_LocalRotation: {x: 0.6221888, y: -0.33597797, z: -0.6221888, w: 0.33597788}
   m_LocalPosition: {x: -0.000000012646989, y: 0.7077994, z: 0.0020704747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2142,7 +2143,7 @@ Transform:
   m_GameObject: {fileID: 1175692184354282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4857154730863364}
   - {fileID: 4804959070878048}
@@ -2643,7 +2644,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1017061537855198}
-  m_LocalRotation: {x: 0.012502076, y: 0.7103867, z: 0.7029223, w: -0.033089012}
+  m_LocalRotation: {x: 0.012502073, y: 0.71038663, z: 0.7029222, w: -0.03308901}
   m_LocalPosition: {x: 0.25704676, y: 0.7584463, z: 0.065603614}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children: []
@@ -2839,6 +2840,19 @@ MonoBehaviour:
   here: 0
   check: 0
   taget: 0
+--- !u!114 &114165163498891540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1175692184354282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a658c7dc301f14d82f1cce1bc5db9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Search: 0
+  PlayerPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114263556553887220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17515,7 +17529,7 @@ RectTransform:
   m_GameObject: {fileID: 1420149648600082}
   m_LocalRotation: {x: 0.49999997, y: -0.49999997, z: 0.50000006, w: 0.50000006}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 224722113047115200}
   - {fileID: 224480816039015256}
@@ -17545,7 +17559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.9, y: -0.10920167}
+  m_AnchoredPosition: {x: -2.45, y: 0}
   m_SizeDelta: {x: 2, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224855033947267276

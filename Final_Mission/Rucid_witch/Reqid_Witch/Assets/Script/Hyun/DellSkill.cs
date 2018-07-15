@@ -11,7 +11,7 @@ public class DellSkill : MonoBehaviour
 	private bool Shoot = false;
 	private bool del_timer = false;
 	public bool Del_timer { get { return del_timer; } set { del_timer = value; } }
-
+	public float ScaleValue = 3.0f;
 	//private Collider collider;
 	private Vector3 curScale;
 	private Rigidbody rigi;
@@ -23,7 +23,7 @@ public class DellSkill : MonoBehaviour
 	public void shoot(int chargingCount, GameObject targets)
 	{
 		float del_time = chargingCount * 2;
-		transform.localScale = transform.localScale * 3;
+		transform.localScale = transform.localScale * ScaleValue;
 		target = targets;
 		Vector3 TargettingDir = Vector3.Normalize(target.transform.position - transform.position);
 		rigi.velocity = TargettingDir * 20.0f;//벨런스 조절 필요
@@ -34,13 +34,12 @@ public class DellSkill : MonoBehaviour
 	public void shoot(float chargingCount, GameObject targets,bool isMon=false)
 	{
 		float del_time = chargingCount * 2;
-		transform.localScale = transform.localScale * 3;
 		target = targets;
-		
+		transform.LookAt(target.transform);
 		Vector3 TargettingDir = Vector3.Normalize(target.transform.position - transform.position);
 		rigi.velocity = TargettingDir * 20.0f;//벨런스 조절 필요
 		Shoot = true;
-		StartCoroutine(Shooter(del_time));
+		StartCoroutine(Shooter());
 		target = null;
 	}
 	IEnumerator Shooting(float delTime = 2.0f)

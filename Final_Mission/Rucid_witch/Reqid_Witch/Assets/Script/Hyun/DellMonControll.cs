@@ -16,9 +16,7 @@ public class DellMonControll : MonoBehaviour {
 	private void Awake()
 	{
 		sound = GetComponent<BossSoundSetting>();
-		
 		Hp = GetComponent<ObjectLife>().Hp;
-		int poolCount = 5;
 	}
 	// Use this for initialization
 	void Start () {
@@ -37,7 +35,7 @@ public class DellMonControll : MonoBehaviour {
 	{
 		DellAttackObj.SetActive(true);
 		Vector3 pos= transform.position;
-		pos.y += 5;
+		pos.y += 3;
 		DellAttackObj.transform.position = pos;
 		DellAttackObj.GetComponent<DellSkill>().shoot(Hp / 5000.0f, target, true);
 	}
@@ -56,11 +54,10 @@ public class DellMonControll : MonoBehaviour {
 	void Attack5()
 	{
 		attackSkill.gameObject.SetActive(true);
-		attackSkill.shoot(target.transform, Hp / 5000.0f);
+		attackSkill.shoot(target.transform, 500.0f/Hp);
 	}
 	void setTarget()
 	{
 		Hp = GetComponent<ObjectLife>().Hp;
-
 	}
 }

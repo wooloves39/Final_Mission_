@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d62ec95c7aebff94daedd77943bd3246, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5892f56cfb8643345bfea45e5e7ca9fd, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -661,6 +661,11 @@ Prefab:
       propertyPath: Vskill
       value: 
       objectReference: {fileID: 312706234}
+    - target: {fileID: 114170795850518756, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: SoundController
+      value: 
+      objectReference: {fileID: 1629371220}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0
@@ -887,6 +892,8 @@ GameObject:
   - component: {fileID: 1629371215}
   - component: {fileID: 1629371218}
   - component: {fileID: 1629371217}
+  - component: {fileID: 1629371220}
+  - component: {fileID: 1629371219}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1049,6 +1056,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1629371219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1629371214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a520cf37a04174f8228848a05d609a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1629371220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1629371214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d464fd93ac479d49b0a033c6a436f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1654503021
 Prefab:
   m_ObjectHideFlags: 0

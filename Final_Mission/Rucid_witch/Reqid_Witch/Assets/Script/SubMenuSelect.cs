@@ -7,6 +7,7 @@ public class SubMenuSelect : MonoBehaviour {
 	public GameObject[] BGM;
 	public GameObject[] SAVE;
 	private SubMenu sub;
+	public SoundController SoundController;
 	private void OnEnable()
 	{
 		sub = FindObjectOfType<SubMenu>();
@@ -62,6 +63,7 @@ public class SubMenuSelect : MonoBehaviour {
 								BGM[i].SetActive(false);
 							BGM[0].SetActive(true);
 							Singletone.Instance.BGMSound = 0.0f;
+							SoundController.BGMOptionChange();
 						}
 						else if (temp.z < 2.5f)
 						{
@@ -69,6 +71,7 @@ public class SubMenuSelect : MonoBehaviour {
 								BGM[i].SetActive(false);
 							BGM[1].SetActive(true);
 							Singletone.Instance.BGMSound = 0.5f;
+							SoundController.BGMOptionChange();
 						}
 						else if (temp.z < 3.5f)
 						{
@@ -76,6 +79,7 @@ public class SubMenuSelect : MonoBehaviour {
 								BGM[i].SetActive(false);
 							BGM[2].SetActive(true);
 							Singletone.Instance.BGMSound = 1.0f;
+							SoundController.BGMOptionChange();
 						}
 						else if (temp.z < 100.5f)
 						{
@@ -108,6 +112,7 @@ public class SubMenuSelect : MonoBehaviour {
 								EFF[i].SetActive(false);
 							EFF[0].SetActive(true);
 							Singletone.Instance.Sound = 0.0f;
+							SoundController.soundOptionChange() ;
 						}
 						else if (temp.z > -2.5f)
 						{
@@ -115,6 +120,7 @@ public class SubMenuSelect : MonoBehaviour {
 								EFF[i].SetActive(false);
 							EFF[1].SetActive(true);
 							Singletone.Instance.Sound = 0.5f;
+							SoundController.soundOptionChange();
 						}
 						else
 						{
@@ -122,6 +128,7 @@ public class SubMenuSelect : MonoBehaviour {
 								EFF[i].SetActive(false);
 							EFF[2].SetActive(true);
 							Singletone.Instance.Sound = 1.0f;
+							SoundController.soundOptionChange();
 						}
 					}
 				

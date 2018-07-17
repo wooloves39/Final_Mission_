@@ -41,8 +41,11 @@ public class Stage5Boss: MonoBehaviour {
 	Queue Battle = null;
 	Queue Peace = null;
 	private Transform Player;
+
+	public bool Islive { get; set; }
 	void Awake()
 	{
+		Islive = true;
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
 		ObjLife = GetComponent<ObjectLife>();
 		ani = GetComponent<Animator>();
@@ -61,7 +64,7 @@ public class Stage5Boss: MonoBehaviour {
 			Peace.Enqueue (BasicPeace [i]);
 		for (int i = 0; i<BasicBattle.Length ; ++i)
 			Battle.Enqueue (BasicBattle [i]);
-		StartCoroutine("AISearching");
+		StartCoroutine(AISearching());
 	}
 	IEnumerator AISearching(){
 		int num = 0;
@@ -76,7 +79,8 @@ public class Stage5Boss: MonoBehaviour {
 				ani.SetBool("Die", true);
 
 				yield return new WaitForSeconds(Die_Time);
-				this.gameObject.SetActive(false);
+				Islive = false;
+				break;
 			}
 
 			if (Fight)

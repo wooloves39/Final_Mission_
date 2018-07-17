@@ -18,9 +18,6 @@ public class MobGenerater : MonoBehaviour
 		MyState = player.transform.parent.GetComponent<PlayerState>();
 		monsterWaves = GetComponents<MonsterWaveGenerate>();
 	}
-	private void Update()
-	{
-	}
 	public void waveOn()
 	{
 		Wave_Start = true;

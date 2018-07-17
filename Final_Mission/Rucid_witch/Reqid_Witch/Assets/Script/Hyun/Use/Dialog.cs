@@ -30,6 +30,9 @@ public class Dialog : MonoBehaviour
 	public NextStage next;
 	public GameObject nextParticle;
 	private int wavecnt = 0;
+	Vector3 MeCurPos;
+	Vector3 BossCurPos;
+
 	void Start()
 	{
 		File_parser file_parser = new File_parser(); 
@@ -40,7 +43,6 @@ public class Dialog : MonoBehaviour
 		DialogueStrings = file_parser.GetText();
 		chatChar = file_parser.GetTextChar();
 		_textComponent.text = "";
-		moveSetting();
 		HideIcons();
 
 		StartCoroutine(StartDialogue());
@@ -139,6 +141,8 @@ public class Dialog : MonoBehaviour
 		_textComponent.text = "";
 		if (_isEndofDialogue)
 		{
+			 Me.transform.localPosition= MeCurPos;
+		 Boss.transform.localPosition = BossCurPos;
 			_isEndofDialogue = false;
 			dia_Play.setPlay(true);
 		}
@@ -158,19 +162,16 @@ public class Dialog : MonoBehaviour
 		}
 		ContinueIcon.SetActive(true);
 	}
-	private void moveSetting()
-	{
-		//iTween.MoveFrom(Me, iTween.Hash("x", Me.transform.position.x - 2.0f, "time", 1.0f, "easetype", iTween.EaseType.easeOutBounce));
-		//iTween.MoveFrom(Boss, iTween.Hash("x", Boss.transform.position.x + 2.0f, "time", 1.0f, "easetype", iTween.EaseType.easeOutBounce));
-	}
 	private void moveImage(int currentDialogueIndex)
 	{
+		MeCurPos=Me.transform.localPosition;
+		BossCurPos = Boss.transform.localPosition;
 		if (currentDialogueIndex == 0) return;
 		if (chatChar[currentDialogueIndex] == 0)
-			iTween.ShakePosition(Me, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 0.5f));
+			iTween.ShakePosition(Me, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 0.1f));
 		else if (chatChar[currentDialogueIndex] == 1)
 		{
-			iTween.ShakePosition(Boss, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 0.5f));
+			iTween.ShakePosition(Boss, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 0.1f));
 		}
 	}
 

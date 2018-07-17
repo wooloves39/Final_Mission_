@@ -237,7 +237,17 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1564807256845334, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114170795850518756, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: SoundController
+      value: 
+      objectReference: {fileID: 1938698607}
+    m_RemovedComponents:
+    - {fileID: 33825232105496722, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &967257720
@@ -605,3 +615,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeBalance: 0.4
+--- !u!114 &1938698607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938698604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d464fd93ac479d49b0a033c6a436f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1938698608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938698604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a520cf37a04174f8228848a05d609a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

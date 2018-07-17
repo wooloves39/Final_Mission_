@@ -132,6 +132,13 @@ public class MemoryPool : IEnumerable, System.IDisposable {
 		for (int i = 0; i < table.Length; ++i)
 		{
 			Item item = table[i];
+			if (item.gameObject.GetComponent<Stage5Boss>())
+			{
+				if (!item.gameObject.GetComponent<Stage5Boss>().Islive)
+				{
+					break;
+				}
+			}
 			if (item.gameObject.activeInHierarchy == true)
 			{
 				check = true;

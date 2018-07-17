@@ -546,6 +546,15 @@ Prefab:
       propertyPath: Main
       value: 
       objectReference: {fileID: 36688111}
+    - target: {fileID: 1811456291594838, guid: dd6f8b17b75616a489cc4751f67ec682, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892159881518982, guid: dd6f8b17b75616a489cc4751f67ec682,
+        type: 2}
+      propertyPath: SoundController
+      value: 
+      objectReference: {fileID: 970623682}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6f8b17b75616a489cc4751f67ec682, type: 2}
   m_IsPrefabParent: 0
@@ -2878,6 +2887,8 @@ GameObject:
   - component: {fileID: 970623679}
   - component: {fileID: 970623678}
   - component: {fileID: 970623680}
+  - component: {fileID: 970623681}
+  - component: {fileID: 970623682}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -2987,6 +2998,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75ad27644098d8c4ba07a453848d6c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &970623681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 970623677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a520cf37a04174f8228848a05d609a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &970623682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 970623677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d464fd93ac479d49b0a033c6a436f97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &990526873
@@ -4519,7 +4552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1311929505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8668,7 +8701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2121929159
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8739,6 +8772,7 @@ MonoBehaviour:
   Main: {fileID: 36688111}
   index: 0
   timer: 0
+  SoundController: {fileID: 970623682}
 --- !u!82 &2121929161
 AudioSource:
   m_ObjectHideFlags: 0

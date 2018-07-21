@@ -12,7 +12,7 @@ public class Dialog : MonoBehaviour
 	private string[] DialogueStrings;
 	public int[] chatChar;
 	private float SecondsBetweenCharacters = 0.1f;
-	private float CharacterRateMultuplier = 0.0001f;
+	private float CharacterRateMultuplier = 0.001f;
 
 	private bool _isStringBeingRevealed = false;
 	private bool _isEndofDialogue = false;
@@ -110,13 +110,21 @@ public class Dialog : MonoBehaviour
 				{
 					yield return new WaitForSeconds(SecondsBetweenCharacters);
 				}
+				if (InputManager_JHW.AButton()||Input.GetKey(KeyCode.S))
+				{
+					for(int i = currentCaracterIndex; i < stringLength; ++i)
+					{
+						_textComponent.text += stringToDisplay[i];
+					}
+					break;
+				}
 			}
 			else break;
 		}
 		ShowIcon();
 		while (true)
 		{
-			if (InputManager_JHW.BButtonDown())
+			if (InputManager_JHW.BButtonDown()|| InputManager_JHW.AButton()|| Input.GetKey(KeyCode.S))
 			{
 				if (_isEndofDialogue)
 				{

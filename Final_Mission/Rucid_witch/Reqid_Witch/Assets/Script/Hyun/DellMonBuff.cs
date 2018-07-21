@@ -31,7 +31,7 @@ public class DellMonBuff : MonoBehaviour {
 		while (true)
 		{
 			yield return new WaitForSeconds(1.0f);
-			if (objectLife.Hp < objectLife.MaxHp) objectLife.Hp = HpVal;
+			if (objectLife.Hp < objectLife.MaxHp) objectLife.Hp += HpVal;
 		}
 	}
 }

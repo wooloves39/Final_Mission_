@@ -43,7 +43,7 @@ public class KaliBoss : MonoBehaviour {
 
     public bool Delay = false;
     public bool Fight = false;//false;
-    private bool Ulti = false;
+    public bool Ulti = false;
     Queue Battle = null;
     Queue Peace = null;
     private Transform Player;
@@ -64,10 +64,16 @@ public class KaliBoss : MonoBehaviour {
 		playerstate = Player.gameObject.GetComponentInParent<PlayerState>();
 		//가져와서 적용해야 할 부분
 		msg = new MoveMsg();
-        //가져와서 적용해야 할 부분
+		//가져와서 적용해야 할 부분
 
+		if (Singletone.Instance.stage == 6)
+		{
+			Ulti = true;
+			ObjLife.Hp = 300;
+			ObjLife.MaxHp = 300;
+		}
 
-        Battle = new Queue();
+		Battle = new Queue();
         Peace = new Queue();
         for (int i = 0; i<BasicPeace.Length ; ++i)
             Peace.Enqueue (BasicPeace [i]);

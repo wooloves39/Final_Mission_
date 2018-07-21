@@ -2278,7 +2278,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046241488869640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -18.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4936862027495936}
@@ -3747,11 +3747,11 @@ MonoBehaviour:
   Time_Nomal_MoveWay: 3
   Time_Taget_Search: 1
   Time_Battle_Move: 1
-  Time_Skill_1: 4
-  Time_Skill_2: 6
-  Time_Skill_3: 4
-  Time_Skill_4: 5
-  Time_Skill_5: 6
+  Time_Skill_1: 2
+  Time_Skill_2: 2
+  Time_Skill_3: 2
+  Time_Skill_4: 2
+  Time_Skill_5: 3
   Die_Time: 2
   SkillValue:
   - 0
@@ -3768,6 +3768,7 @@ MonoBehaviour:
   BossCoolDown: 0000000000
   Delay: 0
   Fight: 0
+  Ulti: 0
 --- !u!114 &114761947121930340
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,18 +11,52 @@ public class MonsterWaveGenerate : MonoBehaviour
 	private MobGenerater mobGenerater;
 	private bool initFinish = false;
 	public bool InitFinish { get { return initFinish; } }
+	public bool Finalboss = false;
+	public bool first = false;
+	public GameObject[] FinalPrefab;
 	// Use this for initialization
 	private void Awake()
 	{
 		mobGenerater = GetComponent<MobGenerater>();
 		pool = new MemoryPool();
-		pool.Create(Prefab, Prefab_Count);
+		if (!Finalboss)
+		{
+			if (Singletone.Instance.stage != 6)
+				pool.Create(Prefab, Prefab_Count);
+			else
+			{
+				int N = Singletone.Instance.NoHaveSkill(first);
+				switch (N)
+				{
+					case 0:
+						pool.Create(FinalPrefab[N], 1);
+						break;
+					case 1:
+						pool.Create(FinalPrefab[N], 1);
+						break;
+					case 2:
+						pool.Create(FinalPrefab[N], 1);
+						break;
+					case 3:
+						pool.Create(FinalPrefab[N], 1);
+						break;
+					case 4:
+						pool.Create(FinalPrefab[N], 1);
+						break;
+				}
+			}
+		}
+		else
+		{
+			pool.Create(Prefab, Prefab_Count);
+		}
 		GenTime = mobGenerater.GenTime;
 		StartCoroutine(MobGen());
 	}
 	IEnumerator MobGen()
 	{
 		yield return new WaitUntil(() => mobGenerater.Wave_Start);
+
 		yield return new WaitForSeconds(GenTime);
 		for (int i = 0; i < Prefab_Count; ++i)
 		{
@@ -32,6 +66,7 @@ public class MonsterWaveGenerate : MonoBehaviour
 		yield return new WaitForSeconds(1);
 		initFinish = true;
 		mobGenerater.checkInit();
+		
 	}
 	public bool MondieAll()
 	{

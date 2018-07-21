@@ -25,9 +25,38 @@ public class Singletone
     public float Sound = 0.5f;
     public float BGMSound = 0.5f;
 	public string name= "Reqid_Witch";
-	public int stage = 5;
+	public int stage = 6;
 	public string saveTime;
 	public int[] Myskill = { 0 , 4, 3};
+
+	public int NoHaveSkill(bool check)
+	{
+		int[] arr = { 0, 1, 2, 3, 4 };
+		for (int i = 0; i < 5; ++i)
+			for (int j = 0; j < 3; ++j)
+				if (Myskill[j] == arr[i])
+					arr[i] = -1;
+
+		for (int i = 0; i < 5; ++i)
+			if (arr[i] != -1)
+				if (check)
+				{
+					return arr[i];
+					break;
+				}
+				else
+				{
+					arr[i] = -1;
+					break;
+				}
+
+		for (int i = 0; i < 5; ++i)
+			if (arr[i] != -1)
+				if (!check)
+					return arr[i];
+
+		return 0;
+	}
 	public void Save(string FileName)
 	{
 		string saveTime = System.DateTime.Now.ToString("yyyy-MM-dd-HH");

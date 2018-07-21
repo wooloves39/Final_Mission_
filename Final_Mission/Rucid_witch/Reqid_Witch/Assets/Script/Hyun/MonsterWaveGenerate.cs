@@ -25,7 +25,8 @@ public class MonsterWaveGenerate : MonoBehaviour
 				pool.Create(Prefab, Prefab_Count);
 			else
 			{
-				int N = Singletone.Instance.NoHaveSkill(first);
+
+				int N = NoHaveSkill(first);
 				switch (N)
 				{
 					case 0:
@@ -75,5 +76,34 @@ public class MonsterWaveGenerate : MonoBehaviour
 	private void OnApplicationQuit()
 	{
 		pool.Dispose();
+	}
+	public int NoHaveSkill(bool check)
+	{
+
+		int[] arr = { 0, 1, 2, 3, 4 };
+		for (int i = 0; i < 5; ++i)
+			for (int j = 0; j < 3; ++j)
+				if (Singletone.Instance.Myskill[j] == arr[i])
+					arr[i] = -1;
+
+		for (int i = 0; i < 5; ++i)
+			if (arr[i] != -1)
+				if (check)
+				{
+					return arr[i];
+					break;
+				}
+				else
+				{
+					arr[i] = -1;
+					break;
+				}
+
+		for (int i = 0; i < 5; ++i)
+			if (arr[i] != -1)
+				if (!check)
+					return arr[i];
+
+		return 0;
 	}
 }

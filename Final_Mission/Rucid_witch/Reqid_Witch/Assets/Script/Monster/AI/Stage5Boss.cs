@@ -298,4 +298,5 @@ public class Stage5Boss: MonoBehaviour {
         BossCoolDown[num] = false;
 
     }
+	
 }

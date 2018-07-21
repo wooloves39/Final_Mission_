@@ -53,7 +53,7 @@ public class KaliBoss : MonoBehaviour {
     void Awake()
     {
         AttackMove = 0;
-        AttackMoveNum = getRandom(2, 4);
+        AttackMoveNum = getRandom(10, 13);
         Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
         ObjLife = GetComponent<ObjectLife>();
         ani = GetComponent<Animator>();
@@ -154,7 +154,8 @@ public class KaliBoss : MonoBehaviour {
                     {
                         num = 14;
                         AttackMove = 0;
-                    }
+						AttackMoveNum = getRandom(10, 13);
+					}
                     else
                     {
                         AttackMove++;
@@ -294,16 +295,16 @@ public class KaliBoss : MonoBehaviour {
                             switch (NUM)
                             {
                                 case 0:
-                                    msg.destination = Player.position + Player.transform.forward * 3;
+									msg.destination = this.transform.position + this.transform.forward * -5;
                                     break;
                                 case 1:
-                                    msg.destination = Player.position + Player.transform.right * 3;
+                                    msg.destination = this.transform.position + this.transform.right * 7;
                                     break;
                                 case 2:
-                                    msg.destination = Player.position + Player.transform.right * -3;
+                                    msg.destination = this.transform.position + this.transform.right * -7;
                                     break;
-                            }
-                            msg.destination = Player.position;
+			
+							}
                             msg.Speed = ObjLife.BattleSpeed;
                             BCommand.BattleMove(msg);
                             break;

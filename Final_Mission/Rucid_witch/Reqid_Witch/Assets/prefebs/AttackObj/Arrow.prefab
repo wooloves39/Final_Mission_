@@ -3074,7 +3074,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3154,7 +3154,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3234,7 +3234,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3314,7 +3314,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3394,7 +3394,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3474,7 +3474,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 39c8c9c7977bd8c479f4dea33279fa6b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3554,7 +3554,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9a92c4090d3ac094e9081d5887f76050, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7853,16 +7853,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114026661769440522
 MonoBehaviour:
@@ -7883,16 +7881,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114029551733662380
 MonoBehaviour:
@@ -7977,16 +7973,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114058499071982960
 MonoBehaviour:
@@ -8037,16 +8031,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114092881020095234
 MonoBehaviour:
@@ -8067,16 +8059,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114154554976448682
 MonoBehaviour:
@@ -8097,16 +8087,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114182008514481406
 MonoBehaviour:
@@ -8127,16 +8115,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114227047460770864
 MonoBehaviour:
@@ -8157,16 +8143,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114237469194270976
 MonoBehaviour:
@@ -8187,16 +8171,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114253943130042422
 MonoBehaviour:
@@ -8217,16 +8199,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114255403715501658
 MonoBehaviour:
@@ -8247,16 +8227,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114264627946257622
 MonoBehaviour:
@@ -8277,16 +8255,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114276268343539126
 MonoBehaviour:
@@ -8307,16 +8283,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114282873391517972
 MonoBehaviour:
@@ -8337,16 +8311,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114299895560262032
 MonoBehaviour:
@@ -8383,16 +8355,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114302691324267430
 MonoBehaviour:
@@ -8413,16 +8383,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114310940754767696
 MonoBehaviour:
@@ -8443,16 +8411,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114321829957945972
 MonoBehaviour:
@@ -8473,16 +8439,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114337694728957218
 MonoBehaviour:
@@ -8519,16 +8483,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114347606237737134
 MonoBehaviour:
@@ -8549,16 +8511,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114354686654186152
 MonoBehaviour:
@@ -8579,16 +8539,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114375835127165196
 MonoBehaviour:
@@ -8609,16 +8567,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114381822637864322
 MonoBehaviour:
@@ -8639,16 +8595,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114384292155368832
 MonoBehaviour:
@@ -8669,16 +8623,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 8
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 8
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114436372247112320
 MonoBehaviour:
@@ -8699,16 +8651,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114436838688684426
 MonoBehaviour:
@@ -8729,16 +8679,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114461694266979532
 MonoBehaviour:
@@ -8759,16 +8707,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114487087519694328
 MonoBehaviour:
@@ -8789,16 +8735,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114492603078691398
 MonoBehaviour:
@@ -8819,16 +8763,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114493386069892802
 MonoBehaviour:
@@ -8849,16 +8791,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114510544580827122
 MonoBehaviour:
@@ -8879,16 +8819,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114582940505913334
 MonoBehaviour:
@@ -8909,16 +8847,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114600515321108146
 MonoBehaviour:
@@ -8939,16 +8875,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114618931327119398
 MonoBehaviour:
@@ -8969,16 +8903,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114623364288154662
 MonoBehaviour:
@@ -8999,16 +8931,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114635148676992576
 MonoBehaviour:
@@ -9029,16 +8959,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114636613589437948
 MonoBehaviour:
@@ -9059,16 +8987,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114645151239329880
 MonoBehaviour:
@@ -9089,16 +9015,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114673054826058378
 MonoBehaviour:
@@ -9119,16 +9043,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 2
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 2
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114713635953879998
 MonoBehaviour:
@@ -9149,16 +9071,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114731830154027554
 MonoBehaviour:
@@ -9179,16 +9099,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114743704877178520
 MonoBehaviour:
@@ -9209,16 +9127,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114775804274433652
 MonoBehaviour:
@@ -9255,16 +9171,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114803221524516594
 MonoBehaviour:
@@ -9296,16 +9210,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114843630316946174
 MonoBehaviour:
@@ -9326,16 +9238,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114863018134789920
 MonoBehaviour:
@@ -9356,16 +9266,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114873048687262854
 MonoBehaviour:
@@ -9386,16 +9294,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114892472716922074
 MonoBehaviour:
@@ -9416,16 +9322,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 1
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 1
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114960098296402704
 MonoBehaviour:
@@ -9446,16 +9350,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114977496270239974
 MonoBehaviour:
@@ -9476,16 +9378,14 @@ MonoBehaviour:
   DotHit: 0
   DotDmg: 50
   DotTime: 5
-  Cycle: 0.3
-  HitCount: 4
   PowerMemory:
   - 0
   - 0
   - 0
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
-  time: 0
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
 --- !u!114 &114995724881053348
 MonoBehaviour:

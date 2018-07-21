@@ -43,7 +43,11 @@ public class AITree {
 		Dnum = 11;
 		AIDic.Add(Dnum,"Move");//추격
 		Dnum = 12;
-		AIDic.Add(Dnum,"NomalAttack");
+        AIDic.Add(Dnum,"NomalAttack");
+        Dnum = 13;
+        AIDic.Add(Dnum,"RunAway");
+        Dnum = 14;
+        AIDic.Add(Dnum,"AttackMove");
 
 		//기본 공격스킬
 		Dnum = 20;

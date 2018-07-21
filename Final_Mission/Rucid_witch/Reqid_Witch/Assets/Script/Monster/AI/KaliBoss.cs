@@ -23,6 +23,8 @@ public class KaliBoss : MonoBehaviour {
     public float Time_Taget_Search;     //10
     public float Time_Battle_Move;      //11
     //public float Time_Normal_Attack;  //12
+    public float Time_RunAway;     //13
+    public float Time_AttackMove;      //14
 
     public float Time_Skill_1;      //20
     public float Time_Skill_2;      //21
@@ -45,8 +47,13 @@ public class KaliBoss : MonoBehaviour {
     Queue Battle = null;
     Queue Peace = null;
     private Transform Player;
+
+    private int AttackMove;
+    private int AttackMoveNum;
     void Awake()
     {
+        AttackMove = 0;
+        AttackMoveNum = getRandom(2, 4);
         Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
         ObjLife = GetComponent<ObjectLife>();
         ani = GetComponent<Animator>();
@@ -118,73 +125,85 @@ public class KaliBoss : MonoBehaviour {
                 //전투중 AI 조건
                 while (Battle.Count < 2)
                 {
-                    if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
-                        num = 12;
-                    else
-                        num = 11;
-                    Battle.Enqueue(num);
+                    {
+                        if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
+                            num = 12;
+                        else
+                            num = 11;
+                        Battle.Enqueue(num);
+                    }
                 }
             }
 
             if (Limit >= time)
             {
                 Limit = 0.0f;
+
                 if (!Fight)
                     num = (int)Peace.Dequeue();
                 else
                 {
 
-                    if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
+                    if (AttackMove >= AttackMoveNum)
                     {
-                        int NUM = getRandom(0, 100);
-                        if (!Ulti && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
+                        num = 14;
+                        AttackMove = 0;
+                    }
+                    else
+                    {
+                        AttackMove++;
+                        if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
                         {
-                            num = 26;
-                            Ulti = true;
-                        }
-                        else
-                        {
-                            if (SkillValue[0] <= NUM && NUM < SkillValue[2])
+                            int NUM = getRandom(0, 100);
+                            if (!Ulti && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
                             {
-                                if (spire)
-                                {
-                                    spire = false;
-                                    num = 20;
-                                }
-                                else
-                                {
-                                    spire = true;
-                                    num = 21;
-                                }
+                                num = 26;
+                                Ulti = true;
                             }
                             else
                             {
-                                for (int i = 2; i < 6; ++i)
+                                if (SkillValue[0] <= NUM && NUM < SkillValue[2])
                                 {
-                                    if (SkillValue[i] <= NUM && NUM < SkillValue[i+1])
+                                    if (spire)
                                     {
-                                        if (BossCoolDown[i])
+                                        spire = false;
+                                        num = 20;
+                                    }
+                                    else
+                                    {
+                                        spire = true;
+                                        num = 21;
+                                    }
+                                }
+                                else
+                                {
+                                    for (int i = 2; i < 6; ++i)
+                                    {
+                                        if (SkillValue[i] <= NUM && NUM < SkillValue[i+1])
                                         {
-                                            if (spire)
+                                            if (BossCoolDown[i])
                                             {
-                                                spire = false;
-                                                num = 20;
+                                                if (spire)
+                                                {
+                                                    spire = false;
+                                                    num = 20;
+                                                }
+                                                else
+                                                {
+                                                    spire = true;
+                                                    num = 21;
+                                                }
                                             }
                                             else
-                                            {
-                                                spire = true;
-                                                num = 21;
-                                            }
+                                                num = 20+i;
                                         }
-                                        else
-                                            num = 20+i;
                                     }
                                 }
                             }
                         }
+                        else
+                            num = 11;
                     }
-                    else
-                        num = 11;
                 }
                 ////실행할 동작 - 삭제할 부분
                 //Debug.Log(num);
@@ -246,6 +265,41 @@ public class KaliBoss : MonoBehaviour {
                             //ani.SetBool("IsAttack", true);
                             //time = Time_Normal_Attack;
                             //BCommand.Attack(time);
+                            break;
+                        }
+                    case 13:
+                        {
+                            ani.SetBool("Run", true);
+                            ani.SetBool("Move", false);
+                            time = Time_RunAway;
+                            msg.time = time;
+                            msg.destination = Stage5Pos.GetRandomPos();
+                            msg.Speed = ObjLife.BattleSpeed;
+                            BCommand.BattleMove(msg);
+                            break;
+                        }
+                    case 14:
+                        {
+                            ani.SetBool("Run", true);
+                            ani.SetBool("Move", false);
+                            time = Time_AttackMove;
+                            msg.time = time;
+                            int NUM = getRandom(0, 3);
+                            switch (NUM)
+                            {
+                                case 0:
+                                    msg.destination = Player.position + Player.transform.forward * 3;
+                                    break;
+                                case 1:
+                                    msg.destination = Player.position + Player.transform.right * 3;
+                                    break;
+                                case 2:
+                                    msg.destination = Player.position + Player.transform.right * -3;
+                                    break;
+                            }
+                            msg.destination = Player.position;
+                            msg.Speed = ObjLife.BattleSpeed;
+                            BCommand.BattleMove(msg);
                             break;
                         }
                     case 20:

@@ -15,14 +15,18 @@ public class DellSkill : MonoBehaviour
 	//private Collider collider;
 	private Vector3 curScale;
 	private Rigidbody rigi;
+	private Skill_Info info;
 	private void Awake()
 	{
+		info = GetComponent<Skill_Info>();
 		deltaTime = Time.deltaTime;
 		rigi = GetComponent<Rigidbody>();
 	}
-	public void shoot(int chargingCount, GameObject targets)
+	public void shoot(int chargingCount, GameObject targets, float Gage = 0)
 	{
+		float chargingGage = Gage + 1;
 		float del_time = chargingCount * 2;
+		info.chargingSet(chargingGage);
 		transform.localScale = transform.localScale * ScaleValue;
 		target = targets;
 		Vector3 TargettingDir = Vector3.Normalize(target.transform.position - transform.position);

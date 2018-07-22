@@ -10,11 +10,6 @@ public class BeeJaeMonSkill : MonoBehaviour
 	private GameObject MyCharacter;
 	public GameObject MyCharacters { get { return MyCharacter; } set { MyCharacter = value; } }
 	public bool handle2 = false;
-
-
-	private void Awake()
-	{
-	}
 	public void shoot(int skillIndex, GameObject targetPos)
 	{
 		target = targetPos;

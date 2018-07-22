@@ -246,8 +246,13 @@ Prefab:
       propertyPath: SoundController
       value: 
       objectReference: {fileID: 1938698607}
+    - target: {fileID: 1622277166448478, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 33825232105496722, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
+    - {fileID: 114525735171515754, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &967257720

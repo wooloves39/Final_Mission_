@@ -33,8 +33,10 @@ public class SeiKwanSkill : MonoBehaviour
 		rigi = GetComponent<Rigidbody>();
 		bagicRota = this.transform.rotation;
 	}
-	public void shoot(int skillIndex, GameObject targets, float handDistance, float del_time = 10.0f)
+	public void shoot(int skillIndex, GameObject targets, float handDistance,
+	float del_time = 10.0f, float Gage=0)
 	{
+		float chargingGage = Gage + 1;
 		bool Mp = false;
 		bool Cool = false;
 		transform.localScale = transform.localScale * 3;
@@ -55,16 +57,16 @@ public class SeiKwanSkill : MonoBehaviour
 			switch (skill)
 			{
 				case 1:
-					BraveArrow();
+					BraveArrow(chargingGage);
 					break;
 				case 2:
-					ArrowTrab();
+					ArrowTrab(chargingGage);
 					break;
 				case 3:
-					SkyArrow(targets.transform.position);
+					SkyArrow(targets.transform.position, chargingGage);
 					break;
 				case 5:
-					HavensGate(targets.transform.position);
+					HavensGate(targets.transform.position, chargingGage);
 					break;
 			}
 			//CoolTime.MpDown(2, skill);
@@ -73,19 +75,13 @@ public class SeiKwanSkill : MonoBehaviour
 			Shoot = true;
 			StartCoroutine(Shooting(del_time));
 		}
-		else
-		{
-			if (Mp)
-				Debug.Log("Mp부족 처리 부분");
-			if (Cool)
-				Debug.Log("쿨타임 중 처리 부분");
-		}
 		target = null;
 	}
 	//#### #### #### #### 기본
-	private void BraveArrow()
+	private void BraveArrow(float chargingGage)
 	{
 		SeiKwanArrow.GetComponentInChildren<Skill_Sound_Set>().check = true;
+		SeiKwanArrow.GetComponent<Skill_Info>().chargingSet(chargingGage);
 		Vector3 Arrowforward = transform.forward;
 		Vector3 TargettingDir = Vector3.zero;
 		if (target)
@@ -103,7 +99,7 @@ public class SeiKwanSkill : MonoBehaviour
 		}
 	}
 	//#### #### #### #### 
-	private void ArrowTrab()
+	private void ArrowTrab(float chargingGage)
 	{
 		Vector3 Arrowforward = transform.forward;
 		Vector3 TargettingDir = Vector3.zero;
@@ -121,9 +117,9 @@ public class SeiKwanSkill : MonoBehaviour
 			rigi.velocity = TargettingDir * 15f * handDis;
 		}
 		Debug.Log(handDis);
-		StartCoroutine(ArrowTrabCor(.15f));
+		StartCoroutine(ArrowTrabCor(.15f, chargingGage));
 	}
-	IEnumerator ArrowTrabCor(float timer)
+	IEnumerator ArrowTrabCor(float timer,float chargingGage)
 	{
 
 		yield return new WaitForSeconds(timer);
@@ -132,6 +128,7 @@ public class SeiKwanSkill : MonoBehaviour
 		for (int i = 0; i < trab_object.Length; ++i)
 		{
 			trab_object[i].transform.position = this.transform.position + new Vector3(Random.Range(-1.50f, 1.50f), Random.Range(-1.50f, 1.50f), Random.Range(-1.50f, 1.50f));
+			trab_object[i].GetComponent<Skill_Info>().chargingSet(chargingGage);
 			trab_object[i].SetActive(true);
 		}
 		float t = 0.0f;
@@ -143,13 +140,13 @@ public class SeiKwanSkill : MonoBehaviour
 		}
 
 	}
-	private void SkyArrow(Vector3 targetPoint)
+	private void SkyArrow(Vector3 targetPoint, float chargingGage)
 	{
 		Vector3 Arrowforward = transform.forward;
 		rigi.velocity = (Vector3.up / .5f + Arrowforward) * 15f * handDis;
-		StartCoroutine(SkyArrowCor(targetPoint, 1.0f));
+		StartCoroutine(SkyArrowCor(targetPoint, 1.0f, chargingGage));
 	}
-	IEnumerator SkyArrowCor(Vector3 target, float timer)
+	IEnumerator SkyArrowCor(Vector3 target, float timer,float chargingGage)
 	{
 		float speed = 22.5f;
 		this.transform.localScale = Vector3.one;
@@ -162,12 +159,14 @@ public class SeiKwanSkill : MonoBehaviour
 		Vector3 dir;
 		sky_Arraws[0].transform.position = target + new Vector3(0, 10, 0);
 		sky_Arraws[0].transform.LookAt(target);
+		sky_Arraws[0].GetComponent<Skill_Info>().chargingSet(chargingGage);
 		sky_Arraws[0].SetActive(true);
 		for (int i = 1; i < sky_Arraws.Length; ++i)
 		{
 			dir = new Vector3(Random.Range(-4, 4), Random.Range(-8, 9), Random.Range(-4, 4));
 			sky_Arraws[i].transform.position = target + dir + new Vector3(0, 20, 0);
 			sky_Arraws[i].transform.LookAt(target + dir);
+			sky_Arraws[i].GetComponent<Skill_Info>().chargingSet(chargingGage);
 			sky_Arraws[i].SetActive(true);
 		}
 		bool once = false;
@@ -186,16 +185,17 @@ public class SeiKwanSkill : MonoBehaviour
 		SeiKwanArrow.SetActive(true);
 	}
 	//#### #### #### #### 
-	private void HavensGate(Vector3 targetPoint)
+	private void HavensGate(Vector3 targetPoint, float chargingGage)
 	{
 		SeiKwanArrow.SetActive(false);
-		StartCoroutine(HavensGateCor(targetPoint));
+		StartCoroutine(HavensGateCor(targetPoint, chargingGage));
 	}
-	IEnumerator HavensGateCor(Vector3 targetPoint)
+	IEnumerator HavensGateCor(Vector3 targetPoint, float chargingGage)
 	{
 		yield return new WaitForSeconds(1.0f);
 		transform.position = targetPoint;
 		Gate.GetComponentInChildren<Skill_Sound_Set>().check = true;
+		Gate.GetComponent<Skill_Info>().chargingSet(chargingGage);
 		Gate.SetActive(true);
 		yield return new WaitForSeconds(3.0f);
 		Gate.SetActive(false);

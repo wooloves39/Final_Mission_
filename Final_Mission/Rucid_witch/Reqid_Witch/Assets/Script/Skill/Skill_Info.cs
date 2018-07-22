@@ -26,16 +26,26 @@ public class Skill_Info : MonoBehaviour {
 	public float ShockTime = 2.0f;
 	private bool Once = false;
 	public GameObject effect;
+
+	public float chargingGage = 1.0f;
 	private void OnEnable()
 	{
 		Once = false;
-		PowerMemory[0] = Power;
-		PowerMemory[1] = AreaDmg;
-		PowerMemory[2] = DotDmg;
+		PowerMemory[0] = Power* chargingGage;
+		PowerMemory[1] = AreaDmg* chargingGage;
+		PowerMemory[2] = DotDmg* chargingGage;
+	}
+	public void chargingSet(float Gage)
+	{
+		chargingGage = Gage;
+		PowerMemory[0] = Power * chargingGage;
+		PowerMemory[1] = AreaDmg * chargingGage;
+		PowerMemory[2] = DotDmg * chargingGage;
 	}
 	private void OnDisable()
 	{
 		ObjList = new List<GameObject>();
+		chargingGage = 1.0f;
 	}
 	void Start () {
 		Minus[0] = (float)(Power / HitCount);

@@ -11,9 +11,6 @@ public class ChargeBar : MonoBehaviour {
 		playerState = GetComponentInParent<PlayerState>();
 		slider = GetComponent<Slider>();
 	}
-	void Start () {
-		
-	}
 	private void OnEnable()
 	{
 		slider.value = 1.0f;

@@ -39,6 +39,7 @@
 	ENDCG
 		SubShader{
 		Tags{ "RenderType" = "Opaque" }
+		Name "HYUSHADEROUTLINE"
 		LOD 250
 		Lighting Off
 		Fog{ Mode Off }

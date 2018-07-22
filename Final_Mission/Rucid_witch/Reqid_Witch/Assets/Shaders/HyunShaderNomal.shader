@@ -4,8 +4,8 @@ Shader "Custom/HyunShaderNomal"   {
 		_Color("Main Color", Color) = (.5,.5,.5,1)
 		_MainTex("Base (RGB)", 2D) = "white" {}
 	_ToonShade("ToonShader Cubemap(RGB)", CUBE) = "" { }
-	_Brightness("Brightness = neutral", Float) = 1.5
-_Shadow("ShadowValue",  Range(0.0, 1.0)) = 0.05
+	_Brightness("Brightness = neutral", Float) = 2.0
+_Shadow("ShadowValue",  Range(0.0, 1.0)) = 0.2
 	}
 		SubShader{
 		Tags{ "RenderType" = "Opaque" }
@@ -48,7 +48,7 @@ _Shadow("ShadowValue",  Range(0.0, 1.0)) = 0.05
 		o.pos = UnityObjectToClipPos(v.vertex);
 		float3 n = mul(UNITY_MATRIX_IT_MV, normalize(float4(v.normal,0)));
 		normalize(n);
-		n = n* float3(.5, .5, .5) +float3(_Shadow, _Shadow, _Shadow);
+		n = n +float3(_Shadow, _Shadow, _Shadow);
 		o.cubenormal = n;
 		o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
 		return o;

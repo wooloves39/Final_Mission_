@@ -3,10 +3,10 @@
 			_Color("Main Color", Color) = (.5,.5,.5,1)
 			_MainTex("Base (RGB)", 2D) = "white" { }
 			_ToonShade("ToonShader Cubemap(RGB)", CUBE) = "" { }
-			_Brightness("Brightness = neutral", Float) = 1.5	
-			_Shadow("ShadowValue",  Range(0.0, 1.0)) = 0.05
+			_Brightness("Brightness = neutral", Float) = 2.0	
+			_Shadow("ShadowValue",  Range(0.0, 1.0)) = 0.2
 			_OutlineColor("Outline Color", Color) = (0,0,0,1)
-			_Outline("Outline width", Range(.001, 0.03)) = .002
+			_Outline("Outline width", Range(.001, 0.03)) = .005	
 
 	}
 
@@ -39,6 +39,7 @@
 	ENDCG
 		SubShader{
 		Tags{ "RenderType" = "Opaque" }
+		Name "HYUSHADEROUTLINE"
 		LOD 250
 		Lighting Off
 		Fog{ Mode Off }

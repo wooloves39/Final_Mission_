@@ -35,9 +35,10 @@ public class DellSkill : MonoBehaviour
 		StartCoroutine(Shooting(del_time));
 		target = null;
 	}
-	public void shoot(float chargingCount, GameObject targets,bool isMon=false)
+	public void shoot(float chargingCount, GameObject targets, bool isMon=false)
 	{
 		float del_time = chargingCount * 2;
+
 		target = targets;
 		transform.LookAt(target.transform);
 		Vector3 TargettingDir = Vector3.Normalize(target.transform.position - transform.position);

@@ -521,7 +521,7 @@ public class AttackMethod : MonoBehaviour
 									break;
 								}
 							}
-							DellAttackObj[DellNum].GetComponent<DellSkill>().shoot(chargingCount, myTarget);
+							DellAttackObj[DellNum].GetComponent<DellSkill>().shoot(chargingCount, myTarget,MyState.chargingRate());
 							chargingCount = 0;
 						}
 					}
@@ -562,7 +562,7 @@ public class AttackMethod : MonoBehaviour
 							if (myTarget != null)
 							{
 								playerSound.PlayerSound(PlayerSoundSetting.soundPack.AttackSkill);
-								AzuraBall[AzuraBallNum].GetComponent<AzuraSkill>().shoot(typecheck.Skills[0].getCurrentSkill(), myTarget, handDis);
+								AzuraBall[AzuraBallNum].GetComponent<AzuraSkill>().shoot(typecheck.Skills[0].getCurrentSkill(), myTarget, handDis,MyState.chargingRate());
 							}
 						}
 					}

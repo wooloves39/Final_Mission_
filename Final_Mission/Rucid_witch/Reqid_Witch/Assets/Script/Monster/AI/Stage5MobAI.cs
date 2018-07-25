@@ -6,6 +6,7 @@ public class Stage5MobAI: MonoBehaviour {
 	MoveMsg msg;
 	public int[] BasicPeace;
 	public int[] BasicBattle;
+    public GameObject ExMark;
 
 	StagePosition Stage5Pos;
 	ObjectLife ObjLife;
@@ -62,6 +63,13 @@ public class Stage5MobAI: MonoBehaviour {
 			Battle.Enqueue (BasicBattle [i]);
 		StartCoroutine("AISearching");
 	}
+    IEnumerator Exmark()
+    {
+        ExMark.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        ExMark.SetActive(false);
+
+    }
 	IEnumerator AISearching(){
 
 		
@@ -83,6 +91,7 @@ public class Stage5MobAI: MonoBehaviour {
 				this.gameObject.SetActive(false);
 			}
 			{
+                
 				if (Fight)
 					NCommand.StateChange(true);
 				else
@@ -91,6 +100,8 @@ public class Stage5MobAI: MonoBehaviour {
 				if (Fight != prevFight)
 				{
 					Limit = float.MaxValue;
+                    if (Fight)
+                        StartCoroutine("Exmark");
 				}
 				if (Fight == false)
 				{

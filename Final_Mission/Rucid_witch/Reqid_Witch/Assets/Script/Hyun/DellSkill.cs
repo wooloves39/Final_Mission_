@@ -67,4 +67,9 @@ public class DellSkill : MonoBehaviour
 	{
 		del_timer = false;
 	}
+	private void OnTriggerEnter(Collider other)
+	{
+		//del_timer = true;
+		//Shoot = false;
+	}
 }

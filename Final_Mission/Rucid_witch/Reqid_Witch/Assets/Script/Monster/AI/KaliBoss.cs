@@ -384,8 +384,8 @@ public class KaliBoss : MonoBehaviour {
                 }
                 prevFight = Fight;
             }
-            Limit += 0.1f;
-            yield return new WaitForSeconds (0.1f);
+            Limit += 0.2f;
+            yield return new WaitForSeconds (0.2f);
         }
     }
     int getRandom(int x,int y)

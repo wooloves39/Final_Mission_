@@ -71,9 +71,9 @@ public class AITree {
 
 		//조건 부 스킬(상황에 맞는)
 		Dnum = 30;
-		AIDic.Add(Dnum ,  "Kali_1");
+		AIDic.Add(Dnum ,  "Chaging1");
 		Dnum = 31;
-        AIDic.Add(Dnum ,  "Kali_2");
+        AIDic.Add(Dnum ,  "Chaging2");
 		//Dnum = 32;
 		//AIDic.Add(Dnum ,  "SpecialSkill_3");
 

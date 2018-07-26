@@ -10,7 +10,8 @@ public class Kali_Skill_Attack : MonoBehaviour {
 	public float delay = 0.0f;
 	PlayerState Player;
 	bool ranged = false;
-	int num = 0;
+    int num = 0;
+    public bool Azra = false;
 	private void OnEnable()
 	{
 		num = 0;
@@ -63,6 +64,8 @@ public class Kali_Skill_Attack : MonoBehaviour {
 	}
 	private void Update()
 	{
+        if (Azra)
+            this.transform.Rotate(new Vector3(0, 10.0f, 0));
 		if(dot)
 		{
 			if (ranged)

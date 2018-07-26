@@ -25,36 +25,37 @@ public class AzraAI : MonoBehaviour
 	public float Time_Battle_Move;      //11
 										//public float Time_Normal_Attack;  //12
 	public float Time_RunAway;     //13
-	public float Time_AttackMove;      //14
+    public float Time_AttackMove;      //14
+    public float Time_Chaging;      //14
 
 	public float Time_Skill_1;      //20
 	public float Time_Skill_2;      //21
 	public float Time_Skill_3;      //22
 	public float Time_Skill_4;      //23
 	public float Time_Skill_5;      //24
-	public float Time_Skill_6;      //23
-	public float Time_Skill_7;      //24
+	public float Time_Skill_6;      //25
+    public float Time_Skill_7;      //26
+    public float Time_Skill_8;      //27    체력 60%
+    public float Time_Skill_9;      //28    체력 30%
 
 	public float Die_Time = 2.0f;
 
-	private bool spire = false;
-	public float[] SkillValue = { 0, 25, 50, 70, 85, 95, 100 }; // 25 25 20 15 10 0.
-	public float[] BossCoolTime = { 0, 0, 3, 9, 12, 15, 100 };
-	public bool[] BossCoolDown = { false, false, false, false, false };
+	public float[] SkillValue = { 0,24,41,58,70,82,91,100}; // 24,17,17,12,12,9,9
+	public float[] BossCoolTime = { 0, 6, 6, 12, 12, 21, 21 };
+    public bool[] BossCoolDown = { false, false, false, false, false, false, false };
 
 	public bool Delay = false;
 	public bool Fight = false;//false;
-	public bool Ulti = false;
+
+    bool Ulti1 = false;
+    bool Ulti2 = false;
+    bool Chaging = false;
+
 	Queue Battle = null;
 	Queue Peace = null;
 	private Transform Player;
-
-	private int AttackMove;
-	private int AttackMoveNum;
 	void Awake()
 	{
-		AttackMove = 0;
-		AttackMoveNum = getRandom(10, 13);
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
 		ObjLife = GetComponent<ObjectLife>();
 		ani = GetComponent<Animator>();
@@ -67,12 +68,6 @@ public class AzraAI : MonoBehaviour
 		msg = new MoveMsg();
 		//가져와서 적용해야 할 부분
 
-		if (Singletone.Instance.stage == 6)
-		{
-			Ulti = true;
-			ObjLife.Hp = 300;
-			ObjLife.MaxHp = 300;
-		}
 
 		Battle = new Queue();
 		Peace = new Queue();
@@ -100,7 +95,9 @@ public class AzraAI : MonoBehaviour
 				ani.SetBool("Skill4", false);
 				ani.SetBool("Skill5", false);
 				ani.SetBool("Skill6", false);
-				ani.SetBool("Skill7", false);
+                ani.SetBool("Skill7", false);
+                ani.SetBool("Skill8", false);
+                ani.SetBool("Skill9", false);
 			}
 			if (ObjLife.Hp <= 0)
 			{
@@ -152,67 +149,53 @@ public class AzraAI : MonoBehaviour
 				else
 				{
 
-					if (AttackMove >= AttackMoveNum)
+					if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
 					{
-						num = 14;
-						AttackMove = 0;
-						AttackMoveNum = getRandom(10, 13);
-					}
-					else
-					{
-						AttackMove++;
-						if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
+                        int NUM = getRandom(0, 100);
+                        if (!Ulti1 && ObjLife.Hp <= ObjLife.MaxHp * 0.6)
+                        {
+                            num = 27;
+                            Ulti1 = true;
+                        }
+						if (!Ulti2 && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
 						{
-							int NUM = getRandom(0, 100);
-							if (!Ulti && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
+							num = 28;
+							Ulti2 = true;
+						}
+						else
+						{
+							if ( NUM < SkillValue[1])
 							{
-								num = 26;
-								Ulti = true;
+								num = 20;
 							}
 							else
 							{
-								if (SkillValue[0] <= NUM && NUM < SkillValue[2])
+								for (int i = 1; i < 7; ++i)
 								{
-									if (spire)
+									if (SkillValue[i] <= NUM && NUM < SkillValue[i + 1])
 									{
-										spire = false;
-										num = 20;
-									}
-									else
-									{
-										spire = true;
-										num = 21;
-									}
-								}
-								else
-								{
-									for (int i = 2; i < 6; ++i)
-									{
-										if (SkillValue[i] <= NUM && NUM < SkillValue[i + 1])
+										if (BossCoolDown[i])
 										{
-											if (BossCoolDown[i])
-											{
-												if (spire)
-												{
-													spire = false;
-													num = 20;
-												}
-												else
-												{
-													spire = true;
-													num = 21;
-												}
-											}
-											else
-												num = 20 + i;
+                                            if (!Chaging)
+                                            {
+                                                Chaging = true;
+                                                num = 30;
+                                            }
+                                            else
+                                            {
+                                                Chaging = false;
+                                                num = 20;
+                                            }
 										}
+										else
+											num = 20 + i;
 									}
 								}
 							}
 						}
-						else
-							num = 11;
 					}
+					else
+						num = 11;
 				}
 				////실행할 동작 - 삭제할 부분
 				//Debug.Log(num);
@@ -380,6 +363,36 @@ public class AzraAI : MonoBehaviour
 							BCommand.Skill(time, 6);
 							break;
 						}
+
+                    case 27:
+                        {
+                            StartCoroutine("Coll", 7);
+                            ani.SetBool("Run", false);
+                            ani.SetBool("Move", false);
+                            ani.SetBool("Skill8", true);
+                            time = Time_Skill_8;
+                            BCommand.Skill(time, 7);
+                            break;
+                        }
+
+                    case 28:
+                        {
+                            ani.SetBool("Run", false);
+                            ani.SetBool("Move", false);
+                            ani.SetBool("Skill9", true);
+                            time = Time_Skill_9;
+                            BCommand.Skill(time, 8);
+                            break;
+                        }
+
+                    case 30:
+                        {
+                            ani.SetBool("Run", false);
+                            ani.SetBool("Move", false);
+                            time = Time_Chaging;
+                            BCommand.Skill(time, 9);
+                            break;
+                        }
 					default:
 						time = 1.0f;
 						break;
@@ -387,7 +400,7 @@ public class AzraAI : MonoBehaviour
 				prevFight = Fight;
 			}
 			Limit += 0.1f;
-			yield return new WaitForSeconds(0.1f);
+			yield return new WaitForSeconds(time);
 		}
 	}
 	int getRandom(int x, int y)

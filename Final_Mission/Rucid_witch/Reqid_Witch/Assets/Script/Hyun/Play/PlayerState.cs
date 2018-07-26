@@ -44,8 +44,6 @@ public class PlayerState : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.A)) Mp -= 5;
-		if (Input.GetKeyDown(KeyCode.S)) Hp -= 5;
 		if (MyState == State.Charging)
 		{
 			ChargingTime += Time.deltaTime;

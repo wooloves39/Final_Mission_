@@ -8,32 +8,40 @@ public class SweetHamony : MonoBehaviour {
 	public float Cycle = 2.5f;
 	public GameObject Coll;
 	private PlayerState player;
+	public float timer { get; set; }
 	private void Awake()
 	{
+		timer = 0.0f;
 		player = GetComponentInParent<PlayerState>();
 	}
 	private void OnEnable()
 	{
-		StartCoroutine("Skilling");
+		timer = 0.0f;
 	}
 	private void OnDisable()
 	{
 		Coll.SetActive(false);
 	}
-	IEnumerator Skilling()
+	private void Update()
 	{
-		while(true)
+		timer += Time.deltaTime;
+		if (timer > 2.5f)
 		{
+			timer = 0.0f;
 			if (player.Mp >= UseMp)
 				player.Mp -= UseMp;
 			else
 			{
-				Coll.SetActive(false);
-				break;
+				gameObject.SetActive(false);
+				//MP부족
 			}
-			Coll.SetActive(true);
-			yield return new WaitForSeconds(Cycle);
+			player.SetMyState(0);
 			Coll.SetActive(false);
+		}
+		else
+		{
+			player.SetMyState(PlayerState.State.Charging, 2.5f);
+			Coll.SetActive(true);
 		}
 	}
 }

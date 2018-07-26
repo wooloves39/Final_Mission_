@@ -81,6 +81,7 @@ public class SeiKwanSkill : MonoBehaviour
 	private void BraveArrow(float chargingGage)
 	{
 		SeiKwanArrow.GetComponentInChildren<Skill_Sound_Set>().check = true;
+		if(SeiKwanArrow.GetComponent<Skill_Info>())
 		SeiKwanArrow.GetComponent<Skill_Info>().chargingSet(chargingGage);
 		Vector3 Arrowforward = transform.forward;
 		Vector3 TargettingDir = Vector3.zero;
@@ -128,6 +129,7 @@ public class SeiKwanSkill : MonoBehaviour
 		for (int i = 0; i < trab_object.Length; ++i)
 		{
 			trab_object[i].transform.position = this.transform.position + new Vector3(Random.Range(-1.50f, 1.50f), Random.Range(-1.50f, 1.50f), Random.Range(-1.50f, 1.50f));
+			if(trab_object[i].GetComponent<Skill_Info>())
 			trab_object[i].GetComponent<Skill_Info>().chargingSet(chargingGage);
 			trab_object[i].SetActive(true);
 		}
@@ -159,6 +161,7 @@ public class SeiKwanSkill : MonoBehaviour
 		Vector3 dir;
 		sky_Arraws[0].transform.position = target + new Vector3(0, 10, 0);
 		sky_Arraws[0].transform.LookAt(target);
+		if(sky_Arraws[0].GetComponent<Skill_Info>())
 		sky_Arraws[0].GetComponent<Skill_Info>().chargingSet(chargingGage);
 		sky_Arraws[0].SetActive(true);
 		for (int i = 1; i < sky_Arraws.Length; ++i)
@@ -166,6 +169,7 @@ public class SeiKwanSkill : MonoBehaviour
 			dir = new Vector3(Random.Range(-4, 4), Random.Range(-8, 9), Random.Range(-4, 4));
 			sky_Arraws[i].transform.position = target + dir + new Vector3(0, 20, 0);
 			sky_Arraws[i].transform.LookAt(target + dir);
+			if (sky_Arraws[i].GetComponent<Skill_Info>())
 			sky_Arraws[i].GetComponent<Skill_Info>().chargingSet(chargingGage);
 			sky_Arraws[i].SetActive(true);
 		}
@@ -195,6 +199,7 @@ public class SeiKwanSkill : MonoBehaviour
 		yield return new WaitForSeconds(1.0f);
 		transform.position = targetPoint;
 		Gate.GetComponentInChildren<Skill_Sound_Set>().check = true;
+		if(Gate.GetComponent<Skill_Info>())
 		Gate.GetComponent<Skill_Info>().chargingSet(chargingGage);
 		Gate.SetActive(true);
 		yield return new WaitForSeconds(3.0f);

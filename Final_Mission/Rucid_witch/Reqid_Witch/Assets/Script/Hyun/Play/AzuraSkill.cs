@@ -90,6 +90,7 @@ public class AzuraSkill : MonoBehaviour
 	private void WitchsHone(float chargingGage)
 	{
 		Rigidbody r = GetComponent<Rigidbody>();
+		if(GetComponent<Skill_Info>())
 		GetComponent<Skill_Info>().chargingSet(chargingGage);
 		Vector3 TargettingDir = Vector3.Normalize(target.transform.position - transform.position);//;
 		r.velocity = TargettingDir * Speed[0] * handDis;
@@ -100,6 +101,7 @@ public class AzuraSkill : MonoBehaviour
 	{
 		for (int i = 0; i < SoulExp.Length; ++i)
 		{
+			if(SoulExp[i].GetComponent<Skill_Info>())
 			SoulExp[i].GetComponent<Skill_Info>().chargingSet(chargingGage);
 			SoulExp[i].transform.position = player.transform.position;
 			SoulExp[i].SetActive(true);
@@ -143,6 +145,7 @@ public class AzuraSkill : MonoBehaviour
 	{
 		for (int i = 0; i < witchsHone.Length; ++i)
 		{
+			if(witchsHone[i].GetComponent<Skill_Info>())
 			witchsHone[i].GetComponent<Skill_Info>().chargingSet(chargingGage);
 			witchsHone[i].transform.position = player.transform.position;
 			witchsHone[i].transform.Rotate(0, i * 30, 0);
@@ -171,6 +174,7 @@ public class AzuraSkill : MonoBehaviour
 	void callofGad(Vector3 targetPos, float scale, float time, float chargingGage)
 	{
 		info.PowerMemory[0] = 0.0f;
+		if(God.GetComponent<Skill_Info>())
 		God.GetComponent<Skill_Info>().chargingSet(chargingGage);
 		God.SetActive(true);
 		God.transform.LookAt(targetPos);
@@ -221,6 +225,7 @@ public class AzuraSkill : MonoBehaviour
 	{
 		info.PowerMemory[0] = 0.0f;
 		Blast.transform.localScale = Vector3.one * 2;
+		if(Blast.GetComponent<Skill_Info>())
 		Blast.GetComponent<Skill_Info>().chargingSet(chargingGage);
 		Blast.SetActive(true);
 		Blast.transform.position = target;

@@ -50,7 +50,7 @@ public class Stage5Boss: MonoBehaviour {
 	void Awake()
     {
         AttackMove = 0;
-        AttackMoveNum = getRandom(15,23);
+        AttackMoveNum = getRandom(5,6);
 		Islive = true;
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
 		ObjLife = GetComponent<ObjectLife>();
@@ -133,63 +133,67 @@ public class Stage5Boss: MonoBehaviour {
 					num = (int)Peace.Dequeue();
 				else
 				{
-                    if (AttackMove >= AttackMoveNum)
-                    {
-                        num = 14;
-                        AttackMove = 0;
-                        AttackMoveNum = getRandom(15, 23);
-                        if (!run)
-                        {
-                            if (AttackMoveNum == 22)//12.5%
-                            {
-                                if (getRandom(0, 4) == 0)//3.125%로도망 = 주기 * 3.125%
-                                {
-                                    run = true;
-                                    num = 13;
-                                    Debug.Log("run AI 선택");
-                                }
-                            }
-                        }
-        
-                    }
-					if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
-                    {
-                        AttackMove++;
-						int NUM = getRandom(0, 100);
-						if (!Ulti && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
+					if (AttackMove >= AttackMoveNum)
+					{
+						num = 14;
+						AttackMove = 0;
+						AttackMoveNum = getRandom(5, 6);
+						Debug.Log("Move 선택");
+						if (!run)
 						{
-							num = 24;
-							Ulti = true;
+							if (AttackMoveNum == 5)//12.5%
+							{
+								if (getRandom(0, 4) == 0)//3.125%로도망 = 주기 * 3.125%
+								{
+									run = true;
+									num = 13;
+									Debug.Log("run AI 선택");
+								}
+							}
 						}
-						else
-						{
-                            if (SkillValue[0] <= NUM && NUM < SkillValue[1])
-                            {
-                                num = 20;
-                            }
-                            else if (SkillValue[1] <= NUM && NUM < SkillValue[2])
-                            {
-                                if (BossCoolDown[1])
-                                    num = 20;
-                                else
-                                    num = 21;
-                            }
-                            else if (SkillValue[2] <= NUM && NUM < SkillValue[3])
-                            {
-                                if (BossCoolDown[2])
-                                    num = 20;
-                                else
-                                    num = 22;
-                            }
-                            else
-                                if (BossCoolDown[3])
-                                    num = 20;
-                                else
-                                    num = 23;
-						}
+
 					}
 					else
-						num = 11;
+					{
+						if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
+						{
+							AttackMove++;
+							int NUM = getRandom(0, 100);
+							if (!Ulti && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
+							{
+								num = 24;
+								Ulti = true;
+							}
+							else
+							{
+								if (SkillValue[0] <= NUM && NUM < SkillValue[1])
+								{
+									num = 20;
+								}
+								else if (SkillValue[1] <= NUM && NUM < SkillValue[2])
+								{
+									if (BossCoolDown[1])
+										num = 20;
+									else
+										num = 21;
+								}
+								else if (SkillValue[2] <= NUM && NUM < SkillValue[3])
+								{
+									if (BossCoolDown[2])
+										num = 20;
+									else
+										num = 22;
+								}
+								else
+									if (BossCoolDown[3])
+									num = 20;
+								else
+									num = 23;
+							}
+						}
+						else
+							num = 11;
+					}
 				}
 				////실행할 동작 - 삭제할 부분
 				//Debug.Log(num);

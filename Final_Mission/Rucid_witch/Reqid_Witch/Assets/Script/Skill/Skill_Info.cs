@@ -69,7 +69,7 @@ public class Skill_Info : MonoBehaviour {
 					if(ElecShock)
 						temp.SendMessage("Shock",ShockTime);
 					if(PowerMemory[0]>0)
-					PowerMemory[0] -= Minus[0];
+						PowerMemory[0] -= Minus[0];
 				}
 			}
 			if (AreaHit)

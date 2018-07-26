@@ -20,7 +20,9 @@ public class Stage5Boss: MonoBehaviour {
 
 	public float Time_Taget_Search;		//10
 	public float Time_Battle_Move;		//11
-	//public float Time_Normal_Attack;	//12
+    //public float Time_Normal_Attack;	//12
+    public float Time_RunAway;     //13
+    public float Time_AttackMove;      //14
 
 	public float Time_Skill_1;		//20
 	public float Time_Skill_2;		//21
@@ -41,10 +43,14 @@ public class Stage5Boss: MonoBehaviour {
 	Queue Battle = null;
 	Queue Peace = null;
 	private Transform Player;
-
+    private bool run = false;
+    private int AttackMove;
+    private int AttackMoveNum;
 	public bool Islive { get; set; }
 	void Awake()
-	{
+    {
+        AttackMove = 0;
+        AttackMoveNum = getRandom(15,23);
 		Islive = true;
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
 		ObjLife = GetComponent<ObjectLife>();
@@ -127,9 +133,28 @@ public class Stage5Boss: MonoBehaviour {
 					num = (int)Peace.Dequeue();
 				else
 				{
-
+                    if (AttackMove >= AttackMoveNum)
+                    {
+                        num = 14;
+                        AttackMove = 0;
+                        AttackMoveNum = getRandom(15, 23);
+                        if (!run)
+                        {
+                            if (AttackMoveNum == 22)//12.5%
+                            {
+                                if (getRandom(0, 4) == 0)//3.125%로도망 = 주기 * 3.125%
+                                {
+                                    run = true;
+                                    num = 13;
+                                    Debug.Log("run AI 선택");
+                                }
+                            }
+                        }
+        
+                    }
 					if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
-					{
+                    {
+                        AttackMove++;
 						int NUM = getRandom(0, 100);
 						if (!Ulti && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
 						{
@@ -229,6 +254,41 @@ public class Stage5Boss: MonoBehaviour {
 							//BCommand.Attack(time);
 							break;
 						}
+                    case 13:
+                        {
+                            ani.SetBool("Run", true);
+                            ani.SetBool("Move", false);
+                            time = Time_RunAway;
+                            msg.time = time;
+                            msg.destination = Stage5Pos.GetRandomPos();
+                            msg.Speed = ObjLife.BattleSpeed;
+                            BCommand.BattleMove(msg);
+                            break;
+                        }
+                    case 14:
+                        {
+                            ani.SetBool("Run", true);
+                            ani.SetBool("Move", false);
+                            time = Time_AttackMove;
+                            msg.time = time;
+                            int NUM = getRandom(0, 3);
+                            switch (NUM)
+                            {
+                                case 0:
+                                    msg.destination = this.transform.position + this.transform.forward * -5;
+                                    break;
+                                case 1:
+                                    msg.destination = this.transform.position + this.transform.right * 8;
+                                    break;
+                                case 2:
+                                    msg.destination = this.transform.position + this.transform.right * -8;
+                                    break;
+
+                            }
+                            msg.Speed = ObjLife.BattleSpeed;
+                            BCommand.BattleMove(msg);
+                            break;
+                        }
 					case 20:
 						{
 							ani.SetBool("Run", false);

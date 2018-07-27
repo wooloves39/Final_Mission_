@@ -8207,6 +8207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a658c7dc301f14d82f1cce1bc5db9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  azra: 0
+  kali: 1
   Search: 0
   PlayerPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114104987456746258
@@ -8235,6 +8237,7 @@ MonoBehaviour:
   skillBalance: 11
   dot: 0
   delay: 0.2
+  Azra: 0
 --- !u!114 &114113043424008912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8721,6 +8724,7 @@ MonoBehaviour:
   skillBalance: 8
   dot: 0
   delay: 0.4
+  Azra: 0
 --- !u!114 &114357581157441626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8842,6 +8846,7 @@ MonoBehaviour:
   skillBalance: 5
   dot: 0
   delay: 0.4
+  Azra: 0
 --- !u!114 &114405383759519852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9227,11 +9232,11 @@ MonoBehaviour:
   Die_Time: 2
   SkillValue:
   - 0
-  - 25
-  - 50
-  - 70
-  - 85
-  - 95
+  - 20
+  - 40
+  - 57
+  - 74
+  - 83
   - 100
   BossCoolTime:
   - 0
@@ -9259,6 +9264,7 @@ MonoBehaviour:
   skillBalance: 7
   dot: 0
   delay: 0.3
+  Azra: 0
 --- !u!114 &114557100055661874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9461,6 +9467,7 @@ MonoBehaviour:
   skillBalance: 14
   dot: 0
   delay: 0
+  Azra: 0
 --- !u!114 &114641414362826670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9487,6 +9494,7 @@ MonoBehaviour:
   skillBalance: 2
   dot: 1
   delay: 0
+  Azra: 0
 --- !u!114 &114648715096083750
 MonoBehaviour:
   m_ObjectHideFlags: 1

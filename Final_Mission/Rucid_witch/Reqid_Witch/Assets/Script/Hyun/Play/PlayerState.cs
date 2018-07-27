@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerState : MonoBehaviour
 {
 	public enum State { Nomal, Drawing, Charging, Attack, Damage, Talk, Die, ChargingOver, Pause }
-
+    public bool Cheat = false;
 	private State MyState;
 	private float ChargingTime;
 	private bool back;
@@ -181,7 +181,6 @@ public class PlayerState : MonoBehaviour
 	}
 	public void DamageHp(float Damage)
 	{
-		
 		playerSound.PlayerSound(PlayerSoundSetting.soundPack.Defance);
 		Hp -= Damage;
 		
@@ -199,6 +198,9 @@ public class PlayerState : MonoBehaviour
 			PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.2f, 1.0f-Hp / 100.0f, OVRInput.Controller.RTouch));
 			PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.2f, 1.0f-Hp/100.0f, OVRInput.Controller.LTouch));
 		}
+
+        if (Cheat)
+            Hp = 100;
 	}
 	public void ConsumeMp(float Consume)
 	{

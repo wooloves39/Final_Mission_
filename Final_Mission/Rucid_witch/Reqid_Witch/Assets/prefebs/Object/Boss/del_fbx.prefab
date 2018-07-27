@@ -162,7 +162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1087816176447920
 GameObject:
   m_ObjectHideFlags: 1
@@ -2687,7 +2687,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070848978108374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -18.73}
+  m_LocalPosition: {x: 2.5, y: 3.102, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4830664144369824}
@@ -5719,8 +5719,8 @@ MonoBehaviour:
   Time_Nomal_MoveWay: 3
   Time_Taget_Search: 1
   Time_Battle_Move: 1
-  Time_RunAway: 8
-  Time_AttackMove: 3.5
+  Time_RunAway: 4
+  Time_AttackMove: 2
   Time_Skill_1: 3
   Time_Skill_2: 4
   Time_Skill_3: 4
@@ -6009,6 +6009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a658c7dc301f14d82f1cce1bc5db9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  azra: 0
+  kali: 0
   Search: 0
   PlayerPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114474847764881332
@@ -6972,7 +6974,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 180
-  m_StoppingDistance: 17
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SimpleCircle : MonoBehaviour {
 	public GameObject Line;
-	public GameObject Magic;
+    public GameObject Magic;
+    public GameObject Boom;
+    public bool BOOM = true;
     public float Delay = 0.5f;
     public float End = 4.5f;
 
@@ -13,11 +15,15 @@ public class SimpleCircle : MonoBehaviour {
 	void OnEnable()
 	{
         StartCoroutine("Skill");
+        if(BOOM)
+            Boom.SetActive(false);
 	}
 	void DisEnable()
 	{
 		Line.SetActive(false);
-		Magic.SetActive(false);
+        Magic.SetActive(false);
+        if(BOOM)
+           Boom.SetActive(false);
 	}
 	IEnumerator Skill()
 	{

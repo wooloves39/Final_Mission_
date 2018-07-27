@@ -50,7 +50,7 @@ public class Stage5Boss: MonoBehaviour {
 	void Awake()
     {
         AttackMove = 0;
-        AttackMoveNum = getRandom(5,6);
+        AttackMoveNum = getRandom(9,17);
 		Islive = true;
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
 		ObjLife = GetComponent<ObjectLife>();
@@ -137,11 +137,11 @@ public class Stage5Boss: MonoBehaviour {
 					{
 						num = 14;
 						AttackMove = 0;
-						AttackMoveNum = getRandom(5, 6);
+                        AttackMoveNum = getRandom(9,17);
 						Debug.Log("Move 선택");
-						if (!run)
+                        if (!run && Ulti)
 						{
-							if (AttackMoveNum == 5)//12.5%
+							if (AttackMoveNum == 15)//12.5%
 							{
 								if (getRandom(0, 4) == 0)//3.125%로도망 = 주기 * 3.125%
 								{
@@ -154,10 +154,10 @@ public class Stage5Boss: MonoBehaviour {
 
 					}
 					else
-					{
+                    {
+                        AttackMove++;
 						if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range)
 						{
-							AttackMove++;
 							int NUM = getRandom(0, 100);
 							if (!Ulti && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
 							{
@@ -279,13 +279,13 @@ public class Stage5Boss: MonoBehaviour {
                             switch (NUM)
                             {
                                 case 0:
-                                    msg.destination = this.transform.position + this.transform.forward * -5;
+                                    msg.destination = this.transform.position + this.transform.forward * -8;
                                     break;
                                 case 1:
-                                    msg.destination = this.transform.position + this.transform.right * 8;
+                                    msg.destination = this.transform.position + this.transform.right * 12;
                                     break;
                                 case 2:
-                                    msg.destination = this.transform.position + this.transform.right * -8;
+                                    msg.destination = this.transform.position + this.transform.right * -12;
                                     break;
 
                             }

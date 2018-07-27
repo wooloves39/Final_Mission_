@@ -4499,9 +4499,9 @@ MonoBehaviour:
   Time_Nomal_StopMotion: 1.5
   Time_Nomal_MoveWay: 3
   Time_Taget_Search: 1
-  Time_Battle_Move: 1
-  Time_RunAway: 8
-  Time_AttackMove: 2.5
+  Time_Battle_Move: 1.5
+  Time_RunAway: 4
+  Time_AttackMove: 1.5
   Time_Skill_1: 3
   Time_Skill_2: 4
   Time_Skill_3: 4
@@ -5173,6 +5173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a658c7dc301f14d82f1cce1bc5db9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  azra: 0
+  kali: 0
   Search: 0
   PlayerPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114823488547688982

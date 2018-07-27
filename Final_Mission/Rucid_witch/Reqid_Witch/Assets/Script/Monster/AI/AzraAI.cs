@@ -54,6 +54,7 @@ public class AzraAI : MonoBehaviour
 	Queue Battle = null;
 	Queue Peace = null;
 	private Transform Player;
+    public GameObject[] Chage;
 	void Awake()
 	{
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
@@ -366,7 +367,6 @@ public class AzraAI : MonoBehaviour
 
                     case 27:
                         {
-                            StartCoroutine("Coll", 7);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill8", true);
@@ -390,7 +390,7 @@ public class AzraAI : MonoBehaviour
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             time = Time_Chaging;
-                            BCommand.Skill(time, 9);
+                            StartCoroutine("charge");
                             break;
                         }
 					default:
@@ -399,8 +399,8 @@ public class AzraAI : MonoBehaviour
 				}
 				prevFight = Fight;
 			}
-			Limit += 0.1f;
-			yield return new WaitForSeconds(time);
+			Limit += 0.2f;
+			yield return new WaitForSeconds(0.2f);
 		}
 	}
 	int getRandom(int x, int y)
@@ -414,4 +414,11 @@ public class AzraAI : MonoBehaviour
 		BossCoolDown[num] = false;
 
 	}
+    IEnumerator charge()
+    {
+        int num = getRandom(0, 4);
+        Chage[num].SetActive(true);
+        yield return new WaitForSeconds(Time_Chaging);
+        Chage[num].SetActive(false);
+    }
 }

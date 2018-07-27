@@ -12,12 +12,19 @@ public class Kali_Skill_Attack : MonoBehaviour {
 	bool ranged = false;
     int num = 0;
     public bool Azra = false;
+    public bool QuickDel = false;
 	private void OnEnable()
 	{
 		num = 0;
 		damage = skillBalance;
 		ranged = false;
+        if (QuickDel)
+            Invoke("EndScripts", 0.5f);
 	}
+    void EndScripts()
+    {
+        this.gameObject.SetActive(false);
+    }
 	void OnTriggerEnter(Collider other)
 	{
 		if(!dot)

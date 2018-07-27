@@ -6,20 +6,26 @@ public class MobSearch : MonoBehaviour {
 	Stage5MobAI Mobai;
     Stage5Boss Bossai;
     KaliBoss KBossai;
+    AzraAI AzraBoss;
+    public bool azra = false;
+    public bool kali = false;
 	public bool Search = false;
 	public Vector3 PlayerPos;
 	// Use this for initialization
-	void Start () {
-        KBossai = GetComponentInParent<KaliBoss>();
+    void Start () {
+        Bossai = GetComponentInParent<Stage5Boss>();
 		Mobai = GetComponentInParent<Stage5MobAI>();
-		Bossai = GetComponentInParent<Stage5Boss>();
+        if(kali)
+            KBossai = GetComponentInParent<KaliBoss>();
+        if(azra)
+            AzraBoss = GetComponent<AzraAI>();
 	}
 
 	void OnTriggerStay(Collider other)
 	{
 		if (other.tag == "Player") {
 			Search = true;
-            if (KBossai == null)
+            if (KBossai == null && AzraBoss == null)
             {
                 if (Bossai == null)
                     Mobai.Fight = true;
@@ -28,7 +34,11 @@ public class MobSearch : MonoBehaviour {
             }
             else
             {
-                KBossai.Fight = true;
+                if(kali)
+                    KBossai.Fight = true;
+                if (azra)
+                    AzraBoss.Fight = true;
+                    
             }
 		}
 	}
@@ -36,7 +46,7 @@ public class MobSearch : MonoBehaviour {
 	{
 		if (other.tag == "Player") {
 			Search = false;
-            if (KBossai == null)
+            if (KBossai == null && AzraBoss == null)
             {
                 if (Bossai == null)
                     Mobai.Fight = false;
@@ -45,7 +55,10 @@ public class MobSearch : MonoBehaviour {
             }
             else
             {
-                KBossai.Fight = false;
+                if(kali)
+                    KBossai.Fight = false;
+                if (azra)
+                    AzraBoss.Fight = false;
             }
 		}
 	}

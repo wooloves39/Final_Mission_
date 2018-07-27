@@ -64,7 +64,7 @@ public class BattleCommand : MonoBehaviour {
 			TimeLimit = T;
 			time = 0.0f;
 			skill_index = n;
-			DMG = MobInfo.SkillDMG[skill_index];
+			//DMG = MobInfo.SkillDMG[skill_index];
 			StartCoroutine("SkillCoroutine");
 		}
 	}
@@ -117,7 +117,17 @@ public class BattleCommand : MonoBehaviour {
                     if (time >= SkillFrame[6])
                         ani.SetBool("Skill7", false);
                     break;
-					
+
+                case 7:
+                    if (time >= SkillFrame[7])
+                        ani.SetBool("Skill8", false);
+                    break;
+
+                case 8:
+                    if (time >= SkillFrame[8])
+                        ani.SetBool("Skill9", false);
+                    break;
+				
                 }
             }
 			if (time >= TimeLimit)

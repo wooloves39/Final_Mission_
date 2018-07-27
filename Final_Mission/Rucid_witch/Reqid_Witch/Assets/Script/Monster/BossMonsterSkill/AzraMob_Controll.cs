@@ -13,21 +13,16 @@ public class AzraMob_Controll : MonoBehaviour {
         player = FindObjectOfType<PlayerState>();
         target = player.transform;
     }
-    void Targetting_Myself(bool check)
-    {
-        if(check)
-            target.transform.position = this.transform.position;
-        else
-            target.transform.position = player.transform.position;
-    }
     void Skill1()//AzraBall
     {
         num = 0;
+        Skill[num].transform.position = this.transform.position ;
         StartCoroutine("Attack", num);
     }
     void Skill2()//StarFall
     {
         num = 1;
+        Skill[num].transform.position = this.transform.position + new Vector3(0,-this.transform.position.y,0);
         StartCoroutine("Attack", num);
     }
     void Skill3()//Blast
@@ -51,27 +46,23 @@ public class AzraMob_Controll : MonoBehaviour {
     void Skill6()//Bluemagic
     {
         num = 5;
-        Targetting_Myself(true);
         Skill[num].transform.position = target.transform.position;
         StartCoroutine("Attack", num);
     }
     void Skill7()//CheckMagic
     {
         num = 6;
-        Targetting_Myself(true);
         StartCoroutine("Attack", num);
     }
     void Skill8()
     {
         num = 7;
-        Targetting_Myself(true);
         Skill[num].transform.position = target.transform.position;
         StartCoroutine("Attack", num);
     }
     void Skill9()
     {
         num = 8;
-        Targetting_Myself(true);
         Skill[num].transform.position = target.transform.position;
         StartCoroutine("Attack", num);
     }

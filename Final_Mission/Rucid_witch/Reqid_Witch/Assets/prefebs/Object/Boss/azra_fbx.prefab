@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 195469736289708092}
   - component: {fileID: 114128074795377928}
   - component: {fileID: 135402470504223074}
+  - component: {fileID: 114412817710722518}
   m_Layer: 12
   m_Name: azra_fbx
   m_TagString: MobSearch
@@ -5125,6 +5126,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6cc7de2dc5c154099afc58c3889a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114412817710722518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191915015181218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933d195f049bf7c479b906ed1ed871f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Skill:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Delay_Time:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &114422178846458854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5233,25 +5265,17 @@ MonoBehaviour:
   Time_RunAway: 0.5
   Time_AttackMove: 0.5
   Time_Chaging: 4
-  Time_Skill_1: 3
-  Time_Skill_2: 3
-  Time_Skill_3: 3
-  Time_Skill_4: 3
-  Time_Skill_5: 3
-  Time_Skill_6: 3
-  Time_Skill_7: 3
-  Time_Skill_8: 3
-  Time_Skill_9: 7
+  Time_Skill_1: 4
+  Time_Skill_2: 8
+  Time_Skill_3: 6
+  Time_Skill_4: 7
+  Time_Skill_5: 7
+  Time_Skill_6: 7
+  Time_Skill_7: 9
+  Time_Skill_8: 8
+  Time_Skill_9: 8
   Die_Time: 2
   SkillValue:
-  - 0
-  - 25
-  - 50
-  - 70
-  - 85
-  - 95
-  - 100
-  BossCoolTime:
   - 0
   - 24
   - 41
@@ -5260,6 +5284,14 @@ MonoBehaviour:
   - 82
   - 91
   - 100
+  BossCoolTime:
+  - 0
+  - 9
+  - 12
+  - 15
+  - 15
+  - 18
+  - 18
   BossCoolDown: 00000000000000
   Delay: 0
   Fight: 0
@@ -5811,7 +5843,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

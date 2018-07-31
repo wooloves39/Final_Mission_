@@ -57,7 +57,7 @@ public class ObjectLife : MonoBehaviour {
                         ani.Play("Defence2");
                 }
 			}
-			//MobSound.PlaySound(1);
+			MobSound.PlaySound(1);
 			Hp -= dmg;
 			StartCoroutine("SetInvincible");
 		}
@@ -81,7 +81,7 @@ public class ObjectLife : MonoBehaviour {
                 break;
 			Debug.Log(dmg);
             Hp -= dmg;
-            //MobSound.PlaySound(1);
+            MobSound.PlaySound(1);
             T += cycleTime;
             yield return new WaitForSeconds(cycleTime);
         }
@@ -126,7 +126,7 @@ public class ObjectLife : MonoBehaviour {
 
 			ElecShock.SetActive(true);
 			Debug.Log("감전 사운드");
-			//MobSound.PlaySound(4);
+			MobSound.PlaySound(4);
 			yield return new WaitForSeconds(Cycle2);
 			time += (Cycle1 + Cycle2);
 			ElecShock.SetActive(false);

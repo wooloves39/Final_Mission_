@@ -22,9 +22,6 @@ public class MonsterSoundSetting : MonoBehaviour
 	// die = 3
 	// electronic = 4
 	// Update is called once per frame
-	void Update()
-	{
-	}
 	IEnumerator attack(int num)
 	{
 		yield return new WaitForSeconds(AttackDelay);

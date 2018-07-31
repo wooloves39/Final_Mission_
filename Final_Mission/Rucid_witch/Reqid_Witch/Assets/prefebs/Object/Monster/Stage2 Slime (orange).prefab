@@ -2240,10 +2240,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: f4c28ecd16f212d4883cc69cb1c339c5, type: 3}
+  - {fileID: 8300000, guid: a30a05f05ec608b4e80426dbcf8aac40, type: 3}
   - {fileID: 8300000, guid: 4d5ef857ce71d294193d149987ce4379, type: 3}
-  - {fileID: 8300000, guid: fea92f95a48e79f4e882162bdcf04464, type: 3}
-  - {fileID: 8300000, guid: 521865e1dc530304aabc4aa14531d1cb, type: 3}
+  - {fileID: 8300000, guid: ab8161c35094571408d0aa81a8dbdd03, type: 3}
+  - {fileID: 8300000, guid: 8ded36d7e05cc5742a0df98ecda28b37, type: 3}
   - {fileID: 8300000, guid: bb7c0ee49033b3a4393a8293a9e2efd5, type: 3}
   AttackDelay: 0
   PlusSound: 1
@@ -2328,6 +2328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a658c7dc301f14d82f1cce1bc5db9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  azra: 0
+  kali: 0
   Search: 0
   PlayerPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114985094882892406

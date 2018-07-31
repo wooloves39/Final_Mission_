@@ -37,7 +37,7 @@ public class Stage5MobAI: MonoBehaviour {
 	void Start()
 	{
 		MobSound = GetComponentInChildren<MonsterSoundSetting>();
-		//MobSound.PlaySound(0);
+		MobSound.PlaySound(0);
 		Time_Nature_Move = getRandom(1, 5);
 		Time_Battle_Move = getRandom(1, 5);
 		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
@@ -85,7 +85,7 @@ public class Stage5MobAI: MonoBehaviour {
 				Debug.Log("DieSound");
 				ani.SetBool("Die", true);
 
-				//MobSound.PlaySound(3);
+				MobSound.PlaySound(3);
 
 				yield return new WaitForSeconds(Die_Time);
 				this.gameObject.SetActive(false);

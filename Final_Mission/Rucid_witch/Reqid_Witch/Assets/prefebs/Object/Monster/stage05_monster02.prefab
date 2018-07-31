@@ -387,7 +387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1380443986513368
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +900,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1357833891510070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4235806175034318}
@@ -1701,10 +1701,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 2060e3e82bcbe974bae59c2e54d574e0, type: 3}
+  - {fileID: 8300000, guid: 84e812707464d36459fc5f5fbbe3383b, type: 3}
   - {fileID: 8300000, guid: 64099e61688334841955b0ffead19343, type: 3}
-  - {fileID: 8300000, guid: 4a4222b8d348518449b2535c82975b13, type: 3}
-  - {fileID: 8300000, guid: 46b47befa7eb1d8428f64361289553c7, type: 3}
+  - {fileID: 8300000, guid: 02fcdc07a8213bd47a7b5ee07772f31b, type: 3}
+  - {fileID: 8300000, guid: 29fd060bdda45d34088899cd12aaccae, type: 3}
   - {fileID: 8300000, guid: 4c592785a90c0ab45bb5f2657591b2ea, type: 3}
   AttackDelay: 0.1
   PlusSound: 0.25
@@ -1825,6 +1825,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a658c7dc301f14d82f1cce1bc5db9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  azra: 0
+  kali: 0
   Search: 0
   PlayerPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114257822912100182

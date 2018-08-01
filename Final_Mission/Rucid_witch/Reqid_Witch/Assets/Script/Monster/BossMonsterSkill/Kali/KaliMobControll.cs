@@ -36,6 +36,7 @@ public class KaliMobControll : MonoBehaviour {
     void Skill3()
     {
         num = 2;
+        Targetting_Myself(true);
         StartCoroutine("Attack", num);
     }
     void Skill4()

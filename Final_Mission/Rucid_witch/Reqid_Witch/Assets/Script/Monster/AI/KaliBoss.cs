@@ -320,7 +320,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 21:
                         {
-                            StartCoroutine("Coll", 1);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill2", true);

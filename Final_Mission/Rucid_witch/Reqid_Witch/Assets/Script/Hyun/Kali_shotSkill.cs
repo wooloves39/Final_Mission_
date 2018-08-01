@@ -8,7 +8,7 @@ public class Kali_shotSkill : MonoBehaviour {
 	private Transform ObjTr;
 	private void Awake()
 	{
-		ObjTr = GetComponentInParent<KaliMobControll>().transform;
+        ObjTr = FindObjectOfType<KaliMobControll>().transform;
 		rigi = GetComponent<Rigidbody>();
 	}
 	private void OnEnable()

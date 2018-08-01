@@ -26,6 +26,7 @@ public class PlayerState : MonoBehaviour
 	public GameObject chraging;
 	private float recoveryTime = 3.0f;
 	public float RecoveryTime { get { return recoveryTime; } set {recoveryTime=value; } }
+	public GameObject PlayerEffect;
 	// Use this for initialization
 	void Awake()
 	{

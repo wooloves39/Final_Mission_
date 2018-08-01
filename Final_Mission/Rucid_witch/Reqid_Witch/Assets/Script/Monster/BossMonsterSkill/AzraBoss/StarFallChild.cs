@@ -7,9 +7,11 @@ public class StarFallChild : MonoBehaviour {
     private Rigidbody Rigi;
     private Vector3 target;
     private float time = 0.0f;
+    private bool collision = false;
     public void SetTarget(Vector3 v)
     {
         target = v;
+        collision = true;
         StartCoroutine("Shoot");
     }
     void Awake()
@@ -18,6 +20,7 @@ public class StarFallChild : MonoBehaviour {
     }
     void OnEnable()
     {
+        collision = false;
         Boom.gameObject.SetActive(false);
     }
     void DisEnable()
@@ -26,21 +29,24 @@ public class StarFallChild : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (collision)
         {
-            PlayerState Player = other.GetComponentInParent<PlayerState>();
-            if (Player != null)
+            if (other.CompareTag("Player"))
             {
-                Boom.transform.position = this.transform.position+Vector3.up*2;
+                PlayerState Player = other.GetComponentInParent<PlayerState>();
+                if (Player != null)
+                {
+                    Boom.transform.position = this.transform.position + Vector3.up * 2;
+                    Boom.gameObject.SetActive(true);
+                    this.gameObject.SetActive(false);
+                }
+            }
+            if (other.CompareTag("Ground"))
+            {
+                Boom.transform.position = this.transform.position + Vector3.up * 2;
                 Boom.gameObject.SetActive(true);
                 this.gameObject.SetActive(false);
             }
-        }
-        if(other.CompareTag("Ground"))
-        {
-            Boom.transform.position = this.transform.position+Vector3.up*2;
-            Boom.gameObject.SetActive(true);
-            this.gameObject.SetActive(false);
         }
     }
     IEnumerator Shoot()

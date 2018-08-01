@@ -8,10 +8,11 @@ public class WarmingLine : MonoBehaviour
 	public float Cycle_time = 0.02f;
 	public float End_time = 0.0f;
 	public float Add_time = 0.0f;
-	public LineRenderer line;
+    public LineRenderer line;
+    private Laiser lai;
     // Use this for initialization
 	void Awake ()
-	{
+    {
 		line = GetComponent<LineRenderer>();
 		
 	}
@@ -21,7 +22,9 @@ public class WarmingLine : MonoBehaviour
         line.SetPosition(1, this.transform.position);
 	}
 	private void OnEnable()
-	{
+    {
+        line.SetPosition(0, this.transform.position);
+        line.SetPosition(1, this.transform.position+this.transform.forward *4);
 		Add_time = 0.0f;
         StartCoroutine("Drawing");
 	}
@@ -29,7 +32,6 @@ public class WarmingLine : MonoBehaviour
 	IEnumerator Drawing()
 	{
 		yield return new WaitForSeconds(Delay_time);
-        line.SetPosition(1, this.transform.position+this.transform.forward *4);
 		while (true)
 		{
 

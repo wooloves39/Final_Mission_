@@ -15,6 +15,7 @@ public class SimpleCircle : MonoBehaviour {
 	void OnEnable()
 	{
         StartCoroutine("Skill");
+        Magic.SetActive(false);
         if(BOOM)
             Boom.SetActive(false);
 	}

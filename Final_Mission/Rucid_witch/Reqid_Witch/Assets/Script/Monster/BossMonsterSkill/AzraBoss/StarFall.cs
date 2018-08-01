@@ -13,7 +13,7 @@ public class StarFall : MonoBehaviour {
 	{
 
 		for (int i = 0; i < 6; ++i) {
-			Start [i] = Magic [i].transform.position;
+			Start [i] = Magic[i].transform.position;
 		}
 	}
 	void OnEnable()
@@ -21,7 +21,7 @@ public class StarFall : MonoBehaviour {
         time = 0.0f;
         for (int i = 0; i < 6; ++i)
         {
-            Magic [i].transform.position = Start[i];
+            Magic [i].transform.position = Start[i]+this.transform.position;
             Magic[i].SetActive(true);
             Line[i].SetActive(false);
         }
@@ -32,7 +32,6 @@ public class StarFall : MonoBehaviour {
         for (int i = 0; i < 6; ++i)
         {
             Line[i].SetActive(false);
-            Magic[i].transform.position = Start[i];
            
         }
     }
@@ -51,7 +50,7 @@ public class StarFall : MonoBehaviour {
 
         for (int i = 0; i < 6; ++i)
         {
-            Line[i].transform.position = new Vector3(Random.Range(-Size + 1, Size), -1.25f, Random.Range(-Size + 1, Size));
+            Line[i].transform.position = this.transform.position + new Vector3(Random.Range(-Size + 1, Size), -1.25f, Random.Range(-Size + 1, Size));
             Line[i].SetActive(true);
             yield return new WaitForSeconds(0.4f);
             Magic[i].GetComponent<StarFallChild>().SetTarget(Line[i].transform.position);

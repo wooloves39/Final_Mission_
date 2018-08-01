@@ -70,6 +70,12 @@ public class AzraMob_Controll : MonoBehaviour {
     {
         yield return new WaitForSeconds(Delay_Time[num]);
         Skill[num].SetActive(true);
+        if (num == 0)
+        {
+            yield return new WaitForSeconds(2.0f);
+            Skill[num].SetActive(false);
+        }
+            
     }
 
 }

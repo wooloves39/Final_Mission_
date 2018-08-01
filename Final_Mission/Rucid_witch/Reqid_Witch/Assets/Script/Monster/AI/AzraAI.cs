@@ -416,6 +416,8 @@ public class AzraAI : MonoBehaviour
 	}
     IEnumerator charge()
     {
+
+        this.transform.LookAt(Player.transform.position);
         int num = getRandom(0, 4);
         Chage[num].SetActive(true);
         yield return new WaitForSeconds(Time_Chaging);

@@ -10,6 +10,7 @@ public class MonsterSoundSetting : MonoBehaviour
 	public float PlusSound = 1.0f;
 	private AudioSource[] audio;
 	private float sound = Singletone.Instance.Sound;
+	public bool isIdleLoop = true;
 	// Use this for initialization
 	void OnEnable()
 	{
@@ -43,7 +44,12 @@ public class MonsterSoundSetting : MonoBehaviour
 				if (num == 0)
 				{
 					audio[0].volume = sound * PlusSound;
+					if(isIdleLoop)
 					audio[0].loop = true;
+					else
+					{
+						audio[0].loop = false;
+					}
 				}
 				else
 					audio[0].loop = false;

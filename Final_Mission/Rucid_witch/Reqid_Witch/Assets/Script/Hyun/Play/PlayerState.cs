@@ -26,7 +26,7 @@ public class PlayerState : MonoBehaviour
 	public GameObject chraging;
 	private float recoveryTime = 3.0f;
 	public float RecoveryTime { get { return recoveryTime; } set {recoveryTime=value; } }
-	public GameObject PlayerEffect;
+	public GameObject PlayerHitEffect;
 	// Use this for initialization
 	void Awake()
 	{
@@ -38,9 +38,7 @@ public class PlayerState : MonoBehaviour
 		StartCoroutine(HpRecovery());
 		StartCoroutine(MpRecovery());
 		PlayerViberation = gameObject.transform.GetComponent<Viberation>();
-	}
-	void Start()
-	{
+
 		fade = FindObjectOfType<OVRScreenFade>();
 	}
 	private void Update()
@@ -184,7 +182,7 @@ public class PlayerState : MonoBehaviour
 	{
 		playerSound.PlayerSound(PlayerSoundSetting.soundPack.Defance);
 		Hp -= Damage;
-		
+		PlayerHitEffect.SetActive(true);
 		if (Hp <= 0)
 		{
 			playerSound.PlayerSound(PlayerSoundSetting.soundPack.Die);

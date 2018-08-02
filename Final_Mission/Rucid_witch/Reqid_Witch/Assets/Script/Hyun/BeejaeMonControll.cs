@@ -18,6 +18,7 @@ public class BeejaeMonControll : MonoBehaviour {
 	}
 	void Attack1()
 	{
+        Debug.Log("Attack1");
 		beejaeManager.shoot(1, target);
 		//beejaeManager;
 	}

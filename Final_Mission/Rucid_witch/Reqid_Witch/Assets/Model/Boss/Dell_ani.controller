@@ -131,7 +131,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Skill3
+    m_ConditionEvent: Skill1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102361846622456790}
@@ -533,7 +533,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Skill3
+    m_ConditionEvent: Skill1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102619588705985864}
@@ -623,7 +623,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Skill1
+    m_ConditionEvent: Skill5
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102921738521835116}
@@ -674,7 +674,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Skill1
+    m_ConditionEvent: Skill5
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102361846622456790}
@@ -1497,7 +1497,7 @@ AnimatorStateMachine:
     m_Position: {x: 168, y: -48, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102651567243180010}
-    m_Position: {x: 24, y: -132, z: 0}
+    m_Position: {x: 12, y: -120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102844156785273902}
     m_Position: {x: 372, y: 432, z: 0}

@@ -16,12 +16,18 @@ public class VerbashSkill : MonoBehaviour
 	private GameObject target;
 
 	private PlayerState Player;
-	private AttackMethod handle;
 	private LineDraw line;
-	public bool handle2 = false;
-
+	private bool SHOOT = false;
+	public Transform handle;
+	private float hight;
+	private Targetting Target;
+	private void OnEnable()
+	{
+		hight = Target.transform.position.y;
+	}
 	private void OnDisable()
 	{
+		SHOOT = false;
 		for (int i = 0; i < 5; ++i)
 			CoolDown[i] = false;
 
@@ -31,140 +37,163 @@ public class VerbashSkill : MonoBehaviour
 	private void Awake()
 	{
         V4 = magic[3].GetComponentsInChildren<VerbashSkill4>();
-		handle = FindObjectOfType<AttackMethod>();
 		Player = FindObjectOfType<PlayerState>();
+		Target = Player.GetComponentInChildren<Targetting>();
 		line = FindObjectOfType<LineDraw>();
 		target = this.gameObject;
 	}
-	public void SetTarget(GameObject targets)
-	{
-		target = targets;
-	}
 	public void Update()
 	{
-		if (left)
+		if (LineDraw.curType == 3 && InputManager_JHW.RTriggerOn() && InputManager_JHW.LTriggerOn())
 		{
-			if (!handle.Verbase_Marker[0].activeInHierarchy && handle2)
+			if (left)
 			{
-				handle2 = false;
-				shoot(line.Skills[3].getCurrentSkill());
+				if (!SHOOT && Player.GetMyState() != PlayerState.State.Drawing)
+				{
+					if (handle.transform.position.y > hight + 0.1f)
+					{
+						shoot(line.Skills[3].getCurrentSkill());
+						SHOOT = true;
+					}
+				}
+				else
+				{
+					if (handle.transform.position.y < hight - 0.1f)
+						if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
+							SHOOT = false;
+				}
+			}
+			else
+			{
+				if (!SHOOT && Player.GetMyState() != PlayerState.State.Drawing)
+				{
+					if (handle.transform.position.y > hight + 0.1f)
+					{
+						shoot(line.Skills[3].getCurrentSkill());
+						SHOOT = true;
+					}
+				}
+				else
+				{
+					if (handle.transform.position.y < hight - 0.1f)
+						if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
+							SHOOT = false;
+				}
 			}
 		}
-		else
-		{
-			if (!handle.Verbase_Marker[1].activeInHierarchy && handle2)
-			{
-				handle2 = false;
-				shoot(line.Skills[3].getCurrentSkill());
-			}
-		}
+		
+		
 	}
 	public void shoot(int skillIndex)
 	{
-		skill = skillIndex;
-		bool fail = false;
-		bool NoMp = false;
-		switch (skill)
+		if (Target.getMytarget() != null)
 		{
-			case 0:
-			case 1:
-				if (Player.Mp >= UseMp[0])
-				{
-					if (!CoolDown[0])
+			target = Target.getMytarget();
+			skill = skillIndex;
+			bool fail = false;
+			bool NoMp = false;
+			switch (skill)
+			{
+				case 0:
+				case 1:
+					if (Player.Mp >= UseMp[0])
 					{
-						StartCoroutine("Skill1");
-						Player.Mp -= UseMp[0];
+						if (!CoolDown[0])
+						{
+							StartCoroutine("Skill1");
+							Player.Mp -= UseMp[0];
+						}
+						else
+						{
+							fail = true;
+						}
 					}
 					else
 					{
-						fail = true;
+						NoMp = true;
 					}
-				}
-				else
-				{
-					NoMp = true;
-				}
-				break;
-			case 2:
-				if (Player.Mp >= UseMp[1])
-				{
-					if (!CoolDown[1])
-                    {
-                        StartCoroutine("Skill2");
-						Player.Mp -= UseMp[1];
+					break;
+				case 2:
+					if (Player.Mp >= UseMp[1])
+					{
+						if (!CoolDown[1])
+						{
+							StartCoroutine("Skill2");
+							Player.Mp -= UseMp[1];
+						}
+						else
+						{
+							fail = true;
+						}
 					}
 					else
 					{
-						fail = true;
+						NoMp = true;
 					}
-				}
-				else
-				{
-					NoMp = true;
-				}
-				break;
-			case 3:
-				if (Player.Mp >= UseMp[2])
-				{
-					if (!CoolDown[2])
-                    {
-                        StartCoroutine("Skill3");
-						Player.Mp -= UseMp[2];
+					break;
+				case 3:
+					if (Player.Mp >= UseMp[2])
+					{
+						if (!CoolDown[2])
+						{
+							StartCoroutine("Skill3");
+							Player.Mp -= UseMp[2];
+						}
+						else
+						{
+							fail = true;
+						}
 					}
 					else
 					{
-						fail = true;
+						NoMp = true;
 					}
-				}
-				else
-				{
-					NoMp = true;
-				}
-				break;
-			case 4:
-				if (Player.Mp >= UseMp[3])
-				{
-					if (!CoolDown[3])
+					break;
+				case 4:
+					if (Player.Mp >= UseMp[3])
 					{
-						StartCoroutine("Skill4");
-						Player.Mp -= UseMp[3];
+						if (!CoolDown[3])
+						{
+							StartCoroutine("Skill4");
+							Player.Mp -= UseMp[3];
+						}
+						else
+						{
+							fail = true;
+						}
 					}
 					else
 					{
-						fail = true;
+						NoMp = true;
 					}
-				}
-				else
-				{
-					NoMp = true;
-				}
-				break;
-			case 5:
-				if (Player.Mp >= UseMp[4])
-				{
-					if (!CoolDown[4])
+					break;
+				case 5:
+					if (Player.Mp >= UseMp[4])
 					{
-						StartCoroutine("Skill5");
-						Player.Mp -= UseMp[4];
+						if (!CoolDown[4])
+						{
+							StartCoroutine("Skill5");
+							Player.Mp -= UseMp[4];
+						}
+						else
+						{
+							fail = true;
+						}
 					}
 					else
 					{
-						fail = true;
+						NoMp = true;
 					}
-				}
-				else
-				{
-					NoMp = true;
-				}
-				break;
-		}
-		if (fail)
-		{
-			Debug.Log("쿨타임 처리");
-		}
-		if (NoMp)
-		{
-			Debug.Log("엠피가 부족");
+					break;
+			}
+			if (fail)
+			{
+				Debug.Log("쿨타임 처리");
+			}
+			if (NoMp)
+			{
+				Debug.Log("엠피가 부족");
+			}
 		}
 
 	}

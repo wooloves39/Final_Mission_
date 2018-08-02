@@ -7,22 +7,24 @@ public class AzraMob_Controll : MonoBehaviour {
     public float[] Delay_Time;
     private Transform target;
     private PlayerState player;
+	private Transform azra;
     private int num = 0;
     void Awake()
     {
+		azra = FindObjectOfType<AzraMob_Controll>().transform;
         player = FindObjectOfType<PlayerState>();
         target = player.transform;
     }
     void Skill1()//AzraBall
     {
         num = 0;
-        Skill[num].transform.position = this.transform.position ;
+        Skill[num].transform.position = azra.transform.position ;
         StartCoroutine("Attack", num);
     }
     void Skill2()//StarFall
     {
         num = 1;
-        Skill[num].transform.position = this.transform.position + new Vector3(0,-this.transform.position.y,0);
+        Skill[num].transform.position = azra.transform.position + new Vector3(0,-azra.transform.position.y,0);
         StartCoroutine("Attack", num);
     }
     void Skill3()//Blast
@@ -72,10 +74,15 @@ public class AzraMob_Controll : MonoBehaviour {
         Skill[num].SetActive(true);
         if (num == 0)
         {
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(4.0f);
             Skill[num].SetActive(false);
         }
-            
-    }
+		if (num == 1)
+		{
+			yield return new WaitForSeconds(10.0f);
+			Skill[num].SetActive(false);
+		}
+
+	}
 
 }

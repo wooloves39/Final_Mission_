@@ -21,8 +21,7 @@ public class AttackMethod : MonoBehaviour
 	GameObject[] DellAttackObj;
 	//#1,3번 공격
 	public GameObject[] Beejae_Marker;
-	public GameObject[] Verbase_Marker;
-
+	public GameObject[] Verbash_Controller;
 	//#0번 공격
 	private TouchCollision[] AzuraHands;
 	public GameObject AzuraBallPrefab;
@@ -290,51 +289,6 @@ public class AttackMethod : MonoBehaviour
 			yield return new WaitForSeconds(0.03f);
 		}
 	}
-	private IEnumerator VerbaseControll()
-	{
-		int layerMask = (-1) - (1 << LayerMask.NameToLayer("UserSkill"));
-
-		//왼손
-		while (flug)
-		{
-			Ray ray = new Ray(Hands[0].transform.position, Hands[0].transform.forward);
-			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit, RayLength, layerMask))
-			{
-                Debug.Log(hit.collider.gameObject.name);
-                if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Monster"))
-				{
-					if (!Verbase_Marker[0].activeSelf)
-					{
-						Verbase_Marker[0].SetActive(true);
-					}
-					Vector3 point = hit.point;
-					point.y += 0.4f;
-					Verbase_Marker[0].transform.LookAt(camTr.position);
-					Verbase_Marker[0].transform.Rotate(90, 0, 0);
-					Verbase_Marker[0].transform.position = point;
-				}
-			}
-			//오른손
-			ray = new Ray(Hands[1].transform.position, Hands[1].transform.forward);
-			if (Physics.Raycast(ray, out hit, RayLength, layerMask))
-            {
-                if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Monster"))
-				{
-					if (!Verbase_Marker[1].activeSelf)
-					{
-						Verbase_Marker[1].SetActive(true);
-					}
-					Vector3 point = hit.point;
-					point.y += 0.4f;
-					Verbase_Marker[1].transform.LookAt(camTr.position);
-					Verbase_Marker[1].transform.Rotate(90, 0, 0);
-					Verbase_Marker[1].transform.position = point;
-				}
-			}
-			yield return null;
-		}
-	}
 	private IEnumerator SeikwanControll()
 	{
 		bool instance = false;
@@ -442,6 +396,18 @@ public class AttackMethod : MonoBehaviour
 			}
 			yield return new WaitForSeconds(0.03f);
 		}
+	}
+	private IEnumerator VerbaseControll()
+	{
+		Verbash_Controller[0].SetActive(true);
+		Verbash_Controller[1].SetActive(true);
+		while (LineDraw.curType == 3)
+		{
+			yield return new WaitForSeconds(0.03f);
+		}
+		Verbash_Controller[0].SetActive(false);
+		Verbash_Controller[1].SetActive(false);
+
 	}
 	private IEnumerator DellControll()
 	{
@@ -608,8 +574,6 @@ public class AttackMethod : MonoBehaviour
 				break;
 			case 3:// 양 컨트롤러의 포인터가 맞춰졌을대 발동, 트리거를 계속 on하면 기를 모아 방출
 				{
-					Verbase_Marker[0].SetActive(false);
-					Verbase_Marker[1].SetActive(false);
 				}
 				break;
 			case 4: //바이올린 상태 전체 공격 위주, 한정된 시간에 여러번 좌우 이동을 통해 차징 공격

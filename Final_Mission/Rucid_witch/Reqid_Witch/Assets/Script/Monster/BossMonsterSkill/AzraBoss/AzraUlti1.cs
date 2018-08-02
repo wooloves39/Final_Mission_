@@ -14,6 +14,6 @@ public class AzraUlti1 : MonoBehaviour {
     }
     IEnumerator Skill()
     {
-        
+		return null;
     }
 }

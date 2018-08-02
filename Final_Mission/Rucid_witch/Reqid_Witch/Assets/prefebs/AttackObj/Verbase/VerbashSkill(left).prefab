@@ -1021,7 +1021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1895623024921440
 GameObject:
   m_ObjectHideFlags: 1
@@ -2621,6 +2621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -20
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4990568546687084}
 --- !u!114 &114093712185994610
 MonoBehaviour:
@@ -2650,6 +2651,7 @@ MonoBehaviour:
   ElecShock: 0
   ShockTime: 2
   effect: {fileID: 1132335418259268, guid: 8ef3e588afed3ca4eb517ef599ce8058, type: 2}
+  chargingGage: 1
 --- !u!114 &114103651154898756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2678,6 +2680,7 @@ MonoBehaviour:
   ElecShock: 0
   ShockTime: 2
   effect: {fileID: 1132335418259268, guid: 8ef3e588afed3ca4eb517ef599ce8058, type: 2}
+  chargingGage: 1
 --- !u!114 &114237334959849856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2706,6 +2709,7 @@ MonoBehaviour:
   ElecShock: 0
   ShockTime: 2
   effect: {fileID: 1132335418259268, guid: 8ef3e588afed3ca4eb517ef599ce8058, type: 2}
+  chargingGage: 1
 --- !u!114 &114253520246344500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2719,6 +2723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4990568546687084}
 --- !u!114 &114330510620489330
 MonoBehaviour:
@@ -2733,6 +2738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4990568546687084}
 --- !u!114 &114343451552263660
 MonoBehaviour:
@@ -2747,6 +2753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4990568546687084}
 --- !u!114 &114368379916355942
 MonoBehaviour:
@@ -2761,6 +2768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -20
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4990568546687084}
 --- !u!114 &114387090324122390
 MonoBehaviour:
@@ -2789,6 +2797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -20
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4990568546687084}
 --- !u!114 &114390310255936446
 MonoBehaviour:
@@ -2803,6 +2812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4946978703772668}
 --- !u!114 &114400531546592196
 MonoBehaviour:
@@ -2832,6 +2842,7 @@ MonoBehaviour:
   ElecShock: 0
   ShockTime: 2
   effect: {fileID: 1132335418259268, guid: 8ef3e588afed3ca4eb517ef599ce8058, type: 2}
+  chargingGage: 1
 --- !u!114 &114426800077082204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2845,6 +2856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4946978703772668}
 --- !u!114 &114432520004510184
 MonoBehaviour:
@@ -2859,6 +2871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4990568546687084}
 --- !u!114 &114488540531967762
 MonoBehaviour:
@@ -2873,6 +2886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4946978703772668}
 --- !u!114 &114515146305277906
 MonoBehaviour:
@@ -2897,10 +2911,10 @@ MonoBehaviour:
   - 2
   - 2
   - 2
-  CoolTime: 0100000001000000010000000100000001000000
+  CoolTime: 0200000003000000040000000500000006000000
   UseMp: 0100000001000000010000000100000001000000
   left: 1
-  handle2: 0
+  handle: {fileID: 0}
 --- !u!114 &114692879544248222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2914,6 +2928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4990568546687084}
 --- !u!114 &114734752641750464
 MonoBehaviour:
@@ -2943,6 +2958,7 @@ MonoBehaviour:
   ElecShock: 0
   ShockTime: 2
   effect: {fileID: 1132335418259268, guid: 8ef3e588afed3ca4eb517ef599ce8058, type: 2}
+  chargingGage: 1
 --- !u!114 &114757364641521496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2969,6 +2985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4946978703772668}
 --- !u!114 &114838128501243640
 MonoBehaviour:
@@ -2983,6 +3000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4946978703772668}
 --- !u!114 &114880407568131656
 MonoBehaviour:
@@ -2997,6 +3015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4990568546687084}
 --- !u!114 &114888439279645940
 MonoBehaviour:
@@ -3026,6 +3045,7 @@ MonoBehaviour:
   ElecShock: 0
   ShockTime: 2
   effect: {fileID: 1132335418259268, guid: 8ef3e588afed3ca4eb517ef599ce8058, type: 2}
+  chargingGage: 1
 --- !u!114 &114933218524084038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3052,6 +3072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
+  upsize: -2
   target: {fileID: 4946978703772668}
 --- !u!135 &135048893968646104
 SphereCollider:

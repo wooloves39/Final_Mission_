@@ -52,17 +52,6 @@ public class Beejea_Verbase_Setting : MonoBehaviour {
 					}
 				}
 				break;
-			case 3:
-				{
-					if (other.gameObject.CompareTag("Monster"))
-					{
-						Vskill.SetTarget(other.gameObject.GetComponentInParent<ObjectLife>().gameObject);
-						Vskill.handle2 = true;
-
-						isTouch = true;
-					}
-				}
-				break;
 		}
 
 	}
@@ -75,15 +64,6 @@ public class Beejea_Verbase_Setting : MonoBehaviour {
 					if (other.gameObject.CompareTag("Monster"))
 					{
 						Bskill.handle2 = false;
-						isTouch = false;
-					}
-				}
-				break;
-			case 3:
-				{
-					if (other.gameObject.CompareTag("Monster"))
-					{
-						Vskill.handle2 = false;
 						isTouch = false;
 					}
 				}

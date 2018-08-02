@@ -29,7 +29,7 @@ public class FallenDown : MonoBehaviour {
             if(i% 15 == 0)
                 list[i].transform.position = new Vector3(0,-3.1f,0);
             else
-                list[i].transform.position = new Vector3(Random.Range(0,SizeX*2) - SizeX,-3.1f,Random.Range(0,SizeZ*2) - SizeZ);
+                list[i].transform.position = this.transform.position + new Vector3(Random.Range(0,SizeX*2) - SizeX,-3.1f,Random.Range(0,SizeZ*2) - SizeZ);
             list[i].SetActive(true);
             yield return new WaitForSeconds(cycle);
         }

@@ -4624,6 +4624,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5537442da8aa8d4c92642270d57e859, type: 3}
   AttackDelay: 0
   PlusSound: 1
+  isIdleLoop: 1
 --- !u!114 &114432012981582520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4902,10 +4903,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 276fa9d575d9e5e45a79c278ad4aad61, type: 3}
-  - {fileID: 8300000, guid: 77f59ac3eaea3ca4b96a29a060365de0, type: 3}
-  - {fileID: 8300000, guid: f5537442da8aa8d4c92642270d57e859, type: 3}
-  - {fileID: 8300000, guid: 3b645dec2332c7c47ba69a25f92e58f9, type: 3}
+  - {fileID: 8300000, guid: bf3b6bcfa3c497143970dd035d4bcca7, type: 3}
+  - {fileID: 8300000, guid: d1b6b7dbccc36bb49a66086135da5de5, type: 3}
+  - {fileID: 8300000, guid: 16e078cc51bc14b4bb21cce8a6cb8bd6, type: 3}
+  - {fileID: 8300000, guid: 5441700d29f893f47a1c9f8d5d972c1d, type: 3}
+  - {fileID: 8300000, guid: e4c0177da1ced7a4c881650c8316441d, type: 3}
 --- !u!114 &114709865021815302
 MonoBehaviour:
   m_ObjectHideFlags: 1

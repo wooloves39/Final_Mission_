@@ -2963,7 +2963,7 @@ MonoBehaviour:
   Time_Nature_Stop: 0.5
   Time_Nature_Move: 2
   Time_Nomal_StopMotion: 5
-  Time_Nomal_MoveWay: 6
+  Time_Nomal_MoveWay: 5
   Time_Taget_Search: 1
   Time_Battle_Move: 2.5
   Time_Normal_Attack: 4
@@ -3245,7 +3245,7 @@ MonoBehaviour:
   MaxHp: 40
   Speed: 4
   BattleSpeed: 6
-  Range: 10
+  Range: 8
   boss: 0
   Attack: 5
   SkillDMG:
@@ -3678,12 +3678,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 1034442248344122}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 2
   m_Speed: 2.5
-  m_Acceleration: 2.5
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 180
-  m_StoppingDistance: 6
+  m_StoppingDistance: 7
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 0

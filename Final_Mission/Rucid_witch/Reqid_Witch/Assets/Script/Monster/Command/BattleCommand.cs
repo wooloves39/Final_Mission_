@@ -43,6 +43,7 @@ public class BattleCommand : MonoBehaviour {
 	{
 		if (this.gameObject.activeInHierarchy)
 		{
+			this.transform.LookAt(Player.transform.position);
 			DMG = MobInfo.Attack;
 			agent.speed = 0;
 			TimeLimit = T;

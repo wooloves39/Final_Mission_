@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 114128074795377928}
   - component: {fileID: 135402470504223074}
   - component: {fileID: 114412817710722518}
+  - component: {fileID: 114359076941426590}
   m_Layer: 12
   m_Name: azra_fbx
   m_TagString: MobSearch
@@ -6062,6 +6063,23 @@ MonoBehaviour:
   Rows: 8
   Columns: 1
   AnimationMode: 3
+--- !u!114 &114359076941426590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191915015181218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9311c7dc539ac83458c91b744ca716ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 1bcbfddca0a1f904d9c482f7dde7f910, type: 3}
+  - {fileID: 8300000, guid: afc4c8ac07ac8be458ebd513bb1ae613, type: 3}
+  - {fileID: 8300000, guid: af08c234a8de874489d1be629a8ab574, type: 3}
+  - {fileID: 8300000, guid: e9fe0be57897a7c408082facc6eabaac, type: 3}
+  - {fileID: 8300000, guid: 4c214d062ed6af74d8690007789b3fd9, type: 3}
 --- !u!114 &114384237879579904
 MonoBehaviour:
   m_ObjectHideFlags: 1

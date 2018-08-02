@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 114893812381478778}
   - component: {fileID: 114097396015278952}
   - component: {fileID: 114705961084816358}
+  - component: {fileID: 114448316075933982}
   m_Layer: 12
   m_Name: kali_fbx (test)
   m_TagString: MobSearch
@@ -4357,6 +4358,23 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114448316075933982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1302692595792424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9311c7dc539ac83458c91b744ca716ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 3d679f89c0e3a1e4290563c28bca5816, type: 3}
+  - {fileID: 8300000, guid: 0b9b4b75e26ab854eb100c8276ab00ee, type: 3}
+  - {fileID: 8300000, guid: f0f4cfd69eca2b5419ec30e535b5d806, type: 3}
+  - {fileID: 8300000, guid: 26afcbbc4f138f845bf9523c40598cbe, type: 3}
+  - {fileID: 8300000, guid: a251c0032d3ac1241b235f3d6bbbf9cc, type: 3}
 --- !u!114 &114461385944485748
 MonoBehaviour:
   m_ObjectHideFlags: 1

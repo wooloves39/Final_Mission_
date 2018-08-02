@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 114194192274436714}
   - component: {fileID: 114661744256676742}
   - component: {fileID: 114761947121930340}
+  - component: {fileID: 114146344676872946}
   m_Layer: 12
   m_Name: berbesi_fbx
   m_TagString: MobSearch
@@ -3172,6 +3173,23 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114146344676872946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046241488869640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9311c7dc539ac83458c91b744ca716ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 9f0469de0f25652439023c0952eac6d3, type: 3}
+  - {fileID: 8300000, guid: 9eb3745b3f3223047a59249e49c59cd9, type: 3}
+  - {fileID: 8300000, guid: 996ed699ba346334085f11e9c16c4105, type: 3}
+  - {fileID: 8300000, guid: 08911a99a9fd3834b9f2ed28b59882ea, type: 3}
+  - {fileID: 8300000, guid: 2d3a8b1bb6a672d4d8f935e5ee7b224e, type: 3}
 --- !u!114 &114161314127690686
 MonoBehaviour:
   m_ObjectHideFlags: 1

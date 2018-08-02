@@ -20,6 +20,7 @@ public class StarFallChild : MonoBehaviour {
     }
     void OnEnable()
     {
+        time = 0.0f;
         collision = false;
         Boom.gameObject.SetActive(false);
     }
@@ -36,14 +37,14 @@ public class StarFallChild : MonoBehaviour {
                 PlayerState Player = other.GetComponentInParent<PlayerState>();
                 if (Player != null)
                 {
-                    Boom.transform.position = this.transform.position + Vector3.up * 2;
+                    Boom.transform.position = target;
                     Boom.gameObject.SetActive(true);
                     this.gameObject.SetActive(false);
                 }
             }
             if (other.CompareTag("Ground"))
             {
-                Boom.transform.position = this.transform.position + Vector3.up * 2;
+                Boom.transform.position = target;
                 Boom.gameObject.SetActive(true);
                 this.gameObject.SetActive(false);
             }
@@ -56,7 +57,7 @@ public class StarFallChild : MonoBehaviour {
 
         while (time < 4.0f)
         {
-            Rigi.MovePosition(this.transform.position + Direction * temp * 22);
+            Rigi.MovePosition(this.transform.position + Direction * temp * 15);
             time += temp;
             yield return new WaitForSeconds(temp);
         }

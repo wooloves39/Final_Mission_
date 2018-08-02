@@ -11,6 +11,7 @@ public class Kali_Skill_Attack : MonoBehaviour {
 	PlayerState Player;
 	bool ranged = false;
     int num = 0;
+    public int dotTime = 10;
     public bool Azra = false;
     public bool QuickDel = false;
 	private void OnEnable()
@@ -78,7 +79,7 @@ public class Kali_Skill_Attack : MonoBehaviour {
 			if (ranged)
 			{
 				num++;
-				if (num > 10)
+                if (num > dotTime)
 				{
 					Player.DamageHp(damage);
 					num = 0;

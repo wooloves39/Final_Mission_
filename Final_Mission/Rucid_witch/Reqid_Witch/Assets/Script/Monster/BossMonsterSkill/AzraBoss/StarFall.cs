@@ -50,15 +50,13 @@ public class StarFall : MonoBehaviour {
 
         for (int i = 0; i < 6; ++i)
         {
-            Line[i].transform.position = this.transform.position + new Vector3(Random.Range(-Size + 1, Size), -1.25f, Random.Range(-Size + 1, Size));
+            Line[i].transform.position = this.transform.position + new Vector3(Random.Range(-Size + 1, Size), -2.00f, Random.Range(-Size + 1, Size));
             Line[i].SetActive(true);
             yield return new WaitForSeconds(0.4f);
             Magic[i].GetComponent<StarFallChild>().SetTarget(Line[i].transform.position);
             yield return new WaitForSeconds(0.2f);
             Line[i].SetActive(false);
         }
-        yield return new WaitForSeconds(4.0f);
-        this.gameObject.SetActive(false);
 
 	}
 }

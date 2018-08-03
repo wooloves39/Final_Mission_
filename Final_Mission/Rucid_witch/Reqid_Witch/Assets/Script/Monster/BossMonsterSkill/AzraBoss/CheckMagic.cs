@@ -8,10 +8,14 @@ public class CheckMagic : MonoBehaviour {
     public float damage = 9.0f;
     public float speed;
     private Vector3 prev;
+    void Awake()
+    {
+        prev = this.transform.position;
+    }
     void OnEnable()
     {
         speed = Random.Range(50,80)/1.5f;
-        prev = this.transform.position;
+        this.transform.position = prev;
         StartCoroutine("Skill");
     }
     IEnumerator Skill()
@@ -43,7 +47,6 @@ public class CheckMagic : MonoBehaviour {
                 yield return new WaitForSeconds(temp);
             }
         }
-        this.transform.position = prev;
         this.gameObject.SetActive(false);
     }
 

@@ -89,6 +89,7 @@ public class Stage5MobAI: MonoBehaviour {
 
 				yield return new WaitForSeconds(Die_Time);
 				this.gameObject.SetActive(false);
+				break;
 			}
 			{
                 
@@ -209,6 +210,7 @@ public class Stage5MobAI: MonoBehaviour {
 				yield return new WaitForSeconds(0.1f);
 			}
 		}
+		StopAllCoroutines();
 	}
 	int getRandom(int x,int y)
 	{

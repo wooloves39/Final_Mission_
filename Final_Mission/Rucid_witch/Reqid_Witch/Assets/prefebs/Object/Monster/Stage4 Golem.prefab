@@ -397,7 +397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1488834090190138
 GameObject:
   m_ObjectHideFlags: 1
@@ -2517,7 +2517,7 @@ MonoBehaviour:
   MaxHp: 175
   Speed: 1.5
   BattleSpeed: 2
-  Range: 5
+  Range: 5.5
   boss: 0
   Attack: 15
   SkillDMG:
@@ -2527,7 +2527,7 @@ MonoBehaviour:
   - 0
   MomentInvincible: 0
   InvincibleTime: 0.2
-  ElecShock: {fileID: 0}
+  ElecShock: {fileID: 1028951894109430}
 --- !u!120 &120295569467629012
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -2894,7 +2894,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1467535726249640}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 2
   m_Speed: 2.5
   m_Acceleration: 2.5
   avoidancePriority: 50

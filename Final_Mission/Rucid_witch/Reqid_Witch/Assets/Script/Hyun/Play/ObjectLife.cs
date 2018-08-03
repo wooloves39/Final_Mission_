@@ -37,27 +37,30 @@ public class ObjectLife : MonoBehaviour {
 		{
 			if (boss)
 			{
-               
+
 				if (dmg < 50.0)
-                {
-                    if( !ani.GetCurrentAnimatorStateInfo(0).IsName("skill1")&&
-                        !ani.GetCurrentAnimatorStateInfo(0).IsName("skill2")&&
-                        !ani.GetCurrentAnimatorStateInfo(0).IsName("skill3")&&
-                        !ani.GetCurrentAnimatorStateInfo(0).IsName("skill4")&&
-                        !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
-					    ani.Play("Defence");
-                }
-                else
-                {
-                    if( !ani.GetCurrentAnimatorStateInfo(0).IsName("skill1")&&
-                        !ani.GetCurrentAnimatorStateInfo(0).IsName("skill2")&&
-                        !ani.GetCurrentAnimatorStateInfo(0).IsName("skill3")&&
-                        !ani.GetCurrentAnimatorStateInfo(0).IsName("skill4")&&
-                        !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
-                        ani.Play("Defence2");
-                }
+				{
+					if (!ani.GetCurrentAnimatorStateInfo(0).IsName("skill1") &&
+						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
+						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
+						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
+						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
+						ani.Play("Defence");
+				}
+				else
+				{
+					if (!ani.GetCurrentAnimatorStateInfo(0).IsName("skill1") &&
+						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
+						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
+						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
+						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
+						ani.Play("Defence2");
+				}
 			}
-			MobSound.PlaySound(1);
+			else
+			{
+				MobSound.PlaySound(1);
+			}
 			Hp -= dmg;
 			StartCoroutine("SetInvincible");
 		}

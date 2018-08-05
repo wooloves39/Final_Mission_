@@ -44,43 +44,47 @@ public class VerbashSkill : MonoBehaviour
 	}
 	public void Update()
 	{
-		if (LineDraw.curType == 3 && InputManager_JHW.RTriggerOn() && InputManager_JHW.LTriggerOn())
-		{
-			if (left)
-			{
-				if (!SHOOT && Player.GetMyState() != PlayerState.State.Drawing)
-				{
-					if (handle.transform.position.y > hight + 0.1f)
-					{
-						shoot(line.Skills[3].getCurrentSkill());
-						SHOOT = true;
-					}
-				}
-				else
-				{
-					if (handle.transform.position.y < hight - 0.1f)
-						if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
-							SHOOT = false;
-				}
-			}
-			else
-			{
-				if (!SHOOT && Player.GetMyState() != PlayerState.State.Drawing)
-				{
-					if (handle.transform.position.y > hight + 0.1f)
-					{
-						shoot(line.Skills[3].getCurrentSkill());
-						SHOOT = true;
-					}
-				}
-				else
-				{
-					if (handle.transform.position.y < hight - 0.1f)
-						if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
-							SHOOT = false;
-				}
-			}
-		}
+        if (LineDraw.curType == 3 && InputManager_JHW.RTriggerOn() && InputManager_JHW.LTriggerOn())
+        {
+            if (left)
+            {
+                if (!SHOOT && Player.GetMyState() != PlayerState.State.Drawing)
+                {
+                    if (handle.transform.position.y > hight + 0.1f)
+                    {
+                        shoot(line.Skills[3].getCurrentSkill());
+                        SHOOT = true;
+                    }
+                }
+                else
+                {
+                    if (handle.transform.position.y < hight - 0.1f)
+                        if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
+                            SHOOT = false;
+                }
+            }
+            else
+            {
+                if (!SHOOT && Player.GetMyState() != PlayerState.State.Drawing)
+                {
+                    if (handle.transform.position.y > hight + 0.1f)
+                    {
+                        shoot(line.Skills[3].getCurrentSkill());
+                        SHOOT = true;
+                    }
+                }
+                else
+                {
+                    if (handle.transform.position.y < hight - 0.1f)
+                        if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
+                            SHOOT = false;
+                }
+            }
+        }
+        else
+        {
+            SHOOT = false;
+        }
 		
 		
 	}

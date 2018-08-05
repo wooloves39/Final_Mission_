@@ -345,7 +345,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 22:
                         {
-                            StartCoroutine("Coll", 2);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill3", true);
@@ -355,7 +354,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 23:
                         {
-                            StartCoroutine("Coll", 3);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill4", true);
@@ -365,7 +363,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 24:
                         {
-                            StartCoroutine("Coll", 4);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill5", true);
@@ -375,7 +372,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 25:
                         {
-                            StartCoroutine("Coll", 5);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill6", true);
@@ -385,7 +381,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 26:
                         {
-                            StartCoroutine("Coll", 6);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill7", true);
@@ -410,6 +405,10 @@ public class KaliBoss : MonoBehaviour {
     int getRandom(int x,int y)
     {
         return Random.Range (x, y);
+    }
+    public void CoolTime(int num)
+    {
+        StartCoroutine("Cool", num);
     }
     IEnumerator Coll(int num)
     {

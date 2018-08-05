@@ -11,9 +11,11 @@ public class SeiKwanMonControll : MonoBehaviour {
 	private float Hp;
 	private BossSoundSetting sound;
 	public GameObject skill4;
+    private Stage5Boss AI;
 	// Use this for initialization
 	private void Awake()
 	{
+        AI = GetComponent<Stage5Boss>();
 		sound = GetComponent<BossSoundSetting>();
 		target = GetComponent<BattleCommand>().getTarget();
 		Hp = GetComponent<ObjectLife>().Hp;
@@ -70,7 +72,8 @@ public class SeiKwanMonControll : MonoBehaviour {
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack2()
-	{
+    {
+        AI.CoolTime(1);
 		int ArrowNum = 0;
 		for (int i = 0; i < Arrow.Length; ++i)
 		{
@@ -96,7 +99,8 @@ public class SeiKwanMonControll : MonoBehaviour {
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack3()
-	{
+    {
+        AI.CoolTime(2);
 		int ArrowNum = 0;
 		for (int i = 0; i < Arrow.Length; ++i)
 		{
@@ -122,12 +126,14 @@ public class SeiKwanMonControll : MonoBehaviour {
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack4()
-	{
+    {
+        AI.CoolTime(3);
 		skill4.SetActive(true);
 	
 	}
 	void Attack5()
-	{
+    {
+        AI.CoolTime(4);
 		int ArrowNum = 0;
 		for (int i = 0; i < Arrow.Length; ++i)
 		{

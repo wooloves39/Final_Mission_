@@ -12,12 +12,14 @@ public class KaliMobControll : MonoBehaviour {
     private Animator ani;
     private NavMeshAgent nav;
     private int num = 0;
+    private KaliBoss AI;
     void Awake()
     {
         nav = GetComponent<NavMeshAgent>();
         ani = GetComponent<Animator>();
         target = this.transform;
         player = FindObjectOfType<PlayerState>();
+        AI.GetComponent<KaliBoss>();
     }
     void Targetting_Myself(bool check)
     {
@@ -41,12 +43,14 @@ public class KaliMobControll : MonoBehaviour {
     void Skill3()
     {
         num = 2;
+        AI.CoolTime(num);
         Targetting_Myself(true);
         StartCoroutine("Attack", num);
     }
     void Skill4()
     {
         num = 3;
+        AI.CoolTime(num);
         Targetting_Myself(true);
         Skill[num].transform.position = this.transform.position;
         StartCoroutine("Attack", num);
@@ -54,11 +58,13 @@ public class KaliMobControll : MonoBehaviour {
     void Skill5()
     {
         num = 4 ;
+        AI.CoolTime(num);
         StartCoroutine("Attack", num);
     }
     void Skill6()
     {
         num = 5;
+        AI.CoolTime(num);
         Targetting_Myself(true);
         Skill[num].transform.position = target.transform.position;
         StartCoroutine("Attack", num);
@@ -66,6 +72,7 @@ public class KaliMobControll : MonoBehaviour {
     void Skill7()
     {
         num = 6;
+        AI.CoolTime(num);
         Targetting_Myself(true);
         Skill[num].transform.position = target.transform.position;
         StartCoroutine("Attack", num);

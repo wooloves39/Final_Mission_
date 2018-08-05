@@ -304,7 +304,6 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 21:
 						{
-                            StartCoroutine("Cool", 1);
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill2", true);
@@ -314,7 +313,6 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 22:
                         {
-                            StartCoroutine("Cool", 2);
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill3", true);
@@ -324,7 +322,6 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 23:
                         {
-                            StartCoroutine("Cool", 3);
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							ani.SetBool("Skill4", true);
@@ -355,6 +352,10 @@ public class Stage5Boss: MonoBehaviour {
 	{
 		return Random.Range (x, y);
 	}
+    public void CoolTime(int num)
+    {
+        StartCoroutine("Cool", num);
+    }
     IEnumerator Cool(int num)
     {
         BossCoolDown[num] = true;

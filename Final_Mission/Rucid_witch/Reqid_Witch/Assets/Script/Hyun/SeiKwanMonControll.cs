@@ -92,7 +92,7 @@ public class SeiKwanMonControll : MonoBehaviour {
 		Vector3 shootPos = target.transform.position;
 		shootPos.y += 1.0f;
 		Arrow[ArrowNum].transform.LookAt(shootPos);
-		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(2, target, Hp / 1000.0f, 5.0f);
+		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(2, target, Hp / 1000.0f,5.0f);
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack3()

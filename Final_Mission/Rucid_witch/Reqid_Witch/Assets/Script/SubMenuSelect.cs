@@ -7,10 +7,15 @@ public class SubMenuSelect : MonoBehaviour {
 	public GameObject[] BGM;
 	public GameObject[] SAVE;
 	private SubMenu sub;
-	public SoundController SoundController;
-	private void OnEnable()
+	private SoundController SoundController;
+    private void Awake()
+    {
+        sub = FindObjectOfType<SubMenu>();
+        SoundController = FindObjectOfType<SoundController>();
+    }
+    private void OnEnable()
 	{
-		sub = FindObjectOfType<SubMenu>();
+	
 		for (int i = 0; i < 3; ++i)
 		{
 			EFF[i].SetActive(false);

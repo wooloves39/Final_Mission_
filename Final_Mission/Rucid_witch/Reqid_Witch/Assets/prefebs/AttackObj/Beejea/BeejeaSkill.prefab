@@ -5053,6 +5053,7 @@ MonoBehaviour:
   ElecShock: 1
   ShockTime: 2
   effect: {fileID: 1340773277856334, guid: 07956b9507f8d9e4494e4a3dea60d334, type: 2}
+  chargingGage: 1
 --- !u!114 &114094742759298172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5103,6 +5104,7 @@ MonoBehaviour:
   ElecShock: 1
   ShockTime: 2
   effect: {fileID: 1340773277856334, guid: 07956b9507f8d9e4494e4a3dea60d334, type: 2}
+  chargingGage: 1
 --- !u!114 &114126380145458134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5489,6 +5491,7 @@ MonoBehaviour:
   ElecShock: 1
   ShockTime: 4
   effect: {fileID: 0}
+  chargingGage: 1
 --- !u!114 &114703632791706076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5659,6 +5662,7 @@ MonoBehaviour:
   ElecShock: 0
   ShockTime: 2
   effect: {fileID: 1340773277856334, guid: 07956b9507f8d9e4494e4a3dea60d334, type: 2}
+  chargingGage: 1
 --- !u!120 &120056257934470126
 LineRenderer:
   m_ObjectHideFlags: 1

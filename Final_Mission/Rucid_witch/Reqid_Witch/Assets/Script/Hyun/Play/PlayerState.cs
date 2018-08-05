@@ -151,8 +151,10 @@ public class PlayerState : MonoBehaviour
 	{
 		MpColor = skillChange.getMpColor();
 		int checkMpFull = (int)(Mp / 10);
-		checkMpFull = (int)Mathf.Floor(checkMpFull / 2);
-		for (int i = 4; i >= 5 - checkMpFull; --i)
+      
+         checkMpFull = (int)Mathf.Floor(checkMpFull / 2);
+        if (checkMpFull < 0) checkMpFull = 0;
+        for (int i = 4; i >= 5 - checkMpFull; --i)
 		{
 			MpMaterial[i].SetColor("_EmissionColor", MpColor);
 		}

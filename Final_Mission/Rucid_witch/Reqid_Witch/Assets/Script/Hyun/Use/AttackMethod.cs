@@ -370,7 +370,7 @@ public class AttackMethod : MonoBehaviour
 						if (myTarget != null)
 						{
 							playerSound.PlayerSound(PlayerSoundSetting.soundPack.AttackSkill);
-							Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(typecheck.Skills[1].getCurrentSkill(), myTarget, handDis,MyState.chargingRate());
+							Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(typecheck.Skills[1].getCurrentSkill(), myTarget, handDis,5.0f,MyState.chargingRate());
 
 						}
 						else
@@ -378,7 +378,7 @@ public class AttackMethod : MonoBehaviour
 							if (typecheck.Skills[1].getCurrentSkill() < 3)
 							{
 								playerSound.PlayerSound(PlayerSoundSetting.soundPack.AttackSkill);
-								Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(typecheck.Skills[1].getCurrentSkill(), myTarget, handDis, MyState.chargingRate());
+								Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(typecheck.Skills[1].getCurrentSkill(), myTarget, handDis, 5.0f, MyState.chargingRate());
 							}
 							else
 							{

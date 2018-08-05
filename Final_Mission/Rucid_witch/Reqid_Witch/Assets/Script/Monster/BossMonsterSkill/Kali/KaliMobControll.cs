@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class KaliMobControll : MonoBehaviour {
     public GameObject[] Skill;
@@ -8,9 +9,13 @@ public class KaliMobControll : MonoBehaviour {
     public float[] Delay_Time;
     private Transform target;
     private PlayerState player;
+    private Animator ani;
+    private NavMeshAgent nav;
     private int num = 0;
     void Awake()
     {
+        nav = GetComponent<NavMeshAgent>();
+        ani = GetComponent<Animator>();
         target = this.transform;
         player = FindObjectOfType<PlayerState>();
     }
@@ -43,7 +48,7 @@ public class KaliMobControll : MonoBehaviour {
     {
         num = 3;
         Targetting_Myself(true);
-        Skill[num].transform.position = target.transform.position;
+        Skill[num].transform.position = this.transform.position;
         StartCoroutine("Attack", num);
     } 
     void Skill5()

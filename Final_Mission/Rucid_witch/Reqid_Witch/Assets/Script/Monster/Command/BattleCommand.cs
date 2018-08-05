@@ -32,10 +32,15 @@ public class BattleCommand : MonoBehaviour {
 	{
 		if (this.gameObject.activeInHierarchy)
 		{
+            if (msg.Speed > 10.0f)
+                agent.angularSpeed = 0;
+            else
+                agent.angularSpeed = 360;
+                
 			agent.destination = msg.destination;
 			agent.speed = msg.Speed;
 			TimeLimit = msg.time;
-			time = 0.0f;
+            time = 0.0f;
 			StartCoroutine("BMove");
 		}
 	}
@@ -198,8 +203,9 @@ public class BattleCommand : MonoBehaviour {
 	}
 	IEnumerator BMove()
 	{
+        
 		while (true)
-		{
+        {
 			float temp = Time.deltaTime;
 			if (time >= TimeLimit)
 			{

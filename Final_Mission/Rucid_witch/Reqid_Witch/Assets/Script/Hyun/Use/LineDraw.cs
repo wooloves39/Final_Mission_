@@ -13,6 +13,7 @@ public class LineDraw : MonoBehaviour {
 	private bool touchOn = false;
 	private LaserColl raser;
 	private PlayerState Mystate;
+    private AttackMethod attack;
 	public static int curType;
 	// Use this for initialization
 	void Awake()
@@ -24,8 +25,10 @@ public class LineDraw : MonoBehaviour {
 		mySkills = Singletone.Instance.Myskill;
 		curType = mySkills[mytype];
 		raser.gameObject.SetActive(false);
-		Mystate = gameObject.transform.parent.parent.GetComponent<PlayerState>();
-	}
+		Mystate = transform.GetComponentInParent<PlayerState>();
+        attack = Mystate.GetComponent<AttackMethod>();
+
+    }
 
 	// Update is called once per frame
 	void Update()
@@ -99,7 +102,8 @@ public class LineDraw : MonoBehaviour {
 			}
 			if (mytype > 2) mytype = 0;
 		}
-		//수정 필요
+        //수정 필요
+        attack.DeleteObj(curType);
 		curType = mySkills[mytype];
 		Skills[curType].resetSkill();
 	}

@@ -198,6 +198,45 @@ public class AttackMethod : MonoBehaviour
 			}
 		}
 	}
+    public void DeleteObj(int num)
+    {
+        if (num == 0)
+        {
+            for (int i = 0; i < AzuraBall.Length; ++i)
+            {
+                if (AzuraBall[i])
+                {
+                        AzuraBall[i].GetComponent<AzuraSkill>().resetDelete();
+                        Azurapool.RemoveItem(AzuraBall[i]);
+                        AzuraBall[i] = null;
+                }
+            }
+        }
+     else   if (num == 1)
+        {
+            for (int i = 0; i < Arrow.Length; ++i)
+            {
+                if (Arrow[i])
+                {
+                        Arrow[i].GetComponent<SeiKwanSkill>().resetDelete();
+                        Arrowpool.RemoveItem(Arrow[i]);
+                        Arrow[i] = null;
+                }
+            }
+        }
+        else if (num == 4)
+        {
+            for (int i = 0; i < DellAttackObj.Length; ++i)
+            {
+                if (DellAttackObj[i])
+                {
+                        DellAttackObj[i].GetComponent<DellSkill>().resetDelete();
+                        Dellpool.RemoveItem(DellAttackObj[i]);
+                        DellAttackObj[i] = null;
+                }
+            }
+        }
+    }
 	private IEnumerator BeejaeControll()
 	{
 		int layerMask = (-1) - (1 << LayerMask.NameToLayer("UserSkill"));

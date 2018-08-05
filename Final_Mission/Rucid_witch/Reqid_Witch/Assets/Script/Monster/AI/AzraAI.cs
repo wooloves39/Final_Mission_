@@ -55,9 +55,12 @@ public class AzraAI : MonoBehaviour
 	Queue Peace = null;
 	private Transform Player;
     public GameObject[] Chage;
+
+    private Stage7_end endingOn;
 	void Awake()
 	{
-		Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
+        endingOn = FindObjectOfType<Stage7_end>();
+           Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
 		ObjLife = GetComponent<ObjectLife>();
 		ani = GetComponent<Animator>();
 		NCommand = GetComponent<NatureCommand>();
@@ -103,8 +106,8 @@ public class AzraAI : MonoBehaviour
 			if (ObjLife.Hp <= 0)
 			{
 				ani.SetBool("Die", true);
-
-				yield return new WaitForSeconds(Die_Time);
+                endingOn.EndOn();
+                yield return new WaitForSeconds(Die_Time);
 				this.gameObject.SetActive(false);
 			}
 

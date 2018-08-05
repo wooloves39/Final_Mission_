@@ -2504,6 +2504,7 @@ GameObject:
   - component: {fileID: 158330382}
   - component: {fileID: 158330384}
   - component: {fileID: 158330383}
+  - component: {fileID: 158330385}
   m_Layer: 5
   m_Name: Skill (4)
   m_TagString: Untagged
@@ -2563,6 +2564,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 158330381}
+--- !u!114 &158330385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 158330381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b536a3279ef10043a26b7c56698df27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartAlpha: 0
+  EndAlpha: 0.15
+  PlusAlpha: 0.05
+  WaitSecond: 0.1
+  isCanvas: 1
 --- !u!1 &165182248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,7 +2698,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 171338586}
-  m_LocalRotation: {x: 0.62218875, y: -0.33597794, z: -0.62218875, w: 0.33597785}
+  m_LocalRotation: {x: 0.6221888, y: -0.33597797, z: -0.6221888, w: 0.33597788}
   m_LocalPosition: {x: -0.000000012646989, y: 0.7077994, z: 0.0020704747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -9109,7 +9126,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 381464946}
-  m_LocalRotation: {x: -0.46994293, y: 0.81424904, z: 0.31759068, w: 0.12364541}
+  m_LocalRotation: {x: -0.469943, y: 0.81424916, z: 0.3175907, w: 0.123645425}
   m_LocalPosition: {x: -0.043483313, y: 0.34436026, z: 0.39291123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18420,7 +18437,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763973364}
-  m_LocalRotation: {x: 0.012502072, y: 0.7103867, z: 0.7029223, w: -0.033089012}
+  m_LocalRotation: {x: 0.012502068, y: 0.71038663, z: 0.7029222, w: -0.03308901}
   m_LocalPosition: {x: 0.25704676, y: 0.7584463, z: 0.065603614}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children: []
@@ -26044,6 +26061,7 @@ GameObject:
   - component: {fileID: 848546405}
   - component: {fileID: 848546407}
   - component: {fileID: 848546406}
+  - component: {fileID: 848546408}
   m_Layer: 5
   m_Name: Skill (2)
   m_TagString: Untagged
@@ -26103,6 +26121,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 848546404}
+--- !u!114 &848546408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848546404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b536a3279ef10043a26b7c56698df27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartAlpha: 0
+  EndAlpha: 0.15
+  PlusAlpha: 0.05
+  WaitSecond: 0.1
+  isCanvas: 1
 --- !u!1 &849197454
 GameObject:
   m_ObjectHideFlags: 0
@@ -34094,6 +34128,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfe6b04e2505864594c2a030f7dba24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Skill:
+  - {fileID: 1168937179}
+  - {fileID: 2146947768}
+  - {fileID: 848546404}
+  - {fileID: 2020311841}
+  - {fileID: 158330381}
+  check:
+  - {fileID: 1774233453}
+  - {fileID: 1528897654}
+  - {fileID: 1148865376}
+  - {fileID: 1839239031}
+  - {fileID: 2121812662}
 --- !u!1 &942597502
 GameObject:
   m_ObjectHideFlags: 0
@@ -36539,7 +36585,7 @@ RectTransform:
   m_GameObject: {fileID: 1091061262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 942458318}
   m_RootOrder: 0
@@ -44164,7 +44210,7 @@ RectTransform:
   m_GameObject: {fileID: 1148865376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.15, z: 1.2}
   m_Children: []
   m_Father: {fileID: 848546405}
   m_RootOrder: 0
@@ -44548,6 +44594,7 @@ GameObject:
   - component: {fileID: 1168937180}
   - component: {fileID: 1168937182}
   - component: {fileID: 1168937181}
+  - component: {fileID: 1168937183}
   m_Layer: 5
   m_Name: Skill
   m_TagString: Untagged
@@ -44607,6 +44654,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1168937179}
+--- !u!114 &1168937183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1168937179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b536a3279ef10043a26b7c56698df27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartAlpha: 0
+  EndAlpha: 0.15
+  PlusAlpha: 0.05
+  WaitSecond: 0.1
+  isCanvas: 1
 --- !u!1 &1172694895
 GameObject:
   m_ObjectHideFlags: 0
@@ -63645,7 +63708,7 @@ RectTransform:
   m_GameObject: {fileID: 1528897654}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.15, z: 1.2}
   m_Children: []
   m_Father: {fileID: 2146947769}
   m_RootOrder: 0
@@ -86962,7 +87025,7 @@ RectTransform:
   m_GameObject: {fileID: 1774233453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.15, z: 1.2}
   m_Children: []
   m_Father: {fileID: 1168937180}
   m_RootOrder: 0
@@ -88357,7 +88420,7 @@ RectTransform:
   m_GameObject: {fileID: 1839239031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.15, z: 1.2}
   m_Children: []
   m_Father: {fileID: 2020311842}
   m_RootOrder: 0
@@ -91726,6 +91789,7 @@ GameObject:
   - component: {fileID: 2020311842}
   - component: {fileID: 2020311844}
   - component: {fileID: 2020311843}
+  - component: {fileID: 2020311845}
   m_Layer: 5
   m_Name: Skill (3)
   m_TagString: Untagged
@@ -91785,6 +91849,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2020311841}
+--- !u!114 &2020311845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020311841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b536a3279ef10043a26b7c56698df27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartAlpha: 0
+  EndAlpha: 0.15
+  PlusAlpha: 0.05
+  WaitSecond: 0.1
+  isCanvas: 1
 --- !u!1 &2022827925
 GameObject:
   m_ObjectHideFlags: 0
@@ -96121,7 +96201,7 @@ RectTransform:
   m_GameObject: {fileID: 2121812662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.15, z: 1.2}
   m_Children: []
   m_Father: {fileID: 158330382}
   m_RootOrder: 0
@@ -96381,6 +96461,7 @@ GameObject:
   - component: {fileID: 2146947769}
   - component: {fileID: 2146947771}
   - component: {fileID: 2146947770}
+  - component: {fileID: 2146947772}
   m_Layer: 5
   m_Name: Skill (1)
   m_TagString: Untagged
@@ -96440,3 +96521,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2146947768}
+--- !u!114 &2146947772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2146947768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b536a3279ef10043a26b7c56698df27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartAlpha: 0
+  EndAlpha: 0.15
+  PlusAlpha: 0.05
+  WaitSecond: 0.1
+  isCanvas: 1

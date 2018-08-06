@@ -13,13 +13,21 @@ public class KaliMobControll : MonoBehaviour {
     private NavMeshAgent nav;
     private int num = 0;
     private KaliBoss AI;
+    private BossSoundSetting sound;
+    private GameObject KaliSkill;
+    public GameObject KaliSkillprefab;
     void Awake()
     {
+        KaliSkill = Instantiate(KaliSkillprefab);
+        Skill[3] = KaliSkill.GetComponent<KaliSkillIndex>().skill[0];
+        Skill[5] = KaliSkill.GetComponent<KaliSkillIndex>().skill[1];
+        Skill[6] = KaliSkill.GetComponent<KaliSkillIndex>().skill[2];
         nav = GetComponent<NavMeshAgent>();
         ani = GetComponent<Animator>();
         target = this.transform;
         player = FindObjectOfType<PlayerState>();
-        AI.GetComponent<KaliBoss>();
+        AI = GetComponent<KaliBoss>();
+        sound = GetComponent<BossSoundSetting>();
     }
     void Targetting_Myself(bool check)
     {
@@ -27,21 +35,37 @@ public class KaliMobControll : MonoBehaviour {
             target.transform.position = this.transform.position;
         else
             target.transform.position = player.transform.position;
+    }  
+    void Apprier()
+    {
+        sound.PlayerSound(0);
+    }
+    void Hit()
+    {
+
+        sound.PlayerSound(1);
+    }
+    void Lose_Sound()
+    {
+        sound.PlayerSound(3);
     }
     void Skill1()
     {
+        sound.PlayerSound(2);
         num = 0;
         Targetting_Myself(true);
         StartCoroutine("Attack", num);
     }
     void Skill2()
     {
+        sound.PlayerSound(2);
         num = 1;
         Targetting_Myself(true);
         StartCoroutine("Attack", num);
     }
     void Skill3()
     {
+        sound.PlayerSound(2);
         num = 2;
         AI.CoolTime(num);
         Targetting_Myself(true);
@@ -49,6 +73,7 @@ public class KaliMobControll : MonoBehaviour {
     }
     void Skill4()
     {
+        sound.PlayerSound(2);
         num = 3;
         AI.CoolTime(num);
         Targetting_Myself(true);
@@ -57,12 +82,14 @@ public class KaliMobControll : MonoBehaviour {
     } 
     void Skill5()
     {
+        sound.PlayerSound(2);
         num = 4 ;
         AI.CoolTime(num);
         StartCoroutine("Attack", num);
     }
     void Skill6()
     {
+        sound.PlayerSound(2);
         num = 5;
         AI.CoolTime(num);
         Targetting_Myself(true);
@@ -71,6 +98,7 @@ public class KaliMobControll : MonoBehaviour {
     }
     void Skill7()
     {
+        sound.PlayerSound(4);
         num = 6;
         AI.CoolTime(num);
         Targetting_Myself(true);

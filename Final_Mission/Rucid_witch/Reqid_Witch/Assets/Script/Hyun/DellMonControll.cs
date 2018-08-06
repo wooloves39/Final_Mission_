@@ -24,17 +24,27 @@ public class DellMonControll : MonoBehaviour {
 	void Start () {
 		target = GetComponent<BattleCommand>().getTarget();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	void Attack1()
-	{
+    void Apprier()
+    {
+        sound.PlayerSound(0);
+    }
+    void Hit()
+    {
+
+        sound.PlayerSound(1);
+    }
+    void Lose_Sound()
+    {
+        sound.PlayerSound(3);
+    }
+    void Attack1()
+    {
+        sound.PlayerSound(2);
 		buffs.SetActive(true);
 	}
 	void Attack2()
     {
+        sound.PlayerSound(2);
         AI.CoolTime(1);
 		DellAttackObj.SetActive(true);
 		Vector3 pos= transform.position;
@@ -44,6 +54,7 @@ public class DellMonControll : MonoBehaviour {
 	}
 	void Attack3()
     {
+        sound.PlayerSound(2);
         AI.CoolTime(2);
 		SweetMelody.SetActive(true);
 	}
@@ -53,11 +64,13 @@ public class DellMonControll : MonoBehaviour {
 	}
 	void Attack4()
     {
+        sound.PlayerSound(2);
         AI.CoolTime(3);
 		rainBow.gameObject.SetActive(true);
 	}
 	void Attack5()
     {
+        sound.PlayerSound(4);
         AI.CoolTime(4);
 		attackSkill.gameObject.SetActive(true);
 		attackSkill.shoot(target.transform, 500.0f/Hp);

@@ -410,7 +410,7 @@ public class KaliBoss : MonoBehaviour {
     {
         StartCoroutine("Cool", num);
     }
-    IEnumerator Coll(int num)
+    IEnumerator Cool(int num)
     {
         BossCoolDown[num] = true;
         yield return new WaitForSeconds(BossCoolTime[num]);

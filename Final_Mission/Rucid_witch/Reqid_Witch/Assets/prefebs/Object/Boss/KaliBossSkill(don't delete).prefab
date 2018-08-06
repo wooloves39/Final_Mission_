@@ -1032,6 +1032,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4776045866227502}
+  - component: {fileID: 114826387802040762}
   m_Layer: 0
   m_Name: KaliBossSkill(don't delete)
   m_TagString: Untagged
@@ -2546,7 +2547,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341612982720156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.2966805, z: 20}
   m_LocalScale: {x: 3.3, y: 3.3, z: 3.3}
   m_Children:
   - {fileID: 4385368967363546}
@@ -3726,7 +3727,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1977509260004602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0.567994, y: -1.2966805, z: 21.565096}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 4396988327189984}
@@ -3905,7 +3906,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1229502602929056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.3808942, y: -1.2910268, z: 17.787365}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4884347734242040}
@@ -5690,6 +5691,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 15
+--- !u!114 &114826387802040762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427169183154352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c7839425245d14389c3fcb9ecdfa43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill:
+  - {fileID: 1229502602929056}
+  - {fileID: 1977509260004602}
+  - {fileID: 1341612982720156}
 --- !u!114 &114838830328971464
 MonoBehaviour:
   m_ObjectHideFlags: 1

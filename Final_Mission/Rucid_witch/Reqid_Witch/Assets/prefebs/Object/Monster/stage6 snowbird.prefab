@@ -2090,7 +2090,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1029638197969834}
-  m_LocalRotation: {x: 0.6221888, y: -0.33597797, z: -0.6221888, w: 0.33597788}
+  m_LocalRotation: {x: 0.62218875, y: -0.33597794, z: -0.62218875, w: 0.33597785}
   m_LocalPosition: {x: -0.000000012646989, y: 0.7077994, z: 0.0020704747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2677,7 +2677,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1017061537855198}
-  m_LocalRotation: {x: 0.012502067, y: 0.71038663, z: 0.7029222, w: -0.03308901}
+  m_LocalRotation: {x: 0.012502068, y: 0.7103867, z: 0.7029223, w: -0.033089012}
   m_LocalPosition: {x: 0.25704676, y: 0.7584463, z: 0.065603614}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_Children: []
@@ -3061,10 +3061,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f23e4cf13f415548a3827691ee7934b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 130
-  MaxHp: 130
-  Speed: 3
-  BattleSpeed: 4
+  Hp: 40
+  MaxHp: 40
+  Speed: 2
+  BattleSpeed: 3
   Range: 7
   boss: 0
   Attack: 8

@@ -5803,7 +5803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 700
   MaxHp: 700
-  Speed: 2.7
+  Speed: 2
   BattleSpeed: 2.7
   Range: 15
   boss: 1
@@ -6693,18 +6693,18 @@ MonoBehaviour:
   Die_Time: 2
   SkillValue:
   - 0
-  - 24
-  - 41
-  - 58
-  - 70
-  - 82
-  - 91
+  - 16
+  - 37
+  - 57
+  - 72
+  - 84
+  - 93
   - 100
   BossCoolTime:
   - 0
-  - 9
-  - 12
-  - 15
+  - 0
+  - 0
+  - 5
   - 15
   - 18
   - 18

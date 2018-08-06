@@ -25,9 +25,9 @@ public class Singletone
     public float Sound = 0.5f;
     public float BGMSound = 0.5f;
 	public string name= "Reqid_Witch";
-	public int stage = 5;
+	public int stage = 3;
 	public string saveTime;
-	public int[] Myskill = { 0 , 1, 4};
+	public int[] Myskill = { 3 , 1, 4};
 
 	
 	public void Save(string FileName)

@@ -4677,7 +4677,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 05ac885be5bb123488c370c1507ebeab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4757,7 +4757,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b15616bda7b73ee48aa9adc1a80a51e1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4837,7 +4837,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: eaa741fb893383f4eb8b2dc60e19ec79, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5077,7 +5077,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b10926ffb9fcccc4c8b246dc87758646, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5157,7 +5157,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b10926ffb9fcccc4c8b246dc87758646, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5317,7 +5317,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6a985e0ef7863354ca8a90e05d5b2c14, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5852,10 +5852,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f23e4cf13f415548a3827691ee7934b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 500
-  MaxHp: 500
+  Hp: 400
+  MaxHp: 400
   Speed: 2
-  BattleSpeed: 5
+  BattleSpeed: 4
   Range: 17
   boss: 1
   Attack: 0
@@ -6217,14 +6217,15 @@ MonoBehaviour:
   Die_Time: 2
   SkillValue:
   - 0
-  - 50
-  - 70
-  - 90
+  - 32
+  - 51
+  - 65
+  - 93
   - 100
   BossCoolTime:
   - 0
-  - 9
-  - 12
+  - 30
+  - 40
   - 15
   - 100
   BossCoolDown: 0000000000

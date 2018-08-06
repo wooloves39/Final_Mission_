@@ -186,7 +186,7 @@ public class KaliBoss : MonoBehaviour {
                                 {
                                     for (int i = 2; i < 6; ++i)
                                     {
-                                        if (SkillValue[i] <= NUM && NUM < SkillValue[i+1])
+                                        if (SkillValue[i] <= NUM && NUM < SkillValue[i + 1])
                                         {
                                             if (BossCoolDown[i])
                                             {
@@ -202,14 +202,26 @@ public class KaliBoss : MonoBehaviour {
                                                 }
                                             }
                                             else
-                                                num = 20+i;
+                                                num = 20 + i;
                                         }
                                     }
                                 }
                             }
                         }
                         else
-                            num = 11;
+                        {
+                            if (!BossCoolDown[3])
+                            {
+                                if (Vector3.Distance(Player.position, this.gameObject.transform.position) <= ObjLife.Range * 2.5)
+                                    num = 23;
+                                else
+                                    num = 11;
+                            }
+                            else
+                            {
+                                num = 11;
+                            }
+                        }
                     }
                 }
                 ////실행할 동작 - 삭제할 부분
@@ -230,6 +242,7 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 1:
                         {
+                            ani.SetBool("jump", false);
                             ani.SetBool("Stop", false);
                             ani.SetBool("Move", true);
                             time = Time_Nature_Move;
@@ -287,26 +300,29 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 14:
                         {
-                            ani.SetBool("Run", true);
+                            ani.SetBool("Run", false);
+                            ani.SetBool("jump", true);
                             ani.SetBool("Move", false);
                             time = Time_AttackMove;
                             msg.time = time;
                             int NUM = getRandom(0, 3);
+
                             switch (NUM)
                             {
                                 case 0:
-									msg.destination = this.transform.position + this.transform.forward * -5;
+									msg.destination = this.transform.position + this.transform.forward * -4;
                                     break;
                                 case 1:
-                                    msg.destination = this.transform.position + this.transform.right * 7;
+                                    msg.destination = this.transform.position + this.transform.right * 3 + this.transform.forward * -4;
                                     break;
                                 case 2:
-                                    msg.destination = this.transform.position + this.transform.right * -7;
+                                    msg.destination = this.transform.position + this.transform.right * -3 + this.transform.forward * -4;
                                     break;
 			
 							}
-                            msg.Speed = ObjLife.BattleSpeed;
+                            msg.Speed = ObjLife.BattleSpeed*5;
                             BCommand.BattleMove(msg);
+                            Invoke("Jump", AttackMove);
                             break;
                         }
                     case 20:
@@ -329,7 +345,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 22:
                         {
-                            StartCoroutine("Coll", 2);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill3", true);
@@ -339,7 +354,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 23:
                         {
-                            StartCoroutine("Coll", 3);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill4", true);
@@ -349,7 +363,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 24:
                         {
-                            StartCoroutine("Coll", 4);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill5", true);
@@ -359,7 +372,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 25:
                         {
-                            StartCoroutine("Coll", 5);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill6", true);
@@ -369,7 +381,6 @@ public class KaliBoss : MonoBehaviour {
                         }
                     case 26:
                         {
-                            StartCoroutine("Coll", 6);
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
                             ani.SetBool("Skill7", true);
@@ -387,11 +398,19 @@ public class KaliBoss : MonoBehaviour {
             yield return new WaitForSeconds (0.2f);
         }
     }
+    void Jump()
+    {
+        ani.SetBool("jump", false);
+    }
     int getRandom(int x,int y)
     {
         return Random.Range (x, y);
     }
-    IEnumerator Coll(int num)
+    public void CoolTime(int num)
+    {
+        StartCoroutine("Cool", num);
+    }
+    IEnumerator Cool(int num)
     {
         BossCoolDown[num] = true;
         yield return new WaitForSeconds(BossCoolTime[num]);

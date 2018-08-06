@@ -13,7 +13,7 @@ public class Kali_shotSkill : MonoBehaviour {
 	}
 	private void OnEnable()
 	{
-	transform.position=ObjTr.transform.position;
+	    transform.position=ObjTr.transform.position;
 		transform.rotation = ObjTr.transform.rotation;
 		rigi.velocity = Vector3.forward * speedBalance;
 	}

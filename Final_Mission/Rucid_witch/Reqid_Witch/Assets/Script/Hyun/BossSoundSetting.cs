@@ -8,7 +8,7 @@ public class BossSoundSetting : MonoBehaviour {
 	public AudioClip[] sounds;
 	private AudioSource audio;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		sound = BosssoundPack.Appearance;
 		audio = GetComponent<AudioSource>();
         audio.volume = Singletone.Instance.Sound;

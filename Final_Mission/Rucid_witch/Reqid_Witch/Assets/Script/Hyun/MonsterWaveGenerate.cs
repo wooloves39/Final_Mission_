@@ -29,7 +29,7 @@ public class MonsterWaveGenerate : MonoBehaviour
 				int N = NoHaveSkill(first);
 				switch (N)
 				{
-					case 0:
+                    case 0:
 						pool.Create(FinalPrefab[N], 1);
 						break;
 					case 1:

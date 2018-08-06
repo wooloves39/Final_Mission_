@@ -4980,14 +4980,15 @@ MonoBehaviour:
   Die_Time: 2
   SkillValue:
   - 0
-  - 50
-  - 70
-  - 90
+  - 19
+  - 51
+  - 79
+  - 93
   - 100
   BossCoolTime:
   - 0
-  - 9
-  - 12
+  - 0
+  - 0
   - 15
   - 100
   BossCoolDown: 0000000000
@@ -5032,10 +5033,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f23e4cf13f415548a3827691ee7934b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 500
-  MaxHp: 500
+  Hp: 300
+  MaxHp: 300
   Speed: 2
-  BattleSpeed: 5
+  BattleSpeed: 4
   Range: 17
   boss: 1
   Attack: 0

@@ -11,18 +11,24 @@ public class SeiKwanMonControll : MonoBehaviour {
 	private float Hp;
 	private BossSoundSetting sound;
 	public GameObject skill4;
+    private Stage5Boss AI;
 	// Use this for initialization
+    private void Start()
+    {
+
+        target = GetComponent<BattleCommand>().getTarget();
+    }
 	private void Awake()
 	{
+        AI = GetComponent<Stage5Boss>();
 		sound = GetComponent<BossSoundSetting>();
-		target = GetComponent<BattleCommand>().getTarget();
 		Hp = GetComponent<ObjectLife>().Hp;
 		int poolCount = 5;
 		Arrowpool.Create(ArrowPrefab, poolCount);
 		Arrow = new GameObject[poolCount];
 		for (int i = 0; i < Arrow.Length; ++i)
 			Arrow[i] = null;
-	}
+    }
 	private void OnApplicationQuit()
 	{
 		Arrowpool.Dispose();
@@ -43,6 +49,18 @@ public class SeiKwanMonControll : MonoBehaviour {
 			}
 		}
 	}
+    void Hit()
+    {
+        sound.PlayerSound(BossSoundSetting.BosssoundPack.Defance);
+    }
+    void Appier()
+    {
+        sound.PlayerSound(0);
+    }
+    void Lose_Sound()
+    {
+        sound.PlayerSound(3);
+    }
 	void Attack1()
 	{
 		int ArrowNum=0;
@@ -70,7 +88,8 @@ public class SeiKwanMonControll : MonoBehaviour {
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack2()
-	{
+    {
+        AI.CoolTime(1);
 		int ArrowNum = 0;
 		for (int i = 0; i < Arrow.Length; ++i)
 		{
@@ -96,7 +115,8 @@ public class SeiKwanMonControll : MonoBehaviour {
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack3()
-	{
+    {
+        AI.CoolTime(2);
 		int ArrowNum = 0;
 		for (int i = 0; i < Arrow.Length; ++i)
 		{
@@ -122,12 +142,14 @@ public class SeiKwanMonControll : MonoBehaviour {
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack4()
-	{
+    {
+        AI.CoolTime(3);
 		skill4.SetActive(true);
 	
 	}
 	void Attack5()
-	{
+    {
+        AI.CoolTime(4);
 		int ArrowNum = 0;
 		for (int i = 0; i < Arrow.Length; ++i)
 		{
@@ -150,7 +172,7 @@ public class SeiKwanMonControll : MonoBehaviour {
 		shootPos.y += 1.0f;
 		Arrow[ArrowNum].transform.LookAt(shootPos);
 		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(5, target, Hp / 5000.0f*10, 5.0f);
-		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
+		sound.PlayerSound(4);
 	}
 	void setTarget()
 	{

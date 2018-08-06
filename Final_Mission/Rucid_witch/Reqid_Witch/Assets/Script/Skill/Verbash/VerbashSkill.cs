@@ -5,8 +5,8 @@ public class VerbashSkill : MonoBehaviour
 {
 	public GameObject[] magic;
 	public float[] playSkill = { 0.7f, 3.0f, 2.0f, 2.0f, 2.0f };
-	public int[] CoolTime = { 8, 80, 10, 20, 120 };
-	public int[] UseMp = { 8, 80, 10, 20, 120 };
+	public float[] CoolTime = { 8, 80, 10, 20, 120 };
+	public float[] UseMp = { 8, 80, 10, 20, 120 };
 	public bool left = false;
 
 	private bool[] CoolDown = { false, false, false, false, false };
@@ -21,6 +21,7 @@ public class VerbashSkill : MonoBehaviour
 	public Transform handle;
 	private float hight;
 	private Targetting Target;
+    private CoolDown cooldown;
 	private void OnEnable()
 	{
 		hight = Target.transform.position.y;
@@ -40,50 +41,48 @@ public class VerbashSkill : MonoBehaviour
 		Player = FindObjectOfType<PlayerState>();
 		Target = Player.GetComponentInChildren<Targetting>();
 		line = FindObjectOfType<LineDraw>();
-		target = this.gameObject;
+        target = this.gameObject;
+        cooldown =  Player.GetComponent<CoolDown>();
+
 	}
 	public void Update()
 	{
+        for (int i = 0; i < 5; ++i)
+        {
+            cooldown.Ver_Cool[i] =  CoolDown[i];
+        }
         if (LineDraw.curType == 3 && InputManager_JHW.RTriggerOn() && InputManager_JHW.LTriggerOn())
         {
             if (left)
             {
-                if (!SHOOT && Player.GetMyState() != PlayerState.State.Drawing)
+                if ( Player.GetMyState() != PlayerState.State.Drawing)
                 {
                     if (handle.transform.position.y > hight + 0.1f)
                     {
                         shoot(line.Skills[3].getCurrentSkill());
-                        SHOOT = true;
                     }
                 }
-                else
-                {
-                    if (handle.transform.position.y < hight - 0.1f)
-                        if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
-                            SHOOT = false;
-                }
+               //else
+               //{
+               //    if (handle.transform.position.y < hight - 0.1f)
+               //        if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
+               //}
             }
             else
             {
-                if (!SHOOT && Player.GetMyState() != PlayerState.State.Drawing)
+                if ( Player.GetMyState() != PlayerState.State.Drawing)
                 {
                     if (handle.transform.position.y > hight + 0.1f)
                     {
                         shoot(line.Skills[3].getCurrentSkill());
-                        SHOOT = true;
                     }
                 }
-                else
-                {
-                    if (handle.transform.position.y < hight - 0.1f)
-                        if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
-                            SHOOT = false;
-                }
+               // else
+               // {
+               //     if (handle.transform.position.y < hight - 0.1f)
+               //         if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
+               // }
             }
-        }
-        else
-        {
-            SHOOT = false;
         }
 		
 		

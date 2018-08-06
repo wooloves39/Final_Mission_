@@ -153,6 +153,11 @@ Prefab:
       propertyPath: handle
       value: 
       objectReference: {fileID: 2079748097}
+    - target: {fileID: 114241461617184612, guid: 6093ddf395aeeaf49b777c82f42a9f2b,
+        type: 2}
+      propertyPath: CoolTime.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6093ddf395aeeaf49b777c82f42a9f2b, type: 2}
   m_IsPrefabParent: 0
@@ -445,6 +450,11 @@ Prefab:
       propertyPath: handle
       value: 
       objectReference: {fileID: 2079748098}
+    - target: {fileID: 114515146305277906, guid: 460b72c6859bdf44d967c3b1db20cad8,
+        type: 2}
+      propertyPath: CoolTime.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 460b72c6859bdf44d967c3b1db20cad8, type: 2}
   m_IsPrefabParent: 0

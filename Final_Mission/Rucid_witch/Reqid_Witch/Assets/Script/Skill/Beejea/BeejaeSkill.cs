@@ -5,7 +5,7 @@ public class BeejaeSkill : MonoBehaviour
 {
 	public GameObject[] magic;
 	public float[] playSkill = { 0.7f, 3.0f, 2.0f, 2.0f, 2.0f };
-	public int[] CoolTime = { 8, 80, 10, 20, 120 };
+	public float[] CoolTime = { 8, 80, 10, 20, 120 };
 	public int[] UseMp = { 8, 80, 10, 20, 120 };
 	
 	private bool[] CoolDown = { false, false, false, false, false };
@@ -17,7 +17,8 @@ public class BeejaeSkill : MonoBehaviour
 
 	private AttackMethod handle;
 	private LineDraw line;
-	public bool handle2 = false;
+    public bool handle2 = false;
+    private CoolDown cooldown;
 
 	private void OnDisable()
 	{
@@ -28,10 +29,16 @@ public class BeejaeSkill : MonoBehaviour
 	}
 
 	private void Awake()
-	{
-		handle = FindObjectOfType<AttackMethod>();
-		Player = FindObjectOfType<PlayerState>();
-		line = FindObjectOfType<LineDraw>();
+    {
+        Player = FindObjectOfType<PlayerState>();
+        handle = Player.GetComponent<AttackMethod>();
+        line = Player.GetComponentInChildren<LineDraw>();
+        cooldown = Player.GetComponent<CoolDown>();
+        for (int i = 0; i < 5; ++i)
+        {
+            CoolTime[i] = cooldown.Bee_CoolTime[i];
+            UseMp[i] = cooldown.Bee_UseMp[i];
+        }
 	}
 	public void SetTarget(GameObject targets)
 	{
@@ -39,6 +46,11 @@ public class BeejaeSkill : MonoBehaviour
 	}
 	private void Update()
 	{
+        for (int i = 0; i < 5; ++i)
+        {
+            if(cooldown.Bee_Cool[i] !=  CoolDown[i])
+                cooldown.Bee_Cool[i] =  CoolDown[i];
+        }
 		if (LineDraw.curType == 2)
 		{
 			if ((line.Skills[2].getCurrentSkill() == 3)

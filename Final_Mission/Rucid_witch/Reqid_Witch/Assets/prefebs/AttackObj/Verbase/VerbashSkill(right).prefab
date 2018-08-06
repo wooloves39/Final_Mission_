@@ -3286,14 +3286,15 @@ MonoBehaviour:
   - {fileID: 1756725813930198}
   playSkill:
   - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  CoolTime: 0200000003000000040000000500000006000000
-  UseMp: 0100000001000000010000000100000001000000
+  - 2
+  - 1.2
+  - 3
+  - 5
+  CoolTime: []
+  UseMp: 
   left: 0
   handle: {fileID: 0}
+  OtherHand: {fileID: 0}
 --- !u!114 &114300746264163674
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,7 +6,7 @@ public class VerbashSkill : MonoBehaviour
 	public GameObject[] magic;
 	public float[] playSkill = { 0.7f, 3.0f, 2.0f, 2.0f, 2.0f };
 	public float[] CoolTime = { 8, 80, 10, 20, 120 };
-	public float[] UseMp = { 8, 80, 10, 20, 120 };
+	public int[] UseMp = { 8, 80, 10, 20, 120 };
 	public bool left = false;
 
 	private bool[] CoolDown = { false, false, false, false, false };
@@ -17,15 +17,13 @@ public class VerbashSkill : MonoBehaviour
 
 	private PlayerState Player;
 	private LineDraw line;
-	private bool SHOOT = false;
 	public Transform handle;
 	private float hight;
 	private Targetting Target;
     private CoolDown cooldown;
-	private void OnEnable()
-	{
-		hight = Target.transform.position.y;
-	}
+    private bool SHOOT = false;
+    public GameObject OtherHand;
+    private VerbashSkill OtherSkill;
 	private void OnDisable()
 	{
 		SHOOT = false;
@@ -37,56 +35,70 @@ public class VerbashSkill : MonoBehaviour
 
 	private void Awake()
 	{
+        OtherSkill = OtherHand.GetComponent<VerbashSkill>();
         V4 = magic[3].GetComponentsInChildren<VerbashSkill4>();
 		Player = FindObjectOfType<PlayerState>();
 		Target = Player.GetComponentInChildren<Targetting>();
-		line = FindObjectOfType<LineDraw>();
+        line = Player.GetComponentInChildren<LineDraw>();
         target = this.gameObject;
         cooldown =  Player.GetComponent<CoolDown>();
+        for (int i = 0; i < 5; ++i)
+        {
+            UseMp[i] = cooldown.Ver_UseMp[i];
+            CoolTime[i] = cooldown.Ver_CoolTime[i];
+        }
 
 	}
 	public void Update()
-	{
+    {
+        hight = Target.gameObject.transform.position.y;
         for (int i = 0; i < 5; ++i)
         {
-            cooldown.Ver_Cool[i] =  CoolDown[i];
+            if(cooldown.Ver_Cool[i] !=  CoolDown[i])
+                cooldown.Ver_Cool[i] =  CoolDown[i];
         }
         if (LineDraw.curType == 3 && InputManager_JHW.RTriggerOn() && InputManager_JHW.LTriggerOn())
         {
             if (left)
             {
-                if ( Player.GetMyState() != PlayerState.State.Drawing)
+                if (Player.GetMyState() != PlayerState.State.Drawing)
                 {
                     if (handle.transform.position.y > hight + 0.1f)
                     {
                         shoot(line.Skills[3].getCurrentSkill());
                     }
                 }
-               //else
-               //{
-               //    if (handle.transform.position.y < hight - 0.1f)
-               //        if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
-               //}
             }
             else
             {
-                if ( Player.GetMyState() != PlayerState.State.Drawing)
+                if (Player.GetMyState() != PlayerState.State.Drawing)
                 {
                     if (handle.transform.position.y > hight + 0.1f)
                     {
                         shoot(line.Skills[3].getCurrentSkill());
                     }
                 }
-               // else
-               // {
-               //     if (handle.transform.position.y < hight - 0.1f)
-               //         if (CoolDown[line.Skills[3].getCurrentSkill()] == false)
-               // }
             }
         }
-		
-		
 	}
+    IEnumerator Chance()
+    {
+        float time = 0.0f;
+        int MYSKILL = line.Skills[3].getCurrentSkill();
+        OtherSkill.SHOOT = true;
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+            time += 0.1f;
+            if (line.Skills[3].getCurrentSkill() != MYSKILL)
+                break;
+            if (time > 4.0f)
+            {
+                break;
+            }
+        }
+        OtherSkill.SHOOT = false;
+    }
 	public void shoot(int skillIndex)
 	{
 		if (Target.getMytarget() != null)
@@ -97,9 +109,13 @@ public class VerbashSkill : MonoBehaviour
 			bool NoMp = false;
 			switch (skill)
 			{
-				case 0:
-				case 1:
-					if (Player.Mp >= UseMp[0])
+                case 0:
+                case 1:
+                    if (SHOOT)
+                    {
+                        StartCoroutine("Skill1");
+                    }
+					else if (Player.Mp >= UseMp[0])
 					{
 						if (!CoolDown[0])
 						{
@@ -117,7 +133,11 @@ public class VerbashSkill : MonoBehaviour
 					}
 					break;
 				case 2:
-					if (Player.Mp >= UseMp[1])
+                    if (SHOOT)
+                    {
+                        StartCoroutine("Skill2");
+                    }
+                    else if (Player.Mp >= UseMp[1])
 					{
 						if (!CoolDown[1])
 						{
@@ -135,7 +155,11 @@ public class VerbashSkill : MonoBehaviour
 					}
 					break;
 				case 3:
-					if (Player.Mp >= UseMp[2])
+                    if (SHOOT)
+                    {
+                        StartCoroutine("Skill3");
+                    }
+                    else if (Player.Mp >= UseMp[2])
 					{
 						if (!CoolDown[2])
 						{
@@ -153,7 +177,11 @@ public class VerbashSkill : MonoBehaviour
 					}
 					break;
 				case 4:
-					if (Player.Mp >= UseMp[3])
+                    if (SHOOT)
+                    {
+                        StartCoroutine("Skill4");
+                    }
+                    else if (Player.Mp >= UseMp[3])
 					{
 						if (!CoolDown[3])
 						{
@@ -171,7 +199,11 @@ public class VerbashSkill : MonoBehaviour
 					}
 					break;
 				case 5:
-					if (Player.Mp >= UseMp[4])
+                    if (SHOOT)
+                    {
+                        StartCoroutine("Skill5");
+                    }
+                    else if (Player.Mp >= UseMp[4])
 					{
 						if (!CoolDown[4])
 						{
@@ -206,7 +238,7 @@ public class VerbashSkill : MonoBehaviour
 
 		magic[0].SetActive(true);
 		CoolDown[0] = true;
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(0.9f);
 
 		magic[0].SetActive(false);
 		yield return new WaitForSeconds(CoolTime[0]-1.5f);
@@ -232,7 +264,7 @@ public class VerbashSkill : MonoBehaviour
 
         magic[2].SetActive(true);
         CoolDown[2] = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.2f);
 
         magic[2].SetActive(false);
         yield return new WaitForSeconds(CoolTime[2]-1.5f);

@@ -158,6 +158,11 @@ Prefab:
       propertyPath: CoolTime.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114241461617184612, guid: 6093ddf395aeeaf49b777c82f42a9f2b,
+        type: 2}
+      propertyPath: OtherHand
+      value: 
+      objectReference: {fileID: 879782926}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6093ddf395aeeaf49b777c82f42a9f2b, type: 2}
   m_IsPrefabParent: 0
@@ -455,6 +460,11 @@ Prefab:
       propertyPath: CoolTime.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114515146305277906, guid: 460b72c6859bdf44d967c3b1db20cad8,
+        type: 2}
+      propertyPath: OtherHand
+      value: 
+      objectReference: {fileID: 439666293}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 460b72c6859bdf44d967c3b1db20cad8, type: 2}
   m_IsPrefabParent: 0
@@ -956,6 +966,236 @@ Prefab:
     - target: {fileID: 1182652138424312, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_CoolTime.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_CoolTime.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_CoolTime.Array.data[2]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_CoolTime.Array.data[3]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_CoolTime.Array.data[4]
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_CoolTime.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_CoolTime.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_CoolTime.Array.data[2]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_CoolTime.Array.data[3]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_CoolTime.Array.data[4]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_CoolTime.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_CoolTime.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_CoolTime.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_CoolTime.Array.data[3]
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_CoolTime.Array.data[4]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Ver_CoolTime.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Ver_CoolTime.Array.data[2]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Ver_CoolTime.Array.data[3]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Ver_CoolTime.Array.data[4]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Dell_CoolTime.Array.data[1]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Dell_CoolTime.Array.data[3]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Dell_CoolTime.Array.data[4]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_UseMp.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_UseMp.Array.data[1]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_UseMp.Array.data[2]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_UseMp.Array.data[3]
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Azu_UseMp.Array.data[4]
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_UseMp.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_UseMp.Array.data[1]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_UseMp.Array.data[2]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_UseMp.Array.data[3]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_UseMp.Array.data[4]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_UseMp.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_UseMp.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_UseMp.Array.data[2]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_UseMp.Array.data[3]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Bee_UseMp.Array.data[4]
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Ver_UseMp.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Ver_UseMp.Array.data[1]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Ver_UseMp.Array.data[2]
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Ver_UseMp.Array.data[3]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Ver_UseMp.Array.data[4]
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Dell_UseMp.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Dell_UseMp.Array.data[2]
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Dell_UseMp.Array.data[3]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114833152637123976, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Dell_UseMp.Array.data[4]
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}

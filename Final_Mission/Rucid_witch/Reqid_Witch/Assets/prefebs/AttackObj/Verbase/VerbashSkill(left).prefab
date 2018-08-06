@@ -3461,15 +3461,21 @@ MonoBehaviour:
   - {fileID: 1160513394160610}
   - {fileID: 1406163830861352}
   playSkill:
-  - 0.7
+  - 1
+  - 2
+  - 1.2
   - 3
-  - 2
-  - 2
-  - 2
-  CoolTime: 0200000003000000040000000500000006000000
-  UseMp: 0100000001000000010000000100000001000000
+  - 5
+  CoolTime:
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  UseMp: 0000000000000000000000000000000000000000
   left: 1
   handle: {fileID: 0}
+  OtherHand: {fileID: 0}
 --- !u!114 &114546749611482464
 MonoBehaviour:
   m_ObjectHideFlags: 1

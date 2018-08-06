@@ -60,7 +60,7 @@ public class AzraAI : MonoBehaviour
 	void Awake()
 	{
         endingOn = FindObjectOfType<Stage7_end>();
-           Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
+        Stage5Pos = FindObjectOfType<StagePosition>().GetComponent<StagePosition>();
 		ObjLife = GetComponent<ObjectLife>();
 		ani = GetComponent<Animator>();
 		NCommand = GetComponent<NatureCommand>();

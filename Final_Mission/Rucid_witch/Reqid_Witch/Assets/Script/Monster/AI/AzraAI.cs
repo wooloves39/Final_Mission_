@@ -47,8 +47,8 @@ public class AzraAI : MonoBehaviour
 	public bool Delay = false;
 	public bool Fight = false;//false;
 
-    bool Ulti1 = false;
-    bool Ulti2 = false;
+    public bool Ulti1 = false;
+    public bool Ulti2 = false;
     bool Chaging = false;
 
 	Queue Battle = null;
@@ -93,15 +93,6 @@ public class AzraAI : MonoBehaviour
 			if (playerstate.GetMyState() == PlayerState.State.Pause)
 			{
 				yield return null;
-				ani.SetBool("Skill1", false);
-				ani.SetBool("Skill2", false);
-				ani.SetBool("Skill3", false);
-				ani.SetBool("Skill4", false);
-				ani.SetBool("Skill5", false);
-				ani.SetBool("Skill6", false);
-                ani.SetBool("Skill7", false);
-                ani.SetBool("Skill8", false);
-                ani.SetBool("Skill9", false);
 			}
 			if (ObjLife.Hp <= 0)
 			{
@@ -158,10 +149,11 @@ public class AzraAI : MonoBehaviour
                         int NUM = getRandom(0, 100);
                         if (!Ulti1 && ObjLife.Hp <= ObjLife.MaxHp * 0.6)
                         {
+                            
                             num = 27;
                             Ulti1 = true;
                         }
-						if (!Ulti2 && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
+                        else if (Ulti1 && !Ulti2 && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
 						{
 							num = 28;
 							Ulti2 = true;

@@ -11,6 +11,7 @@ public class CheckMagicController : MonoBehaviour
     public GameObject OBJ_box;
     public GameObject OBJ_X;
     public GameObject OBJ_Z;
+    public GameObject[] child;
     public float Delay = 3.5f;
     public float Line = 1.0f;
     int[] arr =
@@ -23,9 +24,12 @@ public class CheckMagicController : MonoBehaviour
             2, 0, 1
         };
     
-
     void OnEnable()
     {
+        for (int i = 0; i < child.Length; ++i)
+        {
+            child[i].SetActive(true);
+        }
         X.SetActive(false);
         OBJ_X.SetActive(false);
         Z.SetActive(false);

@@ -41,7 +41,7 @@ public class AzraMob_Controll : MonoBehaviour {
     {
         sound.PlayerSound(2);
         num = 1;
-        Skill[num].transform.position = azra.transform.position + new Vector3(0,-azra.transform.position.y,0);
+        Skill[num].transform.position = azra.gameObject.transform.position;
         StartCoroutine("Attack", num);
     }
     void Skill3()//Blast

@@ -6,17 +6,18 @@ public class CheckMagic : MonoBehaviour {
     public bool X;
     public bool Z;
     public float damage = 9.0f;
-    public float speed;
+    private float speed;
     private Vector3 prev;
-    void Awake()
-    {
-        prev = this.transform.position;
-    }
+    public GameObject parent;
     void OnEnable()
     {
+        prev = this.transform.position;
         speed = Random.Range(50,80)/1.5f;
-        this.transform.position = prev;
         StartCoroutine("Skill");
+    }
+    void OnDisable()
+    {
+        this.transform.position = prev;
     }
     IEnumerator Skill()
     {
@@ -48,6 +49,7 @@ public class CheckMagic : MonoBehaviour {
             }
         }
         this.gameObject.SetActive(false);
+
     }
 
     void OnTriggerEnter(Collider other)

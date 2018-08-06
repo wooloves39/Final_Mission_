@@ -76,8 +76,12 @@ public class Stage5Boss: MonoBehaviour {
 			Peace.Enqueue (BasicPeace [i]);
 		for (int i = 0; i<BasicBattle.Length ; ++i)
 			Battle.Enqueue (BasicBattle [i]);
-		StartCoroutine(AISearching());
 	}
+    void OnEnable()
+    {
+        StartCoroutine(AISearching());
+    }
+
 	IEnumerator AISearching(){
 		int num = 0;
 		float time = 1.0f;

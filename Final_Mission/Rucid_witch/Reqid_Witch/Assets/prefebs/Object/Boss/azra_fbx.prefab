@@ -6197,8 +6197,8 @@ MonoBehaviour:
   - 0.5
   - 0.5
   - 0.5
-  - 0.5
-  - 0.5
+  - 1
+  - 1
   MobObj: {fileID: 0}
 --- !u!114 &114395849824294644
 MonoBehaviour:
@@ -6782,16 +6782,18 @@ MonoBehaviour:
   - 93
   - 100
   BossCoolTime:
-  - 0
-  - 0
-  - 0
-  - 5
+  - 8
+  - 12
+  - 12
+  - 15
   - 15
   - 18
   - 18
   BossCoolDown: 00000000000000
   Delay: 0
   Fight: 0
+  Ulti1: 0
+  Ulti2: 0
   Chage:
   - {fileID: 1640742322942830}
   - {fileID: 1999256413513222}

@@ -27,7 +27,8 @@ public class AzraUlti2 : MonoBehaviour {
 		yield return new WaitForSeconds(Delay);
 		for(int i = 0 ; i< list.Length;++i)
 		{
-            temp = this.transform.position + new Vector3(Random.Range(0,SizeX*2) - SizeX,0.0f,Random.Range(0,SizeZ*2) - SizeZ);
+            temp = new Vector3(Random.Range(0,SizeX*2) - SizeX,0.0f,Random.Range(0,SizeZ*2) - SizeZ);
+
             list[i].transform.position = list[i].transform.position + temp;
 			list[i].SetActive(true);
             if (i % tum == 0)

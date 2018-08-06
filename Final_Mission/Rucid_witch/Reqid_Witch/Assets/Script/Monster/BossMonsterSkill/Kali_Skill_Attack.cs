@@ -14,6 +14,7 @@ public class Kali_Skill_Attack : MonoBehaviour {
     public int dotTime = 10;
     public bool Azra = false;
     public bool QuickDel = false;
+    public bool groundCheck = false;
 	private void OnEnable()
 	{
 		num = 0;
@@ -37,7 +38,14 @@ public class Kali_Skill_Attack : MonoBehaviour {
 					Invoke("DelayDamage",delay);
 				}
 			}
+        if (groundCheck)
+        if (other.CompareTag("Ground"))
+            Invoke("del", 1.0f);
 	}
+    void del()
+    {
+        this.gameObject.SetActive(false);
+    }
 	void DelayDamage()
 	{
 		Player.DamageHp(damage);

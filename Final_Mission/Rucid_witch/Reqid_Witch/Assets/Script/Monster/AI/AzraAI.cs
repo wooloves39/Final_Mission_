@@ -97,7 +97,7 @@ public class AzraAI : MonoBehaviour
 			if (ObjLife.Hp <= 0)
 			{
 				ani.SetBool("Die", true);
-                endingOn.EndOn();
+                endingOn.EndOnInvoke();
                 yield return new WaitForSeconds(Die_Time);
 				this.gameObject.SetActive(false);
 			}

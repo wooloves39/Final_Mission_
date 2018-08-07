@@ -6,7 +6,7 @@ public class Stage7_end : MonoBehaviour {
 	public GameObject[] curObj;
 	public GameObject[] endObj;
 
-public void EndOn()
+private void EndOn()
 	{
 		for(int i = 0; i < curObj.Length; ++i)
 		{
@@ -14,4 +14,8 @@ public void EndOn()
 			endObj[i].SetActive(true);
 		}
 	}
+    public void EndOnInvoke()
+    {
+        Invoke("EndOn", 1.0f);
+    }
 }

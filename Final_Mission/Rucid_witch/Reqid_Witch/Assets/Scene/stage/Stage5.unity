@@ -1282,6 +1282,31 @@ Prefab:
       propertyPath: Dell_UseMp.Array.data[4]
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 114555785761869224, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: markSet
+      value: 
+      objectReference: {fileID: 2079748103}
+    - target: {fileID: 114842851148552876, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: markSet
+      value: 
+      objectReference: {fileID: 2079748101}
+    - target: {fileID: 114695895641003858, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: markSet
+      value: 
+      objectReference: {fileID: 2079748099}
+    - target: {fileID: 114158244457927442, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: markSet
+      value: 
+      objectReference: {fileID: 2079748102}
+    - target: {fileID: 114960612398332522, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: markSet
+      value: 
+      objectReference: {fileID: 2079748100}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0
@@ -1295,3 +1320,33 @@ Transform:
   m_PrefabParentObject: {fileID: 4506247512720100, guid: cd4184ba12fefda4ebe20adef91f5ab8,
     type: 2}
   m_PrefabInternal: {fileID: 2079748096}
+--- !u!114 &2079748099 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114001470676943330, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2079748096}
+  m_Script: {fileID: 11500000, guid: 9d7b9620cc7c0934d836823adebd6e3d, type: 3}
+--- !u!114 &2079748100 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114651976984508346, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2079748096}
+  m_Script: {fileID: 11500000, guid: 9d7b9620cc7c0934d836823adebd6e3d, type: 3}
+--- !u!114 &2079748101 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114052811677530428, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2079748096}
+  m_Script: {fileID: 11500000, guid: 9d7b9620cc7c0934d836823adebd6e3d, type: 3}
+--- !u!114 &2079748102 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114939624265676306, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2079748096}
+  m_Script: {fileID: 11500000, guid: 9d7b9620cc7c0934d836823adebd6e3d, type: 3}
+--- !u!114 &2079748103 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114634811662714290, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2079748096}
+  m_Script: {fileID: 11500000, guid: 9d7b9620cc7c0934d836823adebd6e3d, type: 3}

@@ -37,6 +37,7 @@ public class LinePointChecker : MonoBehaviour
 
 
 	public GameObject DirectionArrow;
+	public ChargingMarkSet markSet;
 	// Use this for initialization
 	private void Awake()
 	{
@@ -170,7 +171,7 @@ public class LinePointChecker : MonoBehaviour
 		PointsVec.Clear();
 		initPos.Clear();
 	}
-	private void PointCheck(int[] skill)
+	private void PointCheck(int[] skill,int Index)
 	{
 
 		if (skill.Length >= count + 1)
@@ -178,7 +179,10 @@ public class LinePointChecker : MonoBehaviour
 			for (int i = 0; i < count; ++i)
 			{
 				if (skill[i] != touchPoints[i])
+				{
+					markSet.setOff(Index);
 					return;
+				}
 			}
 			if (Points[skill[count]] == MyPoint)
 			{
@@ -221,11 +225,11 @@ public class LinePointChecker : MonoBehaviour
 		if (count >= 0)
 		{
 			PointReset();
-			PointCheck(skill1);
-			PointCheck(skill2);
-			PointCheck(skill3);
-			PointCheck(skill4);
-			PointCheck(skill5);
+			PointCheck(skill1,0);
+			PointCheck(skill2,1);
+			PointCheck(skill3,2);
+			PointCheck(skill4,3);
+			PointCheck(skill5,4);
 
 		}
 	}

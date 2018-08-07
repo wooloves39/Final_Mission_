@@ -86,4 +86,15 @@ public class ChargingMarkSet : MonoBehaviour
 				break;
 		}
 	}
+	private void OnDisable()
+	{
+		for(int i=0;i< chargingMarks.Length; ++i)
+		{
+			chargingMarks[i].gameObject.SetActive(true);
+		}
+	}
+	public void setOff(int index)
+	{
+		chargingMarks[index].gameObject.SetActive(false);
+	}
 }

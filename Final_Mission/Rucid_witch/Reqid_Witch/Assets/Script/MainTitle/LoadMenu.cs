@@ -29,64 +29,68 @@ public class LoadMenu : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (InputManager_JHW.AButtonDown())
+		if (!confirm)
 		{
-			source.clip = clips[0];
-			source.Play();
-			if (index == 0)
+			if (InputManager_JHW.AButtonDown())
 			{
-				confirm = true;
-				Confirm.SetActive(true);
-				confirmMenu.SaveDataIndex = 0;
+				source.clip = clips[0];
+				source.Play();
+				if (index == 0)
+				{
+					confirm = true;
+					Confirm.SetActive(true);
+					confirmMenu.SaveDataIndex = 0;
+				}
+				if (index == 1)
+				{
+					confirm = true;
+					Confirm.SetActive(true);
+					confirmMenu.SaveDataIndex = 1;
+				}
+				if (index == 2)
+				{
+					confirm = true;
+					Confirm.SetActive(true);
+					confirmMenu.SaveDataIndex = 2;
+				}
+				if (index == 3)
+				{
+					this.gameObject.SetActive(false);
+					Main.SetActive(true);
+				}
 			}
-			if (index == 1)
+			if (InputManager_JHW.BButtonDown())
 			{
-				confirm = true;
-				Confirm.SetActive(true);
-				confirmMenu.SaveDataIndex = 1;
-			}
-			if (index == 2)
-			{
-				confirm = true;
-				Confirm.SetActive(true);
-				confirmMenu.SaveDataIndex = 2;
-			}
-			if (index == 3)
-			{
-				this.gameObject.SetActive(false);
-				Main.SetActive(true);
-			}
-		}
-		if (InputManager_JHW.BButtonDown())
-		{
-			source.clip = clips[1];
-			source.Play();
-			if (index == 0)
-			{
-				index = 3;
-			}
-			if (index == 1)
-			{
-				index = 3;
-			}
-			if (index == 2)
-			{
-				index = 3;
-			}
-			if (index == 3)
-			{
-				this.gameObject.SetActive(false);
-				Main.SetActive(true);
-			}
+				source.clip = clips[1];
+				source.Play();
+				if (index == 0)
+				{
+					index = 3;
+				}
+				if (index == 1)
+				{
+					index = 3;
+				}
+				if (index == 2)
+				{
+					index = 3;
+				}
+				if (index == 3)
+				{
+					this.gameObject.SetActive(false);
+					Main.SetActive(true);
+				}
 
+			}
 		}
 	}
 	IEnumerator KeyPad()
 	{
-		if (!confirm)
+
+		Vector3 Stick;
+		while (this.gameObject.activeInHierarchy)
 		{
-			Vector3 Stick;
-			while (this.gameObject.activeInHierarchy)
+			if (!confirm)
 			{
 				//KeyBoard	
 				Stick = InputManager_JHW.MainJoystick();
@@ -111,8 +115,9 @@ public class LoadMenu : MonoBehaviour
 					Select[i].SetActive(false);
 				}
 				Select[index].SetActive(true);
-				yield return new WaitForSeconds(0.125f);
+
 			}
+			yield return new WaitForSeconds(0.125f);
 		}
 	}
 }

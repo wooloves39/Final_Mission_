@@ -70,6 +70,9 @@ public class DellMonControll : MonoBehaviour {
 	}
 	void Attack5()
     {
+        Vector3 pos = transform.position;
+        pos.y += 3;
+        attackSkill.transform.position = pos;
         sound.PlayerSound(4);
         AI.CoolTime(4);
 		attackSkill.gameObject.SetActive(true);

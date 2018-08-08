@@ -34,7 +34,7 @@ public class AttackMethod : MonoBehaviour
 	GameObject[] Arrow;
 
     public GameObject BeejaePrefab;
-	public float RayLength = 50f;
+	private float RayLength = 200f;
 	private Coroutine currentCorutine;
 	private bool flug = false;
 	public bool Flug { get { return flug; } set { flug = value; } }

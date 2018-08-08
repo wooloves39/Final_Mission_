@@ -115,7 +115,11 @@ public class AzuraSkill : MonoBehaviour
 		float speed = Random.Range(5, 10);
 		float Timer = 0.0f;
 		float MaxTime = Vector3.Distance(soul.transform.position, target) / Speed[1] * 2.5f;
-		while (true)
+        if (MaxTime < 1.0f)
+        {
+            MaxTime = 1.5f;
+        }
+        while (true)
 		{
 			Timer += deltaTime;
 			if (Vector3.Distance(soul.transform.position, target) < 0.1f)

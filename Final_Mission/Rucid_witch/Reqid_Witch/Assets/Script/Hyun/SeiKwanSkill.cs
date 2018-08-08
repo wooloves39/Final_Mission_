@@ -215,7 +215,8 @@ public class SeiKwanSkill : MonoBehaviour
 	public bool IsShoot() { return Shoot; }
 	public void resetDelete()
 	{
-		rigi.velocity = Vector3.zero;
+        Shoot = false;
+        rigi.velocity = Vector3.zero;
 		transform.rotation = bagicRota;
 		transform.localScale = Vector3.one;
 		SeiKwanArrow.SetActive(true);

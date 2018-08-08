@@ -65,7 +65,8 @@ public class DellSkill : MonoBehaviour
 	public bool IsShoot() { return Shoot; }
 	public void resetDelete()
 	{
-		del_timer = false;
+        transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+           del_timer = false;
 	}
 	private void OnTriggerEnter(Collider other)
 	{

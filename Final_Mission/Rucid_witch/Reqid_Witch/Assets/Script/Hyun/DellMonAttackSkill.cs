@@ -17,6 +17,11 @@ public class DellMonAttackSkill : MonoBehaviour {
 	{
 		Target = tr;
 		transform.LookAt(Target);
-		rigi.velocity = Vector3.forward * charging;
+		rigi.velocity = Vector3.forward * charging*5;
+        Invoke("SetOff", 4.0f);
 	}
+    void SetOff()
+    {
+        gameObject.SetActive(false);
+    }
 }

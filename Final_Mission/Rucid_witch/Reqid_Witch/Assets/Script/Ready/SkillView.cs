@@ -32,15 +32,19 @@ public class SkillView : MonoBehaviour {
 
         for (int i = 0; i < 5; ++i)
         {
-            if (!check[myskill[0]].activeInHierarchy)
-                check[i].SetActive(true);
+            if(myskill[0]!= -1 )
+                if (!check[myskill[0]].gameObject.activeInHierarchy)
+                    check[i].SetActive(true);
 
-            if (!check[myskill[1]].activeInHierarchy)
-                check[i].SetActive(true);
+            if (myskill[1] != -1)
+                if (!check[myskill[1]].gameObject.activeInHierarchy)
+                    check[i].SetActive(true);
 
-            if (!check[myskill[2]].activeInHierarchy)
-                check[i].SetActive(true);
+            if (myskill[2] != -1)
+                if (!check[myskill[2]].gameObject.activeInHierarchy)
+                    check[i].SetActive(true);
         }
+
         for (int i = 0; i < 5; ++i)
         {
             if (i != myskill[0] && i != myskill[1] && i != myskill[2])

@@ -63,7 +63,7 @@ public class VerbashSkill : MonoBehaviour
             {
                 if (Player.GetMyState() != PlayerState.State.Drawing)
                 {
-                    if (handle.transform.position.y > hight + 0.1f)
+                    if (handle.transform.position.y > hight + 0.0f)
                     {
                         shoot(line.Skills[3].getCurrentSkill());
                     }
@@ -73,7 +73,7 @@ public class VerbashSkill : MonoBehaviour
             {
                 if (Player.GetMyState() != PlayerState.State.Drawing)
                 {
-                    if (handle.transform.position.y > hight + 0.1f)
+                    if (handle.transform.position.y > hight + 0.0f)
                     {
                         shoot(line.Skills[3].getCurrentSkill());
                     }
@@ -92,7 +92,7 @@ public class VerbashSkill : MonoBehaviour
             time += 0.1f;
             if (line.Skills[3].getCurrentSkill() != MYSKILL)
                 break;
-            if (time > 4.0f)
+            if (time > 2.0f)
             {
                 break;
             }
@@ -114,11 +114,13 @@ public class VerbashSkill : MonoBehaviour
                     if (SHOOT)
                     {
                         StartCoroutine("Skill1");
+                        SHOOT = false;
                     }
 					else if (Player.Mp >= UseMp[0])
 					{
 						if (!CoolDown[0])
 						{
+                            StartCoroutine("Chance");
 							StartCoroutine("Skill1");
 							Player.Mp -= UseMp[0];
 						}
@@ -136,12 +138,14 @@ public class VerbashSkill : MonoBehaviour
                     if (SHOOT)
                     {
                         StartCoroutine("Skill2");
+                        SHOOT = false;
                     }
                     else if (Player.Mp >= UseMp[1])
 					{
 						if (!CoolDown[1])
-						{
-							StartCoroutine("Skill2");
+                        {
+                            StartCoroutine("Chance");
+                            StartCoroutine("Skill2");
 							Player.Mp -= UseMp[1];
 						}
 						else
@@ -158,12 +162,14 @@ public class VerbashSkill : MonoBehaviour
                     if (SHOOT)
                     {
                         StartCoroutine("Skill3");
+                        SHOOT = false;
                     }
                     else if (Player.Mp >= UseMp[2])
 					{
 						if (!CoolDown[2])
-						{
-							StartCoroutine("Skill3");
+                        {
+                            StartCoroutine("Chance");
+                            StartCoroutine("Skill3");
 							Player.Mp -= UseMp[2];
 						}
 						else
@@ -180,12 +186,14 @@ public class VerbashSkill : MonoBehaviour
                     if (SHOOT)
                     {
                         StartCoroutine("Skill4");
+                        SHOOT = false;
                     }
                     else if (Player.Mp >= UseMp[3])
 					{
 						if (!CoolDown[3])
-						{
-							StartCoroutine("Skill4");
+                        {
+                            StartCoroutine("Chance");
+                            StartCoroutine("Skill4");
 							Player.Mp -= UseMp[3];
 						}
 						else
@@ -202,12 +210,14 @@ public class VerbashSkill : MonoBehaviour
                     if (SHOOT)
                     {
                         StartCoroutine("Skill5");
+                        SHOOT = false;
                     }
                     else if (Player.Mp >= UseMp[4])
 					{
 						if (!CoolDown[4])
-						{
-							StartCoroutine("Skill5");
+                        {
+                            StartCoroutine("Chance");
+                            StartCoroutine("Skill5");
 							Player.Mp -= UseMp[4];
 						}
 						else

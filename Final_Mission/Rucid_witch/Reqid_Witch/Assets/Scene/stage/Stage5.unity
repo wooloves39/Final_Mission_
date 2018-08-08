@@ -882,6 +882,11 @@ Prefab:
       propertyPath: WaveStart.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114389319886559842, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Verbash_Controller.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4751355359674346, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.28

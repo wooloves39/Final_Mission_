@@ -12,17 +12,20 @@ public class HowToSkill : MonoBehaviour {
         if (num != LineDraw.curType)
         {
             num = LineDraw.curType;
-            for (int i = 0; i < 5; ++i)
-            {
-                list[i].SetActive(false);
-            }
             list[LineDraw.curType].SetActive(true);
-            Invoke("del", del_Time);
-            del_Time = 3.0f;
+            StopAllCoroutines();
+            StartCoroutine("del", del_Time);
+            del_Time = 2.3f;
         }
 	}
-    void del()
+    IEnumerator del(float f)
     {
+        for (int i = 0; i < 5; ++i)
+        {
+            list[i].SetActive(false);
+        }
+        list[num].SetActive(true);
+        yield return new WaitForSeconds(f);
         for (int i = 0; i < 5; ++i)
         {
             list[i].SetActive(false);

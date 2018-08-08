@@ -3290,8 +3290,13 @@ MonoBehaviour:
   - 1.2
   - 3
   - 5
-  CoolTime: []
-  UseMp: 
+  CoolTime:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UseMp: 0000000000000000000000000000000000000000
   left: 0
   handle: {fileID: 0}
   OtherHand: {fileID: 0}

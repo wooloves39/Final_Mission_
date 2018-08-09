@@ -56,7 +56,8 @@ public class MonsterWaveGenerate : MonoBehaviour
                     switch (N)
                     {
                         case 0:
-                            pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
+
+							pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
                             break;
                         case 1:
                             pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
@@ -70,8 +71,9 @@ public class MonsterWaveGenerate : MonoBehaviour
                         case 4:
                             pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
                             break;
-                    }
-                }
+					}
+					Prefab_Count = FinalMobCount[N];
+				}
 			}
 		}
 		else

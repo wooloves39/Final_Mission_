@@ -13,7 +13,10 @@ public class MonsterWaveGenerate : MonoBehaviour
 	public bool InitFinish { get { return initFinish; } }
 	public bool Finalboss = false;
 	public bool first = false;
-	public GameObject[] FinalPrefab;
+    public bool FinalMiddleBoss = false;
+    public GameObject[] FinalPrefab;
+    public GameObject[] FinalMobPrefab;
+    public int[] FinalMobCount;
 	// Use this for initialization
 	private void Awake()
 	{
@@ -27,24 +30,48 @@ public class MonsterWaveGenerate : MonoBehaviour
 			{
 
 				int N = NoHaveSkill(first);
-				switch (N)
-				{
-                    case 0:
-						pool.Create(FinalPrefab[N], 1);
-						break;
-					case 1:
-						pool.Create(FinalPrefab[N], 1);
-						break;
-					case 2:
-						pool.Create(FinalPrefab[N], 1);
-						break;
-					case 3:
-						pool.Create(FinalPrefab[N], 1);
-						break;
-					case 4:
-						pool.Create(FinalPrefab[N], 1);
-						break;
-				}
+                if (FinalMiddleBoss)
+                {
+                    switch (N)
+                    {
+                        case 0:
+                            pool.Create(FinalPrefab[N], 1);
+                            break;
+                        case 1:
+                            pool.Create(FinalPrefab[N], 1);
+                            break;
+                        case 2:
+                            pool.Create(FinalPrefab[N], 1);
+                            break;
+                        case 3:
+                            pool.Create(FinalPrefab[N], 1);
+                            break;
+                        case 4:
+                            pool.Create(FinalPrefab[N], 1);
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (N)
+                    {
+                        case 0:
+                            pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
+                            break;
+                        case 1:
+                            pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
+                            break;
+                        case 2:
+                            pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
+                            break;
+                        case 3:
+                            pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
+                            break;
+                        case 4:
+                            pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
+                            break;
+                    }
+                }
 			}
 		}
 		else

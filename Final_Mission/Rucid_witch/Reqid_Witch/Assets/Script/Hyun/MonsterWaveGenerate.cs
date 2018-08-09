@@ -28,7 +28,6 @@ public class MonsterWaveGenerate : MonoBehaviour
 				pool.Create(Prefab, Prefab_Count);
 			else
 			{
-
 				int N = NoHaveSkill(first);
                 if (FinalMiddleBoss)
                 {

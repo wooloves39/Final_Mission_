@@ -173,17 +173,17 @@ public class LinePointChecker : MonoBehaviour
 	}
 	private void PointCheck(int[] skill,int Index)
 	{
-
+		for (int i = 0; i < count; ++i)
+		{
+			if (skill[i] != touchPoints[i])
+			{
+				markSet.setOff(Index);
+				return;
+			}
+		}
 		if (skill.Length >= count + 1)
 		{
-			for (int i = 0; i < count; ++i)
-			{
-				if (skill[i] != touchPoints[i])
-				{
-					markSet.setOff(Index);
-					return;
-				}
-			}
+			
 			if (Points[skill[count]] == MyPoint)
 			{
 				if (skill.Length == count + 1)
@@ -205,7 +205,7 @@ public class LinePointChecker : MonoBehaviour
 						else
 						{
 							Points[skill[i]].turnon();
-							Points[skill[i]].ArrowOff() ;
+							Points[skill[i]].ArrowOff();
 						}
 					}
 				}
@@ -230,7 +230,6 @@ public class LinePointChecker : MonoBehaviour
 			PointCheck(skill3,2);
 			PointCheck(skill4,3);
 			PointCheck(skill5,4);
-
 		}
 	}
 	private bool SkillCheck(int[] skill)

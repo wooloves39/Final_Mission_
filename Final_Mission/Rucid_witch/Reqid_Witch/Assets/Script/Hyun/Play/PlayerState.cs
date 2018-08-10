@@ -24,7 +24,7 @@ public class PlayerState : MonoBehaviour
 	private PlayerSoundSetting playerSound;
 	public bool LightningBolt;
 	public GameObject chraging;
-	private float recoveryTime = 3.0f;
+	private float recoveryTime = 1.5f;
 	public float RecoveryTime { get { return recoveryTime; } set {recoveryTime=value; } }
 	public GameObject PlayerHitEffect;
 	// Use this for initialization

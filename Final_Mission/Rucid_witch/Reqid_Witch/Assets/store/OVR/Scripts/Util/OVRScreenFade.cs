@@ -192,6 +192,8 @@ public class OVRScreenFade : MonoBehaviour
 	}
 	public void fadeSmoth(Color newScreenOverlayColor, float startAlpha, float endAlpha, float firstFadeTime, float secondFadeTime, float fadeDelay)
 	{
+		StopAllCoroutines();
+		SetMaterialAlpha(new Color(0,0,0,0));
 		StartCoroutine(FadeSmoth(newScreenOverlayColor, startAlpha,  endAlpha,  firstFadeTime,  secondFadeTime, fadeDelay));
 	}
 	IEnumerator Fade(float startAlpha, float endAlpha)

@@ -12,7 +12,7 @@ public class ObjectLife : MonoBehaviour {
 	public float Speed;
 	public float BattleSpeed;
 	public float Range;
-	MonsterSoundSetting MobSound;
+    MonsterSoundSetting MobSound;
 
 	public bool boss;
 	public float Attack;
@@ -67,7 +67,6 @@ public class ObjectLife : MonoBehaviour {
 	}
     public void SendDotDMG(float dmg,float time,float cycleTime)
 	{
-		Debug.Log("Dot start");
 		if (!dot)
         {
             dot = true;
@@ -77,14 +76,14 @@ public class ObjectLife : MonoBehaviour {
     IEnumerator DotDMG(float dmg,float time,float cycleTime)
     {
         float T = 0.0f;
-		Debug.Log("Dot start Co");
 		while (T < time)
         {
             if(!this.gameObject.activeInHierarchy)
                 break;
 			Debug.Log(dmg);
             Hp -= dmg;
-            MobSound.PlaySound(1);
+            if(!boss)
+                MobSound.PlaySound(1);
             T += cycleTime;
             yield return new WaitForSeconds(cycleTime);
         }

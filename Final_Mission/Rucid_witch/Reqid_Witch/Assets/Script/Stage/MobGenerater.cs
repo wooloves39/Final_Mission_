@@ -13,6 +13,8 @@ public class MobGenerater : MonoBehaviour
 	private PlayerState MyState;
 	public GameObject[] ReaspwanParticles;
 	private MonsterWaveGenerate[] monsterWaves;
+    public bool block = false;
+    public GameObject[] B;
 	void Start()
 	{
 		MyState = player.transform.parent.GetComponent<PlayerState>();
@@ -21,6 +23,11 @@ public class MobGenerater : MonoBehaviour
 	public void waveOn()
 	{
 		Wave_Start = true;
+        if (block)
+            for (int i = 0; i < 3; ++i)
+            {
+                B[i].SetActive(true);
+            }
 		for (int i = 0; i < ReaspwanParticles.Length; ++i)
 		{
 			ReaspwanParticles[i].SetActive(true);

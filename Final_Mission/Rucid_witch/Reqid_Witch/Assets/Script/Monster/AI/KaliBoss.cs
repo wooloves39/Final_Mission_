@@ -106,6 +106,7 @@ public class KaliBoss : MonoBehaviour {
 
                 yield return new WaitForSeconds(Die_Time);
                 this.gameObject.SetActive(false);
+                break;
             }
 
             if (Fight)

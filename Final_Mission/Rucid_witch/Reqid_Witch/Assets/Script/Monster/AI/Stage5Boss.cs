@@ -93,8 +93,11 @@ public class Stage5Boss: MonoBehaviour {
 			if (ObjLife.Hp <= 0)
 			{
 				ani.SetBool("Die", true);
-
 				yield return new WaitForSeconds(Die_Time);
+                if (Singletone.Instance.stage == 6)
+                {
+                    this.gameObject.SetActive(false);
+                }
 				Islive = false;
 				break;
 			}

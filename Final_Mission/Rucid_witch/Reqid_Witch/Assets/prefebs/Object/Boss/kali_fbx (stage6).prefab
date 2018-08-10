@@ -4655,7 +4655,7 @@ MonoBehaviour:
   - 40
   MomentInvincible: 0
   InvincibleTime: 0.2
-  ElecShock: {fileID: 0}
+  ElecShock: {fileID: 1542424967263348}
 --- !u!114 &114194156686330994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4916,6 +4916,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f0f4cfd69eca2b5419ec30e535b5d806, type: 3}
   - {fileID: 8300000, guid: 26afcbbc4f138f845bf9523c40598cbe, type: 3}
   - {fileID: 8300000, guid: a251c0032d3ac1241b235f3d6bbbf9cc, type: 3}
+  - {fileID: 8300000, guid: bb7c0ee49033b3a4393a8293a9e2efd5, type: 3}
 --- !u!114 &114461385944485748
 MonoBehaviour:
   m_ObjectHideFlags: 1

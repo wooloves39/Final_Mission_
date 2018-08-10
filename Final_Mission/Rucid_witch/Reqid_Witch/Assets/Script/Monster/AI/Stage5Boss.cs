@@ -33,7 +33,7 @@ public class Stage5Boss: MonoBehaviour {
 	public float Die_Time = 2.0f;
 
 
-    public float[] SkillValue = {0,35,60,85,100 }; 
+    private int[] SkillValue = {0,25,50,75,100 }; 
     public float[] BossCoolTime = {0,9,12,15,100 };   
     public bool[] BossCoolDown = {false,false,false,false,false };      
 

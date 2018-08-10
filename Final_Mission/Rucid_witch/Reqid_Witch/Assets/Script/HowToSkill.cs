@@ -15,9 +15,8 @@ public class HowToSkill : MonoBehaviour {
             num = LineDraw.curType;
             list[LineDraw.curType].SetActive(true);
             StopAllCoroutines();
-            if(OneTime[LineDraw.curType] == false)
-                StartCoroutine("del", del_Time);
-            del_Time = 2.3f;
+            StartCoroutine("del", del_Time);
+            del_Time = 2.5f;
         }
 	}
     IEnumerator del(float f)
@@ -26,11 +25,12 @@ public class HowToSkill : MonoBehaviour {
         {
             list[i].SetActive(false);
         }
-        list[num].SetActive(true);
-        yield return new WaitForSeconds(2.0f);
+        if (OneTime[LineDraw.curType] == false)
+            list[num].SetActive(true);
+        yield return new WaitForSeconds(1.0f);
         if (f < 4.0)
             OneTime[num] = true;
-        yield return new WaitForSeconds(f-2.0f);
+        yield return new WaitForSeconds(f-1.0f);
         for (int i = 0; i < 5; ++i)
         {
             list[i].SetActive(false);

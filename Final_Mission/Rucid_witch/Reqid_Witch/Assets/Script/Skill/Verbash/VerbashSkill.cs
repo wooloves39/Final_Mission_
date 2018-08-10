@@ -24,6 +24,7 @@ public class VerbashSkill : MonoBehaviour
     private bool SHOOT = false;
     public GameObject OtherHand;
     private VerbashSkill OtherSkill;
+    private bool Attack = false;
 	private void OnDisable()
 	{
 		SHOOT = false;
@@ -49,22 +50,28 @@ public class VerbashSkill : MonoBehaviour
         }
 
 	}
-	public void Update()
+    public void Update()
     {
         hight = Target.gameObject.transform.position.y;
         for (int i = 0; i < 5; ++i)
         {
-            if(cooldown.Ver_Cool[i] !=  CoolDown[i])
-                cooldown.Ver_Cool[i] =  CoolDown[i];
+            if (cooldown.Ver_Cool[i] != CoolDown[i])
+                cooldown.Ver_Cool[i] = CoolDown[i];
         }
+        if (handle.transform.position.y < hight && Attack)
+        {
+            Attack = false;
+        }
+           
         if (LineDraw.curType == 3 && InputManager_JHW.RTriggerOn() && InputManager_JHW.LTriggerOn())
         {
             if (left)
             {
                 if (Player.GetMyState() != PlayerState.State.Drawing)
                 {
-                    if (handle.transform.position.y > hight + 0.0f)
+                    if (handle.transform.position.y > hight + 0.0f && !Attack)
                     {
+                        Attack = true;
                         shoot(line.Skills[3].getCurrentSkill());
                     }
                 }
@@ -73,8 +80,9 @@ public class VerbashSkill : MonoBehaviour
             {
                 if (Player.GetMyState() != PlayerState.State.Drawing)
                 {
-                    if (handle.transform.position.y > hight + 0.0f)
+                    if (handle.transform.position.y > hight + 0.0f && !Attack)
                     {
+                        Attack = true;
                         shoot(line.Skills[3].getCurrentSkill());
                     }
                 }

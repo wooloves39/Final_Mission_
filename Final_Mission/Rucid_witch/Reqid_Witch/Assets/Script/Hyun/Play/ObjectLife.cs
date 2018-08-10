@@ -12,7 +12,10 @@ public class ObjectLife : MonoBehaviour {
 	public float Speed;
 	public float BattleSpeed;
 	public float Range;
+    private float prev_speed;
+    private float prev_battle_speed;
     MonsterSoundSetting MobSound;
+    BossSoundSetting BossSound;
 
 	public bool boss;
 	public float Attack;
@@ -26,8 +29,13 @@ public class ObjectLife : MonoBehaviour {
     private bool dot = false;
 	private void Start()
 	{
-		MobSound = GetComponentInChildren<MonsterSoundSetting>();
-		agent = GetComponent<NavMeshAgent>();
+        prev_speed = Speed;
+        prev_battle_speed = BattleSpeed;
+        if (!boss)
+            MobSound = GetComponentInChildren<MonsterSoundSetting>();
+        else
+            BossSound = GetComponent<BossSoundSetting>();
+       agent = GetComponent<NavMeshAgent>();
 		ani = GetComponent<Animator>();
 	}
 	
@@ -35,9 +43,9 @@ public class ObjectLife : MonoBehaviour {
 	{
 		if (!MomentInvincible)
 		{
-			if (boss)
-			{
 
+			if (boss && Hp > 0)
+			{
 				if (dmg < 50.0)
 				{
 					if (!ani.GetCurrentAnimatorStateInfo(0).IsName("skill1") &&
@@ -55,8 +63,9 @@ public class ObjectLife : MonoBehaviour {
 						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
 						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
 						ani.Play("Defence2");
-				}
-			}
+                }
+                BossSound.PlayerSound(1);
+            }
 			else
 			{
 				MobSound.PlaySound(1);
@@ -82,7 +91,7 @@ public class ObjectLife : MonoBehaviour {
                 break;
 			Debug.Log(dmg);
             Hp -= dmg;
-            if(!boss)
+            if (!boss)
                 MobSound.PlaySound(1);
             T += cycleTime;
             yield return new WaitForSeconds(cycleTime);
@@ -115,7 +124,6 @@ public class ObjectLife : MonoBehaviour {
 		float time = 0;
 		float Cycle1 = 0.15f;
 		float Cycle2 = 0.10f;
-		float[] temp = { Speed, BattleSpeed };
 		Vector3 playerpos;
 		Speed = 0.1f;
 		BattleSpeed = 0.1f;
@@ -128,13 +136,16 @@ public class ObjectLife : MonoBehaviour {
 
 			ElecShock.SetActive(true);
 			Debug.Log("감전 사운드");
-			MobSound.PlaySound(4);
+            if (!boss)
+                MobSound.PlaySound(4);
+            else
+                BossSound.PlayerSound(5);
 			yield return new WaitForSeconds(Cycle2);
 			time += (Cycle1 + Cycle2);
 			ElecShock.SetActive(false);
 		}
 		agent.destination =playerpos;
-		Speed = temp[0];
-		BattleSpeed = temp[1];
+		Speed = prev_speed;
+		BattleSpeed = prev_battle_speed;
 	}
 }

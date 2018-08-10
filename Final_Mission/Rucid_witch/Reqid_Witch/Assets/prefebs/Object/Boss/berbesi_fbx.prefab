@@ -3857,13 +3857,6 @@ MonoBehaviour:
   Time_Skill_4: 2
   Time_Skill_5: 3
   Die_Time: 2
-  SkillValue:
-  - 0
-  - 19
-  - 51
-  - 79
-  - 93
-  - 100
   BossCoolTime:
   - 0
   - 3
@@ -4614,7 +4607,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 2
-  m_Acceleration: 8
+  m_Acceleration: 3.5
   avoidancePriority: 50
   m_AngularSpeed: 180
   m_StoppingDistance: 5

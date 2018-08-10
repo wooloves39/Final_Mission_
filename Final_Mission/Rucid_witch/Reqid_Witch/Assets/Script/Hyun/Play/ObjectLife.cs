@@ -44,27 +44,30 @@ public class ObjectLife : MonoBehaviour {
 		if (!MomentInvincible)
 		{
 
-			if (boss && Hp > 0)
+			if (boss )
 			{
-				if (dmg < 50.0)
-				{
-					if (!ani.GetCurrentAnimatorStateInfo(0).IsName("skill1") &&
-						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
-						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
-						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
-						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
-						ani.Play("Defence");
-				}
-				else
-				{
-					if (!ani.GetCurrentAnimatorStateInfo(0).IsName("skill1") &&
-						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
-						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
-						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
-						!ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
-						ani.Play("Defence2");
+                if (Hp > 0)
+                {
+                    if (dmg < 50.0)
+                    {
+                        if (!ani.GetCurrentAnimatorStateInfo(0).IsName("skill1") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
+                            ani.Play("Defence");
+                    }
+                    else
+                    {
+                        if (!ani.GetCurrentAnimatorStateInfo(0).IsName("skill1") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
+                            ani.Play("Defence2");
+                    }
+                    BossSound.PlayerSound(1);
                 }
-                BossSound.PlayerSound(1);
             }
 			else
 			{

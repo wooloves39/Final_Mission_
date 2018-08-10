@@ -152,7 +152,7 @@ Prefab:
         type: 2}
       propertyPath: handle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1003499007}
     - target: {fileID: 114241461617184612, guid: 6093ddf395aeeaf49b777c82f42a9f2b,
         type: 2}
       propertyPath: OtherHand
@@ -337,6 +337,16 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114809772459494754, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Verbash_Controller.Array.data[0]
+      value: 
+      objectReference: {fileID: 1654503022}
+    - target: {fileID: 114809772459494754, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Verbash_Controller.Array.data[1]
+      value: 
+      objectReference: {fileID: 312706234}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0
@@ -346,6 +356,16 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1003499005}
   m_Script: {fileID: 11500000, guid: 34a9476b46f325b4886932a827c7111c, type: 3}
+--- !u!4 &1003499007 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4304025031541016, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1003499005}
+--- !u!4 &1003499008 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4047988492242154, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1003499005}
 --- !u!1001 &1116195362
 Prefab:
   m_ObjectHideFlags: 0
@@ -941,7 +961,7 @@ Prefab:
         type: 2}
       propertyPath: handle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1003499008}
     - target: {fileID: 114515146305277906, guid: 460b72c6859bdf44d967c3b1db20cad8,
         type: 2}
       propertyPath: OtherHand

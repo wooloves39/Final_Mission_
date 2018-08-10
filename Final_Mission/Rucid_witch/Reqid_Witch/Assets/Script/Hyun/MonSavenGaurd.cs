@@ -20,7 +20,7 @@ public class MonSavenGaurd : MonoBehaviour
 		while (timer <= 5.0f)
 		{
 			timer += .6f;
-			if (objectLife.Hp < 500)
+			if (objectLife.Hp < 250)
 			{
 				objectLife.Hp += 1;
 			}

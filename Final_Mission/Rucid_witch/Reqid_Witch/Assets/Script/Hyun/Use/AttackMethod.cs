@@ -315,8 +315,8 @@ public class AttackMethod : MonoBehaviour
 			}
 			else if (instance)
 			{
-				AttackPoint += Camera.main.transform.forward * 0.1f;
-				AzuraBall[AzuraBallNum].transform.position = AttackPoint;
+                AttackPoint = (AzuraHands[0].transform.position + AzuraHands[1].transform.position) / 2+ Camera.main.transform.forward * 0.1f;
+                AzuraBall[AzuraBallNum].transform.position = AttackPoint;
 				float handDis = Vector3.Distance(Hands[0].transform.position, Hands[1].transform.position);
 				if (handDis > distance)
 				{

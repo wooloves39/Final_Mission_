@@ -4508,13 +4508,6 @@ MonoBehaviour:
   Time_Skill_4: 6
   Time_Skill_5: 7
   Die_Time: 2
-  SkillValue:
-  - 0
-  - 19
-  - 51
-  - 79
-  - 93
-  - 100
   BossCoolTime:
   - 0
   - 0
@@ -5138,7 +5131,7 @@ MonoBehaviour:
   MAttdelay: 0
   AttackFrame: 0.4
   SkillFrame:
-  - 1.2
+  - 0.4
   - 0.3
   - 0.5
   - 0.5

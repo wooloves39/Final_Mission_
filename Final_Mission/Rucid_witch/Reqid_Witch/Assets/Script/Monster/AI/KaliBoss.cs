@@ -311,19 +311,19 @@ public class KaliBoss : MonoBehaviour {
                             switch (NUM)
                             {
                                 case 0:
-									msg.destination = this.transform.position + this.transform.forward * -4;
+									msg.destination = this.transform.position + this.transform.forward * -3;
                                     break;
                                 case 1:
-                                    msg.destination = this.transform.position + this.transform.right * 3 + this.transform.forward * -4;
+                                    msg.destination = this.transform.position + this.transform.right * 3 + this.transform.forward * -3;
                                     break;
                                 case 2:
-                                    msg.destination = this.transform.position + this.transform.right * -3 + this.transform.forward * -4;
+                                    msg.destination = this.transform.position + this.transform.right * -3 + this.transform.forward * -3;
                                     break;
 			
 							}
                             msg.Speed = ObjLife.BattleSpeed*5;
                             BCommand.BattleMove(msg);
-                            Invoke("Jump", AttackMove);
+                            Invoke("Jump", time);
                             break;
                         }
                     case 20:

@@ -4987,6 +4987,7 @@ MonoBehaviour:
   dotTime: 10
   Azra: 0
   QuickDel: 0
+  groundCheck: 0
 --- !u!114 &114495575396936058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5061,14 +5062,14 @@ MonoBehaviour:
   Time_Taget_Search: 1
   Time_Battle_Move: 1
   Time_RunAway: 8
-  Time_AttackMove: 2
-  Time_Skill_1: 1.5
-  Time_Skill_2: 1.5
-  Time_Skill_3: 2
-  Time_Skill_4: 2
-  Time_Skill_5: 2
-  Time_Skill_6: 2
-  Time_Skill_7: 3
+  Time_AttackMove: 1.17
+  Time_Skill_1: 2
+  Time_Skill_2: 2
+  Time_Skill_3: 2.5
+  Time_Skill_4: 2.5
+  Time_Skill_5: 2.5
+  Time_Skill_6: 4
+  Time_Skill_7: 4
   Die_Time: 2
   SkillValue:
   - 0
@@ -5422,9 +5423,9 @@ MonoBehaviour:
   MAttdelay: 0
   AttackFrame: 0.4
   SkillFrame:
-  - 0.4
-  - 0.4
-  - 0.9
+  - 0.2
+  - 0.2
+  - 1
   - 0.8
   - 0.8
   - 0.9
@@ -5447,6 +5448,7 @@ MonoBehaviour:
   dotTime: 10
   Azra: 0
   QuickDel: 0
+  groundCheck: 0
 --- !u!114 &114972505588200174
 MonoBehaviour:
   m_ObjectHideFlags: 1

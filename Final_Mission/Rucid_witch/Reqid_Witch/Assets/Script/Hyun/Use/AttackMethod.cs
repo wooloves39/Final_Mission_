@@ -288,6 +288,7 @@ public class AttackMethod : MonoBehaviour
 	{
 		Vector3 AttackPoint = (AzuraHands[0].transform.position + AzuraHands[1].transform.position) / 2;
 		AttackPoint += Camera.main.transform.forward * 0.1f;
+		Vector3 MovePoint = AttackPoint - transform.position;
 		bool instance = false;
 		float distance = 0.0f;
 		Vector3 AzuraScale = AzuraBallPrefab.transform.localScale;
@@ -315,8 +316,9 @@ public class AttackMethod : MonoBehaviour
 			}
 			else if (instance)
 			{
-                AttackPoint = (AzuraHands[0].transform.position + AzuraHands[1].transform.position) / 2+ Camera.main.transform.forward * 0.1f;
-                AzuraBall[AzuraBallNum].transform.position = AttackPoint;
+				//테스트 시험
+			   AzuraBall[AzuraBallNum].transform.position = transform.position+MovePoint;
+
 				float handDis = Vector3.Distance(Hands[0].transform.position, Hands[1].transform.position);
 				if (handDis > distance)
 				{

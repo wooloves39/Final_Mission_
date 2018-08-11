@@ -139,7 +139,13 @@ public class AzuraSkill : MonoBehaviour
 				soul.transform.Translate(Vector3.forward * deltaTime * speed);
 			}
 			if (Timer >= MaxTime)
+			{
+				//테스트
+				StopCoroutine(Shooting());
+				del_timer = true;
+				Shoot = false;
 				break;
+			}
 			else
 				yield return null;
 		}

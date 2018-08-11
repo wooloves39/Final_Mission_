@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 	public GameObject Load;
 	public GameObject Option;
 	public GameObject newConfirm;
+	public GameObject Developement;
 	public bool confirm = false;
 	int index = 0;
 	private AudioSource source;
@@ -41,6 +42,8 @@ public class MainMenu : MonoBehaviour
 			}
 			if (index == 2)
 			{
+				Developement.SetActive(true);
+				this.gameObject.SetActive(false);
 			}//멀티플레이
 			if (index == 3)
 			{

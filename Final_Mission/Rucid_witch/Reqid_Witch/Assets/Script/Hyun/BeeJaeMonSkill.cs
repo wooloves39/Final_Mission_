@@ -34,7 +34,6 @@ public class BeeJaeMonSkill : MonoBehaviour
 
 				break;
 		}
-		Debug.Log(MyCharacter.transform.position);
 	}
 	IEnumerator SkyThunder()//1번스킬
 	{

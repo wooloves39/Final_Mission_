@@ -3797,7 +3797,7 @@ MonoBehaviour:
   MAttdelay: 0
   AttackFrame: 0.4
   SkillFrame:
-  - 0.8
+  - 0.4
   - 1
   - 0.8
   - 1.2
@@ -4301,7 +4301,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137113495287071676
 SkinnedMeshRenderer:

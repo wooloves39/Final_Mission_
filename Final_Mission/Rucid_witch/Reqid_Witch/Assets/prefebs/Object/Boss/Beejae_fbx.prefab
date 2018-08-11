@@ -4981,8 +4981,8 @@ MonoBehaviour:
   Die_Time: 2
   BossCoolTime:
   - 0
-  - 0
-  - 0
+  - 5
+  - 8
   - 15
   - 100
   BossCoolDown: 0000000000
@@ -5290,7 +5290,7 @@ MonoBehaviour:
   MAttdelay: 0
   AttackFrame: 0.4
   SkillFrame:
-  - 1.2
+  - 0.4
   - 0.8
   - 0.6
   - 0.6

@@ -21,7 +21,8 @@ public class CoolDown : MonoBehaviour {
 	public bool[] Bee_Cool = { false, false, false, false, false };
 	public bool[] Ver_Cool = { false, false, false, false, false };
 	public bool[] Dell_Cool = { false, false, false, false, false };
-
+	public GameObject Mpless;
+	private Viberation PlayerViberation; 
 
 	private PlayerState player;
     /*
@@ -33,7 +34,8 @@ public class CoolDown : MonoBehaviour {
     */
     void Awake()
     {
-        player = GetComponent<PlayerState>();
+		PlayerViberation = GetComponent<Viberation>();
+		   player = GetComponent<PlayerState>();
         for (int i = 0; i < 5; ++i)
         {
             Azu_Cool[i] = false;
@@ -185,5 +187,10 @@ public class CoolDown : MonoBehaviour {
 			default:
 				return 0;
 		}
+	}
+	public void MpLessOn()
+	{
+		Mpless.SetActive(true);
+		PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.3f, 0.5f, OVRInput.Controller.RTouch));
 	}
 }

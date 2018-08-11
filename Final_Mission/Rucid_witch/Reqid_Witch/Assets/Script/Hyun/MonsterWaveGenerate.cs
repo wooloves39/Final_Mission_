@@ -82,6 +82,7 @@ public class MonsterWaveGenerate : MonoBehaviour
 		GenTime = mobGenerater.GenTime;
 		StartCoroutine(MobGen());
 	}
+
 	IEnumerator MobGen()
 	{
 		yield return new WaitUntil(() => mobGenerater.Wave_Start);

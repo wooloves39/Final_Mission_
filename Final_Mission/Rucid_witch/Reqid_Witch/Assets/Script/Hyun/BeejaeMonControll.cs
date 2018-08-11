@@ -27,6 +27,10 @@ public class BeejaeMonControll : MonoBehaviour {
     {
         sound.PlayerSound(0);
     }
+    void Look()
+    {
+        this.gameObject.transform.LookAt(target.transform.position);
+    }
     void Hit()
     {
 

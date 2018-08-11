@@ -11,4 +11,9 @@ public class SoundSetting : MonoBehaviour {
 		CompleteSound = GetComponent<AudioSource>();
 		CompleteSound.volume = Singletone.Instance.Sound*volumeBalance;
 	}
+    private void OnEnbale()
+    {
+        CompleteSound = GetComponent<AudioSource>();
+        CompleteSound.volume = Singletone.Instance.Sound*volumeBalance;
+    }
 }

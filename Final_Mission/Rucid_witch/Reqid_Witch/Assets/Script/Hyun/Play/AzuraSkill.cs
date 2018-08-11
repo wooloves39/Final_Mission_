@@ -20,6 +20,7 @@ public class AzuraSkill : MonoBehaviour
 	private Skill_Info info;
 
 	private Collider collider;
+    private int[] UseMp = {0,0,0,0,0};
 	public GameObject AzuraBall;
 
 
@@ -27,9 +28,14 @@ public class AzuraSkill : MonoBehaviour
 	{
 		info = GetComponent<Skill_Info>();
 		player = FindObjectOfType<PlayerState>();
+
 		deltaTime = Time.deltaTime;
 		collider = GetComponent<Collider>();
-		CoolTime = FindObjectOfType<CoolDown>();
+        CoolTime = player.GetComponent<CoolDown>();
+        for (int i = 0; i < 5; ++i)
+        {
+            UseMp[i] = CoolTime.Azu_UseMp[i];
+        }
 	}
 
 	public void shoot(int skillIndex, GameObject targets, float handDistance, float Gage = 0)
@@ -54,6 +60,7 @@ public class AzuraSkill : MonoBehaviour
 		if (!Cool && !Mp)
 		{
 			if (skill > 1) UseOtherObject();
+            player.Mp -= UseMp[skill - 1];
 			switch (skill)
 			{
 				case 1:

@@ -4386,8 +4386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 250
   MaxHp: 250
-  Speed: 2
-  BattleSpeed: 3.8
+  Speed: 4
+  BattleSpeed: 5
   Range: 17
   boss: 1
   Attack: 0
@@ -5131,11 +5131,11 @@ MonoBehaviour:
   MAttdelay: 0
   AttackFrame: 0.4
   SkillFrame:
-  - 0.4
   - 0.3
-  - 0.5
-  - 0.5
-  - 0.5
+  - 0.3
+  - 0.3
+  - 0.3
+  - 0.3
   MobObj: {fileID: 0}
 --- !u!114 &114797784902118230
 MonoBehaviour:
@@ -5922,8 +5922,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
-  m_Acceleration: 8
+  m_Speed: 5
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 180
   m_StoppingDistance: 17

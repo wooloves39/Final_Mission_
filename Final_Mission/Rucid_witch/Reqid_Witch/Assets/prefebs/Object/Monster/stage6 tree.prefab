@@ -2045,8 +2045,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 100
   MaxHp: 100
-  Speed: 1
-  BattleSpeed: 1.5
+  Speed: 2.5
+  BattleSpeed: 4
   Range: 9
   boss: 0
   Attack: 12
@@ -2841,9 +2841,9 @@ MonoBehaviour:
   BasicBattle: 0a0000000b000000
   ExMark: {fileID: 1819573996100156}
   Time_Nature_Stop: 0.5
-  Time_Nature_Move: 3
+  Time_Nature_Move: 2
   Time_Nomal_StopMotion: 2
-  Time_Nomal_MoveWay: 6
+  Time_Nomal_MoveWay: 2
   Time_Taget_Search: 1
   Time_Battle_Move: 1
   Time_Normal_Attack: 4
@@ -3245,8 +3245,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 4
+  m_Acceleration: 3.5
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 9

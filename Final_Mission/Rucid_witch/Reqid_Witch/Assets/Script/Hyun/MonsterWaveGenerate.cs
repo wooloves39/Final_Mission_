@@ -130,7 +130,11 @@ public class MonsterWaveGenerate : MonoBehaviour
 		for (int i = 0; i < Prefab_Count; ++i)
 		{
 			int initPos = i % 3;
-			pool.NewItem(mobGenerater.Position[initPos].transform.position);
+			GameObject obj= pool.NewItem(mobGenerater.Position[initPos].transform.position);
+			if (FinalMiddleBoss)
+			{
+				obj.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+			}
 		}
 		yield return new WaitForSeconds(1);
 		initFinish = true;

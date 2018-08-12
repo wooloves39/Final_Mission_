@@ -179,8 +179,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4004339170094282}
-  - component: {fileID: 114110588825503672}
   - component: {fileID: 135208350446795486}
+  - component: {fileID: 114251452848505484}
   m_Layer: 0
   m_Name: Ultimate (1)
   m_TagString: Untagged
@@ -3333,7 +3333,7 @@ MonoBehaviour:
   Shoot: 0
   ShootSound: {fileID: 0}
   check: 0
---- !u!114 &114110588825503672
+--- !u!114 &114251452848505484
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -3341,10 +3341,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1156479199452916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b599aca42368104abe8e2c56673c837, type: 3}
+  m_Script: {fileID: 11500000, guid: 28c0ade4e5c8fc34e97ea438dac8ed52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillBalance: 30
+  skillBalance: 1.5
+  dot: 1
+  delay: 0
+  dotTime: 10
+  Azra: 1
+  QuickDel: 0
+  groundCheck: 0
 --- !u!114 &114322359493541674
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -330,7 +330,7 @@ public class AttackMethod : MonoBehaviour
 
 			}
 			//yield return null;
-			yield return new WaitForSeconds(0.03f);
+			yield return null;
 		}
 	}
 	private IEnumerator SeikwanControll()
@@ -438,7 +438,7 @@ public class AttackMethod : MonoBehaviour
 					}
 				}
 			}
-			yield return new WaitForSeconds(0.03f);
+            yield return null;
 		}
 	}
 	private IEnumerator VerbaseControll()
@@ -447,7 +447,7 @@ public class AttackMethod : MonoBehaviour
 		Verbash_Controller[1].SetActive(true);
 		while (LineDraw.curType == 3)
 		{
-			yield return new WaitForSeconds(0.03f);
+			yield return new WaitForSeconds(0.1f);
 		}
 		Verbash_Controller[0].SetActive(false);
 		Verbash_Controller[1].SetActive(false);
@@ -545,7 +545,7 @@ public class AttackMethod : MonoBehaviour
 					break;
 				}
 			}
-			yield return new WaitForSeconds(0.01f);
+            yield return null;
 		}
 
 	}

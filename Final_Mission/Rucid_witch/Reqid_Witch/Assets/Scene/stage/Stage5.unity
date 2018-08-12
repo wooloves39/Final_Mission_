@@ -1687,14 +1687,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 1964750758516104, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561149578839614, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
-      objectReference: {fileID: 0}
+    - target: {fileID: 114809772459494754, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Verbash_Controller.Array.data[0]
+      value: 
+      objectReference: {fileID: 879782926}
+    - target: {fileID: 114809772459494754, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Verbash_Controller.Array.data[1]
+      value: 
+      objectReference: {fileID: 439666293}
     - target: {fileID: 114270762297372336, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
       propertyPath: WaveStart.Array.data[0]
@@ -1720,48 +1722,31 @@ Prefab:
       propertyPath: nextParticle
       value: 
       objectReference: {fileID: 1623479537}
-    - target: {fileID: 114875313637839086, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    - target: {fileID: 224794559712426150, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a78f13890ac53c54eb336ee1210ff912,
-        type: 3}
-    - target: {fileID: 114062897565571676, guid: cd4184ba12fefda4ebe20adef91f5ab8,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 04a696f1ed835df499f0acabe851f315,
-        type: 3}
-    - target: {fileID: 114062897565571676, guid: cd4184ba12fefda4ebe20adef91f5ab8,
-        type: 2}
-      propertyPath: m_Color.r
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114062897565571676, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    - target: {fileID: 224794559712426150, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
-      propertyPath: m_Color.g
-      value: 1
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114062897565571676, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    - target: {fileID: 224103675744042756, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
-      propertyPath: m_Color.b
-      value: 1
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114270762297372336, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    - target: {fileID: 224103675744042756, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
-      propertyPath: fileName
-      value: /Text/talk/Episode04.txt
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114809772459494754, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    - target: {fileID: 224103675744042756, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
-      propertyPath: Verbash_Controller.Array.data[0]
-      value: 
-      objectReference: {fileID: 879782926}
-    - target: {fileID: 114809772459494754, guid: cd4184ba12fefda4ebe20adef91f5ab8,
-        type: 2}
-      propertyPath: Verbash_Controller.Array.data[1]
-      value: 
-      objectReference: {fileID: 439666293}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0

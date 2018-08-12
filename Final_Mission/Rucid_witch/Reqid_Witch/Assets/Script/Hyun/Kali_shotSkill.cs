@@ -18,12 +18,5 @@ public class Kali_shotSkill : MonoBehaviour {
 		transform.rotation = ObjTr.transform.rotation;
         rigi.velocity = ObjTr.transform.forward * speedBalance;
 	}
-	private void OnDisable()
-	{
-        if (ObjTr.gameObject.activeInHierarchy)
-        {
-            transform.position = ObjTr.transform.position;
-            transform.rotation = ObjTr.transform.rotation;
-        }
-	}
+  
 }

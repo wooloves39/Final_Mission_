@@ -267,7 +267,7 @@ public class VerbashSkill : MonoBehaviour
 	}
     IEnumerator Skill2()
     {
-        magic[1].transform.position = target.transform.position;
+        magic[1].transform.position = target.transform.position + Vector3.down * 0.6f;
 
         magic[1].SetActive(true);
         CoolDown[1] = true;

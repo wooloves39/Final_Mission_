@@ -45,6 +45,15 @@ public class KaliMobControll : MonoBehaviour {
 
         sound.PlayerSound(1);
     }
+    IEnumerator Jump()
+    {
+        this.transform.LookAt(player.transform);
+        for(int i = 0; i< 30; ++i)
+        {
+            this.transform.position += this.transform.forward * -3 * 0.1f;
+            yield return new WaitForSeconds(1.0f / 40.0f);
+        }
+    }
     void Lose_Sound()
     {
         sound.PlayerSound(3);
@@ -101,6 +110,7 @@ public class KaliMobControll : MonoBehaviour {
         sound.PlayerSound(4);
         num = 6;
         AI.CoolTime(num);
+        AI.Ulti = true;
         Targetting_Myself(true);
         Skill[num].transform.position = target.transform.position;
         StartCoroutine("Attack", num);

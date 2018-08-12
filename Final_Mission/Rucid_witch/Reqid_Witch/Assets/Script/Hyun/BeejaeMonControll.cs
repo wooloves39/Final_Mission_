@@ -76,7 +76,8 @@ public class BeejaeMonControll : MonoBehaviour {
     {
         sound.PlayerSound(4);
         AI.CoolTime(4);
-		beejaeManager.shoot(5, target);
+        AI.Ulti = true;
+        beejaeManager.shoot(5, target);
 	}
 	void setTarget()
 	{

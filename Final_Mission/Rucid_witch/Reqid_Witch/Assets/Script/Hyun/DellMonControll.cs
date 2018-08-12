@@ -41,6 +41,7 @@ public class DellMonControll : MonoBehaviour {
     {
         sound.PlayerSound(2);
 		buffs.SetActive(true);
+        AI.Ulti = true;
 	}
 	void Attack2()
     {

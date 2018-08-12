@@ -11,8 +11,19 @@ public class TreeSkill : MonoBehaviour {
 	private Vector3 SetPos;
 	// Use this for initialization
 	void OnEnable ()
-	{
-		StartCoroutine("GrowUp");
+    {
+        if (Singletone.Instance.stage == 3)
+            upsize = -2.0f;
+        if (Singletone.Instance.stage == 4)
+            upsize = 0.0f;
+        if (Singletone.Instance.stage == 5)
+            upsize = -4.0f;
+        if (Singletone.Instance.stage == 6)
+        {
+            offset = -7.0f;
+            upsize = -4.0f;
+        }
+        StartCoroutine("GrowUp");
     }
     IEnumerator GrowUp()
     {

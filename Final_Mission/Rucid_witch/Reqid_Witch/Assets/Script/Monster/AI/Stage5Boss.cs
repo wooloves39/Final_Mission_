@@ -177,7 +177,6 @@ public class Stage5Boss: MonoBehaviour {
 							if (!Ulti && ObjLife.Hp <= ObjLife.MaxHp * 0.3)
 							{
 								num = 24;
-								Ulti = true;
 							}
 							else
 							{

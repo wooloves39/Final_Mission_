@@ -150,6 +150,7 @@ public class SeiKwanMonControll : MonoBehaviour {
 	void Attack5()
     {
         AI.CoolTime(4);
+        AI.Ulti = true;
 		int ArrowNum = 0;
 		for (int i = 0; i < Arrow.Length; ++i)
 		{

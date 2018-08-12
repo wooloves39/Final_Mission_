@@ -49,7 +49,8 @@ public class AzuraSkill : MonoBehaviour
 		skill = skillIndex;
 		handDis = handDistance;
 
-		if (CoolTime.CheckCool(1, skill))
+    
+        if (CoolTime.CheckCool(1, skill))
 		{
 			Cool = true;
 		}
@@ -60,7 +61,6 @@ public class AzuraSkill : MonoBehaviour
 		if (!Cool && !Mp)
 		{
 			if (skill > 1) UseOtherObject();
-            player.Mp -= UseMp[skill - 1];
 			switch (skill)
 			{
 				case 1:
@@ -80,7 +80,7 @@ public class AzuraSkill : MonoBehaviour
 					LastBlast(target.transform.position, chargingGage);
 					break;
 			}
-			//CoolTime.MpDown(1, skill);
+			CoolTime.MpDown(1, skill);
 			CoolTime.SetCool(1, skill);
 			Shoot = true;
 			StartCoroutine(Shooting());

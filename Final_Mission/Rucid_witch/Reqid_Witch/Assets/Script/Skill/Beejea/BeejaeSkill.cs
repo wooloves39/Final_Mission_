@@ -103,6 +103,7 @@ public class BeejaeSkill : MonoBehaviour
 				if (NoMp)
 				{
 					Debug.Log("엠피가 부족");
+                    cooldown.MpLessOn();
 				}
 				line.Skills[2].resetSkill();
 				}
@@ -224,7 +225,8 @@ public class BeejaeSkill : MonoBehaviour
 		if (NoMp)
 		{
 			Debug.Log("엠피가 부족");
-		}
+            cooldown.MpLessOn();
+        }
 		
 	}
 	IEnumerator SkyThunder()//1번스킬

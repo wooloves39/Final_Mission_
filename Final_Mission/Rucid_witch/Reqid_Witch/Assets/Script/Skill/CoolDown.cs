@@ -72,6 +72,8 @@ public class CoolDown : MonoBehaviour {
 					send = true;
 				break;
 		}
+        if (send)
+            MpLessOn();
         return send;
     }
     public bool CheckCool(int cha, int n)
@@ -190,6 +192,7 @@ public class CoolDown : MonoBehaviour {
 	}
 	public void MpLessOn()
 	{
+        Debug.Log("Mp부족 UI 출력");
 		Mpless.SetActive(true);
 		PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.3f, 0.5f, OVRInput.Controller.RTouch));
 	}

@@ -27,7 +27,6 @@ public class SeiKwanSkill : MonoBehaviour
 	private Rigidbody rigi;
     private Quaternion bagicRota;
     private PlayerState player;
-    private int[] UseMp = {0,0,0,0,0};
 	private void Awake()
 	{
 		deltaTime = Time.deltaTime;
@@ -35,10 +34,6 @@ public class SeiKwanSkill : MonoBehaviour
         player = CoolTime.GetComponent<PlayerState>();
 		rigi = GetComponent<Rigidbody>();
         bagicRota = this.transform.rotation;
-        for (int i = 0; i < 5; ++i)
-        {
-            UseMp[i] = CoolTime.Azu_UseMp[i];
-        }
 	}
 	public void shoot(int skillIndex, GameObject targets, float handDistance,
 	float del_time = 10.0f, float Gage=0)
@@ -61,8 +56,8 @@ public class SeiKwanSkill : MonoBehaviour
 		if (!Cool && !Mp)
 		{
             CoolTime.SetCool(2, skill);
-            player.Mp -= UseMp[skill - 1];
-			switch (skill)
+            CoolTime.MpDown(1, skill);
+            switch (skill)
 			{
 				case 1:
 					BraveArrow(chargingGage);

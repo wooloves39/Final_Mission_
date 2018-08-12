@@ -195,4 +195,9 @@ public class MemoryPool : IEnumerable, System.IDisposable {
             return false;
         
     }
+    public GameObject GetItem(int n)
+    {
+        Item item = table[n];
+        return item.gameObject;
+    }
 }

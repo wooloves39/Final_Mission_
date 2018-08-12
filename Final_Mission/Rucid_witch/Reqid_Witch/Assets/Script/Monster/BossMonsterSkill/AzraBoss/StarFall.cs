@@ -51,7 +51,7 @@ public class StarFall : MonoBehaviour {
             this.transform.Rotate(new Vector3(0, 8.0f, 0));
             for (int i = 0; i < 6; ++i)
             {
-                Magic[i].transform.position += Vector3.up * 0.1f;
+                Magic[i].transform.position += Vector3.up * 0.2f;
             }
             time += 0.05f;
             yield return new WaitForSeconds(0.05f);

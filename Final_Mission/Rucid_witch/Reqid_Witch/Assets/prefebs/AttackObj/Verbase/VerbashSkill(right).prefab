@@ -3205,7 +3205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4268522143039814}
 --- !u!114 &114103217957790534
 MonoBehaviour:
@@ -3220,7 +3220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4945429708251440}
 --- !u!114 &114145564932222266
 MonoBehaviour:
@@ -3235,7 +3235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4268522143039814}
 --- !u!114 &114157304131696122
 MonoBehaviour:
@@ -3250,7 +3250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4945429708251440}
 --- !u!114 &114211399514385168
 MonoBehaviour:
@@ -3265,7 +3265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4945429708251440}
 --- !u!114 &114241461617184612
 MonoBehaviour:
@@ -3285,18 +3285,18 @@ MonoBehaviour:
   - {fileID: 1591866293783920}
   - {fileID: 1756725813930198}
   playSkill:
-  - 1
-  - 2
-  - 1.2
+  - 0.7
+  - 3
+  - 1.5
   - 3
   - 5
   CoolTime:
+  - 1
+  - 1
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  UseMp: 0000000000000000000000000000000000000000
+  UseMp: 0100000001000000010000000100000001000000
   left: 0
   handle: {fileID: 0}
   OtherHand: {fileID: 0}
@@ -3358,7 +3358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4945429708251440}
 --- !u!114 &114362353131308608
 MonoBehaviour:
@@ -3447,7 +3447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4268522143039814}
 --- !u!114 &114444401401559766
 MonoBehaviour:
@@ -3475,7 +3475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4945429708251440}
 --- !u!114 &114483968132764146
 MonoBehaviour:
@@ -3490,7 +3490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4268522143039814}
 --- !u!114 &114502744049270090
 MonoBehaviour:
@@ -3505,7 +3505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -20
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4268522143039814}
 --- !u!114 &114574358202602694
 MonoBehaviour:
@@ -3552,7 +3552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -20
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4268522143039814}
 --- !u!114 &114679390182948050
 MonoBehaviour:
@@ -3567,7 +3567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4268522143039814}
 --- !u!114 &114773684013185976
 MonoBehaviour:
@@ -3582,7 +3582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -20
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4268522143039814}
 --- !u!114 &114821615676816592
 MonoBehaviour:
@@ -3597,7 +3597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4945429708251440}
 --- !u!114 &114860531058842380
 MonoBehaviour:
@@ -3612,7 +3612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4268522143039814}
 --- !u!114 &114860801958605938
 MonoBehaviour:

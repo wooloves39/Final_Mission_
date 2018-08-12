@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BeejaeMonControll : MonoBehaviour {
 	public GameObject BeejeaPrefab;
@@ -9,10 +10,13 @@ public class BeejaeMonControll : MonoBehaviour {
 	private BossSoundSetting sound;
     private BeeJaeMonSkill beejaeManager;
     private Stage5Boss AI;
+    private NavMeshAgent agent;
 	// Use this for initialization
 	void Awake () 
     {
-		sound = GetComponent<BossSoundSetting>();
+
+        agent = GetComponent<NavMeshAgent>();
+        sound = GetComponent<BossSoundSetting>();
 		Hp = GetComponent<ObjectLife>().Hp;
 		beejaeManager=Instantiate(BeejeaPrefab).GetComponent<BeeJaeMonSkill>();
         beejaeManager.MyCharacters=gameObject;

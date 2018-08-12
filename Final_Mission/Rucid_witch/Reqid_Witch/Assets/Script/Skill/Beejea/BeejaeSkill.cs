@@ -66,7 +66,8 @@ public class BeejaeSkill : MonoBehaviour
 						{
 							StartCoroutine("Buff");
 							Player.Mp -= UseMp[1];
-						}
+                            cooldown.SetCool(3, 2);
+                        }
 						else
 						{
 							fail = true;
@@ -85,7 +86,8 @@ public class BeejaeSkill : MonoBehaviour
 						{
 							StartCoroutine("ThunderShock");
 							Player.Mp -= UseMp[2];
-						}
+                            cooldown.SetCool(3, 3);
+                        }
 						else
 						{
 							fail = true;

@@ -176,6 +176,7 @@ public class VerbashSkill : MonoBehaviour
 					{
 						if (!CoolDown[2])
                         {
+                            cooldown.SetCool(4, 3);
                             StartCoroutine("Chance");
                             StartCoroutine("Skill3");
 							Player.Mp -= UseMp[2];

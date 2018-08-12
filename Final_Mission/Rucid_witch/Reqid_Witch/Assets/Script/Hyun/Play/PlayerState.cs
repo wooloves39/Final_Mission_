@@ -43,6 +43,10 @@ public class PlayerState : MonoBehaviour
 	}
 	private void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.C))
+		{
+			Cheat = !Cheat;
+		}
 		if (MyState == State.Charging)
 		{
 			ChargingTime += Time.deltaTime;
@@ -200,8 +204,11 @@ public class PlayerState : MonoBehaviour
 			PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.2f, 1.0f-Hp/100.0f, OVRInput.Controller.LTouch));
 		}
 
-        if (Cheat)
-            Hp = 100;
+		if (Cheat)
+		{
+			Hp = 100;
+			Mp = 100;
+		}
 	}
 	public void ConsumeMp(float Consume)
 	{

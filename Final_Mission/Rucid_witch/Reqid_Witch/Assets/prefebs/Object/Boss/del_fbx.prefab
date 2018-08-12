@@ -5855,8 +5855,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 400
   MaxHp: 400
-  Speed: 2
-  BattleSpeed: 4
+  Speed: 4
+  BattleSpeed: 5
   Range: 17
   boss: 1
   Attack: 0
@@ -6649,11 +6649,11 @@ MonoBehaviour:
   MAttdelay: 0
   AttackFrame: 0.4
   SkillFrame:
-  - 0.8
-  - 0.8
-  - 0.8
-  - 0.8
-  - 0.8
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
   MobObj: {fileID: 0}
 --- !u!114 &114618420622114508
 MonoBehaviour:

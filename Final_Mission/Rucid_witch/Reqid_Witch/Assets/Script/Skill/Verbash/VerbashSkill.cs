@@ -246,7 +246,8 @@ public class VerbashSkill : MonoBehaviour
 			if (NoMp)
 			{
 				Debug.Log("엠피가 부족");
-			}
+                cooldown.MpLessOn();
+            }
 		}
 
 	}

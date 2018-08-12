@@ -97,6 +97,7 @@ public class AttackMethod : MonoBehaviour
 	{
 		if (InputManager_JHW.LTriggerOn() && InputManager_JHW.RTriggerOn())
 		{
+            Debug.Log("양쪽 트리거를 누른상태");
 			if (MyState.GetMyState() == PlayerState.State.Nomal)
 			{
 				MyState.SetMyState(PlayerState.State.Attack);
@@ -292,8 +293,8 @@ public class AttackMethod : MonoBehaviour
 		bool instance = false;
 		float distance = 0.0f;
 		Vector3 AzuraScale = AzuraBallPrefab.transform.localScale;
-
-		while (flug)
+        Debug.Log("아즈라 컨트롤 진입부분");
+        while (flug)
 		{
 			if (!instance && (AzuraHands[0].GetTouch() || AzuraHands[1].GetTouch()))
 			{
@@ -563,8 +564,12 @@ public class AttackMethod : MonoBehaviour
 			case 0://아즈라 공격 형태 기를 모으는 형태, 오큘러스 터치의 충돌에서 출발하여 양손을 벌릴때 점차 커지며 방출
 				{
 					float handDis = Vector3.Distance(Hands[0].transform.position, Hands[1].transform.position);
-					if (AzuraBall[AzuraBallNum] && MyState.GetMyState() != PlayerState.State.ChargingOver)
+                    Debug.Log(AzuraBall[AzuraBallNum]);
+                    Debug.Log(MyState.GetMyState());
+                    Debug.Log(PlayerState.State.ChargingOver);
+                    if (AzuraBall[AzuraBallNum] && MyState.GetMyState() != PlayerState.State.ChargingOver)
 					{
+                        Debug.Log("아즈라 슈팅 어택메소드 호출 지점");
 						if (!AzuraBall[AzuraBallNum].GetComponent<AzuraSkill>().IsShoot())
 						{
 							GameObject myTarget = PlayerTarget.getMytarget();

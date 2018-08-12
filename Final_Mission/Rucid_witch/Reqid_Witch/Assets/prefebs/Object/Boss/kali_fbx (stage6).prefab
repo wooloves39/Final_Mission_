@@ -5063,7 +5063,7 @@ MonoBehaviour:
   Time_Taget_Search: 1
   Time_Battle_Move: 1
   Time_RunAway: 8
-  Time_AttackMove: 1.17
+  Time_AttackMove: 1
   Time_Skill_1: 2
   Time_Skill_2: 2
   Time_Skill_3: 2.5
@@ -5074,11 +5074,11 @@ MonoBehaviour:
   Die_Time: 2
   SkillValue:
   - 0
-  - 18
-  - 42
-  - 64
-  - 79
-  - 91
+  - 12
+  - 24
+  - 49
+  - 60
+  - 75
   - 100
   BossCoolTime:
   - 0
@@ -5426,11 +5426,11 @@ MonoBehaviour:
   SkillFrame:
   - 0.2
   - 0.2
-  - 1
-  - 0.8
-  - 0.8
-  - 0.9
-  - 1.2
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
   MobObj: {fileID: 0}
 --- !u!114 &114933182052545610
 MonoBehaviour:

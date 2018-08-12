@@ -73,6 +73,7 @@ public class MonsterWaveGenerate : MonoBehaviour
 					}
 					Prefab_Count = FinalMobCount[N];
 				}
+
 			}
 		}
 		else
@@ -81,7 +82,46 @@ public class MonsterWaveGenerate : MonoBehaviour
 		}
 		GenTime = mobGenerater.GenTime;
 		StartCoroutine(MobGen());
+        StartCoroutine(MonsterTeam());
+        StartCoroutine(Stage7BossDie());
 	}
+    IEnumerator Stage7BossDie()
+    {
+        MonsterWaveGenerate[] OtherWave = {null,null, null};
+        if (FinalMiddleBoss)
+        {
+            while (true)
+            {
+                if (pool.BossDie())
+                {
+                    OtherWave = GetComponents<MonsterWaveGenerate>();
+                    for (int i = 0; i < 3; ++i)
+                    {
+                        OtherWave[i].pool.AllMonsterKill();
+                    }
+                    break;
+                }
+                else
+                {
+                    yield return new WaitForSeconds(1.0f);
+                }
+            }
+        }
+    }
+    IEnumerator MonsterTeam()
+    {
+        if (Prefab_Count != 1)
+        {
+            while (true)
+            {
+                if (pool.MonsterAttackCommand())
+                    break;
+                else
+                    yield return new WaitForSeconds(1.0f);
+                
+            }
+        }
+    }
 	IEnumerator MobGen()
 	{
 		yield return new WaitUntil(() => mobGenerater.Wave_Start);

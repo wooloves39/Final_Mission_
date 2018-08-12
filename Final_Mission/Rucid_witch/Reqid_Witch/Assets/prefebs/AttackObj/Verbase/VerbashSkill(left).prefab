@@ -3176,7 +3176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -20
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4990568546687084}
 --- !u!114 &114093712185994610
 MonoBehaviour:
@@ -3278,7 +3278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4990568546687084}
 --- !u!114 &114330510620489330
 MonoBehaviour:
@@ -3293,7 +3293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4990568546687084}
 --- !u!114 &114343451552263660
 MonoBehaviour:
@@ -3308,7 +3308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4990568546687084}
 --- !u!114 &114368379916355942
 MonoBehaviour:
@@ -3323,7 +3323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -20
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4990568546687084}
 --- !u!114 &114387090324122390
 MonoBehaviour:
@@ -3352,7 +3352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -20
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4990568546687084}
 --- !u!114 &114390310255936446
 MonoBehaviour:
@@ -3367,7 +3367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4946978703772668}
 --- !u!114 &114400531546592196
 MonoBehaviour:
@@ -3411,7 +3411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4946978703772668}
 --- !u!114 &114432520004510184
 MonoBehaviour:
@@ -3426,7 +3426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4990568546687084}
 --- !u!114 &114488540531967762
 MonoBehaviour:
@@ -3441,7 +3441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4946978703772668}
 --- !u!114 &114515146305277906
 MonoBehaviour:
@@ -3461,13 +3461,13 @@ MonoBehaviour:
   - {fileID: 1160513394160610}
   - {fileID: 1406163830861352}
   playSkill:
-  - 1
-  - 2
-  - 1.2
+  - 0.7
+  - 3
+  - 1.5
   - 3
   - 5
   CoolTime:
-  - 1
+  - 0
   - 0
   - 0
   - 0
@@ -3537,7 +3537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4990568546687084}
 --- !u!114 &114734752641750464
 MonoBehaviour:
@@ -3594,7 +3594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4946978703772668}
 --- !u!114 &114832694779673724
 MonoBehaviour:
@@ -3625,7 +3625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4946978703772668}
 --- !u!114 &114874919028331892
 MonoBehaviour:
@@ -3656,7 +3656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -7
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4990568546687084}
 --- !u!114 &114888439279645940
 MonoBehaviour:
@@ -3713,7 +3713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -4
   glowTime: 0.75
-  upsize: -2
+  upsize: -4
   target: {fileID: 4946978703772668}
 --- !u!135 &135048893968646104
 SphereCollider:

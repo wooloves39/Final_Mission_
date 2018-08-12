@@ -5884,8 +5884,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 700
   MaxHp: 700
-  Speed: 2
-  BattleSpeed: 2.7
+  Speed: 3
+  BattleSpeed: 4
   Range: 15
   boss: 1
   Attack: 0
@@ -6191,13 +6191,13 @@ MonoBehaviour:
   MAttdelay: 0
   AttackFrame: 0.4
   SkillFrame:
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
-  - 0.5
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
+  - 0.4
   - 1
   - 1
   MobObj: {fileID: 0}
@@ -7119,7 +7119,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137248382819397946
 SkinnedMeshRenderer:
@@ -7648,8 +7648,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.7
-  m_Acceleration: 2.7
+  m_Speed: 4
+  m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 8

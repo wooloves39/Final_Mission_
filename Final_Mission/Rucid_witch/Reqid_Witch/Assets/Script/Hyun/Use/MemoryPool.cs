@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MemoryPool : IEnumerable, System.IDisposable {
+
 	class Item
 	{
 		public bool active;
@@ -25,7 +26,6 @@ public class MemoryPool : IEnumerable, System.IDisposable {
 	//메모리 풀 생성
 	//original: 미리 생성될 원본 소스
 	//count: 풀 최고 갯수
-
 	public void Create(Object original, int count)
 	{
 		Dispose();
@@ -147,4 +147,57 @@ public class MemoryPool : IEnumerable, System.IDisposable {
 		}
 		return check;
 	}
+    public bool BossDie()
+    {
+        bool check = false;
+        for (int i = 0; i < table.Length; ++i)
+        {
+            Item item = table[i];
+            if (item.gameObject.GetComponent<ObjectLife>().Hp <= 0)
+                return true;
+        }
+        return false;
+    }
+    public void AllMonsterKill()
+    {
+        for (int i = 0; i < table.Length; ++i)
+        {
+            Item item = table[i];
+            if (item.gameObject.activeInHierarchy == true)
+            {
+                item.gameObject.GetComponent<ObjectLife>().Hp = -1;
+            }
+        }
+        
+    }
+    public bool MonsterAttackCommand()
+    {
+        List<Stage5MobAI> Mob = new List<Stage5MobAI>();
+        bool Attack = false;
+        for (int i = 0; i < table.Length; ++i)
+        {
+            Item item = table[i];
+            Mob.Add(item.gameObject.gameObject.GetComponent<Stage5MobAI>());
+            if (Mob[i].Fight == true)
+            {
+                Attack = true;
+            }
+        }
+        if (Attack)
+        {
+            for (int i = 0; i < table.Length; ++i)
+            {
+                Mob[i].Fight = true;
+            }
+            return true;
+        }
+        else
+            return false;
+        
+    }
+    public GameObject GetItem(int n)
+    {
+        Item item = table[n];
+        return item.gameObject;
+    }
 }

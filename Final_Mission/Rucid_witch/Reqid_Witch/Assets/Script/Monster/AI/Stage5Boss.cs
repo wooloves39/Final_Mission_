@@ -140,24 +140,32 @@ public class Stage5Boss: MonoBehaviour {
 					num = (int)Peace.Dequeue();
 				else
 				{
-					if (AttackMove >= AttackMoveNum)
+                    
+                    if (AttackMove >= AttackMoveNum)
 					{
-						num = 14;
-						AttackMove = 0;
-                        AttackMoveNum = getRandom(9,17);
-						Debug.Log("Move 선택");
-                        if (!run && Ulti)
-						{
-							if (AttackMoveNum == 15)//12.5%
-							{
-								if (getRandom(0, 4) == 0)//3.125%로도망 = 주기 * 3.125%
-								{
-									run = true;
-									num = 13;
-									Debug.Log("run AI 선택");
-								}
-							}
-						}
+                        if (!ani.GetCurrentAnimatorStateInfo(0).IsName("skill1") &&
+                           !ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
+                           !ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
+                           !ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
+                           !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
+                        {
+                            num = 14;
+                            AttackMove = 0;
+                            AttackMoveNum = getRandom(9, 17);
+                            Debug.Log("Move 선택");
+                            if (!run && Ulti)
+                            {
+                                if (AttackMoveNum == 15)//12.5%
+                                {
+                                    if (getRandom(0, 4) == 0)//3.125%로도망 = 주기 * 3.125%
+                                    {
+                                        run = true;
+                                        num = 13;
+                                        Debug.Log("run AI 선택");
+                                    }
+                                }
+                            }
+                        }
 
 					}
 					else

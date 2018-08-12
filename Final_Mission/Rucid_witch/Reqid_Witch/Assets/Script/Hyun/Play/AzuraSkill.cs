@@ -81,7 +81,6 @@ public class AzuraSkill : MonoBehaviour
 					break;
 			}
 			CoolTime.MpDown(1, skill);
-			CoolTime.SetCool(1, skill);
 			Shoot = true;
 			StartCoroutine(Shooting());
 		}

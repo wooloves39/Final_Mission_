@@ -20,7 +20,10 @@ public class Kali_shotSkill : MonoBehaviour {
 	}
 	private void OnDisable()
 	{
-		transform.position = ObjTr.transform.position;
-		transform.rotation = ObjTr.transform.rotation;
+        if (ObjTr.gameObject.activeInHierarchy)
+        {
+            transform.position = ObjTr.transform.position;
+            transform.rotation = ObjTr.transform.rotation;
+        }
 	}
 }

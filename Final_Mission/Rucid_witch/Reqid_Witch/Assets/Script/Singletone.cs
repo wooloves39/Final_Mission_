@@ -27,7 +27,7 @@ public class Singletone
 	public string name= "Reqid_Witch";
 	public int stage = 6;
 	public string saveTime;
-	public int[] Myskill = { 3, 1, 2 };
+	public int[] Myskill = { 1, 2, 4 };
 
 	
 	public void Save(string FileName)

@@ -18,11 +18,28 @@ public class Laiser : MonoBehaviour {
     }
     void OnEnable()
     {
-        this.transform.position = Pos[num] + azra.position;
+        switch(num)
+        {
+            case 0:
+                this.transform.position = azra.right * -8 + azra.forward * -4 + azra.position + Vector3.up * +2;
+                break;
+
+            case 1:
+                this.transform.position = azra.right * -3 + azra.forward * -4 + azra.position + Vector3.up * +2;
+                break;
+
+            case 2:
+                this.transform.position = azra.right * 3 + azra.forward * -4 + azra.position + Vector3.up * +2;
+                break;
+            case 3:
+                this.transform.position = azra.right * 8 + azra.forward * -4 + azra.position + Vector3.up * +2;
+                break;
+        }
         Look_At();
     }
-    void DisEnable()
+    private void OnDisable()
     {
+
         Line.SetActive(false);
         Magic.SetActive(false);
     }

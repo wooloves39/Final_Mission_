@@ -34,7 +34,8 @@ public class AzraMob_Controll : MonoBehaviour {
     {
         sound.PlayerSound(2);
         num = 0;
-        Skill[num].transform.position = azra.transform.position ;
+        Skill[num].transform.position = azra.transform.position;
+        Skill[num].transform.rotation = azra.transform.rotation;
         StartCoroutine("Attack", num);
     }
     void Skill2()//StarFall

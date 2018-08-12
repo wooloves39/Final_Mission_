@@ -226,6 +226,10 @@ public class LinePointChecker : MonoBehaviour
 				}
 			}
 		}
+		else
+		{
+			markSet.setOff(Index);
+		}
 	}
 	private void PlayingSound()
 	{

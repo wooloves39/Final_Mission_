@@ -9,8 +9,10 @@ public class SweetHamony : MonoBehaviour {
 	public GameObject Coll;
 	private PlayerState player;
 	public float timer { get; set; }
+    private CoolDown CoolTime;
 	private void Awake()
 	{
+        CoolTime = GetComponentInParent<CoolDown>();
 		timer = 0.0f;
 		player = GetComponentInParent<PlayerState>();
 	}
@@ -28,7 +30,7 @@ public class SweetHamony : MonoBehaviour {
 		if (timer > 2.5f)
 		{
 			timer = 0.0f;
-			if (player.Mp >= UseMp)
+			if (CoolTime.CheckMp(5,1))
 				player.Mp -= UseMp;
 			else
 			{

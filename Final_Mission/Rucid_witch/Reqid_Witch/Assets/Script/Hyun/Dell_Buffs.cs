@@ -12,43 +12,62 @@ public class Dell_Buffs : MonoBehaviour {
 	private CoolDown CoolTime;
 	void Start() {
 		pointChecker = GetComponent<LinePointChecker>();
-		CoolTime = FindObjectOfType<CoolDown>();
+		CoolTime = GetComponentInParent<CoolDown>();
 	}
 
 	// Update is called once per frame
 	void Update() {
 		bool Mp = false;
 		bool Cool = false;
-		switch (pointChecker.getCurrentSkill())
-		{
-			case 2:
-				{
-					
-						CoolTime.SetCool(5, 2);
-						CoolTime.MpDown(5, 2);
-						buffs[0].SetActive(true);
-					pointChecker.resetSkill();
-				}
-				break;
-			case 3:
-				{
-					
-						CoolTime.SetCool(5, 3);
-						CoolTime.MpDown(5, 3);
-						buffs[1].SetActive(true);
-					pointChecker.resetSkill();
-				}
-				break;
-			case 5:
-				{
-					
-						CoolTime.SetCool(5, 5);
-						CoolTime.MpDown(5, 5);
-						buffs[2].SetActive(true);
-					pointChecker.resetSkill();
-				}
-				break;
-		}
+        if(CoolTime.CheckCool(5, pointChecker.getCurrentSkill()))
+        {
+            Cool = true;
+        }
+        if (CoolTime.CheckMp(5, pointChecker.getCurrentSkill()))
+        {
+            Mp = true;
+        }
+        if (!Cool && !Mp)
+        {
+            switch (pointChecker.getCurrentSkill())
+            {
+                case 2:
+                    {
+
+                        CoolTime.SetCool(5, 2);
+                        CoolTime.MpDown(5, 2);
+                        buffs[0].SetActive(true);
+                        pointChecker.resetSkill();
+                    }
+                    break;
+                case 3:
+                    {
+
+                        CoolTime.SetCool(5, 3);
+                        CoolTime.MpDown(5, 3);
+                        buffs[1].SetActive(true);
+                        pointChecker.resetSkill();
+                    }
+                    break;
+                case 5:
+                    {
+
+                        CoolTime.SetCool(5, 5);
+                        CoolTime.MpDown(5, 5);
+                        buffs[2].SetActive(true);
+                        pointChecker.resetSkill();
+                    }
+                    break;
+            }
+        }
+        else
+        {
+            if(Mp)
+                Debug.Log("Mp부족 처리 부분");
+
+            if (Cool)
+                Debug.Log("쿨타임 중 처리 부분");
+        }
 		
 	}
 }

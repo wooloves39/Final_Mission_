@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MplessImage : MonoBehaviour {
 	private Image image;
 	private Color imageColor;
+    public float delTime = 0.005f;
 	private void Awake()
 	{
 		image = GetComponent<Image>();
@@ -31,7 +32,7 @@ public class MplessImage : MonoBehaviour {
 				if (count == 6) break;
 			}
 			image.color = imageColor;
-			yield return null;
+			yield return new WaitForSeconds(delTime);
 		}
 		gameObject.SetActive(false);
 	}

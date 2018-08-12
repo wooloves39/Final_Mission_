@@ -408,7 +408,7 @@ Prefab:
     - target: {fileID: 114279177382299398, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
       propertyPath: Prefab_Count
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114917297572686694, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
@@ -419,7 +419,7 @@ Prefab:
     - target: {fileID: 114917297572686694, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
       propertyPath: Prefab_Count
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114487811922332136, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
@@ -433,6 +433,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1314756675457100, guid: d69e16cdd9a8af84cb1f15c2f7516165,
         type: 2}
+    - target: {fileID: 114917297572686694, guid: 480b50d78952ea745b85c674444a6d87,
+        type: 2}
+      propertyPath: WavePosNum
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114077061778976820, guid: 480b50d78952ea745b85c674444a6d87, type: 2}
     - {fileID: 114819401480155848, guid: 480b50d78952ea745b85c674444a6d87, type: 2}
@@ -800,6 +805,26 @@ GameObject:
   m_PrefabParentObject: {fileID: 1144980746354922, guid: 480b50d78952ea745b85c674444a6d87,
     type: 2}
   m_PrefabInternal: {fileID: 370153611}
+--- !u!114 &1648488481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1648488480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e2c08a03776244287ad31f67c7ac5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1516672222777650, guid: 85269b6da1d52b04bb38cb6c333c6d75, type: 2}
+  Prefab_Count: 2
+  Finalboss: 0
+  first: 0
+  FinalMiddleBoss: 0
+  FinalPrefab: []
+  FinalMobPrefab: []
+  FinalMobCount: 
+  WavePosNum: 2
 --- !u!1001 &1852814429
 Prefab:
   m_ObjectHideFlags: 0
@@ -873,6 +898,46 @@ GameObject:
   m_PrefabParentObject: {fileID: 1099770979329912, guid: 480b50d78952ea745b85c674444a6d87,
     type: 2}
   m_PrefabInternal: {fileID: 370153611}
+--- !u!114 &1958081752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958081751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e2c08a03776244287ad31f67c7ac5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1082659963072908, guid: 2e5d2c0770a3f8144af00f7b730dd95b, type: 2}
+  Prefab_Count: 3
+  Finalboss: 0
+  first: 0
+  FinalMiddleBoss: 0
+  FinalPrefab: []
+  FinalMobPrefab: []
+  FinalMobCount: 
+  WavePosNum: 2
+--- !u!114 &1958081753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1958081751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e2c08a03776244287ad31f67c7ac5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1082659963072908, guid: 2e5d2c0770a3f8144af00f7b730dd95b, type: 2}
+  Prefab_Count: 3
+  Finalboss: 0
+  first: 0
+  FinalMiddleBoss: 0
+  FinalPrefab: []
+  FinalMobPrefab: []
+  FinalMobCount: 
+  WavePosNum: 1
 --- !u!1001 &2027470150
 Prefab:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class VerbashMonSkill : MonoBehaviour {
     private void Awake()
 	{
 		V4 = magic[3].GetComponentsInChildren<VerbashSkill4>();
-        AI = GetComponent<Stage5Boss>();
+        AI = FindObjectOfType<Stage5Boss>();
     }
 	public void shoot(int skillIndex, GameObject targetPos)
 	{

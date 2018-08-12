@@ -27,6 +27,7 @@ public class SeiKwanSkill : MonoBehaviour
 	private Rigidbody rigi;
     private Quaternion bagicRota;
     private PlayerState player;
+    public bool MonsterAttack = false;
 	private void Awake()
 	{
 		deltaTime = Time.deltaTime;
@@ -45,39 +46,65 @@ public class SeiKwanSkill : MonoBehaviour
 		target = targets;
 		skill = skillIndex;
 		handDis = handDistance;
-		if (CoolTime.CheckCool(2, skill))
-		{
-			Cool = true;
-		}
-		if (CoolTime.CheckMp(2, skill))
-		{
-			Mp = true;
-		}
-		if (!Cool && !Mp)
-		{
-            CoolTime.SetCool(2, skill);
-            CoolTime.MpDown(1, skill);
+        if (MonsterAttack)
+        {
             switch (skill)
-			{
-				case 1:
-					BraveArrow(chargingGage);
-					break;
-				case 2:
-					ArrowTrab(chargingGage);
-					break;
-				case 3:
-					SkyArrow(targets.transform.position, chargingGage);
-					break;
-				case 5:
-					HavensGate(targets.transform.position, chargingGage);
-					break;
-			}
-			//CoolTime.MpDown(2, skill);
-			if (skill == 5) del_time += 20f;
-			//if (skill > 1) UseOtherObject();
-			Shoot = true;
-			StartCoroutine(Shooting(del_time));
-		}
+            {
+                case 1:
+                    BraveArrow(chargingGage);
+                    break;
+                case 2:
+                    ArrowTrab(chargingGage);
+                    break;
+                case 3:
+                    SkyArrow(targets.transform.position, chargingGage);
+                    break;
+                case 5:
+                    HavensGate(targets.transform.position, chargingGage);
+                    break;
+            }
+            //CoolTime.MpDown(2, skill);
+            if (skill == 5) del_time += 20f;
+            //if (skill > 1) UseOtherObject();
+            Shoot = true;
+            StartCoroutine(Shooting(del_time));
+        }
+        else
+        {
+            if (CoolTime.CheckCool(2, skill))
+            {
+                Cool = true;
+            }
+            if (CoolTime.CheckMp(2, skill))
+            {
+                Mp = true;
+            }
+            if (!Cool && !Mp)
+            {
+                CoolTime.SetCool(2, skill);
+                CoolTime.MpDown(1, skill);
+                switch (skill)
+                {
+                    case 1:
+                        BraveArrow(chargingGage);
+                        break;
+                    case 2:
+                        ArrowTrab(chargingGage);
+                        break;
+                    case 3:
+                        SkyArrow(targets.transform.position, chargingGage);
+                        break;
+                    case 5:
+                        HavensGate(targets.transform.position, chargingGage);
+                        break;
+                }
+                //CoolTime.MpDown(2, skill);
+                if (skill == 5) del_time += 20f;
+                //if (skill > 1) UseOtherObject();
+                Shoot = true;
+                StartCoroutine(Shooting(del_time));
+            }
+        }
 		target = null;
 	}
 	//#### #### #### #### 기본

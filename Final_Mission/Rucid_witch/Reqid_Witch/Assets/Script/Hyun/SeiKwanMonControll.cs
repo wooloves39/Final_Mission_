@@ -26,8 +26,12 @@ public class SeiKwanMonControll : MonoBehaviour {
 		int poolCount = 5;
 		Arrowpool.Create(ArrowPrefab, poolCount);
 		Arrow = new GameObject[poolCount];
+        
 		for (int i = 0; i < Arrow.Length; ++i)
+        {
+            Arrowpool.GetItem(i).GetComponent<SeiKwanSkill>().MonsterAttack = true;
 			Arrow[i] = null;
+        }
     }
 	private void OnApplicationQuit()
 	{

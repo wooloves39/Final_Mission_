@@ -17,6 +17,7 @@ public class MonsterWaveGenerate : MonoBehaviour
     public GameObject[] FinalPrefab;
     public GameObject[] FinalMobPrefab;
     public int[] FinalMobCount;
+    public int WavePosNum = 0;
 	// Use this for initialization
 	private void Awake()
 	{
@@ -129,8 +130,23 @@ public class MonsterWaveGenerate : MonoBehaviour
 		yield return new WaitForSeconds(GenTime);
 		for (int i = 0; i < Prefab_Count; ++i)
 		{
-			int initPos = i % 3;
-			GameObject obj= pool.NewItem(mobGenerater.Position[initPos].transform.position);
+            GameObject obj = new GameObject();
+            switch (WavePosNum)
+            {
+                case 0:
+                   obj = pool.NewItem(mobGenerater.Position[WavePosNum].transform.position);
+
+                    break;
+                case 1:
+                   obj = pool.NewItem(mobGenerater.Position[WavePosNum].transform.position);
+
+                    break;
+                case 2:
+                    obj = pool.NewItem(mobGenerater.Position[WavePosNum].transform.position);
+
+                    break;
+            }
+
 			if (FinalMiddleBoss)
 			{
 				obj.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);

@@ -46,6 +46,7 @@ public class PlayerState : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.C))
 		{
 			Cheat = !Cheat;
+            Debug.Log("치트");
 		}
 		if (MyState == State.Charging)
 		{

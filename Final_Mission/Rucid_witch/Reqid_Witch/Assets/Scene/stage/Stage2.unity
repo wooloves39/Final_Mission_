@@ -415,27 +415,27 @@ Prefab:
     - target: {fileID: 224794559712426150, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224794559712426150, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224103675744042756, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224103675744042756, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224103675744042756, guid: cd4184ba12fefda4ebe20adef91f5ab8,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
@@ -616,7 +616,7 @@ Prefab:
     - target: {fileID: 114819401480155848, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
       propertyPath: Prefab_Count
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114279177382299398, guid: 480b50d78952ea745b85c674444a6d87,
         type: 2}
@@ -633,6 +633,21 @@ Prefab:
         type: 2}
       propertyPath: Finalboss
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114279177382299398, guid: 480b50d78952ea745b85c674444a6d87,
+        type: 2}
+      propertyPath: WavePosNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114077061778976820, guid: 480b50d78952ea745b85c674444a6d87,
+        type: 2}
+      propertyPath: WavePosNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819401480155848, guid: 480b50d78952ea745b85c674444a6d87,
+        type: 2}
+      propertyPath: WavePosNum
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 480b50d78952ea745b85c674444a6d87, type: 2}
@@ -652,6 +667,26 @@ GameObject:
   m_PrefabParentObject: {fileID: 1099770979329912, guid: 480b50d78952ea745b85c674444a6d87,
     type: 2}
   m_PrefabInternal: {fileID: 1960955978}
+--- !u!114 &1960955982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1960955980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e2c08a03776244287ad31f67c7ac5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1339942502418268, guid: dc9b191662bdde94abe91495658306b4, type: 2}
+  Prefab_Count: 3
+  Finalboss: 0
+  first: 0
+  FinalMiddleBoss: 0
+  FinalPrefab: []
+  FinalMobPrefab: []
+  FinalMobCount: 
+  WavePosNum: 2
 --- !u!1001 &2027470150
 Prefab:
   m_ObjectHideFlags: 0

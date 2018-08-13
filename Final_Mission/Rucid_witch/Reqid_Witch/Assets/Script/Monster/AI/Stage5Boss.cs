@@ -311,7 +311,7 @@ public class Stage5Boss: MonoBehaviour {
 						{
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
-							ani.SetBool("Skill1", true);
+							//ani.SetBool("Skill1", true);
 							time = Time_Skill_1;
 							BCommand.Skill(time, 0);
 							break;
@@ -320,7 +320,7 @@ public class Stage5Boss: MonoBehaviour {
 						{
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
-							ani.SetBool("Skill2", true);
+							//ani.SetBool("Skill2", true);
 							time = Time_Skill_2;
 							BCommand.Skill(time, 1);
 							break;
@@ -329,7 +329,7 @@ public class Stage5Boss: MonoBehaviour {
                         {
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
-							ani.SetBool("Skill3", true);
+							//ani.SetBool("Skill3", true);
 							time = Time_Skill_3;
 							BCommand.Skill(time, 2);
 							break;
@@ -338,7 +338,7 @@ public class Stage5Boss: MonoBehaviour {
                         {
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
-							ani.SetBool("Skill4", true);
+							//ani.SetBool("Skill4", true);
 							time = Time_Skill_4;
 							BCommand.Skill(time, 3);
 							break;
@@ -347,7 +347,7 @@ public class Stage5Boss: MonoBehaviour {
 						{
 							ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
-							ani.SetBool("Skill5", true);
+							//ani.SetBool("Skill5", true);
 							time = Time_Skill_5;
 							BCommand.Skill(time, 4);
 							break;

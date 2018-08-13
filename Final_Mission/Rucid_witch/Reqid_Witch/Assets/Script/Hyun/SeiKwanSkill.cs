@@ -30,6 +30,7 @@ public class SeiKwanSkill : MonoBehaviour
     public bool MonsterAttack = false;
 	private void Awake()
 	{
+        StopAllCoroutines();
 		deltaTime = Time.deltaTime;
 		CoolTime = FindObjectOfType<CoolDown>();
         player = CoolTime.GetComponent<PlayerState>();

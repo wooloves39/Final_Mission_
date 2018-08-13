@@ -294,7 +294,7 @@ public class AzraAI : MonoBehaviour
 						{
 							ani.SetBool("Run", false);
 							ani.SetBool("Move", false);
-							ani.SetBool("Skill1", true);
+							//ani.SetBool("Skill1", true);
 							time = Time_Skill_1;
 							BCommand.Skill(time, 0);
 							break;
@@ -304,7 +304,7 @@ public class AzraAI : MonoBehaviour
 							StartCoroutine("Coll", 1);
 							ani.SetBool("Run", false);
 							ani.SetBool("Move", false);
-							ani.SetBool("Skill2", true);
+							//ani.SetBool("Skill2", true);
 							time = Time_Skill_2;
 							BCommand.Skill(time, 1);
 							break;
@@ -314,7 +314,7 @@ public class AzraAI : MonoBehaviour
 							StartCoroutine("Coll", 2);
 							ani.SetBool("Run", false);
 							ani.SetBool("Move", false);
-							ani.SetBool("Skill3", true);
+							//ani.SetBool("Skill3", true);
 							time = Time_Skill_3;
 							BCommand.Skill(time, 2);
 							break;
@@ -324,7 +324,7 @@ public class AzraAI : MonoBehaviour
 							StartCoroutine("Coll", 3);
 							ani.SetBool("Run", false);
 							ani.SetBool("Move", false);
-							ani.SetBool("Skill4", true);
+							//ani.SetBool("Skill4", true);
 							time = Time_Skill_4;
 							BCommand.Skill(time, 3);
 							break;
@@ -334,7 +334,7 @@ public class AzraAI : MonoBehaviour
 							StartCoroutine("Coll", 4);
 							ani.SetBool("Run", false);
 							ani.SetBool("Move", false);
-							ani.SetBool("Skill5", true);
+							//ani.SetBool("Skill5", true);
 							time = Time_Skill_5;
 							BCommand.Skill(time, 4);
 							break;
@@ -344,7 +344,7 @@ public class AzraAI : MonoBehaviour
 							StartCoroutine("Coll", 5);
 							ani.SetBool("Run", false);
 							ani.SetBool("Move", false);
-							ani.SetBool("Skill6", true);
+							//ani.SetBool("Skill6", true);
 							time = Time_Skill_6;
 							BCommand.Skill(time, 5);
 							break;
@@ -354,7 +354,7 @@ public class AzraAI : MonoBehaviour
 							StartCoroutine("Coll", 6);
 							ani.SetBool("Run", false);
 							ani.SetBool("Move", false);
-							ani.SetBool("Skill7", true);
+							//ani.SetBool("Skill7", true);
 							time = Time_Skill_7;
 							BCommand.Skill(time, 6);
 							break;
@@ -364,7 +364,7 @@ public class AzraAI : MonoBehaviour
                         {
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
-                            ani.SetBool("Skill8", true);
+                           // ani.SetBool("Skill8", true);
                             time = Time_Skill_8;
                             BCommand.Skill(time, 7);
                             break;
@@ -374,7 +374,7 @@ public class AzraAI : MonoBehaviour
                         {
                             ani.SetBool("Run", false);
                             ani.SetBool("Move", false);
-                            ani.SetBool("Skill9", true);
+                           // ani.SetBool("Skill9", true);
                             time = Time_Skill_9;
                             BCommand.Skill(time, 8);
                             break;

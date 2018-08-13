@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ModelView : MonoBehaviour {
 	public GameObject Camera;
-	public GameObject[] Map;
 	public GameObject[] Unit;
 	private int num = 0;
-	// Use this for initialization
-	void Start () {
+    public float speed=5;
+    public float cycle = 0.002f;
+    // Use this for initialization
+    void Start () {
 		StartCoroutine (Viewing ());
 	}
 	IEnumerator Viewing()
@@ -16,28 +17,27 @@ public class ModelView : MonoBehaviour {
 		float degree = 0.0f;
 		yield return new WaitForSeconds (2.0f);
 
-			Map [num].gameObject.SetActive (true);
-			Unit [num].gameObject.SetActive (true);
+		Unit [num].gameObject.SetActive (true);
 		while (true) {
-			Camera.transform.Rotate (new Vector3 (0, 0.4f, 0));
-			degree += 0.4f;
+            Camera.transform.position += Vector3.right*speed;
+			degree += speed;
 				
-			yield return new WaitForSeconds (0.035f);
-			if (degree >= 360.0f) {
-				if (num != 6)
-					num++;
-				else
-					num = 0;
+			yield return new WaitForSeconds (cycle);
+			if (degree >= 600.0f)
+            {
+                if (num != 6)
+                    num++;
+                else
+                {
+                    num = 0;
+                    Camera.transform.position = new Vector3(-100, 240, -700);
+                }
 				degree = 0.0f;
 
 				if (num != 0) {
-					Map [num - 1].gameObject.SetActive (false);
-					Map [num].gameObject.SetActive (true);
 					Unit [num - 1].gameObject.SetActive (false);
 					Unit [num].gameObject.SetActive (true);
 				} else {
-					Map [6].gameObject.SetActive (false);
-					Map [num].gameObject.SetActive (true);
 					Unit [6].gameObject.SetActive (false);
 					Unit [num].gameObject.SetActive (true);
 				}

@@ -15,7 +15,6 @@ public class SeiKwanMonControll : MonoBehaviour {
 	// Use this for initialization
     private void Start()
     {
-
         target = GetComponent<BattleCommand>().getTarget();
     }
 	private void Awake()

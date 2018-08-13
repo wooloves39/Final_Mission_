@@ -26,18 +26,18 @@ public class StartNew : MonoBehaviour
 	IEnumerator StartNewCor()
 	{ int textCount = 0;
 		float colorAlpha = 0.0f;
-		int plugNum = 1;
+		float plugNum = 2.5f;
 		while (true)
 		{
 			textimage.color = new Color(textimage.color.r, textimage.color.g, textimage.color.b,colorAlpha/255);
 			colorAlpha += plugNum;
-			if(colorAlpha==255|| colorAlpha == 0)
+			if(colorAlpha>=255|| colorAlpha <= 0)
 			{
-				if (colorAlpha == 255)
+				if (colorAlpha >= 255)
 				{
-					yield return new WaitForSeconds(2.0f);
+					yield return new WaitForSeconds(1.5f);
 				}
-				if (colorAlpha == 0)
+				if (colorAlpha <= 0)
 				{
 					++textCount;
 					if (textCount == images.Length) break;
@@ -47,6 +47,6 @@ public class StartNew : MonoBehaviour
 			}
 			yield return null;
 		}
-		sceneChange.sceneChange("Stage0");
+		sceneChange.sceneChange(SceneName);
 	}
 }

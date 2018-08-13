@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 10698e8ce60612a46a2d6021b2eb0a1d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ff3244a64994c494f841689174e1a4c1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -515,10 +515,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images:
-  - {fileID: 21300000, guid: 26d6b318bd8df7447b661a6286c5e686, type: 3}
-  - {fileID: 21300000, guid: e3fd234927771e2478cdc9882ec5e322, type: 3}
-  - {fileID: 21300000, guid: 01b54d9f68f9327479f71787bd4d9b16, type: 3}
-  - {fileID: 21300000, guid: 14aeb775afea37f418d9dccf3799987e, type: 3}
+  - {fileID: 21300000, guid: aa22090369ec5c5449f16f4f09fda02a, type: 3}
+  - {fileID: 21300000, guid: 8270665a3383b4149b8dd046afacc903, type: 3}
+  - {fileID: 21300000, guid: aba9187f7ed8e9e48900b160fb5d6a4a, type: 3}
+  - {fileID: 21300000, guid: 09f78fa2017a86e48897c92a2573d77e, type: 3}
+  - {fileID: 21300000, guid: 34c9bde07bb13ee4490aa5f181c4779e, type: 3}
   SceneName: Title_Scene
 --- !u!114 &1726753993
 MonoBehaviour:

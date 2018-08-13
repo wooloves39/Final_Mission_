@@ -14,14 +14,14 @@ public class KaliMobControll : MonoBehaviour {
     private int num = 0;
     private KaliBoss AI;
     private BossSoundSetting sound;
-    private GameObject KaliSkill;
-    public GameObject KaliSkillprefab;
+    public GameObject KaliSkillprefab1;
+    public GameObject KaliSkillprefab2;
+    public GameObject KaliSkillprefab3;
     void Awake()
     {
-        KaliSkill = Instantiate(KaliSkillprefab);
-        Skill[3] = KaliSkill.GetComponent<KaliSkillIndex>().skill[0];
-        Skill[5] = KaliSkill.GetComponent<KaliSkillIndex>().skill[1];
-        Skill[6] = KaliSkill.GetComponent<KaliSkillIndex>().skill[2];
+        Skill[3] = Instantiate(KaliSkillprefab1);
+        Skill[5] = Instantiate(KaliSkillprefab2);
+        Skill[6] = Instantiate(KaliSkillprefab3);
         nav = GetComponent<NavMeshAgent>();
         ani = GetComponent<Animator>();
         target = this.transform;
@@ -118,8 +118,26 @@ public class KaliMobControll : MonoBehaviour {
     IEnumerator Attack(int num)
     {
         yield return new WaitForSeconds(Delay_Time[num]);
+        if(num == 4)
+        {
+            Skill[0].GetComponent<Kali_Skill_Attack>().DamageUp();
+            Skill[1].GetComponent<Kali_Skill_Attack>().DamageUp();
+            Skill[2].GetComponent<Kali_Skill_Attack>().DamageUp();
+            Skill[3].GetComponent<Kali_Skill_Attack>().DamageUp();
+            Skill[5].GetComponentInChildren<Kali_Skill_Attack>().DamageUp();
+            Skill[6].GetComponent<Kali_Skill_Attack>().DamageUp();
+        }
         Skill[num].SetActive(true);
         yield return new WaitForSeconds(On_Time[num]);
+        if (num == 4)
+        {
+            Skill[0].GetComponent<Kali_Skill_Attack>().DamageDown();
+            Skill[1].GetComponent<Kali_Skill_Attack>().DamageDown();
+            Skill[2].GetComponent<Kali_Skill_Attack>().DamageDown();
+            Skill[3].GetComponent<Kali_Skill_Attack>().DamageDown();
+            Skill[5].GetComponentInChildren<Kali_Skill_Attack>().DamageDown();
+            Skill[6].GetComponent<Kali_Skill_Attack>().DamageDown();
+        }
         Skill[num].SetActive(false);
     }
     

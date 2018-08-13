@@ -4247,7 +4247,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4327,7 +4327,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4407,7 +4407,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4487,7 +4487,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4567,7 +4567,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4665,6 +4665,7 @@ MonoBehaviour:
   dotTime: 10
   Azra: 0
   QuickDel: 0
+  groundCheck: 0
 --- !u!114 &114019412956327618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5771,6 +5772,7 @@ MonoBehaviour:
   dotTime: 10
   Azra: 0
   QuickDel: 0
+  groundCheck: 0
 --- !u!114 &114870429783121178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5920,6 +5922,7 @@ MonoBehaviour:
   dotTime: 10
   Azra: 0
   QuickDel: 0
+  groundCheck: 0
 --- !u!114 &114959694204255610
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6025,6 +6028,7 @@ MonoBehaviour:
   dotTime: 10
   Azra: 0
   QuickDel: 0
+  groundCheck: 0
 --- !u!135 &135464940322147040
 SphereCollider:
   m_ObjectHideFlags: 1

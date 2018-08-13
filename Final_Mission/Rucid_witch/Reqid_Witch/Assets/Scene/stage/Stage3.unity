@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657767, g: 0.4964127, b: 0.57481843, a: 1}
+  m_IndirectSpecularColor: {r: 0.6642175, g: 0.64779985, b: 0.65775913, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -86,7 +86,7 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 8692fb910448f974b8adf87e81fb87ad,
+  m_LightingDataAsset: {fileID: 112000004, guid: 440570f7454e2e448a705eecc4b4177d,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -802,6 +802,41 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0a604031afea14241854a298c4371da3, type: 2}
+    - target: {fileID: 23742960604847880, guid: 80b334ff005a60e4d8dcbc8793988a87,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23696539116789834, guid: 80b334ff005a60e4d8dcbc8793988a87,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23696539116789834, guid: 80b334ff005a60e4d8dcbc8793988a87,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23528638984384990, guid: 80b334ff005a60e4d8dcbc8793988a87,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23568360650547914, guid: 80b334ff005a60e4d8dcbc8793988a87,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23528638984384990, guid: 80b334ff005a60e4d8dcbc8793988a87,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23568360650547914, guid: 80b334ff005a60e4d8dcbc8793988a87,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80b334ff005a60e4d8dcbc8793988a87, type: 2}
   m_IsPrefabParent: 0

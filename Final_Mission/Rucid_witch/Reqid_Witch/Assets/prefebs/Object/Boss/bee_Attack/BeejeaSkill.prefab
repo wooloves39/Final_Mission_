@@ -187,15 +187,15 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4722359005083608}
-  - component: {fileID: 114263318806795408}
   - component: {fileID: 135625266557528250}
+  - component: {fileID: 114316576213264112}
   m_Layer: 0
   m_Name: BlackThunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1119578205684074
 GameObject:
   m_ObjectHideFlags: 1
@@ -5063,18 +5063,6 @@ MonoBehaviour:
   Rows: 8
   Columns: 1
   AnimationMode: 3
---- !u!114 &114263318806795408
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1107793501988394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030319139777e4d4688dc43e2bb670c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillBalance: 35
 --- !u!114 &114297769924460030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5097,6 +5085,24 @@ MonoBehaviour:
   Rows: 1
   Columns: 1
   AnimationMode: 0
+--- !u!114 &114316576213264112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1107793501988394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28c0ade4e5c8fc34e97ea438dac8ed52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillBalance: 40
+  dot: 0
+  delay: 2.25
+  dotTime: 10
+  Azra: 0
+  QuickDel: 0
+  groundCheck: 0
 --- !u!114 &114322095074192432
 MonoBehaviour:
   m_ObjectHideFlags: 1

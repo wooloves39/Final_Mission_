@@ -345,7 +345,8 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 24:
 						{
-							ani.SetBool("Run", false);
+                            Debug.Log("궁극기 진입");
+                            ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
 							//ani.SetBool("Skill5", true);
 							time = Time_Skill_5;

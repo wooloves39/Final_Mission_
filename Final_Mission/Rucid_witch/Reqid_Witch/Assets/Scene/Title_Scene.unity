@@ -721,6 +721,15 @@ Prefab:
       propertyPath: m_Color.g
       value: 0.029411793
       objectReference: {fileID: 0}
+    - target: {fileID: 1649242712270094, guid: dd6f8b17b75616a489cc4751f67ec682, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892159881518982, guid: dd6f8b17b75616a489cc4751f67ec682,
+        type: 2}
+      propertyPath: index
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd6f8b17b75616a489cc4751f67ec682, type: 2}
   m_IsPrefabParent: 0
@@ -8389,7 +8398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1984829870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9043,7 +9052,7 @@ MonoBehaviour:
   - {fileID: 108059337}
   - {fileID: 990526873}
   Main: {fileID: 36688111}
-  index: 0
+  index: 3
   timer: 0
   SoundController: {fileID: 970623682}
 --- !u!82 &2121929161

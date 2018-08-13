@@ -357,6 +357,11 @@ Prefab:
       propertyPath: Ver_UseMp.Array.data[3]
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 114131407555539950, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Cheat
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0

@@ -12,7 +12,7 @@ public class OptionMenu : MonoBehaviour
 	public GameObject[] Box2;
 	public GameObject[] GrapicBox;
 	public GameObject Main;
-	public int index = 0;
+	public int index = 3;
 	int sound = 12;
 	int sound2 = 22;
 	int grapic = 31;
@@ -29,7 +29,7 @@ public class OptionMenu : MonoBehaviour
 	void OnEnable()
 	{
 		source.volume = Singletone.Instance.Sound;
-		index = 0;
+		index = 3;
 		timer = 0.0f;
 		StartCoroutine("KeyPad");
 	}
@@ -88,15 +88,15 @@ public class OptionMenu : MonoBehaviour
 				source.volume = Singletone.Instance.Sound;
 			}
 
-			if (30 <= index && index <= 33)
-			{
-				grapic = index;
-				for (int i = 0; i < 4; ++i)
-				{
-					Grapic[i].SetActive(false);
-				}
-				Grapic[grapic - 30].SetActive(true);
-			}
+			//if (30 <= index && index <= 33)
+			//{
+			//	grapic = index;
+			//	for (int i = 0; i < 4; ++i)
+			//	{
+			//		Grapic[i].SetActive(false);
+			//	}
+			//	Grapic[grapic - 30].SetActive(true);
+			//}
 
 			if (index == 3)
 				index = sound;
@@ -130,11 +130,14 @@ public class OptionMenu : MonoBehaviour
 			if ((index == 2) &&
 				CheckB == false)
 			{
-				index = 0;
+				index = 3;
 				CheckB = true;
 			}
-			if (index == 3 || index == 4)
-				index = 0;
+            if ((index == 3 || index == 4) && !CheckB)
+            {
+                index = 2;
+                CheckB = true;
+            }
 			if (11 <= index && index <= 13)
 				index = 3;
 			if (21 <= index && index <= 23)
@@ -151,21 +154,7 @@ public class OptionMenu : MonoBehaviour
 			if (timer < 1.0f)
 				timer += Time.deltaTime * 25;
 			Stick = InputManager_JHW.MainJoystick();
-			if (index < 2)
-			{
-				if (Stick.z > 0)
-				{
-					index = 0;
-					source.Play();
-				}
-
-				if (Stick.z < 0)
-				{
-					index = 1;
-					source.Play();
-				}
-			}
-			else if (index == 4 || index == 3)
+			if (index == 4 || index == 3)
 			{
 				if (Stick.z > 0)
 				{

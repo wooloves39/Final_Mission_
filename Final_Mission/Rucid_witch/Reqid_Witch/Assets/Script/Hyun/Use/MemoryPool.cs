@@ -172,13 +172,13 @@ public class MemoryPool : IEnumerable, System.IDisposable {
     }
     public bool MonsterAttackCommand()
     {
-        List<Stage5MobAI> Mob = new List<Stage5MobAI>();
+        List<ObjectLife> Mob = new List<ObjectLife>();
         bool Attack = false;
         for (int i = 0; i < table.Length; ++i)
         {
             Item item = table[i];
-            Mob.Add(item.gameObject.gameObject.GetComponent<Stage5MobAI>());
-            if (Mob[i].Fight == true)
+            Mob.Add(item.gameObject.GetComponent<ObjectLife>());
+            if (Mob[i].Hp < Mob[i].MaxHp)
             {
                 Attack = true;
             }
@@ -187,7 +187,7 @@ public class MemoryPool : IEnumerable, System.IDisposable {
         {
             for (int i = 0; i < table.Length; ++i)
             {
-                Mob[i].Fight = true;
+                Mob[i].GetComponent<Stage5MobAI>().Fight = true;
             }
             return true;
         }
@@ -195,6 +195,7 @@ public class MemoryPool : IEnumerable, System.IDisposable {
             return false;
         
     }
+
     public GameObject GetItem(int n)
     {
         Item item = table[n];

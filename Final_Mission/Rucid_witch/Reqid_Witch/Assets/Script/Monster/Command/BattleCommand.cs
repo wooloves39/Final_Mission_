@@ -121,54 +121,45 @@ public class BattleCommand : MonoBehaviour {
             if (Player.GetMyState() == PlayerState.State.Nomal)
             {
                 ani.speed = 1;
-			switch (skill_index)
-			{
-				case 0:
-					if (time >= SkillFrame[0])
-						ani.SetBool("Skill1", false);
-					break;
-				case 1:
-					if (time >= SkillFrame[1])
-						ani.SetBool("Skill2", false);
-					break;
-				case 2:
-					if (time >= SkillFrame[2])
-						ani.SetBool("Skill3", false);
-					break;
-				case 3:
-					if (time >= SkillFrame[3])
-						ani.SetBool("Skill4", false);
-					break;
-				case 4:
-					if (time >= SkillFrame[4])
-						ani.SetBool("Skill5", false);
-					break;
-
-                case 5:
-                    if (time >= SkillFrame[5])
-                        ani.SetBool("Skill6", false);
-                    break;
-
-                case 6:
-                    if (time >= SkillFrame[6])
-                        ani.SetBool("Skill7", false);
-                    break;
-
-                case 7:
-                    if (time >= SkillFrame[7])
-                        ani.SetBool("Skill8", false);
-                    break;
-
-                case 8:
-                    if (time >= SkillFrame[8])
-                        ani.SetBool("Skill9", false);
-                    break;
-				
-                }
             }
-			if (time >= TimeLimit)
+			if (time >= SkillFrame[skill_index])
 			{
-				break;
+                    switch (skill_index)
+                    {
+                        case 0:
+                            ani.SetBool("Skill1", false);
+                            break;
+                        case 1:
+                            ani.SetBool("Skill2", false);
+                            break;
+                        case 2:
+                            ani.SetBool("Skill3", false);
+                            break;
+                        case 3:
+                            ani.SetBool("Skill4", false);
+                            break;
+                        case 4:
+                            ani.SetBool("Skill5", false);
+                            break;
+
+                        case 5:
+                            ani.SetBool("Skill6", false);
+                            break;
+
+                        case 6:
+                            ani.SetBool("Skill7", false);
+                            break;
+
+                        case 7:
+                            ani.SetBool("Skill8", false);
+                            break;
+
+                        case 8:
+                            ani.SetBool("Skill9", false);
+                            break;
+
+                    }
+                break;
 			}
 			else
             { 

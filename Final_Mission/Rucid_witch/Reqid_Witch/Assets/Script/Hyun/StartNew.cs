@@ -8,6 +8,7 @@ public class StartNew : MonoBehaviour
 	private SceneChange sceneChange;
 	private Image textimage;
 	public Sprite[] images;
+	public string SceneName = "Stage0";
 	// Use this for initialization
 	void Awake () {
 		textimage = GetComponent<Image>();
@@ -19,7 +20,7 @@ public class StartNew : MonoBehaviour
 	{
 		if (InputManager_JHW.MenuButton())
 		{
-			sceneChange.sceneChange("Stage0");
+			sceneChange.sceneChange(SceneName);
 		}
 	}
 	IEnumerator StartNewCor()

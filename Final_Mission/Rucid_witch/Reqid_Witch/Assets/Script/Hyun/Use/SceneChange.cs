@@ -10,14 +10,6 @@ public class SceneChange : MonoBehaviour {
 		scenefade = FindObjectOfType<OVRScreenFade>();
 		scenefade.fade(Color.white, 1, 0, 2.0f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.A))
-		{
-			sceneChange(0);
-		}
-	}
 	public void sceneChange(int SceneNum)
 	{
 		scenefade.fade(Color.white, 0, 1, 2.0f);

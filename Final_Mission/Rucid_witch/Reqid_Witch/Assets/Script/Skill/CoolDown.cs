@@ -16,11 +16,11 @@ public class CoolDown : MonoBehaviour {
 	public int[] Ver_UseMp = { 4, 30, 15, 30, 50 };
 	public int[] Dell_UseMp = { 4, 30, 15, 30, 50 };
 
-	private bool[] Azu_Cool = { false, false, false, false, false };
-    private bool[] Sei_Cool = { false, false, false, false, false };
-	private bool[] Bee_Cool = { false, false, false, false, false };
-	private bool[] Ver_Cool = { false, false, false, false, false };
-	private bool[] Dell_Cool = { false, false, false, false, false };
+	public bool[] Azu_Cool = { false, false, false, false, false };
+    public bool[] Sei_Cool = { false, false, false, false, false };
+	public bool[] Bee_Cool = { false, false, false, false, false };
+	public bool[] Ver_Cool = { false, false, false, false, false };
+	public bool[] Dell_Cool = { false, false, false, false, false };
 	public GameObject Mpless;
 	private Viberation PlayerViberation;
 	private LinePointChecker[] PointCheckers;

@@ -41,6 +41,13 @@ public class newConfirmMenu : MonoBehaviour {
 				this.gameObject.SetActive(false);
 			}
 		}
+		else if (InputManager_JHW.BButtonDown())
+		{
+			source.clip = clips[1];
+			source.Play();
+			main.GetComponent<MainMenu>().confirm = false;
+			this.gameObject.SetActive(false);
+		}
 	}
 	IEnumerator KeyPad()
 	{

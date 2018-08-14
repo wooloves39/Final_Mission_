@@ -48,7 +48,11 @@ public class AzuraSkill : MonoBehaviour
 		target = targets;
 		skill = skillIndex;
 		handDis = handDistance;
+        if (handDis <= 0.0f)
+        {
+            handDis = 0.001f;
 
+        }
     
         if (CoolTime.CheckCool(1, skill))
 		{
@@ -99,7 +103,8 @@ public class AzuraSkill : MonoBehaviour
 		if(GetComponent<Skill_Info>())
 		GetComponent<Skill_Info>().chargingSet(chargingGage);
 		Vector3 TargettingDir = Vector3.Normalize(target.transform.position - transform.position);//;
-		r.velocity = TargettingDir * Speed[0] * handDis;
+        if (TargettingDir == Vector3.zero) TargettingDir = Vector3.forward;
+        r.velocity = TargettingDir * Speed[0] * handDis;
 
 	}
 	//########################################################

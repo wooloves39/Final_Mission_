@@ -46,12 +46,12 @@ public class StarFall : MonoBehaviour {
     }
 	IEnumerator Skilling()
 	{
-        while (time < 3.0f)
+        while (time < 1.5f)
         {
             this.transform.Rotate(new Vector3(0, 8.0f, 0));
             for (int i = 0; i < 6; ++i)
             {
-                Magic[i].transform.position += Vector3.up * 0.2f;
+                Magic[i].transform.position += Vector3.up * 0.35f;
             }
             time += 0.05f;
             yield return new WaitForSeconds(0.05f);

@@ -10,11 +10,11 @@ public class CoolDown : MonoBehaviour {
 	public float[] Ver_CoolTime = { 0, 3, 5, 10, 20 };
 	public float[] Dell_CoolTime = { 0, 3, 5, 10, 20 };
 
-	public int[] Azu_UseMp = {4,8,20,30,50};
-    public int[] Sei_UseMp = {4,8,12,15,50};
-	public int[] Bee_UseMp = { 4, 30, 15, 30, 50 };
-	public int[] Ver_UseMp = { 4, 30, 15, 30, 50 };
-	public int[] Dell_UseMp = { 4, 30, 15, 30, 50 };
+	public int[] Azu_UseMp   = {5,9,13,22,40};
+    public int[] Sei_UseMp   = {5,9,9,17,40};
+	public int[] Bee_UseMp   = {5,15,12,21,40};
+	public int[] Ver_UseMp   = {5,9,11,19,40};
+	public int[] Dell_UseMp  = {5,20,30,19,40};
 
 	public bool[] Azu_Cool = { false, false, false, false, false };
     public bool[] Sei_Cool = { false, false, false, false, false };

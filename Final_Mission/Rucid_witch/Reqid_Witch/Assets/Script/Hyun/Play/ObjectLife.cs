@@ -54,7 +54,12 @@ public class ObjectLife : MonoBehaviour {
                             !ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
                             !ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
                             !ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
-                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill6") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill7") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill8") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill9")
+                        )
                             ani.Play("Defence");
                     }
                     else
@@ -63,7 +68,12 @@ public class ObjectLife : MonoBehaviour {
                             !ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
                             !ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
                             !ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
-                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill6") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill7") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill8") &&
+                            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill9")
+                        )
                             ani.Play("Defence2");
                     }
                     BossSound.PlayerSound(1);
@@ -107,7 +117,12 @@ public class ObjectLife : MonoBehaviour {
 			!ani.GetCurrentAnimatorStateInfo(0).IsName("skill2") &&
 			!ani.GetCurrentAnimatorStateInfo(0).IsName("skill3") &&
 			!ani.GetCurrentAnimatorStateInfo(0).IsName("skill4") &&
-			!ani.GetCurrentAnimatorStateInfo(0).IsName("skill5"))
+            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill5") &&
+            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill6") &&
+            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill7") &&
+            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill8") &&
+            !ani.GetCurrentAnimatorStateInfo(0).IsName("skill9")
+        )
 			ani.Play("Defence");
 		Hp -= dmg;
 	

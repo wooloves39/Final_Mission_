@@ -14,11 +14,11 @@ public class TreeSkill : MonoBehaviour {
     {
         if (Singletone.Instance.stage == 3)
             upsize = -2.0f;
-        if (Singletone.Instance.stage == 4)
+      else  if (Singletone.Instance.stage == 4)
             upsize = 0.0f;
-        if (Singletone.Instance.stage == 5)
+		else if (Singletone.Instance.stage == 5)
             upsize = -4.0f;
-        if (Singletone.Instance.stage == 6)
+		else if (Singletone.Instance.stage == 6)
         {
             offset = -7.0f;
             upsize = -4.0f;

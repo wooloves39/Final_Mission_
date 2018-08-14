@@ -87,7 +87,7 @@ public class SeiKwanMonControll : MonoBehaviour {
 		Vector3 shootPos = target.transform.position;
 		shootPos.y += 1.0f;
 		Arrow[ArrowNum].transform.LookAt(shootPos);
-		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(1, target, Hp/500.0f, 5.0f);
+		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(1, target, Hp/250.0f, 5.0f);
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack2()
@@ -114,7 +114,7 @@ public class SeiKwanMonControll : MonoBehaviour {
 		Vector3 shootPos = target.transform.position;
 		shootPos.y += 1.0f;
 		Arrow[ArrowNum].transform.LookAt(shootPos);
-		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(2, target, Hp / 1000.0f,5.0f);
+		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(2, target, Hp / 500.0f,5.0f);
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack3()
@@ -141,7 +141,7 @@ public class SeiKwanMonControll : MonoBehaviour {
 		Vector3 shootPos = target.transform.position;
 		shootPos.y += 1.0f;
 		Arrow[ArrowNum].transform.LookAt(shootPos);
-		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(3, target, Hp / 5000.0f, 5.0f);
+		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(3, target, Hp / 1000.0f, 5.0f);
 		sound.PlayerSound(BossSoundSetting.BosssoundPack.AttackSkill);
 	}
 	void Attack4()
@@ -175,7 +175,7 @@ public class SeiKwanMonControll : MonoBehaviour {
 		Vector3 shootPos = target.transform.position;
 		shootPos.y += 1.0f;
 		Arrow[ArrowNum].transform.LookAt(shootPos);
-		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(5, target, Hp / 5000.0f*10, 5.0f);
+		Arrow[ArrowNum].GetComponent<SeiKwanSkill>().shoot(5, target, Hp / 1000.0f*10, 5.0f);
 		sound.PlayerSound(4);
 	}
 	void setTarget()

@@ -118,7 +118,7 @@ public class BattleCommand : MonoBehaviour {
             {
                 ani.speed = 0;
             }
-            if (Player.GetMyState() == PlayerState.State.Nomal)
+            if (Player.GetMyState() != PlayerState.State.Pause)
             {
                 ani.speed = 1;
             }
@@ -163,10 +163,7 @@ public class BattleCommand : MonoBehaviour {
 			}
 			else
             { 
-                if (Player.GetMyState() == PlayerState.State.Nomal)
-                {
-                    time += temp;
-                }
+                time += temp;
 			}
 			yield return new WaitForSeconds(temp);
 

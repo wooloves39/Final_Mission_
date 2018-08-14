@@ -17,7 +17,8 @@ public class SkillChange : MonoBehaviour
 	// Use this for initialization
 	private void Awake()
 	{
-		Dell[0].SetActive(false);
+        playerState = GetComponentInParent<PlayerState>();
+        Dell[0].SetActive(false);
 		Dell[1].SetActive(false);
 		Seikwan.SetActive(false);
 		Hand[0].SetActive(false);

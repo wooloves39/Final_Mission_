@@ -36,8 +36,8 @@ public class SweetHamony : MonoBehaviour {
 			else
 			{
 				gameObject.SetActive(false);
-				//MP부족
-			}
+                //MP부족
+            }
 			player.SetMyState(0);
 			Coll.SetActive(false);
 		}

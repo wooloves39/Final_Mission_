@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Kali_Skill_Attack : MonoBehaviour {
 
-    private float damage = 0.0f;
     public float skillBalance;
     public bool dot = false;
     public float delay = 0.0f;
@@ -23,7 +22,6 @@ public class Kali_Skill_Attack : MonoBehaviour {
     private void OnEnable()
     {
         num = 0;
-        damage = skillBalance;
         ranged = false;
         if (QuickDel)
             Invoke("EndScripts", 0.5f);
@@ -53,7 +51,7 @@ public class Kali_Skill_Attack : MonoBehaviour {
     }
     void DelayDamage()
     {
-        Player.DamageHp(damage);
+        Player.DamageHp(skillBalance);
     }
     public void DamageUp()
     {
@@ -102,7 +100,7 @@ public class Kali_Skill_Attack : MonoBehaviour {
 				num++;
                 if (num > dotTime)
 				{
-					Player.DamageHp(damage);
+					Player.DamageHp(skillBalance);
 					num = 0;
 				}
 			}

@@ -4389,6 +4389,7 @@ MonoBehaviour:
   Speed: 4
   BattleSpeed: 5
   Range: 17
+  prefab: {fileID: 1132335418259268, guid: 8ef3e588afed3ca4eb517ef599ce8058, type: 2}
   boss: 1
   Attack: 0
   SkillDMG:
@@ -4512,7 +4513,7 @@ MonoBehaviour:
   - 0
   - 5
   - 7
-  - 15
+  - 22
   - 100
   BossCoolDown: 0000000000
   Delay: 0
@@ -5926,7 +5927,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 180
-  m_StoppingDistance: 17
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
   m_AutoRepath: 1

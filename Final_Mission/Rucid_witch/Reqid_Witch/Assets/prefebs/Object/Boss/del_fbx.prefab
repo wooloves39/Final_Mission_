@@ -5858,6 +5858,7 @@ MonoBehaviour:
   Speed: 4
   BattleSpeed: 5
   Range: 17
+  prefab: {fileID: 1132335418259268, guid: 8ef3e588afed3ca4eb517ef599ce8058, type: 2}
   boss: 1
   Attack: 0
   SkillDMG:
@@ -6876,7 +6877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09b07df8d289d84da6ea4f423470205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillBalance: 15
+  skillBalance: 7
 --- !u!114 &114958358504051344
 MonoBehaviour:
   m_ObjectHideFlags: 1

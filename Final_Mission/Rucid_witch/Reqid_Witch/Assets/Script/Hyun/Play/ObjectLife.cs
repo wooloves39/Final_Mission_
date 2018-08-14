@@ -16,6 +16,7 @@ public class ObjectLife : MonoBehaviour {
     private float prev_battle_speed;
     MonsterSoundSetting MobSound;
     BossSoundSetting BossSound;
+    public GameObject prefab;
 
 	public bool boss;
 	public float Attack;
@@ -98,16 +99,23 @@ public class ObjectLife : MonoBehaviour {
     IEnumerator DotDMG(float dmg,float time,float cycleTime)
     {
         float T = 0.0f;
-		while (T < time)
+        int cnt = 0;
+        while (T < time)
         {
-            if(!this.gameObject.activeInHierarchy)
+            if (!this.gameObject.activeInHierarchy)
                 break;
-			Debug.Log(dmg);
+            Debug.Log(dmg);
             Hp -= dmg;
             if (!boss)
                 MobSound.PlaySound(1);
+            else if (cnt%2 ==0)
+            {
+                BossSound.PlayerSound(1);
+                Instantiate(prefab).transform.position = this.transform.position + Vector3.up;
+            }
             T += cycleTime;
             yield return new WaitForSeconds(cycleTime);
+            cnt++;
         }
         dot = false;
     }

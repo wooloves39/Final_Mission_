@@ -574,6 +574,11 @@ Prefab:
       propertyPath: Cheat
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114693271837045658, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+        type: 2}
+      propertyPath: Sei_UseMp.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
   m_IsPrefabParent: 0

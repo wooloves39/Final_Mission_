@@ -14,7 +14,7 @@ public class DellMonControll : MonoBehaviour {
 	public DellMonRainBow rainBow;
     public DellMonAttackSkill attackSkill;
     private Stage5Boss AI;
-	private void Awake()
+    private void Awake()
 	{
 		sound = GetComponent<BossSoundSetting>();
         Hp = GetComponent<ObjectLife>().Hp;
@@ -36,6 +36,9 @@ public class DellMonControll : MonoBehaviour {
     void Lose_Sound()
     {
         sound.PlayerSound(3);
+        rainBow.gameObject.SetActive(false);
+        SweetMelody.SetActive(false);
+        buffs.SetActive(false);
     }
     void Attack1()
     {

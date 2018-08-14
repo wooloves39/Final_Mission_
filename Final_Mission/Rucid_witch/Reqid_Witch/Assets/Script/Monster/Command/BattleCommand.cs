@@ -68,7 +68,6 @@ public class BattleCommand : MonoBehaviour {
 			this.transform.LookAt(Player.transform.position);
 			agent.speed = 0;
 			TimeLimit = T;
-			time = 0.0f;
 			skill_index = n;
 			//DMG = MobInfo.SkillDMG[skill_index];
 			StartCoroutine("SkillCoroutine");
@@ -76,7 +75,8 @@ public class BattleCommand : MonoBehaviour {
 	}
 	IEnumerator SkillCoroutine()
 	{
-		float temp = Time.deltaTime;
+        float temp = Time.deltaTime;
+        float SkillTime = 0.0f;
         switch (skill_index)
         {
             case 0:
@@ -122,7 +122,7 @@ public class BattleCommand : MonoBehaviour {
             {
                 ani.speed = 1;
             }
-			if (time >= SkillFrame[skill_index])
+            if (SkillTime >= SkillFrame[skill_index])
 			{
                     switch (skill_index)
                     {
@@ -163,7 +163,7 @@ public class BattleCommand : MonoBehaviour {
 			}
 			else
             { 
-                time += temp;
+                SkillTime += temp;
 			}
 			yield return new WaitForSeconds(temp);
 

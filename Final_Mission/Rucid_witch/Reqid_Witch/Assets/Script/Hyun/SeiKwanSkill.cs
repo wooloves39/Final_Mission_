@@ -28,6 +28,7 @@ public class SeiKwanSkill : MonoBehaviour
     private Quaternion bagicRota;
     private PlayerState player;
     public bool MonsterAttack = false;
+	public float shootSpeed=30.0f;
 	private void Awake()
 	{
         StopAllCoroutines();
@@ -122,12 +123,12 @@ public class SeiKwanSkill : MonoBehaviour
 		}
 		if (Vector3.Dot(TargettingDir, Arrowforward) < 0.8f || TargettingDir == Vector3.zero)
 		{
-			rigi.velocity = Arrowforward * 25f * handDis;
+			rigi.velocity = Arrowforward * shootSpeed * handDis;
 		}
 		else
 		{
 			TargettingDir += Arrowforward;
-			rigi.velocity = TargettingDir * 25f * handDis;
+			rigi.velocity = TargettingDir * shootSpeed * handDis;
 		}
 	}
 	//#### #### #### #### 
@@ -141,12 +142,12 @@ public class SeiKwanSkill : MonoBehaviour
 		}
 		if (Vector3.Dot(TargettingDir, Arrowforward) < 0.8f || TargettingDir == Vector3.zero)
 		{
-			rigi.velocity = Arrowforward * 25f * handDis;
+			rigi.velocity = Arrowforward * shootSpeed * handDis;
 		}
 		else
 		{
 			TargettingDir += Arrowforward;
-			rigi.velocity = TargettingDir * 25f * handDis;
+			rigi.velocity = TargettingDir * shootSpeed * handDis;
 		}
 		Debug.Log(handDis);
 		StartCoroutine(ArrowTrabCor(.15f, chargingGage));
@@ -176,7 +177,7 @@ public class SeiKwanSkill : MonoBehaviour
 	private void SkyArrow(Vector3 targetPoint, float chargingGage)
 	{
 		Vector3 Arrowforward = transform.forward;
-		rigi.velocity = (Vector3.up / .5f + Arrowforward) * 25f * handDis;
+		rigi.velocity = (Vector3.up / .5f + Arrowforward) * shootSpeed * handDis;
 		StartCoroutine(SkyArrowCor(targetPoint, 1.0f, chargingGage));
 	}
 	IEnumerator SkyArrowCor(Vector3 target, float timer,float chargingGage)

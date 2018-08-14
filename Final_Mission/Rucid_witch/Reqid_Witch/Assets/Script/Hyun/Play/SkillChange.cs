@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SkillChange : MonoBehaviour
 {
+	private PlayerState playerState;
 	public LineDraw Draw_Rtouch;
 	public Material[] MpMaterial;
 	private Color Color;
@@ -54,16 +55,19 @@ public class SkillChange : MonoBehaviour
 	{
 		if (InputManager_JHW.XButtonDown())
 		{
-			Draw_Rtouch.myType();
-			Color = HandColor[LineDraw.curType];
-			for (int i = 0; i < MpMaterial.Length; ++i)
-				MpMaterial[i].SetColor("_EmissionColor", Color);
-			++Index;
-			if (Index > 2) Index = 0;
-			ChangeParticle.gameObject.SetActive(true);
+			if (playerState.GetMyStateInt() == 0)
+			{
+				Draw_Rtouch.myType();
+				Color = HandColor[LineDraw.curType];
+				for (int i = 0; i < MpMaterial.Length; ++i)
+					MpMaterial[i].SetColor("_EmissionColor", Color);
+				++Index;
+				if (Index > 2) Index = 0;
+				ChangeParticle.gameObject.SetActive(true);
 
-			ChangeParticle.setChange(Index);
-			StartCoroutine(ChangeObject());
+				ChangeParticle.setChange(Index);
+				StartCoroutine(ChangeObject());
+			}
 		}
 	}
 	public Color getMpColor()

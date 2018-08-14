@@ -18,8 +18,9 @@ public class MonsterWaveGenerate : MonoBehaviour
     public GameObject[] FinalMobPrefab;
     public int[] FinalMobCount;
     public int WavePosNum = 0;
-	// Use this for initialization
-	private void Awake()
+    GameObject obj;
+    // Use this for initialization
+    private void Awake()
 	{
 		mobGenerater = GetComponent<MobGenerater>();
 		pool = new MemoryPool();
@@ -123,14 +124,14 @@ public class MonsterWaveGenerate : MonoBehaviour
             }
         }
     }
-	IEnumerator MobGen()
+
+    IEnumerator MobGen()
 	{
 		yield return new WaitUntil(() => mobGenerater.Wave_Start);
 
 		yield return new WaitForSeconds(GenTime);
 		for (int i = 0; i < Prefab_Count; ++i)
 		{
-            GameObject obj = new GameObject();
             switch (WavePosNum)
             {
                 case 0:

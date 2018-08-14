@@ -3417,7 +3417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OneHit: 1
-  Power: 30
+  Power: 60
   AreaHit: 0
   AreaDmg: 40
   AreaCycle: 0.5
@@ -3428,7 +3428,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  HitCount: 1
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2
@@ -3669,7 +3669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OneHit: 1
-  Power: 30
+  Power: 60
   AreaHit: 0
   AreaDmg: 40
   AreaCycle: 0.5
@@ -3680,7 +3680,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  HitCount: 1
+  HitCount: 4
   Delete_Delay_Time: 0
   ElecShock: 0
   ShockTime: 2

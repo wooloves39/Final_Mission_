@@ -18,7 +18,7 @@ public class Sei_SkillAttack : MonoBehaviour
 	{
 		if (other.CompareTag("Player"))
 		{
-			PlayerState Player = other.GetComponentInParent<PlayerState>();
+			PlayerState Player = other.GetComponent<PlayerState>();
 			if (Player != null)
 			{
 				Player.DamageHp(damage);

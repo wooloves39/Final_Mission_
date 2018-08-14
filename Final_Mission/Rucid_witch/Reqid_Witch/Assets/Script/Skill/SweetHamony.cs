@@ -15,6 +15,7 @@ public class SweetHamony : MonoBehaviour {
         CoolTime = GetComponentInParent<CoolDown>();
 		timer = 0.0f;
 		player = GetComponentInParent<PlayerState>();
+        UseMp = CoolTime.Dell_UseMp[0];
 	}
 	private void OnEnable()
 	{

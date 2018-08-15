@@ -8,6 +8,7 @@ public class Minimap : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		stage = Singletone.Instance.stage;
+		if (stage == 10) stage = 6;
 		minimap[stage].SetActive(true);
 	}
 }

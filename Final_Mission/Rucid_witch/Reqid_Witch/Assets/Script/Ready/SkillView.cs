@@ -11,7 +11,8 @@ public class SkillView : MonoBehaviour {
     {
 
         int stage = Singletone.Instance.stage;
-        if (stage  < 5)
+		if (stage == 10) stage = 6;
+		if (stage  < 5)
         {
             for(int i = 0 ; i < 5 ; ++i)
                 Skill[i].GetComponent<ChangeAlpha>().EndAlpha = 0.2f;

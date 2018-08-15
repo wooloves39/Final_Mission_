@@ -19,7 +19,11 @@ public class Confirm : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (InputManager_JHW.AButtonDown())
+		if (Input.GetKeyDown(KeyCode.S))
+		{
+			choice = true;
+		}
+		if (InputManager_JHW.AButtonDown()||Input.GetKeyDown(KeyCode.A))
 		{
 			if (choice)
 			{
@@ -43,6 +47,9 @@ public class Confirm : MonoBehaviour
 						break;
 					case 6:
 						sceneChange.sceneChange("Stage7");
+						break;
+					case 10:
+						sceneChange.sceneChange("HiddenScene");
 						break;
 				}
 			}

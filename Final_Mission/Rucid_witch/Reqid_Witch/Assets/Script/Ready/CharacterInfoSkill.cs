@@ -6,10 +6,6 @@ public class CharacterInfoSkill : MonoBehaviour {
 	public List<GameObject> skill;
 	private int type=new int();
 	public int Skill_index;
-	private void Start()
-	{
-		
-	}
 	void Update()
 	{
 		type = Singletone.Instance.Myskill[Skill_index];

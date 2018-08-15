@@ -20,9 +20,6 @@ public class SelectMenu_Ready : MonoBehaviour
 	private AudioSource source;
 	void Start()
 	{
-		stage = Singletone.Instance.stage;
-		//test 
-		stage = 1;
 		source = GetComponent<AudioSource>();
         source.volume = Singletone.Instance.Sound;
 		StartCoroutine(KeyPad());

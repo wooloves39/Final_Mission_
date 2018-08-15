@@ -149,7 +149,6 @@ public class SeiKwanSkill : MonoBehaviour
 			TargettingDir += Arrowforward;
 			rigi.velocity = TargettingDir * shootSpeed * handDis;
 		}
-		Debug.Log(handDis);
 		StartCoroutine(ArrowTrabCor(.15f, chargingGage));
 	}
 	IEnumerator ArrowTrabCor(float timer,float chargingGage)
@@ -216,7 +215,6 @@ public class SeiKwanSkill : MonoBehaviour
 			this.transform.Translate(Vector3.down * speed * deltaTime);
 			yield return null;
 		}
-		Debug.Log("Sound 땅에 닿음");
 
 		SeiKwanArrow.SetActive(true);
 	}

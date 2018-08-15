@@ -158,7 +158,6 @@ public class Stage5Boss: MonoBehaviour {
                             num = 14;
                             AttackMove = 0;
                             AttackMoveNum = getRandom(9, 17);
-                            Debug.Log("Move 선택");
                             if (!run && Ulti)
                             {
                                 if (AttackMoveNum == 15)//12.5%
@@ -167,7 +166,6 @@ public class Stage5Boss: MonoBehaviour {
                                     {
                                         run = true;
                                         num = 13;
-                                        Debug.Log("run AI 선택");
                                     }
                                 }
                             }
@@ -351,10 +349,8 @@ public class Stage5Boss: MonoBehaviour {
 						}
 					case 24:
 						{
-                            Debug.Log("궁극기 진입");
                             ani.SetBool("Run", false);
 							ani.SetBool("IsMove", false);
-							//ani.SetBool("Skill5", true);
 							time = Time_Skill_5;
 							BCommand.Skill(time, 4);
 							break;

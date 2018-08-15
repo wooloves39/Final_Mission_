@@ -160,7 +160,7 @@ public class MonsterWaveGenerate : MonoBehaviour
                     break;
             }
 
-			if (FinalMiddleBoss)
+			if (FinalMiddleBoss||Singletone.Instance.stage==10)
 			{
 				obj.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 			}

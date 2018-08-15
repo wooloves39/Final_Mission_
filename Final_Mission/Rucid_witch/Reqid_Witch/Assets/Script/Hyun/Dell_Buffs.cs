@@ -60,14 +60,6 @@ public class Dell_Buffs : MonoBehaviour {
                     break;
             }
         }
-        else
-        {
-            if(Mp)
-                Debug.Log("Mp부족 처리 부분");
-
-            if (Cool)
-                Debug.Log("쿨타임 중 처리 부분");
-        }
 		
 	}
 }

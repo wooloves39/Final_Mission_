@@ -104,7 +104,6 @@ public class ObjectLife : MonoBehaviour {
         {
             if (!this.gameObject.activeInHierarchy)
                 break;
-            Debug.Log(dmg);
             Hp -= dmg;
             if (!boss)
                 MobSound.PlaySound(1);
@@ -161,7 +160,6 @@ public class ObjectLife : MonoBehaviour {
 			yield return new WaitForSeconds(Cycle1);
 
 			ElecShock.SetActive(true);
-			Debug.Log("감전 사운드");
             if (!boss)
                 MobSound.PlaySound(4);
             else

@@ -97,7 +97,6 @@ public class AttackMethod : MonoBehaviour
 	{
 		if (InputManager_JHW.LTriggerOn() && InputManager_JHW.RTriggerOn())
 		{
-            Debug.Log("양쪽 트리거를 누른상태");
 			if (MyState.GetMyState() == PlayerState.State.Nomal)
 			{
 				MyState.SetMyState(PlayerState.State.Attack);
@@ -249,8 +248,6 @@ public class AttackMethod : MonoBehaviour
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit, RayLength,layerMask))
 			{
-				Debug.Log(hit.collider.tag);
-				Debug.Log(hit.collider.gameObject.name);
 				if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Monster"))
 				{
 					if (!Beejae_Marker[0].activeSelf)
@@ -293,7 +290,6 @@ public class AttackMethod : MonoBehaviour
 		bool instance = false;
 		float distance = 0.0f;
 		Vector3 AzuraScale = AzuraBallPrefab.transform.localScale;
-        Debug.Log("아즈라 컨트롤 진입부분");
         while (flug)
 		{
 			if (!instance && (AzuraHands[0].GetTouch() || AzuraHands[1].GetTouch()))
@@ -368,10 +364,7 @@ public class AttackMethod : MonoBehaviour
 				{
 					if (!Arrow[ArrowNum].GetComponent<SeiKwanSkill>().IsShoot())
 					{
-						//Rigidbody r = Arrow[ArrowNum].GetComponent<Rigidbody>();
-						//Vector3 Arrowforward = Arrow[ArrowNum].transform.forward;
 						GameObject myTarget = PlayerTarget.getMytarget();
-						//Vector3 TargettingDir = Vector3.zero;
 						if (myTarget != null)
 						{
 							playerSound.PlayerSound(PlayerSoundSetting.soundPack.AttackSkill);
@@ -482,7 +475,6 @@ public class AttackMethod : MonoBehaviour
 				if (instance)
 				{
 					SweetMelody.SetActive(false);
-					Debug.Log("델 해드에서 떨어짐");
 					PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.RTouch));
 					PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.LTouch));
 					instance = false;
@@ -508,7 +500,6 @@ public class AttackMethod : MonoBehaviour
 					{
 						PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.3f, 0.3f, OVRInput.Controller.RTouch));
 						++chargingCount;
-						Debug.Log("델 카운트 "+chargingCount);
 						attacking = false;
 						attackTimer = 0.0f;
 					}
@@ -539,7 +530,6 @@ public class AttackMethod : MonoBehaviour
 				if (attackTimer > 4.0f)
 				{
 					SweetMelody.SetActive(false);
-					Debug.Log("델 스킬 종료");
 					PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.RTouch));
 					PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.LTouch));
 					break;
@@ -564,12 +554,8 @@ public class AttackMethod : MonoBehaviour
 			case 0://아즈라 공격 형태 기를 모으는 형태, 오큘러스 터치의 충돌에서 출발하여 양손을 벌릴때 점차 커지며 방출
 				{
 					float handDis = Vector3.Distance(Hands[0].transform.position, Hands[1].transform.position);
-                    Debug.Log(AzuraBall[AzuraBallNum]);
-                    Debug.Log(MyState.GetMyState());
-                    Debug.Log(PlayerState.State.ChargingOver);
                     if (AzuraBall[AzuraBallNum] && MyState.GetMyState() != PlayerState.State.ChargingOver)
 					{
-                        Debug.Log("아즈라 슈팅 어택메소드 호출 지점");
 						if (!AzuraBall[AzuraBallNum].GetComponent<AzuraSkill>().IsShoot())
 						{
 							GameObject myTarget = PlayerTarget.getMytarget();

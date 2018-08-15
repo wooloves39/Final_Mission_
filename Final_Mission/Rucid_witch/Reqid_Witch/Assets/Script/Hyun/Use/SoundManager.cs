@@ -10,10 +10,6 @@ public class SoundManager : MonoBehaviour
 	{
 		get
 		{
-			if (_Instance == null)
-			{
-				Debug.Log("instance is null");
-			}
 			return _Instance;
 		}
 	}

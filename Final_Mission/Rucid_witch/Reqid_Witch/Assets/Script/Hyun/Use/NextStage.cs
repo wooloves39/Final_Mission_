@@ -24,9 +24,7 @@ public class NextStage : MonoBehaviour
 				{
 					++Singletone.Instance.stage;
 				}//스테이지 정보, 속성 추가등 부가 요소 정리
-
-				//ReadyScene으로!
-				Debug.Log(Singletone.Instance.stage + " 다음씬");
+                
 				sceneChange.sceneChange("Ready");
 			}
 			else

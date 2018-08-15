@@ -88,13 +88,6 @@ public class AzuraSkill : MonoBehaviour
 			Shoot = true;
 			StartCoroutine(Shooting());
 		}
-		else
-		{
-			if (Mp)
-				Debug.Log("Mp부족 처리 부분");
-			if (Cool)
-				Debug.Log("쿨타임 중 처리 부분");
-		}
 		target = null;
 	}
 	private void WitchsHone(float chargingGage)

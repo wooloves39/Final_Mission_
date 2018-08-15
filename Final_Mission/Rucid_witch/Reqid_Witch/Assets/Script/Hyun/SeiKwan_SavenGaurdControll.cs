@@ -33,13 +33,6 @@ public class SeiKwan_SavenGaurdControll : MonoBehaviour {
 				CoolTime.MpDown(2, 4);
 				SeiKwan_Saven.SetActive(true);
 			}
-			else
-			{
-				if (Mp)
-					Debug.Log("Mp부족 처리 부분");
-				if (Cool)
-					Debug.Log("쿨타임 중 처리 부분");
-			}
 			pointChecker.resetSkill();
 		}
 	}

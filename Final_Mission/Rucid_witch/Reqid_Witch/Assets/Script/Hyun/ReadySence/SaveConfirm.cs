@@ -43,7 +43,6 @@ public class SaveConfirm : MonoBehaviour
 					selectParticles[2].SetActive(true);
 					break;
 			}
-			Debug.Log("저장완료");
 			transform.parent.GetComponent<SelectMenu_Ready>().confirm = false;
 			Invoke("setoff", 0.5f);
 		}

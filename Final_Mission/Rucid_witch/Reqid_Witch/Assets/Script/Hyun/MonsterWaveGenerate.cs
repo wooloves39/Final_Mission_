@@ -19,18 +19,19 @@ public class MonsterWaveGenerate : MonoBehaviour
     public int[] FinalMobCount;
     public int WavePosNum = 0;
     GameObject obj;
+    public bool hidden = false;
     // Use this for initialization
     private void Awake()
 	{
 		mobGenerater = GetComponent<MobGenerater>();
 		pool = new MemoryPool();
-		if (!Finalboss)
-		{
-			if (Singletone.Instance.stage != 6)
-				pool.Create(Prefab, Prefab_Count);
-			else
-			{
-				int N = NoHaveSkill(first);
+        if (!Finalboss)
+        {
+            if (Singletone.Instance.stage != 6)
+                pool.Create(Prefab, Prefab_Count);
+            else
+            {
+                int N = NoHaveSkill(first);
                 if (FinalMiddleBoss)
                 {
                     switch (N)
@@ -58,7 +59,7 @@ public class MonsterWaveGenerate : MonoBehaviour
                     {
                         case 0:
 
-							pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
+                            pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
                             break;
                         case 1:
                             pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
@@ -72,20 +73,22 @@ public class MonsterWaveGenerate : MonoBehaviour
                         case 4:
                             pool.Create(FinalMobPrefab[N], FinalMobCount[N]);
                             break;
-					}
-					Prefab_Count = FinalMobCount[N];
-				}
-
-			}
-		}
+                    }
+                    Prefab_Count = FinalMobCount[N];
+                }
+            }
+        }
 		else
 		{
-			pool.Create(Prefab, Prefab_Count);
+            pool.Create(Prefab, Prefab_Count);
 		}
 		GenTime = mobGenerater.GenTime;
-		StartCoroutine(MobGen());
-        StartCoroutine(MonsterTeam());
-        StartCoroutine(Stage7BossDie());
+        StartCoroutine(MobGen());
+        if (!hidden)
+        {
+            StartCoroutine(MonsterTeam());
+            StartCoroutine(Stage7BossDie());
+        }
 	}
     IEnumerator Stage7BossDie()
     {
@@ -143,6 +146,15 @@ public class MonsterWaveGenerate : MonoBehaviour
 
                     break;
                 case 2:
+                    obj = pool.NewItem(mobGenerater.Position[WavePosNum].transform.position);
+
+                    break;
+
+                case 3:
+                    obj = pool.NewItem(mobGenerater.Position[WavePosNum].transform.position);
+
+                    break;
+                case 4:
                     obj = pool.NewItem(mobGenerater.Position[WavePosNum].transform.position);
 
                     break;

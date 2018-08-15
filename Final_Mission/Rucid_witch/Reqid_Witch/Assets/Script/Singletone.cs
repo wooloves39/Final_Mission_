@@ -56,9 +56,6 @@ public class Singletone
 			Myskill_str = sr.ReadLine();
 			int.TryParse(Myskill_str, out Myskill[i]);
 		}
-		Debug.Log(name);
-		Debug.Log(stage);
-		Debug.Log(saveTime);
 		fs.Close();
 		sr.Close();
 	}

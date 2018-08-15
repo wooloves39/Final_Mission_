@@ -17,16 +17,6 @@ public class Dia_Play : MonoBehaviour
 	public void setPlay(bool val) { Play = val; }
 	public bool getEnd() { return TalkEnd; }
 	public void setEnd(bool val) { TalkEnd = val; }
-	// Update is called once per frame
-	void Update()
-	{
-		//test;
-		if (Input.GetKeyDown(KeyCode.P))
-		{
-			Debug.Log("눌림");
-			Singletone.Instance.Load("/save1.txt");
-			Play = !Play; }
-	}
 	private IEnumerator TalkCoroutine()
 	{
 		while (true)

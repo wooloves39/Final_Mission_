@@ -41,7 +41,6 @@ public class VerbashMonSkill : MonoBehaviour {
 
 				break;
 		}
-		Debug.Log(MyCharacter.transform.position);
 	}
 	IEnumerator skill1()//1번스킬
 	{

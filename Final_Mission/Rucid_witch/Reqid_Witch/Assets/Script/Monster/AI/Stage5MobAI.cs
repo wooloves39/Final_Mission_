@@ -82,7 +82,6 @@ public class Stage5MobAI: MonoBehaviour {
 		{
 			if (ObjLife.Hp <= 0)
 			{
-				Debug.Log("DieSound");
 				ani.SetBool("Die", true);
 
 				MobSound.PlaySound(3);

@@ -98,13 +98,8 @@ public class BeejaeSkill : MonoBehaviour
 						NoMp = true;
 					}
 				}
-				if (fail)
-				{
-					Debug.Log("쿨타임 처리");
-				}
 				if (NoMp)
 				{
-					Debug.Log("엠피가 부족");
                     cooldown.MpLessOn();
 				}
 				line.Skills[2].resetSkill();
@@ -220,13 +215,8 @@ public class BeejaeSkill : MonoBehaviour
 				}
 				break;
 		}
-		if (fail)
-		{
-			Debug.Log("쿨타임 처리");
-		}
 		if (NoMp)
 		{
-			Debug.Log("엠피가 부족");
             cooldown.MpLessOn();
         }
 		

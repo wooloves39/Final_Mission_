@@ -46,10 +46,7 @@ public class BeejaeMonControll : MonoBehaviour {
 	void Attack1()
     {
         sound.PlayerSound(2);
-        // Use this for initialization
-        Debug.Log("Attack1");
 		beejaeManager.shoot(1, target);
-		//beejaeManager;
 	}
 	void Attack2()
     {

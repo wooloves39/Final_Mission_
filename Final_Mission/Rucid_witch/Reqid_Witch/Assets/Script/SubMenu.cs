@@ -17,7 +17,6 @@ public class SubMenu : MonoBehaviour {
 		if(State.GetMyState() != PlayerState.State.Talk)
 		if (InputManager_JHW.MenuButton() && !once)
 		{
-			Debug.Log("menu버튼");
 			if (mystate)
 			{
 				once = true;

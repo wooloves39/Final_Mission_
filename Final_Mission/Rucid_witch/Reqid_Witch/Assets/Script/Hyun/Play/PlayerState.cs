@@ -46,7 +46,6 @@ public class PlayerState : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.C))
 		{
 			Cheat = !Cheat;
-            Debug.Log("치트");
 		}
 		if (MyState == State.Charging)
 		{
@@ -54,8 +53,6 @@ public class PlayerState : MonoBehaviour
 		}
 		if (ChargingTime > MaxChargingTime)
 		{
-			Debug.Log("챠징오버");
-			//스킬 실패 기초안
 			PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.RTouch));
 			PlayerViberation.StartCoroutine(Viberation.ViberationCoroutine(0.5f, 1.0f, OVRInput.Controller.LTouch));
 			SetMyState(State.ChargingOver);
@@ -215,7 +212,6 @@ public class PlayerState : MonoBehaviour
 	{
 		if (Mp < Consume)
 		{
-			Debug.Log("스킬 실패, MP부족");
 			playerSound.PlayerSound(PlayerSoundSetting.soundPack.MPmiss);
 		}
 

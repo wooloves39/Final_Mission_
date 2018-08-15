@@ -54,7 +54,6 @@ public class Skill_Info : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other)
 	{
-        Debug.Log(gameObject.name);
 		if (other.CompareTag( "Monster"))
 		{
 			ObjList.Add(other.gameObject);

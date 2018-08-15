@@ -17,7 +17,8 @@ public class SelectSkillUI : MonoBehaviour
 	// Update is called once per frame
 	void Start()
 	{
-		stage = Singletone.Instance.stage;
+        
+           stage = Singletone.Instance.stage;
 		if (stage == 10) stage = 6;
 		StartCoroutine(SkillSet());
 		source = GetComponent<AudioSource>();
@@ -25,12 +26,15 @@ public class SelectSkillUI : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (InputManager_JHW.AButtonDown())
-		{
-			source.clip = clips[0];
-			source.Play();
-			skillChoice(RotationSkill);
-		}
+        if (InputManager_JHW.AButtonDown())
+        {
+            if (menu.confirm)
+            {
+                source.clip = clips[0];
+                source.Play();
+                skillChoice(RotationSkill);
+            }
+        }
 		if (InputManager_JHW.BButtonDown())
 		{
 			source.clip = clips[1];

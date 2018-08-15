@@ -272,7 +272,6 @@ public class LinePointChecker : MonoBehaviour
 		if (SkillCheck(skill1))
 		{
 			currentSkill = 1;
-			Debug.Log("마법1");
 			playerSound.PlayerSound(PlayerSoundSetting.soundPack.DrawComplete);
 			TimerOn = true;
 			Complete.SetActive(true);
@@ -283,7 +282,6 @@ public class LinePointChecker : MonoBehaviour
 		else if (SkillCheck(skill2))
 		{
 			currentSkill = 2;
-			Debug.Log("마법2");
 			playerSound.PlayerSound(PlayerSoundSetting.soundPack.DrawComplete);
 			TimerOn = true;
 			Complete.SetActive(true);
@@ -294,7 +292,6 @@ public class LinePointChecker : MonoBehaviour
 		else if (SkillCheck(skill3))
 		{
 			currentSkill = 3;
-			Debug.Log("마법3");
 			playerSound.PlayerSound(PlayerSoundSetting.soundPack.DrawComplete);
 			TimerOn = true;
 			Complete.SetActive(true);
@@ -305,7 +302,6 @@ public class LinePointChecker : MonoBehaviour
 		else if (SkillCheck(skill4))
 		{
 			currentSkill = 4;
-			Debug.Log("마법4");
 			playerSound.PlayerSound(PlayerSoundSetting.soundPack.DrawComplete);
 			TimerOn = true;
 			Complete.SetActive(true);
@@ -316,7 +312,6 @@ public class LinePointChecker : MonoBehaviour
 		else if (SkillCheck(skill5))
 		{
 			currentSkill = 5;
-			Debug.Log("마법5");
 			playerSound.PlayerSound(PlayerSoundSetting.soundPack.DrawComplete);
 			TimerOn = true;
 			Complete.SetActive(true);

@@ -901,6 +901,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4687600858373474}
+  - component: {fileID: 114632390354398928}
   - component: {fileID: 82779608143279690}
   m_Layer: 0
   m_Name: shoot sound
@@ -7957,6 +7958,7 @@ MonoBehaviour:
   - {fileID: 1208909482351632}
   SeiKwanArrow: {fileID: 1884487236303218}
   MonsterAttack: 0
+  shootSpeed: 30
 --- !u!114 &114029685577640190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8976,6 +8978,22 @@ MonoBehaviour:
   ShockTime: 2
   effect: {fileID: 1187873228307910, guid: 697263f667fdbc5419ba4194b2bd2bea, type: 2}
   chargingGage: 1
+--- !u!114 &114632390354398928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1716126443894230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ce6224e6ee1d44d98ad1af941a2875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wait_Time: 0.35
+  play: {fileID: 8300000, guid: 39c8c9c7977bd8c479f4dea33279fa6b, type: 3}
+  Shoot: 0
+  ShootSound: {fileID: 0}
+  check: 0
 --- !u!114 &114635148676992576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9451,8 +9469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wait_Time: 0
   play: {fileID: 8300000, guid: 3d7a26e970edabc42a98d82d2df546c3, type: 3}
-  Shoot: 1
-  ShootSound: {fileID: 1716126443894230}
+  Shoot: 0
+  ShootSound: {fileID: 0}
   check: 0
 --- !u!135 &135224537793786564
 SphereCollider:

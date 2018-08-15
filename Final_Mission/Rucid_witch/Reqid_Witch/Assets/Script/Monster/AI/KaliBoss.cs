@@ -85,7 +85,10 @@ public class KaliBoss : MonoBehaviour {
             Peace.Enqueue (BasicPeace [i]);
         for (int i = 0; i<BasicBattle.Length ; ++i)
             Battle.Enqueue (BasicBattle [i]);
-        StartCoroutine("AISearching");
+    }
+    void OnEnable()
+    {
+        StartCoroutine(AISearching());
     }
     IEnumerator AISearching(){
         int num = 0;

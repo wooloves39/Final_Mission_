@@ -69,6 +69,12 @@ public class Stage5Boss: MonoBehaviour {
 			ObjLife.Hp = 300;
 			ObjLife.MaxHp = 300;
 		}
+        if (Singletone.Instance.stage == 10)
+        {
+            Ulti = true;
+            ObjLife.Hp = 150;
+            ObjLife.MaxHp = 150;
+        }
 
 		Battle = new Queue();
 		Peace = new Queue();

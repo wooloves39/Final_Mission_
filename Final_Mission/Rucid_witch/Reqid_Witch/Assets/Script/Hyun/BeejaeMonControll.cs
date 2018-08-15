@@ -22,7 +22,6 @@ public class BeejaeMonControll : MonoBehaviour {
         beejaeManager.MyCharacters=gameObject;
         AI = GetComponent<Stage5Boss>();
 	}
-
     void Start()
     {
         target = GetComponent<BattleCommand>().getTarget();

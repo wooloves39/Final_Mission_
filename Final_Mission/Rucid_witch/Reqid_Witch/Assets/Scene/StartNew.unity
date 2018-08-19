@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -86,7 +86,8 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 39e746c4014dc9349a02b855d491f0ee,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -519,6 +520,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e3fd234927771e2478cdc9882ec5e322, type: 3}
   - {fileID: 21300000, guid: 01b54d9f68f9327479f71787bd4d9b16, type: 3}
   - {fileID: 21300000, guid: 14aeb775afea37f418d9dccf3799987e, type: 3}
+  SceneName: Stage0
 --- !u!114 &1726753993
 MonoBehaviour:
   m_ObjectHideFlags: 0

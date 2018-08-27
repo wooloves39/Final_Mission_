@@ -41,8 +41,6 @@ public class SelectMenu_Ready : MonoBehaviour
 				Menus[SelectMenu].transform.Translate(0, 0, -10);
 				Menus[SelectMenu].transform.LookAt(Camera.main.transform);
 				Menus[SelectMenu].transform.Rotate(0, 180, 0);
-
-
 			}
 		}
 		if (InputManager_JHW.BButtonDown())
@@ -84,10 +82,6 @@ public class SelectMenu_Ready : MonoBehaviour
 			}
 			confirm = true;
 			SaveConfirm.gameObject.SetActive(true);
-		}
-		if (Input.GetKeyDown(KeyCode.D))
-		{
-			Singletone.Instance.Save("/Text/Save/save01.txt");
 		}
 	}
 	IEnumerator KeyPad()

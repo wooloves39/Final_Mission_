@@ -307,13 +307,11 @@ public class AttackMethod : MonoBehaviour
 						r.velocity = new Vector3(0, 0, 0);
 						break;
 					}
-					//5발 다쏘고 난다음도 생각해야함
 				}
 				MyState.SetMyState(PlayerState.State.Charging, typecheck.Skills[0].GetSkillChargingTime());
 			}
 			else if (instance)
 			{
-				//테스트 시험
 			   AzuraBall[AzuraBallNum].transform.position = transform.position+MovePoint;
 
 				float handDis = Vector3.Distance(Hands[0].transform.position, Hands[1].transform.position);
@@ -323,7 +321,6 @@ public class AttackMethod : MonoBehaviour
 					Vector3 Azura = new Vector3(distance * 4.0f, distance * 4.0f, distance * 4.0f);
 					AzuraBall[AzuraBallNum].transform.localScale = Azura;
 				}
-
 			}
 			//yield return null;
 			yield return null;
@@ -564,6 +561,12 @@ public class AttackMethod : MonoBehaviour
 								playerSound.PlayerSound(PlayerSoundSetting.soundPack.AttackSkill);
 								AzuraBall[AzuraBallNum].GetComponent<AzuraSkill>().shoot(typecheck.Skills[0].getCurrentSkill(), myTarget, handDis,MyState.chargingRate());
 							}
+                            else
+                            {
+                                AzuraBall[AzuraBallNum].GetComponent<AzuraSkill>().resetDelete();
+                                Azurapool.RemoveItem(AzuraBall[AzuraBallNum]);
+                                AzuraBall[AzuraBallNum] = null;
+                             }
 						}
 					}
 					for (int i = 0; i < AzuraBall.Length; ++i)
@@ -604,10 +607,6 @@ public class AttackMethod : MonoBehaviour
 					Beejae_Marker[1].transform.rotation = MarkerRotate;
 					Beejae_Marker[0].SetActive(false);
 					Beejae_Marker[1].SetActive(false);
-				}
-				break;
-			case 3:// 양 컨트롤러의 포인터가 맞춰졌을대 발동, 트리거를 계속 on하면 기를 모아 방출
-				{
 				}
 				break;
 			case 4: //바이올린 상태 전체 공격 위주, 한정된 시간에 여러번 좌우 이동을 통해 차징 공격

@@ -18,5 +18,4 @@ public class CharacterInfoSkill : MonoBehaviour {
 			skill[type].SetActive(true);
 		}
 	}
-	public int Type { get; set; }
 }

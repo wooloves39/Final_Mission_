@@ -22,8 +22,6 @@ public class AzuraSkill : MonoBehaviour
 	private Collider collider;
     private int[] UseMp = {0,0,0,0,0};
 	public GameObject AzuraBall;
-
-
 	private void Awake()
 	{
 		info = GetComponent<Skill_Info>();
@@ -37,7 +35,6 @@ public class AzuraSkill : MonoBehaviour
             UseMp[i] = CoolTime.Azu_UseMp[i];
         }
 	}
-
 	public void shoot(int skillIndex, GameObject targets, float handDistance, float Gage = 0)
 	{
 		float chargingGage = Gage + 1;
@@ -78,7 +75,6 @@ public class AzuraSkill : MonoBehaviour
 					break;
 				case 4:
 					callofGad(target.transform.position, 15.0f, 3f, chargingGage);
-					//gameObject Soul, Vector3 targetPos, float speed, float scale, float time)
 					break;
 				case 5:
 					LastBlast(target.transform.position, chargingGage);
@@ -100,7 +96,6 @@ public class AzuraSkill : MonoBehaviour
         r.velocity = TargettingDir * Speed[0] * handDis;
 
 	}
-	//########################################################
 	void SoulExplosion(Vector3 target, float chargingGage)//12개의 스킬 날리기
 	{
 		for (int i = 0; i < SoulExp.Length; ++i)
@@ -154,7 +149,6 @@ public class AzuraSkill : MonoBehaviour
 				yield return null;
 		}
 	}
-	//########################################################
 	void witchAging(float deltime, float chargingGage)//12개
 	{
 		for (int i = 0; i < witchsHone.Length; ++i)

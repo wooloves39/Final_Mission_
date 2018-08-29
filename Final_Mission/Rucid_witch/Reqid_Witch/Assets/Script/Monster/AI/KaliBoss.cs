@@ -74,9 +74,9 @@ public class KaliBoss : MonoBehaviour {
 		}
         if (Singletone.Instance.stage == 10)
         {
-            Ulti = true;
-            ObjLife.Hp = 150;
-            ObjLife.MaxHp = 150;
+            Ulti = false;
+            ObjLife.Hp = 400;
+            ObjLife.MaxHp = 400;
         }
 
 		Battle = new Queue();

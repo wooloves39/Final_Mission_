@@ -15,14 +15,21 @@ public class MobGenerater : MonoBehaviour
 	private MonsterWaveGenerate[] monsterWaves;
     public bool block = false;
     public GameObject[] B;
-	void Start()
+    public bool Tutorial = false;
+    private TutorialSet tutorialset;
+    private int PrevStep = 0;
+    void Start()
 	{
-		MyState = player.transform.parent.GetComponent<PlayerState>();
+        tutorialset = FindObjectOfType<TutorialSet>();
+        MyState = player.transform.parent.GetComponent<PlayerState>();
 		monsterWaves = GetComponents<MonsterWaveGenerate>();
 	}
 	public void waveOn()
-	{
-		Wave_Start = true;
+    {
+        if (tutorialset.tutorialStep < 0)
+            tutorialset.tutorialStep = 0;
+        PrevStep = tutorialset.tutorialStep;
+        Wave_Start = true;
         if (block)
             for (int i = 0; i < 3; ++i)
             {
@@ -37,24 +44,36 @@ public class MobGenerater : MonoBehaviour
 	IEnumerator Waving()
 	{
 		bool alldie = false;
-		yield return new WaitForSeconds(5);
-		while (true)
-		{
-			alldie = false;
-			for (int i = 0; i < monsterWaves.Length; ++i)
-			{
-				if (monsterWaves[i].MondieAll())
-				{
-					alldie = true;
-					break;
-				}
-			}
-			if (alldie) yield return new WaitForSeconds(1);
-			else
-			{
-				break;
-			}
-		}
+        if (!Tutorial)
+        {
+            yield return new WaitForSeconds(5);
+            while (true)
+            {
+                alldie = false;
+                for (int i = 0; i < monsterWaves.Length; ++i)
+                {
+                    if (monsterWaves[i].MondieAll())
+                    {
+                        alldie = true;
+                        break;
+                    }
+                }
+                if (alldie) yield return new WaitForSeconds(1);
+                else
+                {
+                    break;
+                }
+            }
+        }
+        {
+            while (true)
+            {
+                if (PrevStep != tutorialset.tutorialStep)
+                    break;
+                else
+                    yield return new WaitForSeconds(1);
+            }
+        }
 		yield return new WaitForSeconds(1);
 		if (player.getPlay())
 		{

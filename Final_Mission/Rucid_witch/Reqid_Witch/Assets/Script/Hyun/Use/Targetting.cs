@@ -154,9 +154,8 @@ public class Targetting : MonoBehaviour
 						}
 					}
 				}
-
 			}
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.1f);
 			index = 5;
 		}
 	}

@@ -206,6 +206,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &872637322 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82788866932687290, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2097839316}
 --- !u!1001 &967257720
 Prefab:
   m_ObjectHideFlags: 0
@@ -354,6 +359,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1475038355 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1975545671856376, guid: cd4184ba12fefda4ebe20adef91f5ab8,
+    type: 2}
+  m_PrefabInternal: {fileID: 2097839316}
 --- !u!1001 &1531307734
 Prefab:
   m_ObjectHideFlags: 0
@@ -474,6 +484,54 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff052447bd1e15149abc3db12d4c7495, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1672893202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1672893204}
+  - component: {fileID: 1672893203}
+  m_Layer: 0
+  m_Name: TutorialCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1672893203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1672893202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa2899a337d3ac4cb0f4fb138686c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBack: 0
+  isSkillChange: 0
+  isDrow: 0
+  isAttack: 0
+  tutorialStep: 0
+  completeMark: {fileID: 1475038355}
+  Sound: {fileID: 872637322}
+  AttackSound: {fileID: 8300000, guid: 39245139476b9427ab5d40ac04f08305, type: 3}
+--- !u!4 &1672893204
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1672893202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938698604 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1086201473906540, guid: 4ea25b137099ede4e8d0ab48d6660299,
@@ -671,6 +729,10 @@ Prefab:
         type: 2}
       propertyPath: fileName
       value: /Text/talk/Episode_tutorial.txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975545671856376, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd4184ba12fefda4ebe20adef91f5ab8, type: 2}

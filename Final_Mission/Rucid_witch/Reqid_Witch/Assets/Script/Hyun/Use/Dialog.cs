@@ -159,7 +159,6 @@ public class Dialog : MonoBehaviour
 	{
 		ContinueIcon.SetActive(false);
 		StopIcon.SetActive(false);
-
 	}
 	private void ShowIcon()
 	{
@@ -182,5 +181,4 @@ public class Dialog : MonoBehaviour
 			iTween.ShakePosition(Boss, iTween.Hash("amount", new Vector3(0.05f, 0.05f, 0.05f), "time", 0.1f));
 		}
 	}
-
 }

@@ -6,7 +6,7 @@ public class TutorialHelp : MonoBehaviour {
 
     float deltatime;
     TutorialSet T;
-    float time = 0.000000f;
+    float time = 0.0f;
     public GameObject[] Help;
     public bool ChangeHelp = false;
     public int myStep = -1;

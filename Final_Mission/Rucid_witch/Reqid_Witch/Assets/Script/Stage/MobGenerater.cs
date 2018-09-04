@@ -26,9 +26,12 @@ public class MobGenerater : MonoBehaviour
 	}
 	public void waveOn()
     {
-        if (tutorialset.tutorialStep < 0)
-            tutorialset.tutorialStep = 0;
-        PrevStep = tutorialset.tutorialStep;
+        if (tutorialset)
+        {
+            if (tutorialset.tutorialStep < 0)
+                tutorialset.tutorialStep = 0;
+            PrevStep = tutorialset.tutorialStep;
+        }
         Wave_Start = true;
         if (block)
             for (int i = 0; i < 3; ++i)
@@ -65,6 +68,7 @@ public class MobGenerater : MonoBehaviour
                 }
             }
         }
+        else
         {
             while (true)
             {

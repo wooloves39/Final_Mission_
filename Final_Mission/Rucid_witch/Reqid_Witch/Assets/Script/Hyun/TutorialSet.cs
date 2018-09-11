@@ -19,6 +19,7 @@ public class TutorialSet : MonoBehaviour
     }
 	IEnumerator Tutorial1()//back
 	{
+        int count = 0;
 		while (true)
 		{
 			if (player.GetMyState() != PlayerState.State.Talk)
@@ -26,35 +27,43 @@ public class TutorialSet : MonoBehaviour
 				if (tutorialStep == 0)
 				{
 					if (InputManager_JHW.BButtonDown())
-						break;
+                    {
+                        ++count;
+
+                        if (count== 2) break;
+                        if (playerDialog.getPlay())
+                        {
+                            player.SetMyState(PlayerState.State.Talk);
+                            playerDialog.setPlay(false);
+                        }
+                    }
 				}
 			}
 			yield return null;
 		}
 		tutorialStep = 1;
 		StartCoroutine(Tutorial2());
-		if (playerDialog.getPlay())
-		{
-			player.SetMyState(PlayerState.State.Talk);
-			playerDialog.setPlay(false);
-
-		}
-	}
+        if (playerDialog.getPlay())
+        {
+            player.SetMyState(PlayerState.State.Talk);
+            playerDialog.setPlay(false);
+        }
+    }
 	IEnumerator Tutorial2()//back
 	{
-		while (true)
-		{
-			if (player.GetMyState() != PlayerState.State.Talk)
-			{
-				if (tutorialStep == 1)
-				{
-					if (InputManager_JHW.BButtonDown())
-						break;
-				}
-			}
-			yield return null;
-		}
-		tutorialStep = 2;
+        while (true)
+        {
+            if (player.GetMyState() != PlayerState.State.Talk)
+            {
+                if (tutorialStep == 1)
+                {
+                    if (InputManager_JHW.XButtonDown())
+                        break;
+                }
+            }
+            yield return null;
+        }
+        tutorialStep = 2;
 		StartCoroutine(Tutorial3());
 		if (playerDialog.getPlay())
 		{
@@ -71,11 +80,11 @@ public class TutorialSet : MonoBehaviour
             {
                 if (tutorialStep == 2)
                 {
-                    if (InputManager_JHW.XButtonDown())
+                    if (completeMark.activeSelf)
                         break;
                 }
             }
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
         tutorialStep = 3;
         StartCoroutine(Tutorial4());
@@ -88,36 +97,12 @@ public class TutorialSet : MonoBehaviour
     }
     IEnumerator Tutorial4()//마법진 그리기
     {
-
-        while (true)
-        {
-            if (player.GetMyState() != PlayerState.State.Talk)
-            {
-                if (tutorialStep == 3)
-                {
-                    if (completeMark.activeSelf)
-                        break;
-                }
-            }
-            yield return new WaitForSeconds(0.1f);
-        }
-        tutorialStep = 4;
-        StartCoroutine(Tutorial5());
-        if (playerDialog.getPlay())
-        {
-            player.SetMyState(PlayerState.State.Talk);
-            playerDialog.setPlay(false);
-
-        }
-    }
-    IEnumerator Tutorial5()//공격
-    {
         ObjectLife obj = EasyMonster.GetComponent<ObjectLife>();
         while (true)
         {
             if (player.GetMyState() != PlayerState.State.Talk)
             {
-                if (tutorialStep == 4)
+                if (tutorialStep == 3)
                 {
                     if (obj.Hp <= 0)
                     {
@@ -135,14 +120,13 @@ public class TutorialSet : MonoBehaviour
             }
             yield return new WaitForSeconds(1);
         }
-        tutorialStep = 5;
+        tutorialStep = 4;
         if (playerDialog.getPlay())
         {
             player.SetMyState(PlayerState.State.Talk);
             playerDialog.setPlay(false);
-			helpLast.SetActive(true);
-
-		}
+            helpLast.SetActive(true);
+        }
     }
 }
 

@@ -16,6 +16,7 @@ public class TutorialHelp : MonoBehaviour {
         deltatime = Time.deltaTime;
     }
     void Update () {
+        deltatime = Time.deltaTime;
         this.transform.LookAt(new Vector3(T.player.gameObject.transform.position.x, this.transform.position.y, T.player.gameObject.transform.position.z));
         if (ChangeHelp)
         {

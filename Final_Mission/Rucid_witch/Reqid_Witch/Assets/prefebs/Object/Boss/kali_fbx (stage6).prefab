@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 198475055668758202}
   - component: {fileID: 199679407730849670}
   m_Layer: 0
-  m_Name: par3
+  m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1034796240493716
 GameObject:
   m_ObjectHideFlags: 1
@@ -559,7 +559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1311186337295356
 GameObject:
   m_ObjectHideFlags: 1
@@ -5331,6 +5331,7 @@ MonoBehaviour:
     type: 2}
   KaliSkillprefab3: {fileID: 1886104067585490, guid: 2e02c4810692c3b4a808731a7265b6fb,
     type: 2}
+  Effect: {fileID: 1034710758580118}
 --- !u!114 &114713272289427780
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -17,8 +17,11 @@ public class KaliMobControll : MonoBehaviour {
     public GameObject KaliSkillprefab1;
     public GameObject KaliSkillprefab2;
     public GameObject KaliSkillprefab3;
+    public GameObject Effect;
+    private bool check = false;
     void Awake()
     {
+        Effect.SetActive(false);
         Skill[3] = Instantiate(KaliSkillprefab1);
         Skill[5] = Instantiate(KaliSkillprefab2);
         Skill[6] = Instantiate(KaliSkillprefab3);
@@ -42,7 +45,6 @@ public class KaliMobControll : MonoBehaviour {
     }
     void Hit()
     {
-
         sound.PlayerSound(1);
     }
     IEnumerator Jump()
@@ -53,9 +55,13 @@ public class KaliMobControll : MonoBehaviour {
             this.transform.position += this.transform.forward * -3 * 0.1f;
             yield return new WaitForSeconds(1.0f / 40.0f);
         }
+        EffectToggle();
+        Invoke("EffectToggle", 0.8f);
     }
     void Lose_Sound()
     {
+
+        Effect.SetActive(false);
         sound.PlayerSound(3);
     }
     void Skill1()
@@ -82,12 +88,14 @@ public class KaliMobControll : MonoBehaviour {
     }
     void Skill4()
     {
+        EffectToggle();
         sound.PlayerSound(2);
         num = 3;
         AI.CoolTime(num);
         Targetting_Myself(true);
         Skill[num].transform.position = this.transform.position;
         StartCoroutine("Attack", num);
+        Invoke("EffectToggle", 1.7f);
     } 
     void Skill5()
     {
@@ -107,6 +115,8 @@ public class KaliMobControll : MonoBehaviour {
     }
     void Skill7()
     {
+        EffectToggle();
+        Invoke("EffectToggle", 0.8f);
         sound.PlayerSound(4);
         num = 6;
         AI.CoolTime(num);
@@ -140,5 +150,12 @@ public class KaliMobControll : MonoBehaviour {
         }
         Skill[num].SetActive(false);
     }
-    
+    void EffectToggle()
+    {
+        if (check)
+            Effect.SetActive(false);
+        else
+            Effect.SetActive(true);
+        check = !check;
+    }
 }

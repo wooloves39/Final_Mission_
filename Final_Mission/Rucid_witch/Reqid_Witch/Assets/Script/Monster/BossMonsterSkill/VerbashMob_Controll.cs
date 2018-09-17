@@ -9,6 +9,7 @@ public class VerbashMob_Controll : MonoBehaviour {
 	private BossSoundSetting sound;
     private VerbashMonSkill VerManager;
     private Stage5Boss AI;
+    public GameObject Effect;
     // Use this for initialization
     void Awake () 
     {
@@ -33,6 +34,7 @@ public class VerbashMob_Controll : MonoBehaviour {
     }
     void Lose_Sound()
     {
+        Effect.SetActive(false);
         sound.PlayerSound(3);
     }
 	void Attack1()

@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 4148546168986432}
   - component: {fileID: 198721311978612606}
   - component: {fileID: 199981472680724736}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1074007407822118
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -805,6 +805,21 @@ GameObject:
   - component: {fileID: 4777793159630682}
   m_Layer: 0
   m_Name: LightningEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1336473584761558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4463434077569256}
+  m_Layer: 0
+  m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1498,7 +1513,7 @@ GameObject:
   - component: {fileID: 4009178799976156}
   - component: {fileID: 198033683132771642}
   - component: {fileID: 199550250836259156}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1577,7 +1592,7 @@ GameObject:
   - component: {fileID: 4905470305533416}
   - component: {fileID: 198438922341945752}
   - component: {fileID: 199272616704386328}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2572,7 +2587,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1945555065855254
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -2832,8 +2847,7 @@ Transform:
   - {fileID: 4302351677120860}
   - {fileID: 4626365936935188}
   - {fileID: 4646777245961248}
-  - {fileID: 4551815200218086}
-  - {fileID: 4515813292310124}
+  - {fileID: 4463434077569256}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3644,6 +3658,21 @@ Transform:
   m_Father: {fileID: 4477818438902742}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4463434077569256
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1336473584761558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4515813292310124}
+  - {fileID: 4551815200218086}
+  m_Father: {fileID: 4075907518973788}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4469500995331326
 Transform:
   m_ObjectHideFlags: 1
@@ -3724,13 +3753,13 @@ Transform:
   m_GameObject: {fileID: 1945555065855254}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.666667, z: 0.666667}
+  m_LocalScale: {x: 0.6666667, y: 0.6666673, z: 0.6666673}
   m_Children:
   - {fileID: 4009178799976156}
   - {fileID: 4905470305533416}
   - {fileID: 4148546168986432}
-  m_Father: {fileID: 4075907518973788}
-  m_RootOrder: 8
+  m_Father: {fileID: 4463434077569256}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4516526676589952
 Transform:
@@ -3781,11 +3810,11 @@ Transform:
   m_GameObject: {fileID: 1074007407822118}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.666667, z: 0.666667}
+  m_LocalScale: {x: 0.6666667, y: 0.6666673, z: 0.6666673}
   m_Children:
   - {fileID: 4783525968879476}
-  m_Father: {fileID: 4075907518973788}
-  m_RootOrder: 7
+  m_Father: {fileID: 4463434077569256}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4557383194560848
 Transform:
@@ -7000,6 +7029,7 @@ MonoBehaviour:
   buffs: {fileID: 1120054633196856}
   rainBow: {fileID: 114476756310280004}
   attackSkill: {fileID: 114267870152613518}
+  Effect: {fileID: 1336473584761558}
 --- !u!114 &114820139572521948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122074,7 +122104,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2136423299
+  randomSeed: -1382130889
   InitialModule:
     serializedVersion: 3
     enabled: 1

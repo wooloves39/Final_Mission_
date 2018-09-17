@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SeiKwanMonControll : MonoBehaviour {
 
-    //BossEffectControler Eff;
 	public GameObject ArrowPrefab;
 	MemoryPool Arrowpool = new MemoryPool();
 	GameObject[] Arrow;
@@ -13,14 +12,16 @@ public class SeiKwanMonControll : MonoBehaviour {
 	private BossSoundSetting sound;
 	public GameObject skill4;
     private Stage5Boss AI;
-	// Use this for initialization
+    public GameObject Effect;
+    public float EffectTime;
+    // Use this for initialization
     private void Start()
     {
         target = GetComponent<BattleCommand>().getTarget();
     }
 	private void Awake()
 	{
-        //Eff = GetComponentInChildren<BossEffectControler>();
+        Effect.gameObject.SetActive(false);
         AI = GetComponent<Stage5Boss>();
 		sound = GetComponent<BossSoundSetting>();
 		Hp = GetComponent<ObjectLife>().Hp;
@@ -56,7 +57,6 @@ public class SeiKwanMonControll : MonoBehaviour {
 	}
     void Hit()
     {
-        //Eff.EffSet(2);
         sound.PlayerSound(BossSoundSetting.BosssoundPack.Defance);
     }
     void Appier()
@@ -183,8 +183,18 @@ public class SeiKwanMonControll : MonoBehaviour {
 	}
 	void setTarget()
     {
-        //Eff.EffSet(0);
+        EffectToggle();
         Hp = GetComponent<ObjectLife>().Hp;
+        Invoke("EffectToggle", EffectTime);
 
 	}
+    bool check = true;
+    void EffectToggle()
+    {
+        if (check)
+            Effect.SetActive(false);
+        else
+            Effect.SetActive(true);
+        check = !check;
+    }
 }

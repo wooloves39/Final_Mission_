@@ -3973,6 +3973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1175496498674312, guid: 4d6529d00514e0b488207b3138c0ed32, type: 2}
+  Effect: {fileID: 1341519116256508}
 --- !u!114 &114794111959784058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4771,7 +4772,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1734360974
+  randomSeed: -1093815378
   InitialModule:
     serializedVersion: 3
     enabled: 1

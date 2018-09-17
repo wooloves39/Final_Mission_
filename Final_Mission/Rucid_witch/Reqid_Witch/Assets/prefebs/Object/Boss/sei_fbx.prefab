@@ -5054,6 +5054,8 @@ MonoBehaviour:
   ArrowPrefab: {fileID: 1692142197464032, guid: 3641f3baff8278043b06e80af29fed44,
     type: 2}
   skill4: {fileID: 1937242130202054}
+  Effect: {fileID: 1509273961587340}
+  EffectTime: 3
 --- !u!114 &114564222598460956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -25904,7 +25906,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 679590738
+  randomSeed: -377534465
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -29166,7 +29168,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1266209589
+  randomSeed: 495536647
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -61906,7 +61908,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 2108935350
+  randomSeed: -1235848896
   InitialModule:
     serializedVersion: 3
     enabled: 1

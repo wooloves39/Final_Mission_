@@ -11,6 +11,7 @@ public class BeejaeMonControll : MonoBehaviour {
     private BeeJaeMonSkill beejaeManager;
     private Stage5Boss AI;
     private NavMeshAgent agent;
+    public GameObject Effect;
 	// Use this for initialization
 	void Awake () 
     {
@@ -41,6 +42,7 @@ public class BeejaeMonControll : MonoBehaviour {
     }
     void Lose_Sound()
     {
+        Effect.SetActive(false);
         sound.PlayerSound(3);
     }
 	void Attack1()

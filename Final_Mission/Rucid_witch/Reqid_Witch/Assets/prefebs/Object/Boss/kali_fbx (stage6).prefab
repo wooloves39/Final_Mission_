@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 198475055668758202}
   - component: {fileID: 199679407730849670}
   m_Layer: 0
-  m_Name: par3
+  m_Name: Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1034796240493716
 GameObject:
   m_ObjectHideFlags: 1
@@ -3010,7 +3010,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1302692595792424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 5.03, z: 74.21}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 4714436231562360}
@@ -5331,6 +5331,7 @@ MonoBehaviour:
     type: 2}
   KaliSkillprefab3: {fileID: 1886104067585490, guid: 2e02c4810692c3b4a808731a7265b6fb,
     type: 2}
+  Effect: {fileID: 1034710758580118}
 --- !u!114 &114713272289427780
 MonoBehaviour:
   m_ObjectHideFlags: 1

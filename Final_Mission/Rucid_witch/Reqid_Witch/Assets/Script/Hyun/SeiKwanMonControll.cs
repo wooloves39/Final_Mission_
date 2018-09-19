@@ -188,13 +188,14 @@ public class SeiKwanMonControll : MonoBehaviour {
         Invoke("EffectToggle", EffectTime);
 
 	}
-    bool check = true;
+    bool check = false;
     void EffectToggle()
     {
         if (check)
             Effect.SetActive(false);
         else
             Effect.SetActive(true);
+
         check = !check;
     }
 }

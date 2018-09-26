@@ -18,10 +18,11 @@ public class KaliMobControll : MonoBehaviour {
     public GameObject KaliSkillprefab2;
     public GameObject KaliSkillprefab3;
     public GameObject Effect;
-    private bool check = false;
+    public GameObject SmallEffect;
     void Awake()
     {
         Effect.SetActive(false);
+        SmallEffect.SetActive(false);
         Skill[3] = Instantiate(KaliSkillprefab1);
         Skill[5] = Instantiate(KaliSkillprefab2);
         Skill[6] = Instantiate(KaliSkillprefab3);
@@ -54,9 +55,13 @@ public class KaliMobControll : MonoBehaviour {
         {
             this.transform.position += this.transform.forward * -3 * 0.1f;
             yield return new WaitForSeconds(1.0f / 40.0f);
+            if( i == 25)
+            {
+                SmallEffect.SetActive(false);
+                StopCoroutine("SmallEffectToggle");
+                StartCoroutine(SmallEffectToggle(0.0f, 0.55f));
+            }
         }
-        EffectToggle();
-        Invoke("EffectToggle", 0.8f);
     }
     void Lose_Sound()
     {
@@ -88,14 +93,15 @@ public class KaliMobControll : MonoBehaviour {
     }
     void Skill4()
     {
-        EffectToggle();
+        Effect.SetActive(false);
+        StopCoroutine("EffectToggle");
+        StartCoroutine(EffectToggle(0.0f, 1.15f));
         sound.PlayerSound(2);
         num = 3;
         AI.CoolTime(num);
         Targetting_Myself(true);
         Skill[num].transform.position = this.transform.position;
         StartCoroutine("Attack", num);
-        Invoke("EffectToggle", 1.7f);
     } 
     void Skill5()
     {
@@ -106,6 +112,9 @@ public class KaliMobControll : MonoBehaviour {
     }
     void Skill6()
     {
+        Effect.SetActive(false);
+        StopCoroutine("EffectToggle");
+        StartCoroutine(EffectToggle(0.4f, 0.8f));
         sound.PlayerSound(2);
         num = 5;
         AI.CoolTime(num);
@@ -115,8 +124,6 @@ public class KaliMobControll : MonoBehaviour {
     }
     void Skill7()
     {
-        EffectToggle();
-        Invoke("EffectToggle", 0.8f);
         sound.PlayerSound(4);
         num = 6;
         AI.CoolTime(num);
@@ -150,12 +157,18 @@ public class KaliMobControll : MonoBehaviour {
         }
         Skill[num].SetActive(false);
     }
-    void EffectToggle()
+    IEnumerator EffectToggle(float delay,float time)
     {
-        if (check)
-            Effect.SetActive(false);
-        else
-            Effect.SetActive(true);
-        check = !check;
+        yield return new WaitForSeconds(delay);
+        Effect.SetActive(true);
+        yield return new WaitForSeconds(time);
+        Effect.SetActive(false);
+    }
+    IEnumerator SmallEffectToggle(float delay,float time)
+    {
+        yield return new WaitForSeconds(delay);
+        SmallEffect.SetActive(true);
+        yield return new WaitForSeconds(time);
+        SmallEffect.SetActive(false);
     }
 }

@@ -41,6 +41,11 @@ public class ConfirmMenu : MonoBehaviour {
 				}
 				source.clip = clips[0];
 				source.Play();
+                if (Singletone.Instance.stage == 9)
+                {
+                    sceneChange.sceneChange("Stage0_tutorial");
+                }
+                else
 				sceneChange.sceneChange("Ready");
 			}
 			if (index == 0)

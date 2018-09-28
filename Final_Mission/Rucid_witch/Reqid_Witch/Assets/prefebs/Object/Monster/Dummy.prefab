@@ -191,7 +191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1273911821499152
 GameObject:
   m_ObjectHideFlags: 1
@@ -658,11 +658,11 @@ GameObject:
   - component: {fileID: 4690187870126758}
   - component: {fileID: 95049519050199078}
   - component: {fileID: 54045758377116912}
-  - component: {fileID: 65851526662699838}
   - component: {fileID: 82967740400322110}
   - component: {fileID: 82301722171204258}
   - component: {fileID: 82585111979999692}
   - component: {fileID: 114789894145634442}
+  - component: {fileID: 135560582616612632}
   m_Layer: 10
   m_Name: husu_fbx
   m_TagString: Monster
@@ -1015,18 +1015,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65851526662699838
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1901394678727240}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 3.5, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!82 &82301722171204258
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2347,6 +2335,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 15
   m_Center: {x: 0, y: 2.61, z: 0}
+--- !u!135 &135560582616612632
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901394678727240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2
+  m_Center: {x: 0, y: 2.2, z: 0}
 --- !u!137 &137582249194171056
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

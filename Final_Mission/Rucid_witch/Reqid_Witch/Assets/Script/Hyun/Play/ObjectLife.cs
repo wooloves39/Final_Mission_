@@ -172,4 +172,17 @@ public class ObjectLife : MonoBehaviour {
 		Speed = prev_speed;
 		BattleSpeed = prev_battle_speed;
 	}
+
+    private void Apprier()
+    {
+        prev_speed = Speed;
+        prev_battle_speed = BattleSpeed;
+        Speed = BattleSpeed = 0;
+        Invoke("ResetSpeed", 1.5f);
+    }
+    private void ResetSpeed()
+    {
+        BattleSpeed = prev_battle_speed;
+        Speed = prev_speed;
+    }
 }

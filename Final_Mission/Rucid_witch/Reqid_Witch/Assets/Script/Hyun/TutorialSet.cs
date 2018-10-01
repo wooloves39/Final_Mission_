@@ -20,6 +20,7 @@ public class TutorialSet : MonoBehaviour
 	IEnumerator Tutorial1()//back
 	{
         int count = 0;
+		yield return new WaitForSeconds(0.5f);
 		while (true)
 		{
 			if (player.GetMyState() != PlayerState.State.Talk)
@@ -30,10 +31,13 @@ public class TutorialSet : MonoBehaviour
                     {
                         ++count;
 
-                        if (count== 2) break;
+						if (count == 2) {
+							yield return new WaitForSeconds(0.5f);
+							break; }
                         if (playerDialog.getPlay())
                         {
-                            player.SetMyState(PlayerState.State.Talk);
+							yield return new WaitForSeconds(0.5f);
+							player.SetMyState(PlayerState.State.Talk);
                             playerDialog.setPlay(false);
                         }
                     }
@@ -51,9 +55,10 @@ public class TutorialSet : MonoBehaviour
     }
 	IEnumerator Tutorial2()//back
 	{
-        while (true)
-        {
-            if (player.GetMyState() != PlayerState.State.Talk)
+		yield return new WaitForSeconds(0.5f);
+		while (true)
+		{
+			if (player.GetMyState() != PlayerState.State.Talk)
             {
                 if (tutorialStep == 1)
                 {
@@ -73,10 +78,11 @@ public class TutorialSet : MonoBehaviour
 		}
 	}
 	IEnumerator Tutorial3()//속성 변경
-    {
-        while (true)
-        {
-            if (player.GetMyState() != PlayerState.State.Talk)
+	{
+		yield return new WaitForSeconds(0.5f);
+		while (true)
+		{
+			if (player.GetMyState() != PlayerState.State.Talk)
             {
                 if (tutorialStep == 2)
                 {
@@ -97,10 +103,12 @@ public class TutorialSet : MonoBehaviour
     }
     IEnumerator Tutorial4()//마법진 그리기
     {
-        ObjectLife obj = EasyMonster.GetComponent<ObjectLife>();
-        while (true)
-        {
-            if (player.GetMyState() != PlayerState.State.Talk)
+        ObjectLife obj = EasyMonster.GetComponent<ObjectLife>(); 
+			yield return new WaitForSeconds(0.5f);
+		while (true)
+		{
+			
+			if (player.GetMyState() != PlayerState.State.Talk)
             {
                 if (tutorialStep == 3)
                 {
